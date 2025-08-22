@@ -1,0 +1,159 @@
+/* === Color Palette === */
+:root {
+  --color-maroon: #7B2123;       /* Deep Maroon */
+  --color-orange: #F19D38;       /* Warm Orange */
+  --color-gold: #FFC35C;         /* Golden Yellow */
+  --color-slate-blue: #2F3E50;   /* Dark Slate Blue - text */
+  --color-warm-bg: #FFF9EF;      /* Soft warm off-white */
+  --color-white: #FFFFFF;
+  --color-muted-text: #6c757d;   /* For secondary text */
+}
+
+/* === Global Styles === */
+body {
+  background-color: var(--color-warm-bg);
+  color: var(--color-slate-blue);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* === Headings === */
+h1, h2, h3 {
+  color: var(--color-maroon);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+/* === Navbar === */
+.navbar {
+  background-color: var(--color-maroon);
+}
+
+.navbar-brand, 
+.navbar a.nav-link {
+  color: var(--color-orange);
+  transition: color 0.3s ease;
+  font-weight: 600;
+}
+
+.navbar a.nav-link:hover,
+.navbar a.nav-link:focus,
+.navbar a.nav-link.active {
+  color: var(--color-gold);
+  text-decoration: underline;
+}
+
+/* === Buttons === */
+.btn-primary {
+  background-color: var(--color-maroon);
+  border-color: var(--color-maroon);
+  font-weight: 600;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--color-orange);
+  border-color: var(--color-orange);
+  color: var(--color-white);
+}
+
+/* === Links === */
+a {
+  color: var(--color-orange);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover, a:focus {
+  color: var(--color-gold);
+  text-decoration: underline;
+}
+
+/* === Cards === */
+.card {
+  background-color: var(--color-white);
+  border: 1px solid #ddd;
+  border-radius: 0.6rem;
+  box-shadow: 0 4px 10px rgba(26, 35, 126, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 12px 24px rgba(26, 35, 126, 0.25);
+}
+
+.card-title {
+  color: var(--color-maroon);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  color: var(--color-slate-blue);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* === Form Inputs === */
+input, select, textarea {
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--color-maroon);
+  outline: none;
+  box-shadow: 0 0 6px var(--color-orange);
+}
+
+/* === Headings Spacing */
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/* === Text Muted === */
+.text-muted {
+  color: var(--color-muted-text) !important;
+}
+
+/* === Footer === */
+footer {
+  background-color: var(--color-maroon);
+  color: var(--color-white);
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* === Utility Classes (optional) === */
+.text-primary {
+  color: var(--color-maroon) !important;
+}
+
+.bg-primary {
+  background-color: var(--color-maroon) !important;
+}
+
+/* === Responsive Image with Rounded Corners === */
+img.rounded-logo {
+  border-radius: 0.75rem;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 6px 15px rgba(26, 35, 126, 0.2);
+}

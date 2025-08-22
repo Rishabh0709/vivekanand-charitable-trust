@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Success Stories | Swami Vivekanand Students’ Welfare Charitable Trust</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+
+  <style>
+    main.container {
+      padding-top: 40px;
+      padding-bottom: 60px;
+    }
+    h1 {
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .story-card {
+      border-radius: 0.5rem;
+      box-shadow: 0 2px 18px rgba(10,20,40,.07);
+      border: none;
+      margin-bottom: 2rem;
+      transition: box-shadow 0.15s;
+      background: #fafcff;
+    }
+    .story-card:hover {
+      box-shadow: 0 4px 32px rgba(10,20,40,.15);
+    }
+    .story-card img {
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+      object-fit: cover;
+      height: 220px;
+      width: 100%;
+    }
+    .story-title {
+      color: #1a237e;
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+      font-size: 1.3rem;
+    }
+    .read-more-btn {
+      background: #1a237e;
+      color: #fff;
+      font-weight: 500;
+      border-radius: 2rem;
+      padding: 0.4rem 1.2rem;
+      transition: background 0.18s;
+    }
+    .read-more-btn:hover {
+      background: #3949ab;
+      color: #fff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+
+  <main class="container">
+    <h1>Success Stories</h1>
+    <div class="row">
+      <!-- Story 1 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card story-card">
+          <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" alt="Aarushi" />
+          <div class="card-body">
+            <div class="story-title">Aarushi: From Rural Roots to Medical College</div>
+            <p>Aarushi, recipient of our 2019 scholarship, overcame financial challenges to achieve her dream of becoming a medical student. Her dedication and grit inspire her peers and community.</p>
+            <a href="./story1.html" class="read-more-btn btn btn-sm mt-2">Read More</a>
+          </div>
+        </div>
+      </div>
+      <!-- Story 2 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card story-card">
+          <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=400&q=80" alt="Megha" />
+          <div class="card-body">
+            <div class="story-title">Megha: Breaking Barriers in Engineering</div>
+            <p>Megha's journey from a small village to a top engineering college was supported by Trust mentorship and guidance. Today, she mentors other young girls in STEM fields.</p>
+            <a href="./story2.html" class="read-more-btn btn btn-sm mt-2">Read More</a>
+          </div>
+        </div>
+      </div>
+      <!-- Story 3 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card story-card">
+          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Priya" />
+          <div class="card-body">
+            <div class="story-title">Priya: Academic Excellence & Community Impact</div>
+            <p>Pursuing her studies with passion, Priya achieved academic awards and inspired social change by leading local education drives for underprivileged children.</p>
+            <a href="./story3.html" class="read-more-btn btn btn-sm mt-2">Read More</a>
+          </div>
+        </div>
+      </div>
+      <!-- Story 4 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card story-card">
+          <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Neha" />
+          <div class="card-body">
+            <div class="story-title">Neha: Entrepreneur & Role Model</div>
+            <p>With financial help from the Trust, Neha launched a sustainable business, becoming a role model for women entrepreneurs in her district.</p>
+            <a href="./story4.html" class="read-more-btn btn btn-sm mt-2">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Bootstrap and Main JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+  <!-- Load header and footer partials -->
+  <script>
+    async function loadHTML(id, url) {
+      try {
+        const res = await fetch(url);
+        const text = await res.text();
+        document.getElementById(id).innerHTML = text;
+      } catch (error) {
+        console.error(`Failed to load ${url}:`, error);
+      }
+    }
+    loadHTML('header-placeholder', 'header.html');
+    loadHTML('footer-placeholder', 'footer.html');
+  </script>
+</body>
+</html>

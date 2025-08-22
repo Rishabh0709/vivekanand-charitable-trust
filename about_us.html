@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us | Swami Vivekanand Students’ Welfare Charitable Trust</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="Ltext_Rimg.css" />
+  <link rel="stylesheet" href="Rtext_Limg.css" />
+  
+  <style>
+    main.container {
+      padding-top: 40px;
+      padding-bottom: 60px;
+    }
+    h1, h2 {
+      font-weight: 600;
+    }
+    .founder-photo {
+      max-width: 100%;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+
+  <main class="container">
+    <h1 class="mb-4 text-center">About Us</h1>
+
+    <section class="mb-5 row align-items-center">
+     <div class="col-md-4 d-flex flex-column align-items-center text-center text-md-start">
+        <img src="../images/manidweep.png" alt="Founder Shri Ram Prasad Sharma" class="founder-photo mb-3" />
+        <h3 class= "mb-1">Manidweep</h3>
+        
+      </div>
+      <div class="col-md-8">
+        <p>
+          Swami Vivekananda Students Welfare Charitable Trust was established on June 10, 1996, by Kumari Basanti Manihar
+		  with the aim of fostering the holistic development of underprivileged girl students. 
+		  Shri Nandkishore Sharda served as the first President from its inception until his passing on January 24, 2003. 
+		  Kumari Basanti Manihar then assumed the role of President, continuing in this capacity until her demise in May 2021. 
+		  Since May 27, 2021, Kumari Madhubala Advani has been leading the Trust as its President.
+		</p>
+		<p>	
+		  This trust, which is very special and unique in itself, is committed towards the holistic development of the girl child. 
+		  Generally, all trusts accept the fulfillment of their duty by giving only financial assistance. 
+		  The specialty of this trust is that apart from providing financial support, it is always available for guidance and help the girl students.
+        </p>
+		<p>
+		Shardaji was a great thinker, a sage, a visionary and a prophetic spiritual person.  
+		His thinking was original, scientific and based on the characteristics and need of the present era. 
+		He firmly believed that education is a natural right of every person, especially the girl child. 
+		All beneficiary girls of the trust are members of the family of Divine Mother Maa Jagatjanani; 
+		financial assistance is their right, not a favor or charity
+		</p>
+	</section>	
+	<p>
+		  One of the specialties of this trust is that the scholarship is provided to the girl students on the basis of need only 
+		  and not on the basis of merit. Over a period of time, under the guidance of the trust members, 
+		  the academic level of these girl students increases tremendously and a few students even get into the merit list.
+			</p>
+		<section class="highlight-section">
+		<div class="container">
+			<!-- Left side: Descriptive Text -->
+			<div class="text-side">
+			<p>
+			Shri Sharda was always very careful to ensure that the self-respect and dignity of every girl child was maintained. 
+			Here special importance is given to the overall development of every girl child. 
+			Intensive efforts are made to create interest and curiosity towards their studies, and concentration and dedication towards their goal. 
+			To fulfill this objective, the seeds of Indian culture and human values are sown in them during their school education. 
+			The purpose is 'Catch them young' because their mind at this tender age is like soft clay which can be moulded into the desired form
+			</p>
+			</div>
+			<!-- Right side: Image + Heading -->
+			<div class="image-side">
+				<img src="../images/f6.jpg" alt="Trust established" />
+				<h3>Girls Listening To Bhaiyaji's Encouraging Speech</h3>
+			</div>
+		</div>
+		</section>
+		<section class="reverse-highlight-section">
+		<div class="container">
+		<!-- Left side: Image + Heading -->
+		<div class="image-side">
+		<img src="../images/sanskar_girls.jpg" alt="Women Leadership"/>
+		<h3>Maa Madhubala Advani Enlighting Students</h3>
+		</div>
+		<!-- Right side: Descriptive Text -->
+		<div class="text-side">
+		<!--<h2>Championing Leadership and Innovation</h2>-->
+		<p>
+        In the Personality Development Classes, the girl students are taught how to make their goals, understand them and finally implement them 
+		on the basis of <i>‘Buddhi Vivek Yog Sadhna’</i> developed by Gyanyogi Shri Nandkishore Sharda. This makes these girls stand out in crowd 
+		and build their own unique identity oozing in confidence which is helpful for their progress in every walk of life. 
+		They develop right decision making ability based on cordiality, harmony and self-discretion, which is rare in the present era. 
+		Their life becomes full of happiness and cheerfulness. They are made aware of their rights as well as duties so that 
+		they become Samaritan citizens and are able to contribute in the development of family, society and nation. 
+		This is a positive concrete step towards girl/women empowerment.
+		</p>
+		</div>
+		</div>
+		</section>
+      </div>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Bootstrap and main JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+
+  <!-- Load partials -->
+  <script>
+    async function loadHTML(id, url) {
+      try {
+        const res = await fetch(url);
+        const text = await res.text();
+        document.getElementById(id).innerHTML = text;
+      } catch (err) {
+        console.error(`Failed to load ${url}:`, err);
+      }
+    }
+    loadHTML('header-placeholder', 'header.html');
+    loadHTML('footer-placeholder', 'footer.html');
+  </script>
+
+</body>
+</html>

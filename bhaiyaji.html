@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shri Ram Prasad Sharma – Torch Bearer | Swami Vivekanand Students’ Welfare Charitable Trust</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- FontAwesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css" />
+  
+  <style>
+    /* Additional content styling */
+    main.container {
+      padding-top: 30px;
+      padding-bottom: 60px;
+    }
+    main h2 {
+      margin-top: 0.5rem;
+      font-weight: 600;
+    }
+    main img {
+      max-width: 100%;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header will load here -->
+  <div id="header-placeholder"></div>
+
+  <!-- Main content -->
+  <main class="container">
+    <!-- Section 1 -->
+    <section class="row align-items-center mb-5">
+      <div class="col-md-4 text-center text-md-start">
+        <img src="../images/bhaiyaji.jpg" alt="Shri Ram Prasad Sharma" class="img-fluid rounded mb-3" />
+        <h2>Shri Nandkishore Sharda</h2>
+      </div>
+      <div class="col-md-8">
+        <p>
+          Shri Nandkishoree Sharda ,who was affectionately called 'Bhaiyya' by all, was born on July 16, 1944, in Jodhpur, 
+		  in the affluent and devotional family of Smt. Tulsi Devi and Shri Vijaykishan Ji Sharda. 
+		  Shri Sharda was a brilliant student of science. He possessed extraordinary intellect and a charismatic/majestic personality..
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="mb-5">
+      <p>
+        Shri Nandkishoree Sharda was only 15 years old in 1959 when the sudden demise of his father deeply perturbed him 
+		and he realized the mortality/perishability of this physical body. 
+		At that very instant, he resolved that he would abstain from all attractions of the materialistic world and 
+		would search the cosmic power that drives/runs/sustains this physical body for so many years; 
+		what is that power? how does it runs the physical body? what is the purpose of human life? how should one lead his life? 
+      </p>
+      <p>
+        He went to many sadhus, tantiks, mantriks, saints, mahatmas in search of his quest. 
+		He also read various spiritual and religious books but he could not get any satisfactory answers anywhere. 
+		Once, he was strolling in the valleys near the fort of Jodhpur, when he saw a temple on the top of a hill (Tekri). 
+		When he climbed and the reached the temple, he felt great peace and tranquility. 
+		He then surrendered himself onto the lotus feet of the Divine Mother and made her the mother of even his physical body. 
+		He devoted himself completely to the Divine Mother and worshiped her solemnly day and night intensely. 
+		The Divine Mother could not keep herself away from this simple, innocent child and blessed him with her divine vision. 
+		Bhaiya ji prostrated onto the lotus feet of the Divine Mother. The Divine Mother bestowed many divine powers upon her beloved son. 
+		Bhaiya and the Divine Mother became one. 
+      </p>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="row align-items-center">
+      <div class="col-md-6 order-2 order-md-1">
+        <p>
+          Bhaiya ji himself performed very austere penance but showed us the simple path. told us the easy way. 
+		  If we perform ‘sadhna’ with devotion, faith, love and dedication, then only Bhaiya would unite us with the Divine Mother. 
+		  Bhaiya ji performed divine ‘sadhna’ of highest order under the guidance and supervision of the Divine Mother. 
+		  The divine ambrosial knowledge that he received from the Divine Mother and 
+		  his own divine experiences have been presented in the divine book “Wonderful World After Death”. 
+		  Starting from science and going beyond the realm of science, he has explained the origin and formation of the universe, 
+		  the divine abodes, God’s kingdom, goal of human life, importance of sentient power, etc. in this book which increases one’s trust 
+		  and faith in the Almighty and divinity.
+        </p>
+        <p>
+          The personality and accomplishments/work of Bhaiyaji are described in detail in the book
+		  “Mother Tripurasundari Ke Laadla Chakradhari Yuga Pravartak Adhyatmayogi Shri Nandkishore Sharda”. 
+		  This book also includes a few pages of his handwritten diary which deeply reflects his devotion towards the Divine Mother, 
+		  his philosophical thoughts, and the divine knowledge and experiences gained through the Divine Mother.  
+        </p>
+      </div>
+      <div class="col-md-6 order-1 order-md-2 text-center">
+        <img src="../images/maa_bhaiya.jpg" alt="Community Program" />
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer will load here -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Main JS -->
+  <script src="script.js"></script>
+
+  <!-- JS to load partials -->
+  <script>
+    async function loadHTML(id, url) {
+      try {
+        const res = await fetch(url);
+        const text = await res.text();
+        document.getElementById(id).innerHTML = text;
+      } catch (error) {
+        console.error(`Failed to load ${url}:`, error);
+      }
+    }
+    loadHTML('header-placeholder', 'header.html');
+    loadHTML('footer-placeholder', 'footer.html');
+  </script>
+</body>
+</html>

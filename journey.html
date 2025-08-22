@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>27 Year Journey | Swami Vivekanand Students’ Welfare Charitable Trust</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    main.container {
+      padding-top: 40px;
+      padding-bottom: 60px;
+      max-width: 720px;
+    }
+    h1 {
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Timeline container */
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+      border-left: 3px solid #1a237e;
+      margin-left: 15px;
+    }
+
+    /* Each milestone */
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+      padding-left: 20px;
+    }
+
+    /* Circles on the timeline */
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -36px;
+      top: 8px;
+      width: 20px;
+      height: 20px;
+      background-color: #1a237e;
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 0 8px rgba(26,35,126,0.6);
+    }
+
+    .timeline-year {
+      position: absolute;
+      left: -110px;
+      top: 0;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: #1a237e;
+      background-color: #f0f4ff;
+      padding: 0.25rem 0.7rem;
+      border-radius: 20px;
+      user-select: none;
+    }
+
+    .timeline-content h4 {
+      color: #1a237e;
+      font-weight: 600;
+      margin-top: 0;
+      margin-bottom: 0.4rem;
+    }
+
+    .timeline-content p {
+      margin-bottom: 0;
+      color: #333;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 575px) {
+      .timeline-year {
+        position: static;
+        display: block;
+        margin-bottom: 0.3rem;
+        user-select: auto;
+      }
+      .timeline {
+        border-left: 2px solid #1a237e;
+        padding-left: 15px;
+        margin-left: 0;
+      }
+      .timeline-item::before {
+        left: -28px;
+        top: 14px;
+        width: 16px;
+        height: 16px;
+      }
+      .timeline-item {
+        padding-left: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+
+  <main class="container">
+    <h1>27 Years of Journey: Important Milestones</h1>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-year">1998</div>
+        <div class="timeline-content">
+          <h4>Trust Founded</h4>
+          <p>Swami Vivekanand Students’ Welfare Charitable Trust was established by Shri Ram Prasad Sharma with the mission of empowering girls in Rajasthan through education.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">2002</div>
+        <div class="timeline-content">
+          <h4>First Scholarship Awarded</h4>
+          <p>The inaugural batch of scholarships was granted to 15 deserving students, setting the foundation for future educational support.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">2007</div>
+        <div class="timeline-content">
+          <h4>Community Workshops Launched</h4>
+          <p>Initiated skill development and awareness workshops across multiple rural and urban communities to empower beneficiaries.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">2012</div>
+        <div class="timeline-content">
+          <h4>Partnership with Local NGOs</h4>
+          <p>Collaborated with various non-governmental organizations to expand outreach and resource availability.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">2018</div>
+        <div class="timeline-content">
+          <h4>10,000th Beneficiary Milestone</h4>
+          <p>Celebrated the support of 10,000 girls through scholarships, mentorship programs, and community engagements.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">2023</div>
+        <div class="timeline-content">
+          <h4>Expanded Urban Outreach</h4>
+          <p>Initiated extended programs in urban centers, focusing on vocational training and digital literacy for girls.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">2025</div>
+        <div class="timeline-content">
+          <h4>Future Growth & Adaptation</h4>
+          <p>Launching new women empowerment initiatives while continuing to evolve scholarship programs to meet modern challenges.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Bootstrap and main JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+
+  <!-- Load header and footer partials -->
+  <script>
+    async function loadHTML(id, url) {
+      try {
+        const res = await fetch(url);
+        const text = await res.text();
+        document.getElementById(id).innerHTML = text;
+      } catch (error) {
+        console.error(`Failed to load ${url}:`, error);
+      }
+    }
+    loadHTML('header-placeholder', 'header.html');
+    loadHTML('footer-placeholder', 'footer.html');
+  </script>
+</body>
+</html>

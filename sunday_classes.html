@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Personality Development Classes | Swami Vivekanand Students’ Welfare Charitable Trust</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    main.container {
+      padding-top: 40px;
+      padding-bottom: 60px;
+      max-width: 900px;
+    }
+    h1, h2 {
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .section {
+      margin-bottom: 4rem;
+    }
+    .section-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+    }
+    .text-content {
+      flex: 1 1 400px;
+      min-width: 280px;
+    }
+    .media-content {
+      flex: 1 1 400px;
+      min-width: 280px;
+      text-align: center;
+    }
+    .media-content img, 
+    .media-content iframe {
+      max-width: 100%;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    p {
+      font-size: 1.1rem;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+
+  <main class="container">
+    <h1>Personality Development Classes</h1>
+
+    <!-- Section: Why These Classes Were Started -->
+    <section class="section">
+      <h2>Why These Classes Were Started</h2>
+      <div class="section-content">
+        <div class="text-content">
+          <p>
+            Shri Nandkishore Sharda enkindled the flame of education in girls suffering from financial constraints and leading a purposeless/aimless life. 
+			It is true that the education system of India is inadequate, monotonous and aimless in itself, but necessary for livelihood. 
+			Shri Shardaji took the responsibility for holistic development of such girls and now Maa Madhubala Advani and other members of ‘Manidweep’ are taking it ahead
+          </p>
+        </div>
+        <div class="media-content">
+		<img src="../images/sanskar_girls2.jpg" alt="Sanskar Classes" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Who Takes These Classes -->
+    <section class="section">
+      <!--<h2>Who Takes These Classes</h2> -->
+      <div class="section-content">
+        <div class="media-content">
+          <img src="../images/sanskar_girls.jpg" alt="Teacher conducting personality development class" />
+        </div>
+        <div class="text-content">
+          <p>
+            To accomplish this, Personality Development Classes are organized <b>every Sunday from 10:30 to 12:30 from July to December every year</b> 
+			for students from all walks of life. Here, they are taught the importance and purpose of education and human life, 
+			importance of the Almighty God, the art of striking balance in family and society, etc. and also enlightened on many small and big things useful in life.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Importance of Personality Development -->
+    <section class="section">
+      <h2>Why Personality Development is Important</h2>
+      <div class="section-content">
+        <div class="text-content">
+          <p>
+            Personality development is a vital component of a student’s growth. It boosts confidence, enhances communication skills, fosters leadership qualities, and improves emotional intelligence. These classes help students handle challenges with resilience and positivity, preparing them to excel in both academic and social settings.
+          </p>
+          <p>
+            Students learn vital life skills such as time management, stress management, and positive thinking, all important to becoming balanced, successful individuals.
+          </p>
+        </div>
+        <div class="media-content">
+          <iframe width="400" height="225" src="https://www.youtube.com/embed/CL_76VZOkb4" title="Personality Development Introduction" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: How These Classes Help in Holistic Development -->
+    <section class="section">
+      <h2>How These Classes Help in Holistic Development</h2>
+      <div class="section-content">
+        <div class="media-content">
+          <iframe width="400" height="225" src="https://www.youtube.com/embed/mN64VresiO8" title="Holistic Development for Students" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="text-content">
+          <p>
+            The classes help students grow not only academically but also mentally, socially, and emotionally. Through interactive activities, group discussions, and skill-building exercises, students become more self-aware, socially adept, and confident individuals.
+          </p>
+          <p>
+            The training encourages students to embrace challenges, manage emotions constructively, and develop a positive outlook on life — essential qualities for success in today’s dynamic world.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Bootstrap and Main JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+
+  <!-- Load header and footer partials -->
+  <script>
+    async function loadHTML(id, url) {
+      try {
+        const response = await fetch(url);
+        const text = await response.text();
+        document.getElementById(id).innerHTML = text;
+      } catch (error) {
+        console.error('Failed to load ' + url + ':', error);
+      }
+    }
+    loadHTML('header-placeholder', 'header.html');
+    loadHTML('footer-placeholder', 'footer.html');
+  </script>
+  
+</body>
+</html>

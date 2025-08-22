@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Why Women Empowerment is Important</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  </head>
+<body>
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+
+
+<main>
+  
+  <h2>Historical Perspective</h2>
+  <p>
+   In the last century, it was a menace in a large section of the society that despite being the pivot of the family, 
+   the woman did not get the place she was entitled to. The main reason for this was the age-old evils, 
+   superstitions and narrow-mindedness towards girl child education. For the last two decades, under the women empowerment programme, 
+   sensitivity and concern have been expressed on socio-economic, political and legal issues related to women. 
+   Women empowerment is the process of empowering women by creating awareness and self-confidence in them at all levels, namely physical, mental and spiritual. 
+   In general, women empowerment emphasizes only on the rights of women - there is no awareness about the duties. 
+   This is the reason that our country has not been able to completely reap the benefits of “Women Empowerment” even after so many years. 
+  </p>
+  <p>
+  The ancient Indian education system combined the inculcation of moral values along with education. 
+  The Gurukul System was prevalent during those days. At that time, men and women enjoyed equal rights in the society, 
+  which resulted in a strong foundation of family and society. 
+  Later on, during British Rule, the education system was made devoid of moral values by Lord Macaulay, 
+  as a result of which the moral values got lost and India completely lost its pride.
+  </p>
+
+  <h2>How Women Empowerment Will Help</h2>
+  <p>For women empowerment, it is very important that women should have a sense of both duties and rights, 
+  and education should also include inculcation of moral and ethical values. Besides, they should also be aware about the core values of our culture. 
+  If all these are included in our lives, only then women empowerment will be achieved in the true sense and 
+  our country would come out of the current plight. This is a meaningful step in the right direction to solve many complex problems of the country.
+  </p>
+  <p>
+Sanitary and health awareness is also an integral and important part of women empowerment. 
+Girls should also know the art of living a healthy life because a healthy mind resides in a healthy body. 
+Good health should be our topmost priority in life. There is a verse in Sanskrit- <br><b><i>"Dharm arth kaam mokshaanaam, aarogya mul karanam"</b></i>
+</p>
+<p>
+It means that a healthy body is a must for Religion (Dharma), Livelihood (Artha), Kama and Salvation (Moksha). 
+The importance of health in every sphere of life has been explained in this verse.
+</p>
+<p>
+Our ancient sages laid great emphasis on Yoga-Pranayama etc. for good health and long life. 
+A healthy mother would give birth to a healthy child which will result in the building of a strong nation. 
+</p>
+
+</main>
+ <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Bootstrap and main JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+
+  <!-- Load header and footer partials -->
+  <script>
+    async function loadHTML(id, url) {
+      try {
+        const res = await fetch(url);
+        const text = await res.text();
+        document.getElementById(id).innerHTML = text;
+      } catch (error) {
+        console.error(`Failed to load ${url}:`, error);
+      }
+    }
+    loadHTML('header-placeholder', 'header.html');
+    loadHTML('footer-placeholder', 'footer.html');
+  </script>
+</body>
+</html>
