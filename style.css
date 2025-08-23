@@ -230,6 +230,14 @@ background-color: var(--color-warm-bg);
   transform: translateY(-4px);
 }
 
+/* Card images */
+.card-img-top {
+  width: 100%;           /* Fill the card width */
+  height: 25vw;          /* Set fixed responsive height, adjust as needed */
+  object-fit: cover;     /* Crop image to fill the area without distortion */
+}
+
+
 /*...........(Torch Bearer, Our highlights).....................*/
 /* Effect for entire card  */
 .card-hover-effect {
@@ -309,8 +317,8 @@ background-color: var(--color-warm-bg);
 footer {
   background-color: var(--color-maroon);
   color: var(--color-white);
-  text-align: center;
-  padding: 1.5rem 1rem;
+  text-align: left;
+  padding: 1rem 1rem;
   font-size: 0.9rem;
 	}
 /* Footer styles */
