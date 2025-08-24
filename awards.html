@@ -3,121 +3,229 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Awards & Recognitions | Swami Vivekanand Students’ Welfare Charitable Trust</title>
-
-  <!-- Bootstrap CSS -->
+  <title>Awards & Recognitions</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-
   <style>
-    main.container {
-      max-width: 1000px;
-      padding-top: 40px;
-      padding-bottom: 60px;
-    }
-    h1 {
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: 2.5rem;
-    }
-    .award-card {
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      border-radius: 0.6rem;
-    }
-    .award-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 18px rgba(26, 35, 126, 0.25);
-    }
-    .award-img {
-      border-radius: 0.6rem 0.6rem 0 0;
-      height: 180px;
-      object-fit: cover;
-	  object-position: top;
-      width: 100%;
-    }
-    .award-body {
-      background-color: #f8fafd;
-      padding: 1.3rem 1.5rem;
-      border-radius: 0 0 0.6rem 0.6rem;
-    }
-    .award-title {
-      color: #1a237e;
-      font-weight: 700;
-      font-size: 1.25rem;
-      margin-bottom: 0.3rem;
-    }
-    .award-date {
-      font-size: 0.9rem;
-      color: #757575;
-      margin-bottom: 0.8rem;
-      font-style: italic;
-    }
-    .award-desc {
-      font-size: 1rem;
-      color: #454545;
-      line-height: 1.5;
-    }
+    .award-img { width: 100%; height: auto; object-fit: cover; object-position: top; cursor: pointer; }
+    .award-body { padding: 1rem; }
+    .award-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 0.25rem; }
+    .award-date { font-size: 0.9rem; color: gray; margin-bottom: 0.5rem; }
+    .award-desc { font-size: 0.95rem; }
+	
+	/* Make modal dialog width adapt on small screens */
+@media (max-width: 576px) {
+  .modal-dialog {
+    max-width: 100%;
+    margin: 0 0.5rem; /* small side margin */
+  }
+}
+
+/* Make carousel images responsive */
+#awardCarousel .carousel-inner img {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* keep full image visible */
+  max-height: 80vh;     /* limit image height to 80% of viewport height */
+  margin: 0 auto;       /* center horizontally */
+}
+
   </style>
 </head>
 <body>
+  
   <!-- Header -->
-  <div id="header-placeholder"></div>
-
-  <main class="container">
-    <h1>Awards & Recognitions</h1>
-    <div class="row g-4">
-      <!-- Award Card 1 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card award-card h-100 shadow">
-          <img src="https://rishabh0709.github.io/vivekanand-charitable-trust/images/aw1.jpg" class="award-img" alt="Award 1" />
-          <div class="award-body">
-            <div class="award-title">Best Education Initiative Award</div>
-            <div class="award-date">March 2024</div>
-            <div class="award-desc">
-              Awarded by the Rajasthan Education Board for exemplary contribution to girl's education and empowerment.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Award Card 2 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card award-card h-100 shadow">
-          <img src="https://rishabh0709.github.io/vivekanand-charitable-trust/images/aw2.jpg" class="award-img" alt="Award 2" />
-          <div class="award-body">
-            <div class="award-title">Community Leadership Recognition</div>
-            <div class="award-date">December 2023</div>
-            <div class="award-desc">
-              Honored by the Jodhpur Municipal Council for outstanding leadership in social welfare projects.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Award Card 3 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card award-card h-100 shadow">
-          <img src="https://rishabh0709.github.io/vivekanand-charitable-trust/images/aw3.jpg" class="award-img" alt="Award 3" />
-          <div class="award-body">
-            <div class="award-title">National Scholarship Excellence</div>
-            <div class="award-date">August 2023</div>
-            <div class="award-desc">
-              Recognized nationally for the Trust’s scholarship impact and transparency in fund distribution.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Add more award cards as needed -->
-    </div>
+  <div id="header-placeholder"></div> 
+  
+  <main class="container my-5">
+    <h1 class="mb-4"><center>Awards & Recognition</center></h1>
+    <div class="row g-4" id="awards-container"></div>
   </main>
+
+  <!-- Modal with Carousel -->
+  <div class="modal fade" id="awardModal" tabindex="-1" aria-labelledby="awardModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div id="awardCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-inner" id="carousel-inner">
+              <!-- Carousel items will be injected here -->
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#awardCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#awardCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <div id="footer-placeholder"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Example awards JSON
+      const awardsData = [
+        {
+          img: "../images/awards/madhu1.PNG",
+          alt: "Award 1",
+          title: "Shiksha Shri",
+          date: "2025",
+          desc: "District level Bhamashah Award conferred to Kumari Madhubala Advani."
+        },
+        {
+          img: "../images/awards/madhu3.PNG",
+          alt: "Award 2",
+          title: "Panna Dhai Suraksha Evam Samaan Yojna",
+          date: "March 2025",
+          desc: "Panna Dhai Suraksha Evam Samaan Yojna-2025 Award conferred to Kumari Madhubala Advani."
+        },
+        {
+          img: "../images/awards/madhu4.PNG",
+          alt: "Award 3",
+          title: "Certificate Of Appreciation",
+          date: "2025",
+          desc: "Certificate Of Appreciation by Keru Panchayaat Samiti, Jodhpur to Kumari Madhubala Advani."
+        },
+		{
+          img: "../images/awards/madhu5.PNG",
+          alt: "Award 4",
+          title: "Women's Achiever Award",
+          date: "March 2025",
+          desc: "Women's Achiever Award 2025 conferred to Kumari Madhubala Advani by Gahri Foundation, Jodhpur."
+        },
+		{
+          img: "../images/awards/madhu2.PNG",
+          alt: "Award 5",
+          title: "Shiksha Shri",
+          date: "2023",
+          desc: "District level Bhamashah Award conferred to Kumari Madhubala Advani."
+        },
+		{
+          img: "../images/awards/basanti1.jpg",
+          alt: "Award 6",
+          title: "State Level Award",
+          date: "August 2017",
+          desc: "Kumari Basanti Manihar received the State level Award from Chief Minister Smt. Vasundhara Raje for her social service."
+        },
+		{
+          img: "../images/awards/basanti2.jpg",
+          alt: "Award 7",
+          title: "Letter Of Congratulations",
+          date: "December 2008",
+          desc: "Letter Of Congratulations by Respect India Organisation, Jodhpur to Kumari Basanti Manihar."
+        },
+		{
+          img: "../images/awards/basanti3.jpg",
+          alt: "Award 8",
+          title: "Certificate Of Appreciation",
+          date: "June 2006",
+          desc: "Certificate Of Appreciation by Indo-Tibet Friendship Union, Rajasthan to Kumari Basanti Manihar."
+        },
+		{
+          img: "../images/awards/basanti4.jpg",
+          alt: "Award 9",
+          title: "Letter Of Felicitation",
+          date: "June 2006",
+          desc: "Letter Of Felicitation from Shri Maheshwari Samaj, Jodhpur to Kumari Basanti Manihar."
+        },
+		{
+          img: "../images/awards/bhaiya5.jpg",
+          alt: "Award 10",
+          title: "State Level Bhamashah Award",
+          date: "June 2003",
+          desc: "State Level Bhamashah award conferred to Shri Nandkishore Sharda, President, Swami Vivekanand Students Welfare Charitable Trust."
+        },
+		{
+          img: "../images/awards/bhaiya4.jpg",
+          alt: "Award 11",
+          title: "State Level Bhamashah Award",
+          date: "June 2002",
+          desc: "State Level Bhamashah award conferred to Shri Nandkishore Sharda, President, Swami Vivekanand Students Welfare Charitable Trust."
+        },
+		{
+          img: "../images/awards/bhaiya3.jpg",
+          alt: "Award 12",
+          title: "State Level Bhamashah Award",
+          date: "June 2001",
+          desc: "State Level Bhamashah award conferred to Shri Nandkishore Sharda, President, Swami Vivekanand Students Welfare Charitable Trust."
+        },
+		{
+          img: "../images/awards/bhaiya2.jpg",
+          alt: "Award 13",
+          title: "State Level Bhamashah Award",
+          date: "June 2000",
+          desc: "State Level Bhamashah award conferred to Shri Nandkishore Sharda, President, Swami Vivekanand Students Welfare Charitable Trust."
+        },
+		{
+          img: "../images/awards/bhaiya1.jpg",
+          alt: "Award 14",
+          title: "State Level Bhamashah Award",
+          date: "June 1999",
+          desc: "State Level Bhamashah award conferred to Shri Nandkishore Sharda, President, Swami Vivekanand Students Welfare Charitable Trust."
+        }
+		
+      ];
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="script.js"></script>
+      // Render the award cards
+      const container = document.getElementById('awards-container');
+      awardsData.forEach((award, idx) => {
+        const col = document.createElement('div');
+        col.className = 'col-md-6 col-lg-4';
+
+        col.innerHTML = `
+          <div class="card award-card h-100 shadow">
+            <img src="${award.img}" class="award-img" alt="${award.alt}" data-idx="${idx}" />
+            <div class="award-body">
+              <div class="award-title">${award.title}</div>
+              <div class="award-date">${award.date}</div>
+              <div class="award-desc">${award.desc}</div>
+            </div>
+          </div>
+        `;
+
+        container.appendChild(col);
+      });
+
+      // Create carousel slides in modal
+      function generateCarousel(items, startIndex=0) {
+        const carouselInner = document.getElementById('carousel-inner');
+        carouselInner.innerHTML = '';
+        items.forEach((award, idx) => {
+          const item = document.createElement('div');
+          item.className = `carousel-item${idx === startIndex ? ' active' : ''}`;
+          item.innerHTML = `
+            <img src="${award.img}" class="d-block w-100" alt="${award.alt}">
+            <!-- <div class="carousel-caption bg-dark bg-gradient p-3 rounded">
+              <h5 class="text-light mb-1">${award.title} <span class="text-secondary small">${award.date}</span></h5>
+              <p class="text-light mb-0">${award.desc}</p>
+            </div> -->
+          `;
+          carouselInner.appendChild(item);
+        });
+      }
+
+      // Click photo to open modal at that index
+      container.addEventListener('click', function(e) {
+        if (e.target.classList.contains('award-img')) {
+          const idx = parseInt(e.target.getAttribute('data-idx'), 10);
+          generateCarousel(awardsData, idx);
+          new bootstrap.Modal(document.getElementById('awardModal')).show();
+          const awardCarousel = document.getElementById('awardCarousel');
+          bootstrap.Carousel.getOrCreateInstance(awardCarousel).to(idx);
+        }
+      });
+    });
+  </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
 
   <!-- Load header and footer partials -->
   <script>

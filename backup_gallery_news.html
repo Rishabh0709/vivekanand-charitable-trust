@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Trust In News | Swami Vivekanand Students’ Welfare Charitable Trust</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+
+<style>
+  main.container {
+    padding-top: 40px;
+    padding-bottom: 60px;
+    max-width: 900px;
+  }
+  h1 {
+    color: #1a237e;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .year-selector {
+    max-width: 250px;
+    margin: 0 auto 2rem auto;
+  }
+  .gallery-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.2rem;
+  }
+  .gallery-images img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 14px rgba(26, 35, 126, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  .gallery-images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(26, 35, 126, 0.2);
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div id="header-placeholder"></div>
+
+<main class="container">
+  <h1>Trust In News</h1>
+
+  <div class="year-selector">
+    <select class="form-select" id="yearSelect" aria-label="Select scholarship distribution year">
+      <option selected disabled>Select Year</option>
+      <option value="2025">2025</option>
+      <option value="2024">2024</option>
+      <option value="2023">2023</option>
+      <option value="2022">2022</option>
+      <option value="2021">2021</option>
+    </select>
+  </div>
+
+  <div class="gallery-images" id="gallery" aria-live="polite" aria-label="Scholarship distribution images">
+    <!-- Images will load here based on year -->
+  </div>
+</main>
+
+<!-- Modal for Image Slider -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content bg-dark">
+      <div class="modal-header border-0">
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-0">
+        <div id="carouselImages" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner" id="carouselInner">
+            <!-- Slides inserted here -->
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselImages" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselImages" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div id="footer-placeholder"></div>
+
+<!-- Bootstrap and main JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+
+<!-- Load header and footer partials -->
+<script>
+  async function loadHTML(id, url) {
+    try {
+      const res = await fetch(url);
+      const text = await res.text();
+      document.getElementById(id).innerHTML = text;
+    } catch (error) {
+      console.error(`Failed to load ${url}:`, error);
+    }
+  }
+  loadHTML('header-placeholder', 'header.html');
+  loadHTML('footer-placeholder', 'footer.html');
+</script>
+
+<script>
+  const imageData = {
+    "2025": [
+      "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80"
+    ],
+    "2024": [
+      "https://images.unsplash.com/photo-1519985176271-adb1088fa94c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=80"
+    ],
+    "2023": [
+      "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=800&q=80"
+    ],
+    "2022": [
+      "https://images.unsplash.com/photo-1518173946680-44e8a7fa9c1b?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&w=800&q=80"
+    ],
+    "2021": [
+      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&w=800&q=80"
+    ],
+  };
+
+  const gallery = document.getElementById('gallery');
+  const yearSelect = document.getElementById('yearSelect');
+  const carouselInner = document.getElementById('carouselInner');
+  const modal = new bootstrap.Modal(document.getElementById('imageModal'));
+
+  function loadImages(year) {
+    gallery.innerHTML = '';
+    if (imageData[year]) {
+      imageData[year].forEach((src, idx) => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = `Scholarship distribution event ${year} image ${idx + 1}`;
+        img.setAttribute('data-year', year);
+        img.setAttribute('data-index', idx);
+        gallery.appendChild(img);
+        img.addEventListener('click', () => openSlider(year, idx));
+      });
+    }
+  }
+
+  function openSlider(year, index) {
+    carouselInner.innerHTML = '';
+    imageData[year].forEach((src, idx) => {
+      const div = document.createElement('div');
+      div.className = 'carousel-item' + (idx === index ? ' active' : '');
+      div.innerHTML = `<img src="${src}" class="d-block w-100" alt="Scholarship distribution event ${year} image ${idx + 1}" style="max-height: 600px; object-fit: contain;">`;
+      carouselInner.appendChild(div);
+    });
+    modal.show();
+  }
+
+  yearSelect.addEventListener('change', () => {
+    const selectedYear = yearSelect.value;
+    loadImages(selectedYear);
+  });
+
+  // Load images for first available year as default
+  window.addEventListener('DOMContentLoaded', () => {
+    if(yearSelect.options.length > 1) {
+      yearSelect.selectedIndex = 1;
+      loadImages(yearSelect.value);
+    }
+  });
+</script>
+
+</body>
+</html>
