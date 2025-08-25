@@ -105,4 +105,35 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  // Inject Back to Top button only once per page
+  if (!document.getElementById('backToTopBtn')) {
+    const btn = document.createElement('button');
+    btn.id = 'backToTopBtn';
+    btn.title = 'Go to top';
+    btn.innerHTML = '↑';
+    btn.style.display = 'none';
+    btn.style.position = 'fixed';
+    btn.style.bottom = '30px';
+    btn.style.right = '30px';
+    btn.style.zIndex = '99';
+    btn.style.border = 'none';
+    btn.style.outline = 'none';
+    btn.style.background = '#007bff';
+    btn.style.color = 'white';
+    btn.style.cursor = 'pointer';
+    btn.style.padding = '12px 18px';
+    btn.style.borderRadius = '50%';
+    btn.style.fontSize = '24px';
+    btn.style.boxShadow = '0 4px 10px rgba(0,0,0,0.17)';
+    btn.onclick = function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+    document.body.appendChild(btn);
+
+    window.onscroll = function () {
+      btn.style.display = (window.scrollY > 100) ? 'block' : 'none';
+    };
+  }
+});
 
