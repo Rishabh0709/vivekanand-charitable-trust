@@ -71,172 +71,7 @@
       margin-bottom: 1rem;
       color: #1a237e;
     }
-  </style>
-
-  <!-- Chart.js CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body>
-
-  <!-- Header -->
-  <div id="header-placeholder"></div>
-
-  <main class="container">
-    <h1>Scholarship Distribution</h1>
-
-    <section>
-      <h2>Our Story</h2>
-      <p>
-        The scholarship program began in 1996 supporting 300 students initially. Over the years, the Trust has steadily expanded its reach across Rajasthan, supporting thousands of girls pursuing education and empowerment through financial aid.
-      </p>
-      <p>
-        We remain committed to breaking financial barriers so deserving students can access quality education without hurdles.
-      </p>
-    </section>
-
-    <section class="chart-container">
-      <h2>Cumulative Number of Students Supported Over the Years</h2>
-      <canvas id="studentsChart" aria-label="Line chart showing cumulative number of students over the years" role="img"></canvas>
-    </section>
-
-    <section class="chart-container">
-      <h2>Cumulative Scholarship Amount Distributed (₹ in Lakhs)</h2>
-      <canvas id="amountChart" aria-label="Line chart showing cumulative scholarship amount distributed over the years" role="img"></canvas>
-    </section>
-
-    <section class="institution-list">
-      <h2>Schools and Colleges Covered</h2>
-      <p>The scholarship program supports students across 35 schools and 17 colleges located in Jodhpur, Barmer, and other districts to ensure wide educational outreach.</p>
-      <ul>
-        <li>Shri Vivekanand Senior Secondary School, Jodhpur</li>
-        <li>Government Girls School, Barmer</li>
-        <li>Swami Vivekanand College, Jodhpur</li>
-        <li>Shastri College, Barmer</li>
-        <li>Government Polytechnic, Jodhpur</li>
-        <li>Central Higher Secondary School, Jodhpur</li>
-        <li>Rajasthan Women’s College, Barmer</li>
-        <li>Navodaya Vidyalaya, Jodhpur</li>
-        <li>Government Arts College, Jodhpur</li>
-        <li>Local vocational training centers</li>
-      </ul>
-    </section>
-
-    <section class="last-year-details">
-      <h2>Last Year Scholarship Details (2024-2025)</h2>
-      <table>
-        <caption>Highlights of Scholarship Distribution</caption>
-        <thead>
-          <tr>
-            <th>Category</th>
-            <th>Number of Students</th>
-            <th>Total Amount Distributed (₹ Lakhs)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>School Level</td>
-            <td>4,200</td>
-            <td>45</td>
-          </tr>
-          <tr>
-            <td>Undergraduate</td>
-            <td>2,800</td>
-            <td>65</td>
-          </tr>
-          <tr>
-            <td>Postgraduate</td>
-            <td>1,200</td>
-            <td>55</td>
-          </tr>
-          <tr>
-            <td>Vocational & Other Courses</td>
-            <td>500</td>
-            <td>15</td>
-          </tr>
-          <tr>
-            <th>Total</th>
-            <th>8,700</th>
-            <th>180</th>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-	
-
-<section class="container my-5" style="max-width: 700px;">
-  <h2 class="mb-4 text-center" style="color:#1a237e; font-weight:700;">Scholarship Selection Criteria</h2>
-
-  <div class="accordion" id="criteriaAccordion">
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingOne">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-          Female student enrolled in accredited institution
-        </button>
-      </h2>
-      <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#criteriaAccordion">
-        <div class="accordion-body">
-          Eligible students must be female and currently enrolled in any recognized school, college, or university.
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingTwo">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Proof of financial need
-        </button>
-      </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#criteriaAccordion">
-        <div class="accordion-body">
-          Financial need should be substantiated by income certificates or relevant official documents.
-        </div>
-      </div>
-    </div>
-    <!-- Add more accordion items as needed -->
-  </div>
-</section>
-
-<section class="container my-5">
-  <h2 class="text-center mb-5" style="color:#1a237e; font-weight:700;">Student Selection Procedure</h2>
-
-  <div class="d-flex flex-column flex-md-row justify-content-center align-items-center">
-    <!-- Step 1 -->
-    <div class="step-card text-center p-4 m-3 position-relative">
-      <div class="step-number mb-2">1</div>
-      <h5>Application Submission</h5>
-      <p>Students submit scholarship applications with complete documents by the deadline.</p>
-    </div>
-
-    <div class="arrow d-none d-md-block"></div>
-
-    <!-- Step 2 -->
-    <div class="step-card text-center p-4 m-3 position-relative">
-      <div class="step-number mb-2">2</div>
-      <h5>Document Verification</h5>
-      <p>The Trust verifies financial and academic documents submitted by applicants.</p>
-    </div>
-
-    <div class="arrow d-none d-md-block"></div>
-
-    <!-- Step 3 -->
-    <div class="step-card text-center p-4 m-3 position-relative">
-      <div class="step-number mb-2">3</div>
-      <h5>Shortlisting Candidates</h5>
-      <p>Eligible candidates are shortlisted based on criteria and document checks.</p>
-    </div>
-
-    <div class="arrow d-none d-md-block"></div>
-
-    <!-- Step 4 -->
-    <div class="step-card text-center p-4 m-3 position-relative">
-      <div class="step-number mb-2">4</div>
-      <h5>Final Selection & Awarding</h5>
-      <p>Selected students receive scholarship awards and follow-up support.</p>
-    </div>
-  </div>
-</section>
-
-<style>
-  .step-card {
+	 .step-card {
     background: #f8fafd;
     border-radius: 0.6rem;
     box-shadow: 0 4px 12px rgba(26, 35, 126, 0.1);
@@ -285,9 +120,76 @@
       margin: 1rem 0 !important;
     }
   }
-</style>
+  </style>
 
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
 
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+
+  <main class="container">
+    <h1>Scholarship Distribution</h1>
+
+    <section>
+      <h2>How We Started</h2>
+      <p>
+        At the time when <b>'Swami Vivekanand Students Welfare Charitable Trust'</b> was established in the <b>year 1996</b>, the <b>fee in government schools was 
+		only 110 rupees</b>. Despite this, <b>every year 300 to 400 girl students were dropping out of school due to lack of money</b>. 
+	</p>		
+		<p>When Bhaiyaji examined this situation, he found that there were many families having five to six school going children and 
+		their father's livelihood was so meagre that he could not raise even <b>500-600 rupees at one go</b> in the month of July. 
+		Consequently, the elder sisters had to drop school after their primary education. 
+		<b>Bhaiyaji resolved that if any girl student from a government school fills the application form of the trust, she would continue to 
+		get scholarship for as long as she wishes to study. Lack of money shall not hinder her education.</b> 
+		Bhaiyaji secured the future of all the needy girls of all Government schools of Jodhpur 
+		(Secondary and Senior Secondary) by providing them financial assistance, so that they could complete their education smoothly.
+      </p>
+      <p>
+        In the year 2000, the state government waived the school fee of all the girls of the government schools and also provided them free textbooks. 
+		However, the students from class IX to XII had to pay the computer and development fee. Since then, <b>the trust adopts the 
+		needy girl students of classes IX to XII and reimburses their board fees along with computer and development fees.</b>
+      </p>
+	  <p>
+	  Bhaiyaji realized that school education alone will not be not enough for the all-round development of girl students. 
+	  So he founded the <b>Maa Sharda Mani Trust and Book Bank in the year 2001</b> 
+	  to provide <b>scholarships and textbooks for higher education to desirous students.</b> 
+	  </p>
+    </section>
+	<div>
+	<h2>Where We Are</h2>
+	<p>The seed of girl education which was sown in <b>1996</b> in the form of <b>Swami Vivekanand Students' Welfare Charitable Trust</b> 
+	with <b>300 girl students and scholarships of one lakh rupees</b> has become a gigantic tree today. 
+	Since its inception in <b>1996, scholarships of 3.96 crore rupees has been provided to 35332 girl students</b>.
+	<br>We supports <b>students across 45 schools and 32 colleges</b> located in Jodhpur, Barmer, and other districts to ensure wide educational outreach.	
+	<!--<br>The cumulative scholarship amount and cumulative number of girl students are depicted in graphical form -->
+	</p>
+	</div>
+    <section class="chart-container">
+      <h2>Cumulative Number of Students Supported Over the Years</h2>
+      <canvas id="studentsChart" aria-label="Line chart showing cumulative number of students over the years" role="img"></canvas>
+    </section>
+
+    <section class="chart-container">
+      <h2>Cumulative Scholarship Amount Distributed (₹ in Lakhs)</h2>
+      <canvas id="amountChart" aria-label="Line chart showing cumulative scholarship amount distributed over the years" role="img"></canvas>
+    </section>
+
+	<div>
+	<h2>How Trust's Support Helped Girls</h2>
+	<p>
+	By getting benefited from the trust, girls are now becoming financially self-sufficient by earning professional degrees like 
+	<b>Ph.D., CA, Engineering, MBA, MCA, B.Ed</b> etc. By standing on her feet and beaming with confidence, <b>she is also providing financial support to 
+	her family.</b> </p>
+	<p><b>Due to the qualities/virtues nurtured by the Trust</b>, she is not only living her life happily but also spreading the fragrance 
+	of her qualities in her family. After marriage, she is turning into a/an balanced/excellent wife, leading a happy and peaceful life and is
+	also proving a good mother by imbibing and nurturing good human values in her children.</p>
+	<p>The atmosphere of dissatisfaction and disharmony in her family viz. being angry 
+	over small things, irritability, unrest etc. has been replaced by joy, happiness, mutual harmony and tolerance.
+	</p>
+	</div>
   </main>
 
   <!-- Footer -->
@@ -316,8 +218,8 @@
   <script>
     // Sample cumulative data arrays
     const years = [1996, 2000, 2005, 2010, 2015, 2020, 2025];
-    const cumulativeStudents = [300, 1200, 2800, 5200, 9200, 15000, 20000];
-    const cumulativeAmountLakhs = [5, 20, 55, 130, 240, 400, 520];
+    const cumulativeStudents = [300, 6328, 12556, 17282, 21624, 27032, 35332];
+    const cumulativeAmountLakhs = [1, 27, 64, 92, 140, 230, 396];
 
     const ctxStudents = document.getElementById('studentsChart').getContext('2d');
     new Chart(ctxStudents, {

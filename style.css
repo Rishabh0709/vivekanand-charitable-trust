@@ -231,10 +231,10 @@ background-color: var(--color-warm-bg);
 
 /* Card images */
 .card-img-top {
-  width: 100%;           /* Fill the card width */
-  height: 25vw;          /* Set fixed responsive height, adjust as needed */
-  object-fit: cover;     /* Crop image to fill the area without distortion */
-  object-position: left-center;
+  width: auto;           /* Fill the card width */
+  height: auto;          /* Set fixed responsive height, adjust as needed */
+  object-fit: contain;     /* Crop image to fill the area without distortion */
+  max-height:300px;
 }
 
 
