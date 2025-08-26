@@ -27,44 +27,6 @@
       border-radius: 0.5rem;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-.gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      max-width: 1000px;
-      margin: auto;
-    }
-    figure {
-      flex: 1 1 calc(25% - 20px);
-      /* Four columns, adjust gap */
-      margin: 0;
-      text-align: center;
-      font-family: Arial, sans-serif;
-    }
-    figure img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      display: block;
-    }
-    figcaption {
-      margin-top: 8px;
-      font-size: 1rem;
-      color: #555;
-    }
-    /* Responsive for smaller screens */
-    @media (max-width: 768px) {
-      figure {
-        flex: 1 1 calc(50% - 20px); /* two columns on tablets */
-      }
-    }
-    @media (max-width: 480px) {
-      figure {
-        flex: 1 1 100%; /* stack on mobile */
-      }
-    }
-
   </style>
 </head>
 <body>

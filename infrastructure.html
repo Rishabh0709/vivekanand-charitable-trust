@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Infrastructure Support | Swami Vivekanand Students’ Welfare Charitable Trust</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    main.container {
+      padding-top: 40px;
+      padding-bottom: 60px;
+      max-width: 900px;
+    }
+    h1, h2 {
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .section {
+      margin-bottom: 4rem;
+    }
+    .section-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+    }
+    .text-content {
+      flex: 1 1 400px;
+      min-width: 280px;
+    }
+    .media-content {
+      flex: 1 1 400px;
+      min-width: 280px;
+      text-align: center;
+    }
+    .media-content img, 
+    .media-content iframe {
+      max-width: 100%;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    p {
+      font-size: 1.1rem;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+
+  <main class="container">
+    <h1>Basic Infrastructure Support</h1>
+
+    <!-- Section: Why These Classes Were Started -->
+    <section class="section">
+      <!--<h2>Why These Classes Were Started</h2>-->
+      <div class="section-content">
+        <div class="text-content">
+          <p>
+            Bhaiya Shri Nandkishore Sharda realized that unless <b>basic facilities are provided along with financial assistance</b>, this effort for education 
+			will remain incomplete. Therefore, in order to resolve the basic problems of the schools, Shri Nandkishore Sharda got 
+			furniture, classrooms, reception rooms, toilets, water-huts, boundary walls 
+			built in the schools and relieved the girls from an atmosphere full of neglect, disregard and scarcity
+          </p>
+        </div>
+        <div class="media-content">
+		<img src="https://rishabh0709.github.io/vivekanand-charitable-trust/images/infra1.jpg" alt="Infrastructure 1" />
+        </div>
+      </div>
+    </section>
+        <p>
+		  Shri Sharda <b>himself provided financial support</b> for the construction of furniture, classrooms, reception halls, water-huts, toilets and 
+		  boundary walls in many schools and also inspired other trust members to follow suit.
+		  He also took <b>help and support from the District Collector, Members of Parliament (MP), Members of Legislative Assembly (MLA), etc.</b>
+		 </p>
+	
+	<section class="section">
+      
+        <div class="media-content">
+		<img src="https://rishabh0709.github.io/vivekanand-charitable-trust/images/infra2.jpg" alt="Infrastructure 2" />
+        Constructed the <b>Shri Nandkishore Sharda Reception Hall</b> and <b>three classrooms</b> in Mahalaxmi Girls' School, Pratapnagar, Jodhpur
+		</div>
+		<br>
+        <div class="media-content">
+		<img src="https://rishabh0709.github.io/vivekanand-charitable-trust/images/infra3.jpg" alt="Infrastructure 2" />
+        Shri Nandkishore Sharda, Kumari Basanti Manihar and other associates of the Trust provided financial support for the construction of 
+		<b>"Kumari Basanti Manihar Commerce Block"</b> in Mahila Mahavidyalaya, Jodhpur
+		</div>
+		<br>
+		<div class="media-content">
+		<img src="https://rishabh0709.github.io/vivekanand-charitable-trust/images/infra4.jpg" alt="Infrastructure 2" />
+        Constructed <b>“Tulsi Water-hut” in 2 Girls School in Jodhpur</b> in fond memory of his mother, Smt. Tulsi Devi
+		</div>
+		<br>
+		<div class="media-content">
+		<img src="https://rishabh0709.github.io/vivekanand-charitable-trust/images/infra5.jpg" alt="Infrastructure 2" />
+        The trust arranged the furniture for <b>16 classrooms in 7 girl’s schools</b>
+		</div>
+		<br>
+Apart from these, Trust also constructed Halls, Classrooms, Computer Labs. etc. <b>worth over 1.5 crore rupees</b> in various schools including 
+Siwanchi Gate, Alpbhasha Rajmahal, Jalori Gate, BhagatkiKothi, Rajmahal, Mahamandir and Sardarpura <b>through the support of MPs, MLAs, etc.</b>	
+    </section>
+	</main>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Bootstrap and Main JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+
+  <!-- Load header and footer partials -->
+  <script>
+    async function loadHTML(id, url) {
+      try {
+        const response = await fetch(url);
+        const text = await response.text();
+        document.getElementById(id).innerHTML = text;
+      } catch (error) {
+        console.error('Failed to load ' + url + ':', error);
+      }
+    }
+    loadHTML('header-placeholder', 'header.html');
+    loadHTML('footer-placeholder', 'footer.html');
+  </script>
+  
+</body>
+</html>
