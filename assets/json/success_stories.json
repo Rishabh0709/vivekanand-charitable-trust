@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Priya Sen",
+    "designation": "Medical Student, Jodhpur",
+    "photo": "https://randomuser.me/api/portraits/women/10.jpg",
+    "summary": "From village to medical college, enabled by scholarship.",
+    "link": "story1.html"
+  },
+  {
+    "name": "Geeta Choudhary",
+    "designation": "STEM Mentor",
+    "photo": "https://randomuser.me/api/portraits/women/12.jpg",
+    "summary": "Excelled in STEM, now gives back as mentor.",
+    "link": "story-geeta-choudhary.html"
+  },
+  {
+    "name": "Suresh Meena",
+    "designation": "Community Leader",
+    "photo": "https://randomuser.me/api/portraits/men/11.jpg",
+    "summary": "First in family to graduate; leads community workshops.",
+    "link": "story-suresh-meena.html"
+  },
+  {
+    "name": "Radha Sharma",
+    "designation": "Village Teacher",
+    "photo": "https://randomuser.me/api/portraits/women/15.jpg",
+    "summary": "Empowered by education, inspires girls in her community.",
+    "link": "story-radha-sharma.html"
+  }
+]

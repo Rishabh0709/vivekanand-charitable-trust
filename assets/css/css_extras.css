@@ -1,0 +1,90 @@
+/* On hover, remove top container, srinks logo and menu bar and sticks to top */
+.header-wrapper {
+  height: 140px;
+  transition: height 0.4s cubic-bezier(.4,0,.2,1);
+  position: relative;
+  z-index: 1000;
+}
+
+/* Make header sticky and shrink on scroll */
+.header-wrapper.scrolled {
+  position: fixed;  /* fixed to viewport */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 54px;   /* shrink height */
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 1050;
+}
+
+/* Logo container above others */
+.logo-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 140px;
+  max-width: 90px;
+  transition: height 0.4s ease;
+  z-index: 1060; /* above navbar */
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+}
+
+.header-wrapper.scrolled .logo-container {
+  height: 54px; /* shrink logo container */
+}
+
+/* Shrink logo image */
+ .logo-container img {
+  max-height: 120px;
+  transition: max-height 0.4s ease;
+}
+
+.header-wrapper.scrolled .logo-container img {
+  max-height: 48px; /* smaller logo */
+}
+
+/* Navbar styles */
+#mainNav {
+  height: 100px;
+  margin-left: 90px;
+  transition: height 0.4s ease, padding 0.4s ease;
+  align-items: center;
+  z-index: 1040;
+}
+
+.header-wrapper.scrolled #mainNav {
+  height: 54px;
+  padding: 0 1rem;
+}
+
+
+
+/* Hide top contact bar */
+.header-wrapper.scrolled #topContactBar {
+  opacity: 0;
+  height: 0 !important;
+  pointer-events: none;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: opacity 0.3s, height 0.3s;
+}
+
+/* Shrink navbar */
+.header-wrapper #mainNav {
+  height: 100px;
+  transition: height 0.4s cubic-bezier(.4,0,.2,1), padding 0.4s cubic-bezier(.4,0,.2,1);
+  margin-left: 90px;
+}
+
+.header-wrapper.scrolled #mainNav {
+  height: 54px !important;  /* Shrunk navbar height */
+  padding-top: 0;
+  padding-bottom: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fffbe9; /* Optional subtle background */
+}
+
+/*.............................................................................*/

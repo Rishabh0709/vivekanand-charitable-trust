@@ -1,0 +1,25 @@
+Create a website for educational ngo based out of Rajasthan India named "Swami Vivekanand Students' Welfare Charitable Trust"
+The navigation bar should have logo on the left and menu on the right. The logo should appear big on top but should shrink while scrolling down.
+List of menus:
+1. Home
+2. Our Story (4 sub-menus)
+3. Torch Bearers (3 sub-menus)
+4. Women Empowerment (3 sub-menus)
+5. Our Impact (2 sub-menus)
+6. Media (3 sub-menus)
+7. Contact Us
+After navigation bar there should be a carousel with 3-4 photos (auto and manual slider)
+After that there should be trust name written with fews lines about it. Followed by "Our Mission"
+After that there should be a section for "Our Impact" where we should have following information in counting number animation format along with relevant icons for each point:
+	. Scholarship given to more than 35 thousands girl students
+	. Around 4 crore worth of scholarship distributed so far
+	. More than 50 educational institute covered within Jodhpur & Barmer district of Rajasthan
+	. In last session scholarship amount worth 48 lakhs was distributed among 2 thousands girl students
+After that there should be a section for "Torch Bearers" where we should have data arrange side-by-side for 3 founders with image, name and description about them
+After that there shouls be three section "Our Objective", "Unique Features" and "Awards & Recognition" arranged side-by-side with image, some text followed by "Read more" hyperlink
+After that there should be a section for "Succes Stories" where 3 stories along with photo, name and description with "read more" hyperlink appear side-by-side. There should be slider to navigate for more stories
+After that there should be a section for "Our Testimonial" where 3 testimonials along with photo, name, designation and description appear side-by-side, along with slider for more testimonials
+After that there should be a section for "Media" where we have "Scholarship Programme" and "Trust is News" arranged side-by-side showing photo and text
+After that there should be footer
+
+	
