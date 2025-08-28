@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scholarship Selection Criteria</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://rishabh0709.github.io/vivekanand-charitable-trust/assets/css/style.css" />
+
+  <style>
+    
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    section {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    h2 {
+      margin-bottom: 15px;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 8px;
+    }
+    .accordion {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+    .accordion-header {
+      background: #f1f1f1;
+      padding: 12px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #34495e;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .accordion-header:hover {
+      background: #e2e2e2;
+    }
+    .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    padding: 0 15px; /* side padding stays */
+    background: #fff;
+    border-top: 1px solid #ddd;
+  }
+
+  .accordion.active .accordion-content {
+    max-height: 500px; /* large enough to fit content */
+    padding: 15px; /* restore padding when expanded */
+  }
+    .accordion-header span {
+      font-size: 18px;
+      transition: transform 0.3s;
+    }
+    .accordion.active .accordion-header span {
+      transform: rotate(90deg);
+    }
+    ul {
+      margin-left: 20px;
+    }
+    @media(max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+<br>
+  <h1>Scholarship Selection Criteria</h1>
+
+  <div class="container">
+    <!-- Section 1 -->
+    <section>
+      <h2>How Trust Selects Students</h2>
+      
+      <div class="accordion">
+        <div class="accordion-header">1. School Girls <span>▶</span></div>
+        <div class="accordion-content">
+          <p>The selection of needy students is made by the class teacher through application forms, recommended by the Principal to the trust.</p>
+          <ul>
+            <li>Payments of school fees, board fees and scholarships are made via cheque in the name of the school.</li>
+            <li>Amounts are distributed amongst students in presence of higher education authorities.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <div class="accordion-header">2. College / Competitive Exams <span>▶</span></div>
+        <div class="accordion-content">
+          <p>Once a girl completes school education, trust volunteers reach out individually (via postcard/call) to:</p>
+          <ul>
+            <li>Understand their future plans</li>
+            <li>Provide career guidance</li>
+            <li>Offer scholarship (part or full)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section>
+      <h2>How Students Can Seek Support</h2>
+      
+      <div class="accordion">
+        <div class="accordion-header">1. School Girls <span>▶</span></div>
+        <div class="accordion-content">
+          <p>Reach out to class teacher or principal and explain financial condition. Once principal approves and provides a scholarship form, the trust will grant financial aid.</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <div class="accordion-header">2. College / Competitive Exams <span>▶</span></div>
+        <div class="accordion-content">
+          <p>If a girl wishes to pursue higher studies or competitive exams but cannot afford expenses, she can directly visit the trust’s office. Volunteers will:</p>
+          <ul>
+            <li>Assess financial condition</li>
+            <li>Collect student details</li>
+            <li>Ensure support from trust or community-based programs</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+<br>
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Bootstrap and Main JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://rishabh0709.github.io/vivekanand-charitable-trust/assets/js/script.js"></script>
+
+  <script>
+  // Accordion toggle logic - only one open at a time
+  document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const currentAccordion = header.parentElement;
+      const allAccordions = document.querySelectorAll('.accordion');
+
+      // Close all accordions except the one clicked
+      allAccordions.forEach(acc => {
+        if (acc !== currentAccordion) {
+          acc.classList.remove('active');
+        }
+      });
+
+      // Toggle the clicked accordion
+      currentAccordion.classList.toggle('active');
+    });
+  });
+</script>
+
+
+<!-- Load header and footer partials -->
+  <script>
+    async function loadHTML(id, url) {
+      try {
+        const response = await fetch(url);
+        const text = await response.text();
+        document.getElementById(id).innerHTML = text;
+      } catch (error) {
+        console.error('Failed to load ' + url + ':', error);
+      }
+    }
+    loadHTML('header-placeholder', 'header.html');
+    loadHTML('footer-placeholder', 'footer.html');
+  </script>
+  
+</body>
+</html>

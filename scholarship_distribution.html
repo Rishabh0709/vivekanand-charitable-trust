@@ -31,81 +31,7 @@
       margin-top: 2.5rem;
       margin-bottom: 4rem;
     }
-    .institution-list {
-      max-width: 700px;
-      margin: 0 auto 3rem;
-    }
-    .institution-list ul {
-      columns: 2;
-      -webkit-columns: 2;
-      -moz-columns: 2;
-      padding-left: 1rem;
-    }
-    .institution-list li {
-      font-size: 1.05rem;
-      margin-bottom: 0.4rem;
-      line-height: 1.35;
-    }
-    .last-year-details {
-      max-width: 700px;
-      margin: 0 auto 4rem;
-    }
-    .last-year-details table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .last-year-details th, 
-    .last-year-details td {
-      border: 1px solid #ddd;
-      padding: 0.75rem 1rem;
-      text-align: center;
-    }
-    .last-year-details th {
-      background-color: #1a237e;
-      color: white;
-      font-weight: 600;
-    }
-    caption {
-      font-weight: 700;
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-      color: #1a237e;
-    }
-	 .step-card {
-    background: #f8fafd;
-    border-radius: 0.6rem;
-    box-shadow: 0 4px 12px rgba(26, 35, 126, 0.1);
-    max-width: 260px;
-  }
-  .step-number {
-    background-color: #1a237e;
-    color: white;
-    font-weight: 700;
-    font-size: 1.5rem;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 50%;
-    margin: 0 auto 10px;
-  }
-  .arrow {
-    width: 50px;
-    height: 4px;
-    background-color: #1a237e;
-    position: relative;
-  }
-  .arrow::after {
-    content: '';
-    position: absolute;
-    top: -6px;
-    right: -12px;
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 12px solid #1a237e;
-  }
-
+	
   /* Mobile styling - arrows hidden, vertical layout */
   @media (max-width: 767px) {
     .arrow {
@@ -119,11 +45,10 @@
       max-width: 100% !important;
       margin: 1rem 0 !important;
     }
+	main img{
+	width: 100%;
   }
   </style>
-
-  <!-- Chart.js CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -167,14 +92,14 @@
 	<!--<br>The cumulative scholarship amount and cumulative number of girl students are depicted in graphical form -->
 	</p>
 	</div>
-    <section class="chart-container">
-      <h2>Cumulative Number of Students Supported Over the Years</h2>
-      <canvas id="studentsChart" aria-label="Line chart showing cumulative number of students over the years" role="img"></canvas>
-    </section>
+    <div>
+      <h3>Cumulative Number of Students Supported Over the Years</h3>
+       <img src="https://rishabh0709.github.io/vivekanand-charitable-trust/assets/images/chart1.png" alt="Chart1" />
+    </div>
 
     <section class="chart-container">
-      <h2>Cumulative Scholarship Amount Distributed (₹ in Lakhs)</h2>
-      <canvas id="amountChart" aria-label="Line chart showing cumulative scholarship amount distributed over the years" role="img"></canvas>
+      <h3>Cumulative Scholarship Amount Distributed (₹ in Lakhs)</h3>
+      <img src="https://rishabh0709.github.io/vivekanand-charitable-trust/assets/images/chart2.png" alt="Chart2" />
     </section>
 
 	<div>
@@ -212,78 +137,6 @@
     }
     loadHTML('header-placeholder', 'header.html');
     loadHTML('footer-placeholder', 'footer.html');
-  </script>
-
-  <!-- Chart.js scripts -->
-  <script>
-    // Sample cumulative data arrays
-    const years = [1996, 2000, 2005, 2010, 2015, 2020, 2025];
-    const cumulativeStudents = [300, 6328, 12556, 17282, 21624, 27032, 35332];
-    const cumulativeAmountLakhs = [1, 27, 64, 92, 140, 230, 396];
-
-    const ctxStudents = document.getElementById('studentsChart').getContext('2d');
-    new Chart(ctxStudents, {
-      type: 'line',
-      data: {
-        labels: years,
-        datasets: [{
-          label: 'Students Supported',
-          data: cumulativeStudents,
-          backgroundColor: 'rgba(26, 35, 126, 0.2)',
-          borderColor: 'rgba(26, 35, 126, 1)',
-          borderWidth: 3,
-          fill: true,
-          tension: 0.3,
-          pointRadius: 5,
-          pointHoverRadius: 7,
-          pointBackgroundColor: 'rgba(26, 35, 126, 1)'
-        }]
-      },
-      options: {
-        responsive: true,
-        scales: {
-          x: { title: { display: true, text: 'Year' }},
-          y: { beginAtZero: true, title: { display: true, text: 'Number of Students' }},
-        },
-        plugins: {
-          legend: { display: true, labels: { color: '#1a237e', font: { weight: '600' }}},
-          tooltip: { mode: 'index', intersect: false }
-        },
-        interaction: { mode: 'nearest', intersect: false }
-      }
-    });
-
-    const ctxAmount = document.getElementById('amountChart').getContext('2d');
-    new Chart(ctxAmount, {
-      type: 'line',
-      data: {
-        labels: years,
-        datasets: [{
-          label: 'Scholarship Amount (₹ Lakhs)',
-          data: cumulativeAmountLakhs,
-          backgroundColor: 'rgba(26, 35, 126, 0.2)',
-          borderColor: 'rgba(26, 35, 126, 1)',
-          borderWidth: 3,
-          fill: true,
-          tension: 0.3,
-          pointRadius: 5,
-          pointHoverRadius: 7,
-          pointBackgroundColor: 'rgba(26, 35, 126, 1)'
-        }]
-      },
-      options: {
-        responsive: true,
-        scales: {
-          x: { title: { display: true, text: 'Year' }},
-          y: { beginAtZero: true, title: { display: true, text: 'Amount in Lakhs ₹' }},
-        },
-        plugins: {
-          legend: { display: true, labels: { color: '#1a237e', font: { weight: '600' }}},
-          tooltip: { mode: 'index', intersect: false }
-        },
-        interaction: { mode: 'nearest', intersect: false }
-      }
-    });
   </script>
 </body>
 </html>
