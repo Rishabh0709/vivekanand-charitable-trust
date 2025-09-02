@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Personality Development Classes | Swami Vivekanand Students’ Welfare Charitable Trust</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://rishabh0709.github.io/vivekanand-charitable-trust/assets/css/style.css" />
+
+  <style>
+ .testimonial-gallery {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.testimonial-gallery h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.testimonial-gallery p {
+  margin-bottom: 25px;
+  color: #555;
+}
+
+/* Tabs */
+.tabs {
+  margin-bottom: 25px;
+}
+.tab-btn {
+  background: #eee;
+  border: none;
+  padding: 12px 20px;
+  margin: 0 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+.tab-btn.active {
+  background: #0077cc;
+  color: #fff;
+}
+
+/* Video Grid */
+.video-grid {
+  display: none; /* hidden by default */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.video-grid.active {
+  display: grid;
+}
+
+.video-card {
+  background: #fff;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.video-card iframe {
+  width: 100%;
+  height: 220px;
+  border: none;
+  border-radius: 8px;
+}
+
+.caption {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #444;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+<section class="testimonial-gallery">
+  
+  <h3>Hear from students and dignitaries about their experiences</h3>
+
+  <!-- Category Tabs -->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="showCategory('students')">🎓 Students</button>
+    <button class="tab-btn" onclick="showCategory('dignitaries')">🌟 Dignitaries</button>
+  </div>
+
+  <!-- Student Videos -->
+  <div class="video-grid category students active">
+    <div class="video-card">
+      <iframe src="https://drive.google.com/file/d/1SAEiQBBy-wlvoRZqCQwLZXo2PQZvOtsQ/preview" allowfullscreen></iframe>
+      <p class="caption">Kanika Gehlot</p>
+    </div>
+    <div class="video-card">
+      <iframe src="https://drive.google.com/file/d/12UeAP-XezfCn-j3FcmpF7s8xJWNmGU5L/preview" allowfullscreen></iframe>
+      <p class="caption">Deepika Dadhich</p>
+    </div>
+    <!-- Add more student videos -->
+	<div class="video-card">
+      <iframe src="https://drive.google.com/file/d/1dL50vSTF04yNzioHwBbeXDJaeOlPcFYA/preview" allowfullscreen></iframe>
+      <p class="caption">Muskaan Sultan</p>
+    </div>
+  </div>
+
+  <!-- Dignitary Videos -->
+  <div class="video-grid category dignitaries">
+    <div class="video-card">
+      <iframe src="https://drive.google.com/file/d/1qk7E-RCt39-R5tDfDzS4GiIUDALR89yj/preview" allowfullscreen></iframe>
+      <p class="caption">Prof. (Dr.) V K Bhansali</p>
+    </div>
+    <div class="video-card">
+      <iframe src="https://drive.google.com/file/d/1yNmIhm3my1PNBd1awJI2iqVGQRJcSb97/preview" allowfullscreen></iframe>
+      <p class="caption">Navneet Agarwal - Director General JIET Group Of Institutions</p>
+    </div>
+    <!-- Add more dignitary videos -->
+	<div class="video-card">
+      <iframe src="https://drive.google.com/file/d/157M4dB4c4oWf3tooChUY5XkJAXhYsttc/preview" allowfullscreen></iframe>
+      <p class="caption">Director - Technical Education, Rajasthan</p>
+    </div>
+    <div class="video-card">
+      <iframe src="https://drive.google.com/file/d/1puLiPNiCjzsdIIba4CXlqKIHRePi5vy7/preview" allowfullscreen></iframe>
+      <p class="caption">DIG-BSF (Rajasthan Frontier)</p>
+    </div>
+  </div>
+</section>
+
+ <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Bootstrap and Main JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://rishabh0709.github.io/vivekanand-charitable-trust/assets/js/script.js"></script>
+
+  <!-- Load header and footer partials -->
+  <script>
+    async function loadHTML(id, url) {
+      try {
+        const response = await fetch(url);
+        const text = await response.text();
+        document.getElementById(id).innerHTML = text;
+      } catch (error) {
+        console.error('Failed to load ' + url + ':', error);
+      }
+    }
+    loadHTML('header-placeholder', 'header.html');
+    loadHTML('footer-placeholder', 'footer.html');
+  </script>
+
+<!-- For toggling between 'Students' & 'dignitaries' tab -->  
+  <script>
+  function showCategory(category) {
+  // Hide all
+  document.querySelectorAll('.video-grid').forEach(grid => {
+    grid.classList.remove('active');
+  });
+
+  // Remove active tab
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+
+  // Show selected category
+  document.querySelector('.' + category).classList.add('active');
+  event.target.classList.add('active');
+}
+
+  </script>
+</body>
+</html>
+

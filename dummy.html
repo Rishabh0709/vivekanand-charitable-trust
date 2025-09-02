@@ -1,213 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Responsive Navbar with Sub-menus</title>
-<style>
-  /* Basic reset */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+<section class="py-5">
+  <div class="container">
+    <!-- Top Part: Image Left (on desktop), Image Top (on mobile) -->
+    <div class="row align-items-center mb-5 flex-column-reverse flex-md-row">
+      <!-- Text Content -->
+      <div class="col-md-6 text-center text-md-start mt-4 mt-md-0">
+        <h2 class="mb-3">Empowering Education, Enriching Lives</h2>
+        <ul class="list-unstyled fs-5">
+          <li>📚 <strong>Education Without Discrimination</strong> – Every girl deserves a chance.</li>
+          <li>🌱 <strong>Holistic Development</strong> – Through <em>Sanskar</em> and personality-building classes.</li>
+          <li>🏫 <strong>45 Schools & 32 Colleges</strong> supported by the trust.</li>
+          <li>💰 <strong>₹3.96 Crore+ Scholarships</strong> distributed so far.</li>
+        </ul>
+      </div>
 
-  body {
-    font-family: Arial, sans-serif;
-  }
+      <!-- Image -->
+      <div class="col-md-6 text-center">
+        <img src="https://rishabh0709.github.io/vivekanand-charitable-trust/assets/images/glance1.png" alt="Empowering Women" class="img-fluid rounded shadow-sm" />
+      </div>
+    </div>
 
-  /* Navbar container */
-  .navbar {
-    background-color: #333;
-    overflow: hidden;
-  }
-
-  /* Navbar menu items */
-  .navbar ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: nowrap;
-  }
-
-  .navbar li {
-    position: relative;
-  }
-
-  .navbar > ul > li {
-    flex: 1;
-  }
-
-  /* Main menu links */
-  .navbar a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 0;
-    text-decoration: none;
-    font-weight: bold;
-    user-select: none;
-  }
-
-  .navbar a:hover {
-    background-color: #575757;
-  }
-
-  /* Submenu container */
-  .sub-menu {
-    display: none;
-    position: absolute;
-    background-color: #444;
-    top: 48px;
-    left: 0;
-    width: 160px;
-    z-index: 1000;
-  }
-
-  .sub-menu a {
-    padding: 12px 16px;
-    text-align: left;
-    font-weight: normal;
-  }
-
-  .sub-menu a:hover {
-    background-color: #666;
-  }
-
-  /* Show submenu on hover - desktop */
-  @media(min-width: 768px) {
-    .navbar li:hover > .sub-menu {
-      display: block;
-    }
-  }
-
-  /* Hamburger menu icon */
-  .menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    padding: 14px 16px;
-  }
-
-  .menu-toggle span {
-    background-color: white;
-    height: 3px;
-    margin: 4px 0;
-    width: 25px;
-    border-radius: 2px;
-  }
-
-  /* Mobile Styles */
-  @media(max-width: 767px) {
-    .navbar ul {
-      flex-direction: column;
-      display: none;
-      width: 100%;
-    }
-
-    .navbar ul.active {
-      display: flex;
-    }
-
-    .navbar > ul > li {
-      flex: none;
-      border-top: 1px solid #444;
-    }
-
-    /* Submenu toggle icons */
-    .has-submenu > a::after {
-      content: ' ▼';
-      float: right;
-      font-size: 12px;
-      margin-right: 10px;
-      user-select: none;
-    }
-
-    /* Submenu links full width */
-    .sub-menu {
-      position: static;
-      width: 100%;
-    }
-
-    /* Submenu toggle hidden by default */
-    .sub-menu {
-      display: none;
-      flex-direction: column;
-    }
-
-    /* Show submenu when toggled */
-    .sub-menu.active {
-      display: flex;
-    }
-
-    /* Show hamburger */
-    .menu-toggle {
-      display: flex;
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-  }
-</style>
-</head>
-<body>
-
-<nav class="navbar">
-  <div class="menu-toggle" id="mobile-menu">
-    <span></span>
-    <span></span>
-    <span></span>
+    <!-- Bottom Part: Full-Width Image -->
+    <div class="row">
+      <div class="col-12">
+        <img src="https://rishabh0709.github.io/vivekanand-charitable-trust/assets/images/glance2.png" alt="Impact" class="img-fluid w-100 rounded shadow" />
+      </div>
+    </div>
   </div>
-
-  <ul id="nav-list">
-    <li><a href="#">Menu 1</a></li>
-    <li class="has-submenu">
-      <a href="#">Menu 2</a>
-      <ul class="sub-menu">
-        <li><a href="#">Submenu 2-1</a></li>
-        <li><a href="#">Submenu 2-2</a></li>
-      </ul>
-    </li>
-    <li class="has-submenu">
-      <a href="#">Menu 3</a>
-      <ul class="sub-menu">
-        <li><a href="#">Submenu 3-1</a></li>
-        <li><a href="#">Submenu 3-2</a></li>
-      </ul>
-    </li>
-    <li><a href="#">Menu 4</a></li>
-    <li><a href="#">Menu 5</a></li>
-  </ul>
-</nav>
-
-<script>
-  const menuToggle = document.getElementById('mobile-menu');
-  const navList = document.getElementById('nav-list');
-  const submenuParents = document.querySelectorAll('.has-submenu > a');
-
-  // Toggle main menu on mobile
-  menuToggle.addEventListener('click', () => {
-    navList.classList.toggle('active');
-  });
-
-  // Toggle submenus on mobile
-  submenuParents.forEach(parentLink => {
-    parentLink.addEventListener('click', (e) => {
-      if(window.innerWidth <= 767) {
-        e.preventDefault(); // prevent navigation on mobile submenu click
-        const submenu = parentLink.nextElementSibling;
-        submenu.classList.toggle('active');
-      }
-    });
-  });
-
-  // Optional: Close menus if resizing to desktop
-  window.addEventListener('resize', () => {
-    if(window.innerWidth > 767) {
-      navList.classList.remove('active');
-      document.querySelectorAll('.sub-menu.active').forEach(sm => sm.classList.remove('active'));
-    }
-  });
-</script>
-
-</body>
-</html>
+</section>

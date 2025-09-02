@@ -25,6 +25,76 @@
     box-shadow: 0 12px 24px rgba(26, 35, 126, 0.25);
   }
   .text-muted { color: #99215d }
+
+
+<!-- CSS for 2nd sample of trust at glance -->
+
+.transformation {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 50px 20px;
+  background: #fdfdfd;
+}
+
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+  max-width: 1200px;
+}
+
+.images .before, 
+.images .after {
+  flex: 1;
+  text-align: center;
+}
+
+.images img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.images .content {
+  flex: 2;
+  text-align: center;
+  padding: 20px;
+}
+
+.images .content h2 {
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+  color: #444;
+}
+
+.images .content p {
+  font-size: 1rem;
+  margin-bottom: 12px;
+  color: #555;
+}
+
+.caption {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+<!-- -->
 </style>
 
 <!-- Header will load here -->
@@ -104,10 +174,10 @@
     <h2 style="color: #7B2123; font-weight: 800; letter-spacing: 2px; font-size: 3rem; margin-bottom: 1.5rem; text-align: center;">
       Our Mission
     </h2>
-    <p style="color: #2F3E50; font-size: 1.3rem; line-height: 1.8; font-weight: 500; max-width: 90%; margin: 0 auto; text-align: center;">
-     To ensure that no girl is deprived of education due to financial constraints, irrespective of marks, religion, or caste. 
-	 Beyond financial aid, we nurture values, character, 
-	 and personality development so that these students grow into responsible citizens and contribute meaningfully to society
+    <p style="color: #2F3E50; font-size: 1.2rem; line-height: 1.8; font-weight: 500; max-width: 90%; margin: 0 auto; text-align: center;">
+     <i>"Empowering every girl with the right to education—no matter her background"
+<br>At Swami Vivekanand Students' Welfare Charitable Trust, we nurture minds, inspire self-reliance, and build a future where all thrive.
+<br>'Sarvajan Hitay, Sarvajan Sukhay' — Welfare and prosperity for all.</i>
     </p>
   </div>
 </section>
@@ -151,6 +221,70 @@
 
   </div>
 </section>
+
+<!-- Sample code for trust at a glance -->
+<h2 class="mb-5" style= "font-weight:700;"><center>Our Trust at a Glance</center></h2>
+<section class="py-5">
+  <div class="container">
+    <!-- Top part: Image Left, Text Right -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <img src="https://rishabh0709.github.io/vivekanand-charitable-trust/assets/images/glance1.png" alt="Empowering Women" class="img-fluid rounded shadow-sm" />
+      </div>
+      <div class="col-md-6">
+        <h2 class="mb-3">Empowering Education, Enriching Lives</h2>
+        <ul class="list-unstyled fs-5">
+          <li>📚 <strong>Education Without Discrimination</strong> – Every girl deserves a chance.</li>
+          <li>🌱 Empowering the <b>next generation of women</b> through holistic growth and values-driven <i>Sanskar</i> classes.</li>
+          <li>🏫 <strong>45 Schools & 32 Colleges</strong> supported by the trust.</li>
+          <li>💰 <strong>₹3.96 Crore+ Scholarships</strong> distributed so far.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom part: Full-width Image -->
+    <div class="row">
+      <div class="col-12">
+        <img src="https://rishabh0709.github.io/vivekanand-charitable-trust/assets/images/glance2.png" alt="Impact Image" class="img-fluid w-100 rounded shadow" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- another example -->
+<h2><center>Our Trust at a Glance</center></h2>
+ <section class="transformation">
+  <div class="images">
+    <!-- Left: Before -->
+    <div class="before fade-in">
+      <img src="https://rishabh0709.github.io/vivekanand-charitable-trust/assets/images/glance4.png" alt="School Girls">
+      <p class="caption">Empowering Education</p>
+    </div>
+
+    <!-- Middle Content -->
+    <div class="content fade-in">
+        <ul class="list-unstyled fs-5">
+          <li>📚 <strong>Education Without Discrimination</strong></li>
+          <li>🌱 <strong>Empowering <b>thousands of future women</b> by working on their holistic development via <i>sanskar</i> classes</li>
+          <li>🏫 Girls from <strong>45 Schools & 32 Colleges</strong> are beneficiaries of the trust.</li>
+          <li>💰 <strong>₹3.96 Crore+ Scholarships</strong> distributed so far.</li>
+        </ul>
+    </div>
+
+    <!-- Right: After -->
+    <div class="after fade-in">
+      <img src="https://rishabh0709.github.io/vivekanand-charitable-trust/assets/images/glance5.png" alt="Professional Girls">
+      <p class="caption">Enriching Lives</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
 
 
 <!-- Torch Bearers -->
@@ -251,14 +385,14 @@
   <h2 class="text-center mb-4">Success Stories</h2>
   <div class="swiper success-stories-swiper">
     <div class="swiper-wrapper">
-      <!-- Slide 1 -->
+	 <!-- Slide 1 -->
       <div class="swiper-slide">
-		<a href="./story1.html" class="card-link-wrapper text-decoration-none d-block">
+		<a href="./story5.html" class="card-link-wrapper text-decoration-none d-block">
 		<div class="card shadow">
-		<img src="https://randomuser.me/api/portraits/women/10.jpg" class="card-img-top" alt="Neetu Deora" />
+		<img src="https://rishabh0709.github.io/vivekanand-charitable-trust/assets/images/sejal-rathore.png" class="card-img-top" alt="Neetu Deora" />
 		<div class="card-body">
-			<h5 class="card-title">Neetu Deora</h5>
-			<p class="card-text">Studied from Class 9 till M.Com. from trust support and guidance. Currently working as <b>Manager in SBI, Shastri Nagar, Jodhpur(Raj.)</b></p>
+			<h5 class="card-title">Sejal Rathore</h5>
+			<p class="card-text"><b>Software Engineer, Wells Fargo Ltd.</b></p>
 			<!--<div class="btn btn-primary">Read more</div> <!-- Visual button only, no link -->
 		</div>
 		</div>
@@ -269,7 +403,7 @@
       <div class="swiper-slide">
 	  <a href="./story2.html" class="card-link-wrapper text-decoration-none d-block">
         <div class="card shadow">
-          <img src="https://randomuser.me/api/portraits/women/12.jpg" class="card-img-top" alt="Poonam Mishra">
+          <img src="https://rishabh0709.github.io/vivekanand-charitable-trust/assets/images/poonam-mishra.png" class="card-img-top" alt="Poonam Mishra">
           <div class="card-body ">
             <h5 class="card-title">Poonam Mishra</h5>
             <p class="card-text">Trust supported her from 6th class till M.Sc. With the help of financial support and guidance of trust, she became <b>Principal of Wisdom International School, Jodhpur(Raj.)</b> </p>
@@ -281,7 +415,7 @@
       <div class="swiper-slide">
 	  <a href="./story3.html" class="card-link-wrapper text-decoration-none d-block">
         <div class="card shadow">
-          <img src="https://randomuser.me/api/portraits/men/11.jpg" class="card-img-top" alt="Jyoti Soni">
+          <img src="https://rishabh0709.github.io/vivekanand-charitable-trust/assets/images/jyoti-soni.png" class="card-img-top" alt="Jyoti Soni">
           <div class="card-body">
             <h5 class="card-title">Jyoti Soni (CA, CS)</h5>
             <p class="card-text">Trust became the turning point of her life post her father demise. 
@@ -296,7 +430,7 @@
       <div class="swiper-slide">
         <a href="./story4.html" class="card-link-wrapper text-decoration-none d-block">
 		<div class="card shadow">
-          <img src="https://randomuser.me/api/portraits/men/11.jpg" class="card-img-top" alt="Suresh Meena">
+          <img src="https://rishabh0709.github.io/vivekanand-charitable-trust/assets/images/kumudini-dadhich.png" class="card-img-top" alt="Suresh Meena">
           <div class="card-body">
             <h5 class="card-title">Dr. Kumudini Dhadhich</h5>
             <p class="card-text">From almost leaving school in Class 10 to becoming a Chemistry Lecturer, the trust’s support, guidance, and values have been my guiding light.</p>
@@ -304,6 +438,19 @@
         </div>
 		</a>
       </div>
+	  
+	  <!-- Slide 5 -->
+      <div class="swiper-slide">
+		<a href="./story6.html" class="card-link-wrapper text-decoration-none d-block">
+		<div class="card shadow">
+		<img src="https://rishabh0709.github.io/vivekanand-charitable-trust/assets/images/meenu-tanwar.png" class="card-img-top" alt="Neetu Deora" />
+		<div class="card-body">
+			<h5 class="card-title">Meenu Tanwar</h5>
+			<p class="card-text">M.Com Gold Medalist, JNVU, Jodhpur(Raj.)</b></p>
+		</div>
+		</div>
+		</a>
+	  </div>
 
     </div>
 
@@ -438,6 +585,44 @@
     loadHTML('header-placeholder', 'header.html');
     loadHTML('footer-placeholder', 'footer.html');
   </script>
+  
+  <!-- SCript for 2nd sample of trust at glance -->
+  <script>
+  // Fade-in effect when scrolling
+const faders = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+  threshold: 0.2
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('visible');
+    observer.unobserve(entry.target);
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+
+  </script>
+  
+  <!-- Script for video -->
+  <script>
+  <script>
+  const videoModal = document.getElementById('videoModal');
+  const modalVideo = document.getElementById('modalVideo');
+
+  videoModal.addEventListener('hidden.bs.modal', function () {
+    modalVideo.pause();
+    modalVideo.currentTime = 0;
+  });
+</script>
+
+  </script>
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
