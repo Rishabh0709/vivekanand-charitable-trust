@@ -212,10 +212,16 @@ background-color: var(--color-warm-bg);
   }
 }
  */
+
+
+/* .carousel-inner > .carousel-item {
+height: 400px;
+} */
+
 /* Image carousel */
 .carousel-inner > .carousel-item > img {
-  width: auto;       /* Make image fill the carousel width */
-  height: 100%;     /* Set a fixed height for all images */
+  width: auto;      /* Make image fill the carousel width */
+  height: 100;
   object-fit: contain; /* Crop/scale image to cover area without distortion */
 }
 
