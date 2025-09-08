@@ -45,7 +45,15 @@
  const swiper = new Swiper('.success-stories-swiper', {
   slidesPerView: 3,       // Show 3 cards per view
   spaceBetween: 30,       // Space between cards
+  autoHeight: false,      // disable auto height
   loop: true,             // Infinite loop of slides
+  
+  // Autoplay settings
+  autoplay: {
+    delay: 3000,          // 4 seconds per slide
+    disableOnInteraction: false, // continue autoplay after manual swipe
+  },
+
   pagination: {
     el: '.swiper-pagination',
     clickable: true,

@@ -50,54 +50,59 @@ h3 {font-size: 1.5rem;}
 .navbar-brand, 
 .navbar a.nav-link {
   color: var(--color-maroon);
-  transition: color 0.3s ease;
   font-weight: 600;
+  padding: 0.5rem 1rem;   /* give space for background highlight */
+  border-radius: 6px;     /* smooth corners */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .navbar a.nav-link:hover,
 .navbar a.nav-link:focus,
 .navbar a.nav-link.active {
-  color: var(--color-brown);
-  text-decoration: underline;
+  background-color: var(--color-brown); /* highlight background */
+  color: var(--color-white);            /* contrast text */
 }
+
+/* Dropdown menu links */
+.dropdown-menu a.dropdown-item {
+  color: var(--color-maroon);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu a.dropdown-item:hover,
+.dropdown-menu a.dropdown-item:focus,
+.dropdown-menu a.dropdown-item.active {
+  background-color: var(--color-brown); /* same highlight as navbar */
+  color: var(--color-white);
+}
+
+
 
 /* Wrapper for combined bars */
 .header-wrapper {
-  position: relative;
-  background: var(--color-gold);
-  height: 140px; /* Sum of bars height */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.header-wrapper {
   height: 140px;
-  transition: all 0.4s ease;
-}
-
-.header-wrapper.scrolled {
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-  height: 100px;
-}
-
-.header-wrapper {
-  height: 140px;
-  transition: height 0.4s cubic-bezier(.4,0,.2,1);
   position: relative;
   z-index: 1000;
+  background: var(--color-gold);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: height 0.4s cubic-bezier(.4,0,.2,1), background 0.3s ease;
 }
 
 /* Make header sticky and shrink on scroll */
 .header-wrapper.scrolled {
-  position: fixed;  /* fixed to viewport */
+  position: fixed  /* fixed to viewport */
   top: 0;
   left: 0;
   right: 0;
-  height: 54px;   /* shrink height */
-  background: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  height: 60px;   /* consistent shrink */
+  background: var(--color-white);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   z-index: 1050;
 }
+
 
 .logo-container {
   width: 90px;
@@ -220,8 +225,8 @@ height: 400px;
 
 /* Image carousel */
 .carousel-inner > .carousel-item > img {
-  width: auto;      /* Make image fill the carousel width */
-  height: 100;
+  width: 100%;      
+  height: auto;
   object-fit: contain; /* Crop/scale image to cover area without distortion */
 }
 
@@ -237,10 +242,11 @@ height: 400px;
 
 /* Card images */
 .card-img-top {
-  width: auto;           /* Fill the card width */
-  height: auto;          /* Set fixed responsive height, adjust as needed */
-  object-fit: contain;     /* Crop image to fill the area without distortion */
-  max-height:300px;
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: contain;  /* ensures full image is shown */
+  background-color: #f8f9fa; /* neutral background for empty space */
+  border-radius: 0.25rem 0.25rem 0 0;
 }
 
 
@@ -254,6 +260,17 @@ height: 400px;
 .card-hover-effect:hover {
   box-shadow: 0 12px 24px rgba(217, 119, 6, 0.25);
   transform: translateY(-6px);
+}
+
+/* Card body layout */
+.card-body.card-custom-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+/* Button alignment at bottom */
+.card-body .btn {
+  margin-top: auto; /* pushes button to bottom */
 }
 
 /* Card body */
@@ -275,41 +292,25 @@ height: 400px;
  transform: translateY(-4px);
 }
 
-/* Success stories card - making complete card clickable */
-.card-link-wrapper {
-  color: inherit;       /* Keep original text colors */
-  cursor: pointer;      /* Pointer cursor on hover */
-  text-decoration: none; /* Remove underline */
-  display: block;       /* Make anchor behave like a block element */
-}
-
-.card-link-wrapper .card {
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-  border-radius: 0.25rem;
-}
-
-.card-link-wrapper:hover .card {
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
-  transform: translateY(-6px); /* Moves card up slightly */
-}
-
-.card-link-wrapper:hover {
-  text-decoration: none;
-}
-
 /* Swiper slide - success stories */
+
+.swiper-wrapper {
+  display: flex;           /* already true by Swiper */
+  align-items: stretch;    /* forces all slides to same height */
+}
+/* Ensure Swiper slides stretch */
 .swiper-slide {
   display: flex;
-  justify-content: center;
-  height: 100%;
+  padding: 0.5rem;
+  flex-direction: column;
 }
 
+/* Stretch cards inside slides */
 .swiper-slide .card {
-  width: 100%;
-  max-width: 320px;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-  border-radius: 0.25rem;
-  cursor: pointer;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .swiper-slide .card:hover {
@@ -333,12 +334,18 @@ footer h5 {
 }
 
 footer a {
-  color: #99215d;
-  text-decoration: none;
+  color: var(--color-gold);
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;   /* some breathing space */
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-footer a:hover {
-  text-decoration: underline;
+footer a:hover,
+footer a:focus {
+  background-color: var(--color-gold); /* same highlight style */
+  color: var(--color-white);
+  text-decoration: none; /* remove underline */
 }
 
 
