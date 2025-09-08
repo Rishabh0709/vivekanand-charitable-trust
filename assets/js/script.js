@@ -50,7 +50,7 @@
   
   // Autoplay settings
   autoplay: {
-    delay: 3000,          // 4 seconds per slide
+    delay: 3000,          // 3 seconds per slide
     disableOnInteraction: false, // continue autoplay after manual swipe
   },
 
@@ -78,6 +78,12 @@ const testimonialsSwiper = new Swiper('.testimonials-swiper', {
   slidesPerView: 3,
   spaceBetween: 30,
   loop: true,
+  
+  autoplay: {
+    delay: 3000,          // 3 seconds per slide
+    disableOnInteraction: false, // continue autoplay after manual swipe
+  },
+
   pagination: {
     el: '.swiper-pagination',
     clickable: true,

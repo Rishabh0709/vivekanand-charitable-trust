@@ -218,16 +218,19 @@ background-color: var(--color-warm-bg);
 }
  */
 
+/* Standard size for carousel images */
+#imageCarousel .carousel-inner img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;      /* show entire image, may add letterboxing */
+  background-color: #f8f9fa; /* neutral background for empty space */
+}
 
-/* .carousel-inner > .carousel-item {
-height: 400px;
-} */
-
-/* Image carousel */
-.carousel-inner > .carousel-item > img {
-  width: 100%;      
-  height: auto;
-  object-fit: contain; /* Crop/scale image to cover area without distortion */
+/* Optional: make it responsive */
+@media (max-width: 768px) {
+  #imageCarousel .carousel-inner img {
+    height: 250px; /* smaller height for mobile */
+  }
 }
 
 /*animated counter card: on-hover effect */
