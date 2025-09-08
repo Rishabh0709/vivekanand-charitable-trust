@@ -1,1 +1,8 @@
 permalink: /:basename/
+
+defaults:
+  - scope:
+      path: ""      # apply to all files
+      type: pages   # only HTML/Markdown pages
+    values:
+      layout: none
