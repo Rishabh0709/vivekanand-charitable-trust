@@ -222,14 +222,15 @@ background-color: var(--color-warm-bg);
 #imageCarousel .carousel-inner img {
   width: 100%;
   height: 500px;
-  object-fit: cover;      /* show entire image, may add letterboxing */
-  background-color: #f8f9fa; /* neutral background for empty space */
+  object-fit: contain;      /* show entire image, may add letterboxing */
+  background-color: var(--color-warm-bg) /* neutral background for empty space */
 }
 
 /* Optional: make it responsive */
 @media (max-width: 768px) {
   #imageCarousel .carousel-inner img {
-    height: 250px; /* smaller height for mobile */
+    height: 250px;
+object-fit: contain;	/* smaller height for mobile */
   }
 }
 
