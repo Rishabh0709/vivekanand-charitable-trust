@@ -52,6 +52,8 @@
   autoplay: {
     delay: 3000,          // 3 seconds per slide
     disableOnInteraction: false, // continue autoplay after manual swipe
+	pauseOnMouseEnter: true,   // ✅ pauses when mouse enters, resumes on leave
+
   },
 
   pagination: {
@@ -80,8 +82,10 @@ const testimonialsSwiper = new Swiper('.testimonials-swiper', {
   loop: true,
   
   autoplay: {
-    delay: 3000,          // 3 seconds per slide
+    delay: 4000,          // 4 seconds per slide
     disableOnInteraction: false, // continue autoplay after manual swipe
+	pauseOnMouseEnter: true,   // ✅ pauses when mouse enters, resumes on leave
+
   },
 
   pagination: {

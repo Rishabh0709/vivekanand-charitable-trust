@@ -37,26 +37,43 @@
   background: #fdfdfd;
 }
 
-.images {
+.transformation .images {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 30px;
-  max-width: 1200px;
+  align-items: center;      /* vertically align text with images */
+  justify-content: center;  /* space them evenly */
+  gap: 2rem;                /* consistent spacing between items */
+  flex-wrap: wrap;          /* makes it responsive */
+  text-align: center;
 }
 
-<!-- .images .before, 
-.images .after {
-  flex: 1;
-  text-align: center;
-} -->
-
-.images img {
+.transformation .images img {  
+  height: auto;
+  display: block;
+  margin: 0 auto;
   width: 100%;
-  max-width: 350px;
+  max-width: 350px;  /* keep image sizes consistent */
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
+
+.transformation .content {
+  flex: 1;                  /* take remaining space */
+  min-width: 250px;         /* prevent collapsing on small screens */
+}
+
+.transformation ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+
+
+
+
+
+
 
 .images .content {
   flex: 2;
@@ -112,7 +129,7 @@
 
   <!-- Carousel -->
   <div class="container mt-5">
-    <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="hover">
       <!-- Indicators/dots -->
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
