@@ -1,8 +1,10 @@
-<footer class="text-light pt-5 pb-3">
+<footer class="text-light pt-5 pb-3" style="background-color: #1F2937;">
   <div class="container">
-    <div class="row gy-4 align-items-center">
-      <div class="col-md-5">
-        <h5>Quick Links</h5>
+    <div class="row gy-4 align-items-start">
+      
+      <!-- Quick Links -->
+      <div class="col-md-4">
+        <h5 class="mb-3" style="color: #FDE68A;">Quick Links</h5>
         <ul class="list-unstyled">
           <li><a href="index.html" class="text-light text-decoration-none">Home</a></li>
           <li><a href="faq.html" class="text-light text-decoration-none">FAQs</a></li>
@@ -10,30 +12,58 @@
           <li><a href="contact_us.html" class="text-light text-decoration-none">Contact Us</a></li>
         </ul>
       </div>
+
+      <!-- Address -->
       <div class="col-md-4">
-        <h5>Address</h5>
+        <h5 class="mb-3" style="color: #FDE68A;">Address</h5>
         <p class="mb-1">Swami Vivekanand Students’ Welfare Charitable Trust</p>
-        <p class="mb-1">Manidweep, A-183 Shastri Nagar Near Lachoo Memorial College,<br />Jodhpur, Rajasthan, India - 342001</p>
+        <p class="mb-1">
+          Manidweep, A-183 Shastri Nagar<br />
+          Near Lachoo Memorial College, Jodhpur, Rajasthan, India - 342001
+        </p>
       </div>
-      <div class="col-md-3 d-flex flex-column align-items-md-end align-items-start">
-        <div class="mb-3">
-          <h5>Contact</h5>
-          <p class="mb-1"><i class="fa fa-phone me-2"></i>+91-9414917901</p>
-          <p class="mb-1"><i class="fa fa-envelope me-2"></i>kishoreggm@gmail.com</p>
-          <!--<p><i class="fa fa-globe me-2"></i>www.vivekanandtrust.org</p>-->
-        </div>
-        <a href="donate.html" class="btn btn-primary btn-rounded px-4 py-2" role="button" aria-label="Donate to support the Trust">
+
+      <!-- Contact & Donate -->
+      <div class="col-md-4 d-flex flex-column align-items-md-end align-items-start">
+        <h5 class="mb-3" style="color: #FDE68A;">Contact</h5>
+        <p class="mb-1"><i class="fa fa-phone me-2"></i>+91-9414917901</p>
+        <p class="mb-1"><i class="fa fa-envelope me-2"></i>kishoreggm@gmail.com</p>
+        <!--<p><i class="fa fa-globe me-2"></i>www.vivekanandtrust.org</p>-->
+        <a href="donate.html" class="btn btn-primary btn-rounded mt-3 px-4 py-2" role="button" aria-label="Donate to support the Trust">
           Donate
         </a>
       </div>
+
     </div>
-    <hr class="bg-secondary mt-4" />
-    <div class="text-center">&copy; 2025 Swami Vivekanand Students’ Welfare Charitable Trust. All rights reserved.</div>
+
+    <!-- Tax Info -->
+    <div class="text-center mt-4">
+      <p class="mb-0"><strong>All donations to this trust are exempted under section 80G of the Income Tax Act of India.</strong></p>
+    </div>
+
+    <hr class="bg-secondary mt-3" />
+
+    <!-- Copyright -->
+    <div class="text-center small mt-2">&copy; 2025 Swami Vivekanand Students’ Welfare Charitable Trust. All rights reserved.</div>
   </div>
 </footer>
 
 <style>
   .btn-rounded {
     border-radius: 50px;
+  }
+
+  /* Footer Links Hover */
+  footer a.text-light:hover {
+    color: #FBBF24;
+    
+  }
+
+  /* Small adjustments for mobile */
+  @media (max-width: 768px) {
+    footer .col-md-3 {
+      align-items: flex-start !important;
+      margin-top: 20px;
+    }
   }
 </style>
