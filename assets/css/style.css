@@ -401,9 +401,8 @@ img.rounded-logo {
 }
  */
  
- 
- #backToTopBtn {
-  display: none; /* Hidden by default */
+ /* back-to-top.css */
+#backToTopBtn {
   position: fixed;
   bottom: 30px;
   right: 30px;
@@ -417,8 +416,18 @@ img.rounded-logo {
   border-radius: 50%;
   font-size: 24px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.17);
-  transition: background 0.3s;
+  transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
 }
+
+#backToTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-10px); /* slight lift effect */
+}
+
 #backToTopBtn:hover {
   background: #0056b3;
+  transform: scale(1.1);
 }

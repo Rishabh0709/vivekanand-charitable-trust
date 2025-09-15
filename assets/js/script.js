@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-document.addEventListener('DOMContentLoaded', function () {
+/* document.addEventListener('DOMContentLoaded', function () {
   // Inject Back to Top button only once per page
   if (!document.getElementById('backToTopBtn')) {
     const btn = document.createElement('button');
@@ -153,5 +153,37 @@ document.addEventListener('DOMContentLoaded', function () {
       btn.style.display = (window.scrollY > 100) ? 'block' : 'none';
     };
   }
+}); */
+
+document.addEventListener("DOMContentLoaded", function () {
+  if (!document.getElementById("backToTopBtn")) {
+    const btn = document.createElement("button");
+    btn.id = "backToTopBtn";
+    btn.title = "Go to top";
+    btn.innerHTML = "↑";
+    btn.setAttribute("aria-label", "Back to top");
+    btn.setAttribute("role", "button");
+    btn.setAttribute("data-aos", "fade-up"); // ✅ use AOS attribute
+    document.body.appendChild(btn);
+
+    // Show/hide on scroll
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (window.scrollY > 0) {
+          btn.classList.add("show");
+        } else {
+          btn.classList.remove("show");
+        }
+      },
+      { passive: true }
+    );
+
+    // Scroll to top on click
+    btn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
 });
+
 
