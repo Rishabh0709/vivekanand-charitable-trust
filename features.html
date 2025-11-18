@@ -18,53 +18,82 @@
 <link rel="stylesheet" href="/assets/css/style.css" />
   <!-- Custom CSS -->
   <style>
+.features-journey {
+  background: linear-gradient(180deg, #fffdf5 0%, #fff7db 100%);
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
 
-    .page-section {
-      padding: 70px 20px;
-    }
+.section-heading {
+  font-family: 'Playfair Display', serif;
+  color: #074e9b;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
-    .page-title {
-      text-align: center;
-      margin-bottom: 50px;
-    }
+.feature-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 80px;
+  gap: 40px;
+}
 
-    .accordion-button {
-      background-color: #fff3e8;
-      color: #4b2b99;
-      font-weight: 600;
-      font-size: 1.05rem;
-    }
+.feature-block.reverse {
+  flex-direction: row-reverse;
+}
 
-    .accordion-button i {
-      margin-right: 10px;
-      color: #8a1450;
-    }
+.feature-icon {
+  flex: 0 0 100px;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #fff4b0, #ffd95c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
 
-    .accordion-button:not(.collapsed) {
-      background-color: #8a1450;
-      color: #fff;
-    }
+.feature-icon i {
+  font-size: 2rem;
+  color: #8a1450;
+}
 
-    .accordion-body {
-      font-size: 1rem;
-      color: #3d297c;
-      background-color: #fff;
-    }
+.feature-text {
+  flex: 1;
+}
 
-    .accordion-item {
-      border: none;
-      border-radius: 8px;
-      margin-bottom: 15px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
+.feature-text h4 {
+  color: #074e9b;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
 
-    @media (max-width: 576px) {
-      .page-title {
-        font-size: 2rem;
-      }
-    }
-  </style>
+.feature-text p {
+  color: #333;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .feature-block,
+  .feature-block.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .feature-block::after {
+    display: none;
+  }
+}
+
+</style>
+
+
 </head>
 <body>
 
@@ -72,162 +101,133 @@
   <div id="header-placeholder"></div>
 
   <!-- Main Content -->
-  <section class="page-section">
-    <div class="container" data-aos="fade-up">
-      <h1 class="page-title">Unique Features of the Trust</h1>
+<section class="features-journey py-5">
+  <div class="container">
+    <h2 class="section-heading text-center mb-5" data-aos="fade-up">
+      Unique Features of the Trust
+    </h2>
 
-      <div class="accordion" id="featuresAccordion">
-        <!-- 1 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="heading1">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-              <i class="fas fa-graduation-cap"></i> Equal Access to Education
-            </button>
-          </h2>
-          <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#featuresAccordion">
-            <div class="accordion-body">
-              No girl is denied education due to lack of money—regardless of marks, religion, or background.
-            </div>
-          </div>
-        </div>
+    <!-- Feature 1 -->
+    <div class="feature-block" data-aos="fade-right">
+      <div class="feature-icon">
+        <i class="fas fa-graduation-cap"></i>
+      </div>
+      <div class="feature-text">
+        <h4>Equal Access to Education</h4>
+        <p>No girl is denied education due to lack of money—regardless of marks, religion, or background.</p>
+      </div>
+    </div>
 
-        <!-- 2 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="heading2">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-              <i class="fas fa-school"></i> Widespread Educational Support
-            </button>
-          </h2>
-          <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#featuresAccordion">
-            <div class="accordion-body">
-              The Trust supports girls across 45 schools and 37 colleges in Jodhpur and Balotra districts.
-            </div>
-          </div>
-        </div>
+    <!-- Feature 2 -->
+    <div class="feature-block" data-aos="fade-left">
+      <div class="feature-icon">
+        <i class="fas fa-school"></i>
+      </div>
+      <div class="feature-text">
+        <h4>Widespread Educational Support</h4>
+        <p>Supporting girls across 45 schools and 37 colleges in Jodhpur and Balotra districts.</p>
+      </div>
+    </div>
 
-        <!-- 3 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="heading3">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-              <i class="fas fa-hand-holding-heart"></i> Need-Based Financial Aid
-            </button>
-          </h2>
-          <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#featuresAccordion">
-            <div class="accordion-body">
-              Financial help is extended solely on the basis of need, not on academic performance.
-            </div>
-          </div>
-        </div>
+    <!-- Feature 3 -->
+    <div class="feature-block" data-aos="fade-right">
+      <div class="feature-icon">
+        <i class="fas fa-hand-holding-heart"></i>
+      </div>
+      <div class="feature-text">
+        <h4>Need-Based Financial Aid</h4>
+        <p>Financial help is extended purely based on need, not academic performance.</p>
+      </div>
+    </div>
 
-        <!-- 4 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="heading4">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-              <i class="fas fa-clipboard-check"></i> Transparent Selection Process
-            </button>
-          </h2>
-          <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#featuresAccordion">
-            <div class="accordion-body">
-              Students are selected through a structured process involving teachers and principals, with fee payments made directly to institutions.
-            </div>
-          </div>
-        </div>
-
-        <!-- 5 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="heading5">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-              <i class="fas fa-donate"></i> Every Rupee Counts
-            </button>
-          </h2>
-          <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#featuresAccordion">
-            <div class="accordion-body">
-              Administrative costs are minimal and borne voluntarily, ensuring donations directly benefit students.
-            </div>
-          </div>
-        </div>
-
-        <!-- 6 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="heading6">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
-              <i class="fas fa-spa"></i> Beyond Education: Mind, Body, Soul
-            </button>
-          </h2>
-          <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6" data-bs-parent="#featuresAccordion">
-            <div class="accordion-body">
-              The Trust not only provides financial support for education but also instills moral values and Sanskar through personality development sessions that nurture physical, mental, emotional, and spiritual well-being.
-            </div>
-          </div>
-        </div>
-
-        <!-- 7 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="heading7">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
-              <i class="fas fa-arrow-up"></i> Turning Potential into Performance
-            </button>
-          </h2>
-          <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7" data-bs-parent="#featuresAccordion">
-            <div class="accordion-body">
-              Many underperforming students have achieved academic excellence through the Trust's consistent guidance.
-            </div>
-          </div>
-        </div>
-
-        <!-- 8 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="heading8">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
-              <i class="fas fa-user-graduate"></i> Building Confidence for the Future
-            </button>
-          </h2>
-          <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8" data-bs-parent="#featuresAccordion">
-            <div class="accordion-body">
-              Students supported by the Trust are now confident, capable, and ready to take on life’s challenges.
-            </div>
-          </div>
-        </div>
-
-        <!-- 9 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="heading9">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
-              <i class="fas fa-leaf"></i> Nurturing Responsible Citizens
-            </button>
-          </h2>
-          <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="heading9" data-bs-parent="#featuresAccordion">
-            <div class="accordion-body">
-             The Trust offers holistic guidance and support to foster the all-round development of its students. Alongside their rights, 
+	<!-- Feature 4 -->
+    <div class="feature-block" data-aos="fade-left">
+      <div class="feature-icon">
+        <i class="fas fa-clipboard-check"></i>
+      </div>
+      <div class="feature-text">
+        <h4>Transparent Selection Process</h4>
+        <p>Students are selected through a structured process involving teachers and principals, with fee payments made directly to institutions.</p>
+      </div>
+    </div>
+	
+	<!-- Feature 5 -->
+    <div class="feature-block" data-aos="fade-right">
+      <div class="feature-icon">
+        <i class="fas fa-donate"></i>
+      </div>
+      <div class="feature-text">
+        <h4>Every Rupee Counts</h4>
+        <p>Administrative costs are minimal and borne voluntarily, ensuring donations directly benefit students.</p>
+      </div>
+    </div>
+	
+    <!-- Feature 6 -->
+    <div class="feature-block" data-aos="fade-left">
+      <div class="feature-icon">
+        <i class="fas fa-spa"></i>
+      </div>
+      <div class="feature-text">
+        <h4>Beyond Education: Mind, Body, Soul</h4>
+        <p>Through Sanskar sessions, the Trust nurtures moral strength and inner peace, shaping holistic individuals.</p>
+      </div>
+    </div>
+	
+	<!-- Feature 7 -->
+    <div class="feature-block" data-aos="fade-right">
+      <div class="feature-icon">
+        <i class="fas fa-arrow-up"></i>
+      </div>
+      <div class="feature-text">
+        <h4>Turning Potential into Performance</h4>
+        <p>Many underperforming students have achieved academic excellence through the Trust's consistent guidance.</p>
+      </div>
+    </div>
+	
+	<!-- Feature 8 -->
+    <div class="feature-block" data-aos="fade-left">
+      <div class="feature-icon">
+        <i class="fas fa-user-graduate"></i>
+      </div>
+      <div class="feature-text">
+        <h4>Building Confidence for the Future</h4>
+        <p>Students supported by the Trust are now confident, capable, and ready to take on life’s challenges.</p>
+      </div>
+    </div>
+	
+	<!-- Feature 9 -->
+    <div class="feature-block" data-aos="fade-right">
+      <div class="feature-icon">
+        <i class="fas fa-leaf"></i>
+      </div>
+      <div class="feature-text">
+        <h4>Nurturing Responsible Citizens</h4>
+        <p>The Trust offers holistic guidance and support to foster the all-round development of its students. Alongside their rights, 
 			 girls are also taught their duties—empowering them to become responsible citizens who actively contribute to the nation’s progress. 
 			 Equipped with education and strong moral values <i>(Sanskar)</i>, these young women are now prepared to face future challenges 
-			 with confidence and purpose
-            </div>
-          </div>
-        </div>
-
-        <!-- 10 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="heading10">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
-              <i class="fas fa-hands-helping"></i> Lifelong Professional Support
-            </button>
-          </h2>
-          <div id="collapse10" class="accordion-collapse collapse" aria-labelledby="heading10" data-bs-parent="#featuresAccordion">
-            <div class="accordion-body">
-              Most of the Trusts provide financial support only. <b>The unique feature of the trust is a strong professional backup support.</b> 
+			 with confidence and purpose</p>
+      </div>
+    </div>
+	
+	<!-- Feature 10 -->
+    <div class="feature-block" data-aos="fade-right">
+      <div class="feature-icon">
+        <i class="fas fa-hands-helping"></i>
+      </div>
+      <div class="feature-text">
+        <h4>Lifelong Professional Support</h4>
+        <p>Most of the Trusts provide financial support only. <b>The unique feature of the trust is a strong professional backup support.</b> 
 		  This trust provides financial support and opportunity for overall growth. Trust develops a sense of belongingness among all the girls. 
 		  They consider themselves as a member of this trust family, where highly qualified educated and renowned members of the trust, 
 		  in different walks of life, provide strong and <b>powerful professional back-up support</b> not only during education period 
-		  but interviews, career counselling and during their <b>entire life.</b>
-            </div>
-          </div>
-        </div>
+		  but interviews, career counselling and during their <b>entire life.</b></p>
       </div>
     </div>
-  </section>
-
-  <!-- Footer -->
+	
+  </div>
+</section>
+ 
+ <!-- Footer -->
   <div id="footer-placeholder"></div>
 
   <!-- JS Scripts -->

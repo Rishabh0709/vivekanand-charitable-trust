@@ -1,0 +1,147 @@
+/* === Color Palette === */
+:root {
+  --color-maroon: #7B2123; /*#99215d; */       /* Deep Maroon */
+  --color-orange: #F19D38;       /* Warm Orange */
+  --color-gold: #FFC35C;         /* Golden Yellow */
+  --color-slate-blue: #2F3E50;   /* Dark Slate Blue - text */
+  --color-warm-bg: #FFF9EF;      /* Soft warm off-white */
+  --color-white: #FFFFFF;
+  --color-muted-text: #6c757d;   /* For secondary text */
+  --color-warm-blue: #f1fdfd;    /* light blue shade*/
+  --color-brown: #87402c; 		 /*Brown*/
+  
+  
+  /* Palette from logo */
+  --crimson: #ed1c24;
+  --venice-blue: #074e9b;
+  --turbo: #ffec00;
+  --half-dutch-white: #fef7de;
+  --casablanca: #f7aa52;
+  --sweet-corn: #fce786;
+  --old-rose: #b97f72;
+  --old-brick: #951a19;
+
+}
+
+/* =========================================================
+   NAVBAR BASE STYLING
+   ========================================================= */
+.navbar {
+  background-color: var(--color-gold);
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.navbar-brand,
+.navbar a.nav-link {
+  color: var(--color-maroon);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar a.nav-link:hover,
+.navbar a.nav-link:focus,
+.navbar a.nav-link.active {
+  background-color: var(--color-brown);
+  color: var(--color-white);
+}
+
+/* Dropdown menu items */
+.dropdown-menu a.dropdown-item {
+  color: var(--color-maroon);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu a.dropdown-item:hover,
+.dropdown-menu a.dropdown-item:focus {
+  background-color: var(--color-brown);
+  color: var(--color-white);
+}
+
+/* =========================================================
+   HEADER WRAPPER (Top area including nav)
+   ========================================================= */
+.header-wrapper {
+  height: 140px;
+  background: var(--color-gold);
+  position: relative;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: height 0.4s ease, background 0.3s ease;
+}
+
+/* Shrink effect on scroll */
+.header-wrapper.scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: var(--color-white);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  z-index: 1050;
+}
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+.navbar-brand img {
+  max-height: 120px;
+  width: auto;
+  display: block;
+  transition: max-height 0.4s;
+}
+
+/* Shrink logo on scroll */
+.header-wrapper.scrolled .navbar-brand img {
+  max-height: 55px;
+}
+
+/* =========================================================
+   NAVBAR STRUCTURE
+   ========================================================= */
+#mainNav .container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap !important;
+}
+
+/* Burger icon on right */
+#mainNav .navbar-toggler {
+  margin-left: auto;
+  z-index: 1100;
+}
+
+/* Menu aligned right */
+#mainNav .navbar-collapse {
+  margin-left: auto;
+  justify-content: flex-end;
+}
+
+/* =========================================================
+   MOBILE BEHAVIOR
+   ========================================================= */
+@media (max-width: 991px) {
+
+  /* Fix collapse flicker bug */
+  #mainNav .collapse {
+    width: 100%;
+  }
+
+  /* DO NOT USE absolute – this removes the flicker */
+  #mainNav .collapse.show {
+    position: static !important;
+    background: #ffffff;
+    width: 100%;
+    padding: 12px 16px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  }
+
+  .navbar-brand img {
+    max-height: 8

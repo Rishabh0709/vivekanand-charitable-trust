@@ -1,30 +1,205 @@
-<!-- header.html -->
-<div class="header-wrapper position-relative" style="height: 140px;">
-  <!-- Logo spanning both bars -->
-  <div class="logo-container position-absolute start-0 top-0 h-100 d-flex align-items-center ps-3" style="max-width: 90px; z-index: 1060;">
-    <a class ="navbar-brand" href="index.html" >
-	<img src="/assets/images/logo.png" alt="Trust Logo" style="max-height: 120px; width: auto; display: block; transition: max-height 0.4s ease;" />
-  </a>
-  </div>
+<style>
+/* =========================================================
+   NAVBAR BASE STYLING
+   ========================================================= */
+.navbar {
+  background-color: var(--color-gold);
+  padding-top: 0;
+  padding-bottom: 0;
+}
 
-  <!-- Top Contact Bar -->
-  <div id="topContactBar" class="d-flex justify-content-center align-items-center" style="height: 40px; margin-left: 90px; padding: 0 15px; transition: opacity 0.3s, height 0.3s;">
-    <span class="me-4"><i class="fa fa-phone"></i> +91-9414917901</span>
-    <span><i class="fa fa-envelope"></i> kishoreggm@gmail.com</span>
-  </div>
+.navbar-brand,
+.navbar a.nav-link {
+  color: var(--color-maroon);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-  <!-- Navbar -->
-  <nav id="mainNav" class="navbar navbar-expand-lg shadow-sm"
-       style="height: 100px; margin-left: 90px; transition: height 0.4s, padding 0.4s; align-items: center; z-index: 1040;">
-    <div class="container-fluid justify-content-end">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
-              aria-expanded="false" aria-label="Toggle navigation">
+.navbar a.nav-link:hover,
+.navbar a.nav-link:focus,
+.navbar a.nav-link.active {
+  background-color: var(--color-brown);
+  color: var(--color-white);
+}
+
+/* Dropdown menu items */
+.dropdown-menu a.dropdown-item {
+  color: var(--color-maroon);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu a.dropdown-item:hover,
+.dropdown-menu a.dropdown-item:focus {
+  background-color: var(--color-brown);
+  color: var(--color-white);
+}
+
+/* =========================================================
+   HEADER WRAPPER (Top area including nav)
+   ========================================================= */
+.header-wrapper {
+  height: 140px;
+  background: var(--color-gold);
+  position: relative;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: height 0.4s ease, background 0.3s ease;
+}
+
+/* Shrink effect on scroll */
+.header-wrapper.scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: var(--color-white);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  z-index: 1050;
+}
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+.navbar-brand img {
+  max-height: 120px;
+  width: auto;
+  display: block;
+  transition: max-height 0.4s;
+}
+
+/* Shrink logo on scroll */
+.header-wrapper.scrolled .navbar-brand img {
+  max-height: 55px;
+}
+
+/* =========================================================
+   NAVBAR STRUCTURE
+   ========================================================= */
+#mainNav .container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap !important;
+}
+
+/* Burger icon on right */
+#mainNav .navbar-toggler {
+  margin-left: auto;
+  z-index: 1100;
+}
+
+/* Menu aligned right */
+#mainNav .navbar-collapse {
+  margin-left: auto;
+  justify-content: flex-end;
+}
+
+/* =========================================================
+   MOBILE BEHAVIOR
+   ========================================================= */
+/* =========================================================
+   PERFECT MOBILE MENU (No flicker + No header shift)
+   ========================================================= */
+@media (max-width: 991px) {
+
+  /* Make collapse a floating panel */
+  #mainNav .navbar-collapse {
+    position: absolute;
+    top: 100%;                    /* → Appears right under burger icon */
+    right: 0;
+    left: 0;
+    background: #ffffff;
+    padding: 12px 16px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    border-radius: 0 0 12px 12px;
+    z-index: 9999;
+  }
+
+  /* BUT keep it hidden when collapsed */
+  #mainNav .navbar-collapse.collapse {
+    display: none !important;
+  }
+
+  #mainNav .navbar-collapse.show {
+    display: block !important;
+  }
+
+  /* Prevent logo from shrinking or moving */
+  .header-wrapper {
+    height: 140px !important;
+  }
+  .navbar-brand img {
+    max-height: 80px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE (≤ 768px)
+   ========================================================= */
+@media (max-width: 768px) {
+  .header-wrapper {
+    height: auto !important;
+    padding-bottom: 0.5rem;
+  }
+
+  .navbar-brand img {
+    max-height: 70px;
+  }
+}
+
+@media (max-width: 767px) {
+    #mainNav {
+        height: 80px !important;  /* fix navbar height in mobile */
+        padding: 10px 20px !important;
+    }
+
+    #mainNav.navbar-shrink {
+        height: 80px !important; /* disable shrink on scroll in mobile */
+    }
+}
+
+
+/* =========================================================
+   MULTI-LEVEL DROPDOWNS
+   ========================================================= */
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-left: 0.1rem;
+}
+
+</style>
+
+<header class="header-wrapper" style="height:120px; position:relative;">
+  <nav id="mainNav" class="navbar navbar-expand-lg" style="height:120px;">
+    <div class="container-fluid d-flex align-items-center">
+
+      <!-- Logo as navbar-brand (left) -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html" style="padding-left:16px;">
+        <img src="/assets/images/logo.png" alt="Trust Logo" class="img-fluid logo-img">
+      </a>
+
+      <!-- Toggler (right, same line) -->
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown" style="padding-left: 140px;">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+
+      <!-- Collapsible menu -->
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <!-- your nav items -->
+		  <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Our Story</a>
           <ul class="dropdown-menu">
@@ -79,7 +254,9 @@
           </ul>
         </li>
         <li class="nav-item"><a class="nav-link" href="contact_us.html">Contact Us</a></li>
-      </ul>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
+</header>
+
