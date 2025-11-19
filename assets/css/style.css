@@ -39,6 +39,22 @@ body {
   padding: 0;
 }
 
+/*.............................Some styling for all the pages......................*/
+
+ /* Page wrapper margins for all pages. */
+ .page-wrapper {
+  max-width: 1050px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Main Title */
+.main-title {
+    color: #084d9b;
+    font-weight: 700;
+    font-size: 32px;
+}
+
 /* === Headings === */
 h1, h2, h3, h5, .page-heading {
   color: var(--color-vivid-blue:);
