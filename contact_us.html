@@ -11,35 +11,18 @@
   <link rel="stylesheet" href="/assets/css/style.css" />
 
   <style>
-    main.container {
-      padding-top: 40px;
-      padding-bottom: 60px;
-      max-width: 900px;
-    }
-    h1 {
-      font-weight: 600;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    .contact-info {
-      font-size: 1.1rem;
-      color: #333;
-    }
-    .contact-info strong {
-      color: #1a237e;
-    }
-    .office-photo {
-      max-width: 100%;
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 18px rgba(26, 35, 126, 0.15);
-      margin-top: 30px;
-    }
+   
     .info-icon {
-      color: #1a237e;
-      margin-right: 8px;
-      width: 20px;
-      text-align: center;
-    }
+  color: #1a237e;
+  margin-right: 8px;
+  width: 22px;
+  text-align: center;
+}
+
+.p-4 strong {
+  color: #1a237e;
+}
+
   </style>
 </head>
 <body>
@@ -47,34 +30,65 @@
   <!-- Header -->
   <div id="header-placeholder"></div>
 
-<main class="container">
-    <div class="row align-items-center">
-      
-      <!-- Left: Contact info -->
-      <div class="col-md-6 contact-info">
-        <h2>Contact Information</h2>
-        <div class="contact-info">
-      <p><i class="fa fa-map-marker-alt info-icon"></i><strong>Address:</strong> 'Manidweep' A-183 Shastri Nagar, Near Lachoo Memorial College, Jodhpur, Rajasthan, 342001, India</p>
-      <p><i class="fa fa-phone info-icon"></i><strong>Phone:</strong> +91-9414917901, 0291-2621189</p>
-      <p><i class="fa fa-envelope info-icon"></i><strong>Email:</strong> kishoreggm@gmail.com</p>
-      <!--<p><i class="fa fa-globe info-icon"></i><strong>Website:</strong> www.vivekanandtrust.org</p>-->
-    </div>
+<main class="container py-5">
+
+  <div class="text-center mb-4">
+    <h2 class="fw-bold">Get In Touch</h2>
+    <p>
+      Feel free to contact us for any assistance or information.
+    </p>
+  </div>
+
+  <div class="row g-4 align-items-center">
+
+    <!-- Contact Info -->
+    <div class="col-md-6">
+      <div class="p-4 contact-box">
+
+        <p class="mb-3">
+          <i class="fa fa-map-marker-alt info-icon"></i>
+          <strong>Address:</strong><br>
+          'Manidweep' A-183 Shastri Nagar,<br>
+          Near Lachoo Memorial College, Jodhpur, Rajasthan, 342001, India
+        </p>
+
+        <p class="mb-3">
+          <i class="fa fa-phone info-icon"></i>
+          <strong>Phone:</strong> +91-9414917901, 0291-2621189
+        </p>
+
+        <p class="mb-0">
+          <i class="fa fa-envelope info-icon"></i>
+          <strong>Email:</strong> kishoreggm@gmail.com
+        </p>
 
       </div>
-      
-      <!-- Right: Image -->
-      <div class="col-md-6 contact-image">
-        <img src="/assets/images/manidweep.png" alt="Office Building Photo" class="office-photo" />
-      </div>
     </div>
-  </main>
-       
-	<div class="map-container">
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3577.7894731051456!2d72.99593527425716!3d26.268495277037033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39418dd7248ff2a1%3A0xa4eab9bf28afbe9c!2sSwami%20Vivekanand%20Students%20Welfare%20Charitable%20Trust!5e0!3m2!1sen!2sae!4v1756071689926!5m2!1sen!2sae" 
-		width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-		</iframe>
-	</div>
-  </main>
+
+    <!-- Office Image -->
+    <div class="col-md-6 text-center">
+      <img src="/assets/images/manidweep_home.jpg" 
+           class="img-fluid rounded shadow-sm" 
+           style="max-height:350px; object-fit:cover;"
+           alt="Office">
+    </div>
+
+  </div>
+
+  <!-- Map Section -->
+  <div class="mt-5">
+    <div class="ratio ratio-16x9 shadow-sm rounded">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3577.7894731051456!2d72.99593527425716!3d26.268495277037033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39418dd7248ff2a1%3A0xa4eab9bf28afbe9c!2sSwami%20Vivekanand%20Students%20Welfare%20Charitable%20Trust!5e0!3m2!1sen!2sae!4v1756071689926!5m2!1sen!2sae"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+
+</main>
+
 
   <!-- Footer -->
   <div id="footer-placeholder"></div>

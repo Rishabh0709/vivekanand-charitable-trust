@@ -4,150 +4,151 @@
   <meta charset="UTF-8">
   <title>Modus Operandi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/style.css" />
+
   <style>
-    main {
-      max-width: 900px;
-      margin: 46px auto;
-      background: #fff;
-      border-radius: 14px;
-      box-shadow: 0 2px 9px rgba(150,130,200,0.10);
-      padding: 36px 32px;
-    }
-    .page-heading {
+    .description {
       text-align: center;
+      font-size: 1.1em;
+      color: #504386;
+      margin-bottom: 40px;
+    }
+    .card-text {
+      color: #504386;
+      font-size: 1em;
+    }
+    .card i {
+      margin-bottom: 12px;
       color: #7B2123;
-      font-size: 2em;
-      font-weight: bold;
-      margin-bottom: 14px;
-    }
-    .description { 
-      font-size: 1.09em; 
-      color: #504386; 
-      margin-bottom: 33px; 
-      text-align: center;
-    }
-    .modus-accordion {
-	max-width:680px;
-	margin:40px auto;
-	}
-	.modus-accordion h2 {
-	text-align:center;
-	margin-bottom:28px;
-	}
-	details {
-	margin-bottom:17px;
-	background:#f9f8fa;
-	padding:14px;
-	border-radius:8px; 
-	box-shadow:0 2px 6px rgba(120,120,120,0.06);
-	}
-	summary {
-	font-weight: bold; 
-	color:#87402c; 
-	cursor: pointer; 
-	font-size:1.12em;
-	}
-	details[open] summary {
-	color: #2F3E50;
-	}
-	details p {
-	margin:12px 0 0 0;
-	color:#373463;
-	font-size:1.07em;
-	}
-    @media (max-width: 800px) {
-      main { padding: 16px 4vw;}
     }
 
+/* Card hover effect */
+	.card {
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
 
+	.card:hover {
+		transform: translateY(-6px) scale(1.02);
+		box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+	}
+
+/* Icon hover effect inside cards */
+	.card:hover i {
+		transform: scale(1.3);
+		color: #d35400; /* You can choose any highlight color you like */
+		transition: transform 0.3s ease, color 0.3s ease;
+	}
+
+
+    @media (max-width: 992px) {
+      main.container {
+        padding: 20px;
+      }
+    }
   </style>
 </head>
+
 <body>
 
   <!-- Header -->
   <div id="header-placeholder"></div>
-<main>
-  <div class="page-heading">Modus Operandi</div>
-  <div class="description">
-    Shri Nandkishore Sharda's intense thinking and contemplation led to a methodology for uplifting needy girl students, 
-	addressing not just financial support but also their values, confidence, and holistic well-being.
-  </div>
-  <section class="modus-accordion">
-  <details>
-    <summary>Financial Assistance</summary>
-    <p>
-      To provide financial assistance to these needy girl students, ensuring that lack of resources does not hinder their education.
-    </p>
-  </details>
-  
-  <details>
-    <summary>Inspire Human Values & Confidence</summary>
-    <p>
-      Address the girls to instill human values, boost their confidence, and strengthen their foundation by distributing inspirational literature.
-    </p>
-  </details>
-  
-  <details>
-    <summary>Awaken Curiosity Towards Education</summary>
-    <p>
-      Bhaiya ji strongly believed that curiosity towards education should be awakened. 
-	  He explained the true importance of learning beyond simply clearing exams or passing grades.
-    </p>
-  </details>
-  
-  <details>
-    <summary>Instill Compassion & Spirituality</summary>
-    <p>
-      Instill basic values in the girl students such as compassion, tolerance, positivity, gratitude to God and Nature, 
-	  and encourage selfless prayers daily for developing a well-rounded character.
-    </p>
-  </details>
-  
-  <details>
-    <summary>Promote Health, Hygiene & Well-being</summary>
-    <p>
-      Emphasize how vital health is, especially for these girls from areas with poor standards of sanitation and hygiene. 
-	  Bhaiya Shri Nandkishore Sharda advocated simple ways to be healthy — fresh air, water, sunlight, smiling, pranayama, yoga, exercise, 
-	  morning walks, and nutritious food—alongside benefits for future generations.
-    </p>
-  </details>
-  
-  <details>
-    <summary>Develop Intellect & Discretion</summary>
-    <p>
-      With foresight, Bhaiya Shri Nandkishore Sharda understood that awakening and developing intellect-discretion <b><i>(buddhi-vivek)</b></i> 
-	  is essential for girls to claim their place in society and mold their futures.
-    </p>
-  </details>
-  
-  <details>
-    <summary>Foster Duties, Rights & Good Citizenship</summary>
-    <p>
-      Encourage girls to embody both rights and duties—becoming aware, responsible citizens who carve out their own future and contribute positively to society.
-    </p>
-  </details>
-  
-  <details>
-    <summary>Synergy of Stakeholders</summary>
-    <p>
-      Recognize that lasting success comes from the combined effort of parents, teachers, and the girl students themselves. Bhaiya ji ensured the collaboration of all stakeholders in empowering these girls.
-    </p>
-  </details>
-  
-</section>
-</main>
+
+  <main class="container">
+    <h1>Modus Operandi</h1>
+    <div class="description">
+      Shri Nandkishore Sharda's intense thinking and contemplation led to a methodology for uplifting needy girl students,
+      addressing not just financial support but also their values, confidence, and holistic well-being.
+    </div>
+
+    <section class="row g-4">
+
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0 text-center p-3">
+          <i class="fa-solid fa-hand-holding-dollar fa-2x"></i>
+          <h5 class="mt-2">Financial Assistance</h5>
+          <p class="card-text">To provide financial assistance to needy girl students, ensuring that lack of resources never interrupts their education.</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0 text-center p-3">
+          <i class="fa-solid fa-seedling fa-2x"></i>
+          <h5 class=" mt-2">Inspire Human Values & Confidence</h5>
+          <p class="card-text">Instilling values, boosting confidence, and strengthening character through inspirational literature.</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0 text-center p-3">
+          <i class="fa-solid fa-lightbulb fa-2x"></i>
+          <h5 class=" mt-2">Awaken Curiosity Towards Education</h5>
+          <p class="card-text">Encouraging learning for knowledge—not just exams—so curiosity and understanding become lifelong.</p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0 text-center p-3">
+          <i class="fa-solid fa-heart fa-2x"></i>
+          <h5 class=" mt-2">Instill Compassion & Spirituality</h5>
+          <p class="card-text">Building values like compassion, tolerance, positivity, gratitude, and daily selfless prayer for inner growth.</p>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0 text-center p-3">
+          <i class="fa-solid fa-stethoscope fa-2x"></i>
+          <h5 class=" mt-2">Promote Health, Hygiene & Well-being</h5>
+          <p class="card-text">Emphasizing simple habits—air, sunlight, smiling, yoga, exercise, pranayama—to ensure physical and mental wellness.</p>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0 text-center p-3">
+          <i class="fa-solid fa-brain fa-2x"></i>
+          <h5 class=" mt-2">Develop Intellect & Discretion</h5>
+          <p class="card-text">Awakening intellect and discretion (buddhi-vivek) to help girls shape their future and claim their rightful place in society.</p>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0 text-center p-3">
+          <i class="fa-solid fa-scale-balanced fa-2x"></i>
+          <h5 class=" mt-2">Foster Duties, Rights & Good Citizenship</h5>
+          <p class="card-text">Encouraging girls to understand both their rights and duties, becoming aware and responsible citizens.</p>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0 text-center p-3">
+          <i class="fa-solid fa-people-group fa-2x"></i>
+          <h5 class=" mt-2">Synergy of Stakeholders</h5>
+          <p class="card-text">Ensuring collaboration among parents, teachers, and students—because empowerment thrives through unity.</p>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
   <!-- Footer -->
   <div id="footer-placeholder"></div>
 
-  <!-- Bootstrap and main JS -->
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/assets/js/script.js"></script>
 
-  <!-- Load partials -->
+  <!-- Load header and footer partials -->
   <script>
     async function loadHTML(id, url) {
       try {
@@ -161,6 +162,5 @@
     loadHTML('header-placeholder', 'header.html');
     loadHTML('footer-placeholder', 'footer.html');
   </script>
-
 </body>
 </html>

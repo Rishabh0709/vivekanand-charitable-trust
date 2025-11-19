@@ -49,24 +49,45 @@ body {
 }
 
 /* Main Title */
-.main-title {
-    color: #084d9b;
-    font-weight: 700;
+h2, .main-title{
+    color: var(--color-vivid-blue);
     font-size: 32px;
+	text-align: center;
+	margin-bottom: 1rem; /* Equivalent to Bootstrap's mb-3 (16px) */
+	font-weight: 700;    /* Optional: match Bootstrap h2 style */
+
 }
 
 /* === Headings === */
-h1, h2, h3, h5, .page-heading {
-  color: var(--color-vivid-blue:);
+h1, h3, .page-heading {
+  color: var(--color-vivid-blue);
   font-weight: 700;
   margin-bottom: 1rem;
   line-height: 1.2;
+  text-align: center;
+}
+
+h5 {
+	color: #99215d;
+	font-weight: 700;
+  margin-bottom: 1rem;
 }
 
 /* === Headings Spacing */
 h1 { font-size: 2.5rem;}
-h2 {font-size: 2rem;}
 h3 {font-size: 1.5rem;}
+
+/* Main container of each page */
+
+main.container {
+      padding-top: 40px;
+      padding-bottom: 60px;
+      max-width: 1000px;
+	  background: linear-gradient(135deg, #fef7de, #fff8e7);
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+	  margin: 50px auto;
+    }
 
 /* === Text Muted === */
 .text-muted {
