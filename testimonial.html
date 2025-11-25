@@ -114,7 +114,7 @@
   <div class="testimonial-video-grid category dignitaries">
     <div class="testimonial-video-card">
       <iframe src="https://drive.google.com/file/d/1qk7E-RCt39-R5tDfDzS4GiIUDALR89yj/preview" allowfullscreen></iframe>
-      <p class="caption">Prof. (Dr.) V K Bhansali</p>
+      <p class="caption">Prof. (Dr.) V K Bhansali - Former Head - MBM Engineering College</p>
     </div>
     <div class="testimonial-video-card">
       <iframe src="https://drive.google.com/file/d/1yNmIhm3my1PNBd1awJI2iqVGQRJcSb97/preview" allowfullscreen></iframe>
@@ -173,6 +173,39 @@
 }
 
   </script>
+  <script>
+document.querySelectorAll(".testimonial-video-card iframe").forEach(video => {
+  video.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const videoURL = this.getAttribute("src");
+
+    // Set the video inside the popup
+    document.getElementById("popupVideo").src = videoURL;
+
+    // Open Bootstrap modal
+    const modal = new bootstrap.Modal(document.getElementById("videoModal"));
+    modal.show();
+  });
+});
+
+// Clear video when modal closes
+document.getElementById("videoModal").addEventListener("hidden.bs.modal", function () {
+  document.getElementById("popupVideo").src = "";
+});
+</script>
+<!-- Video Popup Modal -->
+<div class="modal fade" id="videoModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <iframe id="popupVideo" width="100%" height="500" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"></button>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
 
