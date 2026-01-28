@@ -220,6 +220,37 @@
       padding: 10px;
     }
   }
+  
+  
+.section-heading h2 {
+  font-size: 2.4rem;
+  color: #074e9b;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+.section-heading h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 4px;
+  background: #ed1c24;
+  border-radius: 2px;
+}
+
+.section-heading p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
  
 <!-- -->
 </style>
@@ -340,12 +371,17 @@
 	<!--Our Vision-->
 <section class="vision-section">
   <div class="vision-container">
-    <div class="section-text">
-	 <section class="section-heading fade-in">
+  <section class="section-heading text-align-center fade-in">
 	 <h2>Our Vision</h2>
      <p class="divider"></p>
 	 </section>
-     <p>
+	 <div class="container py-2">
+    <div class="section-text row align-items-center">
+	<div class="col-md-5 vision-image">
+	 <img src="/assets/images/bhaiya_maa.jpg" alt="Founder" />
+	</div>
+     <div class="col-md-7">
+	 <p>
         To create a Trust that would support the education of girls through financial assistance while nurturing their complete, holistic development. 
 		We envision empowering young women to cultivate a broad, farsighted, and positive outlook on life, rooted in enduring human values 
 		such as generosity, tolerance, compassion, and love. By fostering self-reliance, self-confidence, and steadfast commitment to their aspirations, 
@@ -353,16 +389,16 @@
 		lead joyful and purposeful lives, and ultimately emerge as responsible, enlightened, 
 		and invaluable contributors to the nation — guided by a harmonious balance between individual rights and responsibilities.
       </p>
+	 </div>
+	  
     </div>
-    <div class="vision-image">
-      <img src="/assets/images/bhaiya_maa.jpg" alt="Founder" />
     </div>
   </div>
 </section>
 <style>
 .vision-section {
   background: linear-gradient(135deg, #fef7de, #fff8e7);
-  padding: 80px 10%;
+  padding: 20px 5px;
 }
 .section-heading .divider {
   font-size: 1.5rem;
@@ -373,7 +409,7 @@
 .vision-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -422,8 +458,232 @@
 </style>
 
 
+<section class="mission-section fade-in">
 
+  <h2 class="mission-title">Our Mission</h2>
+  <p class="mission-subtitle">
+    Empowering girls through education, values, and self-reliance
+  </p>
+
+  <div class="mission-cards">
+
+    <!-- Card 1 -->
+    <div class="mission-card">
+      <div class="mission-icon">🎓</div>
+      <h3>Education Without Barriers</h3>
+      <p>
+        Ensuring that no girl studying in government or community-supported
+        schools is deprived of education due to financial constraints,
+        irrespective of caste, community, or religion.
+      </p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="mission-card">
+      <div class="mission-icon">🌱</div>
+      <h3>Holistic Development</h3>
+      <p>
+        Through regular school visits and inspiring interactions,
+        we nurture self-respect, confidence, dignity, human values,
+        and a positive outlook—guiding girls toward a self-reliant
+        and meaningful life.
+      </p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="mission-card">
+      <div class="mission-icon">🤝</div>
+      <h3>Cycle of Service</h3>
+      <p>
+        We inspire girls to begin their day with prayer, pursue education
+        with determination, and, once independent, support other needy
+        sisters—continuing this sacred cycle of knowledge and service.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+<style>
+.mission-section {
+  padding: 4.5rem 1.5rem;
+  background: linear-gradient(135deg, #fffdf6, #fff7eb);
+  text-align: center;
+}
+
+.mission-title {
+  font-size: 2.2rem;
+  color: var(--primary-color, #6b2d2d);
+  margin-bottom: 0.6rem;
+}
+
+.mission-subtitle {
+  font-size: 1.05rem;
+  color: #555;
+  max-width: 650px;
+  margin: 0 auto 3rem;
+}
+
+.mission-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.mission-card {
+  background: #fff;
+  padding: 2.2rem 1.8rem;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.mission-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.12);
+}
+
+.mission-icon {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.mission-card h3 {
+  color: var(--primary-color, #6b2d2d);
+  margin-bottom: 0.8rem;
+}
+
+.mission-card p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mission-title {
+    font-size: 1.8rem;
+  }
+}
+
+</style>
 	
+
+<section class="mission-section">
+  <div class="section-heading text-align-center">
+    <h2>Our Mission</h2>
+    <p class="divider"></p>
+	<h5 class="text-center fst-italic mb-4" style="font-size: 1.05rem; color: #99215D;">
+	Empowering girls through education, values, and self-reliance
+	</h5>
+  </div>
+
+  <div class="mission-grid">
+
+    <!-- Mission 1 -->
+    <article class="mission-card">
+      <figure class="mission-image">
+        <img src="/assets/images/girls.png" alt="Providing education support to girls">
+      </figure>
+      <h3>Education Without Discrimination</h3>
+      <p>
+        We ensure that no girl studying in any government or community-run 
+        school adopted by us is deprived of education due to financial constraints,
+        irrespective of her caste, community, or religion.
+      </p>
+    </article>
+
+    <!-- Mission 2 -->
+    <article class="mission-card">
+      <figure class="mission-image">
+        <img src="/assets/images/main_page5.jpg" alt="Trust members interacting with students">
+      </figure>
+      <h3>Holistic Development & Self-Belief</h3>
+      <p>
+        Through regular school visits and inspiring interactions,
+        we nurture self-respect, confidence, dignity, and core human
+        values — guiding girls toward a self-reliant and purposeful life.
+      </p>
+    </article>
+
+    <!-- Mission 3 -->
+    <article class="mission-card">
+      <figure class="mission-image">
+        <img src="/assets/images/f6.jpg" alt="Spiritual and value-based guidance">
+      </figure>
+      <h3>Cycle of Gratitude & Service</h3>
+      <p>
+        To nuture core values, Shri Nandkishore Sharda inspire girls to pray daily, pursue education with determination,
+        and once independent, support other needy sisters—continuing this
+        sacred Gyan Yagna of service and belonging.
+      </p>
+    </article>
+
+  </div>
+</section>
+<style>
+.mission-section {
+  background: #fffaf0;
+  padding: 50px ;
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.mission-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mission-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.mission-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.mission-card h3 {
+  padding: 10px;
+  font-size: 1.25rem;
+  color: #6b4f1d;
+}
+
+.mission-card p {
+  padding: 0 10px;
+  color: #444;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  align-items: justify;
+  
+}
+
+</style>
+  
   <!-- Carousel -->
   <div class="container mt-5">
     <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="hover">
@@ -762,8 +1022,16 @@ font-size: 1rem;
       <img src="/assets/images/book-01.png" alt="Our Guiding Principles">
       <h3>Our Guiding Principles</h3>
       <p>
-        Rooted in service and faith, our principles uphold equality, humility, and devotion
-        towards the upliftment of humanity.
+       <!-- Inspired by divine compassion and guided by eternal values and a spirit of selfless service, the Trust is devoted to ensuring that 
+		every girl receives the light of education along with dignity, self-respect, and inner strength. Beyond financial assistance, 
+		the Trust nurtures faith, compassion, and essential human values, enabling the holistic blossoming of mind, personality, character,
+		and outlook on life. Through sincere service, need-based support, and minimal administrative burden, the Trust strives to serve with 
+		purity of intent—allowing every contribution to become a sacred offering in the journey of 
+		transforming young lives and nurturing their future -->
+		Guided by divine compassion and eternal values, the Trust is devoted to ensuring that every girl receives the light of education 
+		with dignity and self-respect. Through faith, compassion, and essential human values, we nurture the holistic development of mind, 
+		character, and personality. With sincere service, need-based support, and minimal administrative burden, every contribution 
+		becomes a sacred offering toward shaping enlightened and empowered futures.
       </p>
       <a href="./principles.html" class="read-more">Read More</a>
     </div>
