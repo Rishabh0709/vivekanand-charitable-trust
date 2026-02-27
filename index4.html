@@ -27,81 +27,6 @@
   .text-muted { color: #99215d }
 
 
-<!-- CSS for 2nd sample of trust at glance -->
-
-.transformation {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  padding: 50px 20px;
-  background: #fdfdfd;
-}
-
-.transformation .images {
-  display: flex;
-  align-items: center;      /* vertically align text with images */
-  justify-content: center;  /* space them evenly */
-  gap: 2rem;                /* consistent spacing between items */
-  flex-wrap: wrap;          /* makes it responsive */
-  text-align: center;
-}
-
-.transformation .images img {  
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 350px;  /* keep image sizes consistent */
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.transformation .content {
-  flex: 1;                  /* take remaining space */
-  min-width: 250px;         /* prevent collapsing on small screens */
-}
-
-.transformation ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-
-.card-title {
-  text-align: center;
-}
-
-.card-text{
-  text-align: justify;
-}
-
-
-.images .content {
-  flex: 2;
-  text-align: left;
-  padding: 20px;
-}
-
-.images .content h2 {
-  margin-bottom: 15px;
-  font-size: 1.8rem;
-  color: #444;
-}
-
-.images .content p {
-  font-size: 1rem;
-  margin-bottom: 12px;
-  color: #555;
-}
-
-.caption {
-  margin-top: 10px;
-  font-weight: bold;
-  color: #333;
-  text-align: center;
-}
-
 /* Fade-in animation */
 .fade-in {
   opacity: 0;
@@ -159,29 +84,6 @@
       animation: fadeInUp 2s ease-in-out;
     }
 
-    .btn {
-      padding: 12px 28px;
-      margin: 8px;
-      border-radius: 25px;
-      border: 2px solid #b45309;
-      background-color: #b45309;
-      color: white;
-      font-weight: 500;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .btn.outline {
-      background: transparent;
-      color: #b45309;
-    }
-
-    .btn:hover {
-	  color : white;
-	  background-color: #b45309;
-      transform: translateY(-3px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
 
 @media (max-width: 768px) {
   .hero h1 { font-size: 2.2rem; }
@@ -259,12 +161,7 @@
   <div id="header-placeholder"></div>
 
 <!-- Main content starts from here -->
-<!-- Trust Name and About -->
-<section class="hero">
-  <h1>Swami Vivekanand Students’ Welfare Charitable Trust</h1>
-  <p>Blending education with <i>sanskar</i> for true women empowerment </p>
-  <button class="btn">Know More</button>
-</section>
+
 <!--
 <section class="spiritual-quote">
   <div class="quote-container">
@@ -278,47 +175,35 @@
     <img src="/assets/images/girls.png" alt="Education for girls">
   </div>
 -->  
-
 <section class="spiritual-quote">
-  <div class="overlay"></div>
   <div class="quote-container">
     <p class="quote-text">
       Every girl deserves the light of education, none should be deprived of it because of poverty.
     </p>
   </div>
 </section>
+<!-- Trust Name and About -->
+<section class="hero">
+  <h1>Swami Vivekanand Students’ Welfare Charitable Trust</h1>
+  <p>Blending education with <i>sanskar</i> for true women empowerment </p>
+  <!--<button class="btn">Know More</button>-->
+</section>
+
 <!-- HERO SECTION -->
-<section class="hero-section d-flex align-items-center" style="background: linear-gradient(135deg,#fff2e6,#fef7de); min-height: 100vh; position: relative; overflow: hidden;">
+<section class="hero-section d-flex align-items-center" style="background: linear-gradient(135deg,#fff2e6,#fef7de); 
+				padding: 50px 0; position: relative; overflow: hidden;">
   <div class="container">
     <div class="row align-items-center">
 	<p><b>Swami Vivekanand Students’ Welfare Charitable Trust</b> was founded on 10th June 1996 by <b>Kumari Basanti Manihar</b> 
 	and <b>Shri Nandkishore Sharda</b> with the divine grace of <i>Jagatjanani Maa Tripursundari</i>. 
 	<b>Kumari Madhubala Advani</b> joined the trust at its inception as a selfless grassroots worker under Shri Sharda’s leadership.</p>
-
-      <!-- Left Column: Text -->
-      <div class="col-lg-6">
-        <div class="hero-text">
-
-          <p>Girl's education was one of the most pressing needs, especially in Western Rajasthan, where girls were often seen as a burden due to poverty and illiteracy.</p>
-
-          <p">To change this reality, this <b>trust</b> laid the foundation of <b>women empowerment</b> by extending education and support to <b>underprivileged girls</b>. These girls, once surrounded by poverty and despair, found a new path through the Trust’s care and guidance.</p>
-
-          <p">Through education and moral nurturing, they have discovered <b>strength, self-worth, and a new light of hope</b>.</p>
-
-          <a href="./about_us.html" class="btn btn-primary mt-3 fade-in delay-4">Learn About Our Mission</a>
-        </div>
-      </div>
-
-      <!-- Right Column: Image -->
-      <div class="col-lg-6 text-center">
-        <img src="/assets/images/hopeless_vs_joyful.jpg" alt="Girls Learning" class="img-fluid rounded shadow-lg fade-in delay-2">
-      </div>
-
-    </div>
+	<p>Girl's education was one of the most pressing needs, especially in Western Rajasthan, where girls were often seen as a burden due to 
+	poverty and illiteracy. To change this reality, this <b>trust</b> laid the foundation of <b>women empowerment</b> by extending 
+	education and support to <b>underprivileged girls</b>. These girls, once surrounded by poverty and despair, found a new path through 
+	the Trust’s care and guidance.</p>
+	<p>Through education and moral nurturing, they have discovered <b>strength, self-worth, and a new light of hope</b>.</p>
+	</div>
   </div>
-
-  <!-- Optional spiritual motif overlay -->
-  <div class="overlay-motif"></div>
 </section>
 <style>
 .p {
@@ -327,43 +212,8 @@
   line-height: 1.6;
 }
 
-/* Button styling */
-.hero-text .btn-primary {
-  background-color: #ed1c24;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-}
-
-.hero-text .btn-primary:hover {
-  background-color: #074e9b;
-  color: #fff;
-  transform: translateY(-2px);
-}
-
 @keyframes fadeInUp {
   to { opacity: 1; transform: translateY(0); }
-}
-
-/* Optional overlay motif (like a faint mandala/lotus) */
-.overlay-motif {
-  position: absolute;
-  top: 10%;
-  right: 5%;
-  width: 200px;
-  height: 200px;
-  background: url('/assets/images/mandala.png') no-repeat center center;
-  background-size: contain;
-  opacity: 0.05;
-  pointer-events: none;
-}
-
-/* Responsive adjustments */
-@media (max-width: 992px) {
-  .hero-text { max-width: 100%; text-align: center; }
-  .col-lg-6 { text-align: center !important; margin-bottom: 1.5rem; }
 }
 
 </style>
@@ -455,133 +305,7 @@
     width: 260px;
   }
 }
-</style>
-
-
-<section class="mission-section fade-in">
-
-  <h2 class="mission-title">Our Mission</h2>
-  <p class="mission-subtitle">
-    Empowering girls through education, values, and self-reliance
-  </p>
-
-  <div class="mission-cards">
-
-    <!-- Card 1 -->
-    <div class="mission-card">
-      <div class="mission-icon">🎓</div>
-      <h3>Education Without Barriers</h3>
-      <p>
-        Ensuring that no girl studying in government or community-supported
-        schools is deprived of education due to financial constraints,
-        irrespective of caste, community, or religion.
-      </p>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="mission-card">
-      <div class="mission-icon">🌱</div>
-      <h3>Holistic Development</h3>
-      <p>
-        Through regular school visits and inspiring interactions,
-        we nurture self-respect, confidence, dignity, human values,
-        and a positive outlook—guiding girls toward a self-reliant
-        and meaningful life.
-      </p>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="mission-card">
-      <div class="mission-icon">🤝</div>
-      <h3>Cycle of Service</h3>
-      <p>
-        We inspire girls to begin their day with prayer, pursue education
-        with determination, and, once independent, support other needy
-        sisters—continuing this sacred cycle of knowledge and service.
-      </p>
-    </div>
-
-  </div>
-
-</section>
-<style>
-.mission-section {
-  padding: 4.5rem 1.5rem;
-  background: linear-gradient(135deg, #fffdf6, #fff7eb);
-  text-align: center;
-}
-
-.mission-title {
-  font-size: 2.2rem;
-  color: var(--primary-color, #6b2d2d);
-  margin-bottom: 0.6rem;
-}
-
-.mission-subtitle {
-  font-size: 1.05rem;
-  color: #555;
-  max-width: 650px;
-  margin: 0 auto 3rem;
-}
-
-.mission-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.mission-card {
-  background: #fff;
-  padding: 2.2rem 1.8rem;
-  border-radius: 18px;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.mission-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.12);
-}
-
-.mission-icon {
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-}
-
-.mission-card h3 {
-  color: var(--primary-color, #6b2d2d);
-  margin-bottom: 0.8rem;
-}
-
-.mission-card p {
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: #444;
-}
-
-/* Fade-in animation */
-.fade-in {
-  opacity: 0;
-  transform: translateY(35px);
-  transition: all 0.8s ease;
-}
-
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .mission-title {
-    font-size: 1.8rem;
-  }
-}
-
-</style>
-	
+</style>	
 
 <section class="mission-section">
   <div class="section-heading text-align-center">
@@ -597,7 +321,7 @@
     <!-- Mission 1 -->
     <article class="mission-card">
       <figure class="mission-image">
-        <img src="/assets/images/girls.png" alt="Providing education support to girls">
+        <img src="/assets/images/scholarship3.jpg" alt="Providing education support to girls">
       </figure>
       <h3>Education Without Discrimination</h3>
       <p>
@@ -610,7 +334,7 @@
     <!-- Mission 2 -->
     <article class="mission-card">
       <figure class="mission-image">
-        <img src="/assets/images/main_page5.jpg" alt="Trust members interacting with students">
+        <img src="/assets/images/school_visit.jpg" alt="Trust members interacting with students">
       </figure>
       <h3>Holistic Development & Self-Belief</h3>
       <p>
@@ -623,11 +347,11 @@
     <!-- Mission 3 -->
     <article class="mission-card">
       <figure class="mission-image">
-        <img src="/assets/images/f6.jpg" alt="Spiritual and value-based guidance">
+        <img src="/assets/images/f4.jpg" alt="Spiritual and value-based guidance">
       </figure>
       <h3>Cycle of Gratitude & Service</h3>
       <p>
-        To nuture core values, Shri Nandkishore Sharda inspire girls to pray daily, pursue education with determination,
+        To nuture core values, we inspire girls to pray daily, pursue education with determination,
         and once independent, support other needy sisters—continuing this
         sacred Gyan Yagna of service and belonging.
       </p>
@@ -637,8 +361,22 @@
 </section>
 <style>
 .mission-section {
-  background: #fffaf0;
+  background: linear-gradient(135deg, #fffdf6, #fff7eb);
+  text-align: center;
   padding: 50px ;
+}
+
+.mission-title {
+  font-size: 2.2rem;
+  color: var(--primary-color, #6b2d2d);
+  margin-bottom: 0.6rem;
+}
+
+.mission-subtitle {
+  font-size: 1.05rem;
+  color: #555;
+  max-width: 650px;
+  margin: 0 auto 3rem;
 }
 
 .mission-grid {
@@ -661,9 +399,10 @@
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
 }
 
+
 .mission-image img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: contain;
 }
 
@@ -682,7 +421,223 @@
   
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+  .mission-title {
+    font-size: 1.8rem;
+  }
+}
+
 </style>
+<!-- ~~~~~~~~~~~~~~~~ Our Objectives And Priciples ~~~~~~~~~~~~~~~~   -->
+
+<section class="pillars-section">
+  <div class="section-heading">
+    <h2>Foundations of Our Trust</h2>
+    <p>
+      Each initiative of our Trust is built on strong values — guiding us from vision to impact.
+    </p>
+  </div>
+
+  <div class="pillars-container">
+    <!-- Subsection 1 -->
+    <div class="pillar-card">
+      <img src="/assets/images/cc2.jpg" alt="Our Objectives">
+      <h3>Our Objectives</h3>
+      <p>
+        <!--We strive to ensure that every deserving girl receives education, moral guidance, and
+        support to lead a life of dignity and purpose.-->
+		The Trust humbly nurtures young minds through education, inner balance, and noble character. 
+		With gentle guidance, self-belief, and reverence for nature, we awaken true empowerment — where learning becomes light, 
+		life finds harmony, and dignity blossoms within.
+      </p>
+      <a href="./objectives.html" class="read-more">Read More</a>
+    </div>
+
+    <!-- Subsection 2 -->
+    <div class="pillar-card">
+      <img src="/assets/images/book-01.png" alt="Our Guiding Principles">
+      <h3>Our Guiding Principles</h3>
+      <p>
+       <!-- Inspired by divine compassion and guided by eternal values and a spirit of selfless service, the Trust is devoted to ensuring that 
+		every girl receives the light of education along with dignity, self-respect, and inner strength. Beyond financial assistance, 
+		the Trust nurtures faith, compassion, and essential human values, enabling the holistic blossoming of mind, personality, character,
+		and outlook on life. Through sincere service, need-based support, and minimal administrative burden, the Trust strives to serve with 
+		purity of intent—allowing every contribution to become a sacred offering in the journey of 
+		transforming young lives and nurturing their future -->
+		<!-- Guided by divine compassion and eternal values, the Trust is devoted to ensuring that every girl receives the light of education 
+		with dignity and self-respect. Through faith, compassion, and essential human values, we nurture the holistic development of mind, 
+		character, and personality. With sincere service, need-based support, and minimal administrative burden, every contribution 
+		becomes a sacred offering toward shaping enlightened and empowered futures. -->
+		Guided by divine compassion and eternal values, the Trust serves as a sacred medium for educating girls with dignity. 
+		Through faith, service, and need-based support, every contribution becomes an offering toward nurturing enlightened, confident, 
+		and empowered futures.
+      </p>
+      <a href="./principles.html" class="read-more">Read More</a>
+    </div>
+  </div>
+</section>
+<style>
+.pillars-section {
+  background: linear-gradient(135deg, #fff8e7, #fef7de);
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.section-heading h2 {
+  font-size: 2.4rem;
+  color: #074e9b;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+.section-heading h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 4px;
+  background: #ed1c24;
+  border-radius: 2px;
+}
+
+.section-heading p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.pillars-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.pillar-card {
+  flex: 1;
+  min-width: 300px;
+  background: #ffffffcc;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 30px 20px;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(6px);
+  position: relative;
+  overflow: hidden;
+  max-width: 420px;
+  min-width: 300px;
+}
+.pillar-card p {
+    text-align: justify; /* ensures text is justified */
+    text-justify: inter-word; /* better spacing in most browsers */
+    line-height: 1.7; 
+    word-wrap: break-word;
+	text-align-last: left; /* last line aligns left */
+	color: #333;
+	font-size: 1rem;
+	margin-bottom: 20px;
+}
+
+
+.pillar-card h3,
+.pillar-card p,
+.read-more {
+  position: relative;
+  z-index: 1;
+}
+
+.pillar-card h3 {
+  color: #074e9b;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.pillar-card p {
+  
+}
+
+
+/* Spiritual Glow on Hover */
+.pillar-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 120%, 
+    rgba(255, 200, 100, 0.3), 
+    rgba(255, 180, 70, 0.2), 
+    transparent 80%);
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+  z-index: 0;
+}
+
+.pillar-card:hover::before {
+  opacity: 1;
+  animation: auraPulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes auraPulse {
+  0% {
+    box-shadow: 0 0 20px rgba(255, 215, 120, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 60px rgba(255, 180, 70, 0.7);
+  }
+}
+
+.pillar-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 30px rgba(255, 200, 100, 0.5);
+}
+
+.pillar-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(255, 220, 150, 0.4);
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.read-more {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #ed1c24;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.read-more:hover {
+  background: #074e9b;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .pillars-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .pillar-card {
+    max-width: 400px;
+  }
+}
+
+</style>
+
+
+
   
   <!-- Carousel -->
   <div class="container mt-5">
@@ -802,32 +757,6 @@ font-size: 1rem;
     <div class="trust-card">
       <div class="trust-card-inner">
         <div class="trust-card-front">
-          <img src="/assets/images/girls2.png" alt="Education">
-        </div>
-        <div class="trust-card-back">
-          <p>No girl should ever be deprived of education for want of money. Regardless of marks, religion, or background, every deserving child is given a chance to learn and dream. Financial help is extended purely on the basis of need, ensuring every girl continues her journey with dignity.</p>
-        </div>
-      </div>
-      <h5 class="trust-card-title">📚 Education for Every Girl</h5>
-    </div>
-
-	<!-- Card 2 -->
-    <div class="trust-card">
-      <div class="trust-card-inner">
-        <div class="trust-card-front">
-          <img src="/assets/images/girl_speech.jpg" alt="Faith">
-        </div>
-        <div class="trust-card-back">
-          <p>The Trust transforms fear into faith and uncertainty into confidence — empowering girls to live with courage, dignity, and purpose.</p>
-        </div>
-      </div>
-      <h5 class="trust-card-title">🕊️ From Fear to Faith</h5>
-    </div>
-
-	<!-- Card 3 -->
-    <div class="trust-card">
-      <div class="trust-card-inner">
-        <div class="trust-card-front">
           <img src="/assets/images/scholarship_2.jpg" alt="Dignity">
         </div>
         <div class="trust-card-back">
@@ -837,7 +766,7 @@ font-size: 1rem;
       <h5 class="trust-card-title">💸🎓 Every Rupee for Education</h5>
     </div>
 	
-    <!-- Card 4 -->
+    <!-- Card 2 -->
     <div class="trust-card">
       <div class="trust-card-inner">
         <div class="trust-card-front">
@@ -850,7 +779,7 @@ font-size: 1rem;
       <h5 class="trust-card-title">💫 Not Charity, But Her Rightful Share</h5>
     </div>
 
-    <!-- Card 5 -->
+    <!-- Card 3 -->
     <div class="trust-card">
       <div class="trust-card-inner">
         <div class="trust-card-front">
@@ -864,22 +793,19 @@ font-size: 1rem;
       </div>
       <h5 class="trust-card-title">🌱 Nurturing Hearts and Minds</h5>
     </div>
-	
-	<!-- Card 6 -->
+	<!-- Card 4 -->
     <div class="trust-card">
       <div class="trust-card-inner">
         <div class="trust-card-front">
-          <img src="/assets/images/f6.jpg" alt="Nurture">
+          <img src="/assets/images/girl_speech.jpg" alt="Faith">
         </div>
         <div class="trust-card-back">
-          <p>To nurture core values, girls are inspired to embrace <b>3 sacred resolutions</b>—simple yet transformative steps toward inner and outer growth:
-		  <br>🙏<b><i>Faith:</i></b> Offer daily prayers with selfless devotion and gratitude for atleast 10 mins.
-		  <br>🎯<b><i>Focus:</i></b> Pursue academic goals with dedication and discipline.
-		  <br>❤️<b><i>Fulfillment:</i></b> Give back by supporting other sisters, fostering compassion and belonging.</p>
+          <p>The Trust transforms fear into faith and uncertainty into confidence — empowering girls to live with courage, dignity, and purpose.</p>
         </div>
       </div>
-      <h5 class="trust-card-title">🪔 The Sacred Commitments that Shape Character</h5>
-    </div>	
+      <h5 class="trust-card-title">🕊️ From Fear to Faith</h5>
+    </div>
+	
   </div>
 </section>
 
@@ -997,195 +923,6 @@ font-size: 1rem;
 </section>
 
 
-<section class="pillars-section">
-  <div class="section-heading">
-    <h2>Foundations of Our Mission</h2>
-    <p>
-      Each initiative of our Trust is built on strong values — guiding us from vision to impact.
-    </p>
-  </div>
-
-  <div class="pillars-container">
-    <!-- Subsection 1 -->
-    <div class="pillar-card">
-      <img src="/assets/images/cc2.jpg" alt="Our Objectives">
-      <h3>Our Objectives</h3>
-      <p>
-        We strive to ensure that every deserving girl receives education, moral guidance, and
-        support to lead a life of dignity and purpose.
-      </p>
-      <a href="./objectives.html" class="read-more">Read More</a>
-    </div>
-
-    <!-- Subsection 2 -->
-    <div class="pillar-card">
-      <img src="/assets/images/book-01.png" alt="Our Guiding Principles">
-      <h3>Our Guiding Principles</h3>
-      <p>
-       <!-- Inspired by divine compassion and guided by eternal values and a spirit of selfless service, the Trust is devoted to ensuring that 
-		every girl receives the light of education along with dignity, self-respect, and inner strength. Beyond financial assistance, 
-		the Trust nurtures faith, compassion, and essential human values, enabling the holistic blossoming of mind, personality, character,
-		and outlook on life. Through sincere service, need-based support, and minimal administrative burden, the Trust strives to serve with 
-		purity of intent—allowing every contribution to become a sacred offering in the journey of 
-		transforming young lives and nurturing their future -->
-		Guided by divine compassion and eternal values, the Trust is devoted to ensuring that every girl receives the light of education 
-		with dignity and self-respect. Through faith, compassion, and essential human values, we nurture the holistic development of mind, 
-		character, and personality. With sincere service, need-based support, and minimal administrative burden, every contribution 
-		becomes a sacred offering toward shaping enlightened and empowered futures.
-      </p>
-      <a href="./principles.html" class="read-more">Read More</a>
-    </div>
-  </div>
-</section>
-<style>
-.pillars-section {
-  background: linear-gradient(135deg, #fff8e7, #fef7de);
-  padding: 80px 10%;
-  text-align: center;
-}
-
-.section-heading h2 {
-  font-size: 2.4rem;
-  color: #074e9b;
-  font-weight: 700;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  position: relative;
-  display: inline-block;
-}
-
-.section-heading h2::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90px;
-  height: 4px;
-  background: #ed1c24;
-  border-radius: 2px;
-}
-
-.section-heading p {
-  font-size: 1.1rem;
-  color: #444;
-  margin-top: 20px;
-  margin-bottom: 50px;
-}
-
-.pillars-container {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.pillar-card {
-  flex: 1;
-  min-width: 300px;
-  background: #ffffffcc;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  padding: 30px 20px;
-  transition: all 0.4s ease;
-  backdrop-filter: blur(6px);
-  position: relative;
-  overflow: hidden;
-  max-width: 420px;
-}
-
-/* Spiritual Glow on Hover */
-.pillar-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 120%, 
-    rgba(255, 200, 100, 0.3), 
-    rgba(255, 180, 70, 0.2), 
-    transparent 80%);
-  opacity: 0;
-  transition: opacity 0.6s ease-in-out;
-  z-index: 0;
-}
-
-.pillar-card:hover::before {
-  opacity: 1;
-  animation: auraPulse 3s ease-in-out infinite alternate;
-}
-
-@keyframes auraPulse {
-  0% {
-    box-shadow: 0 0 20px rgba(255, 215, 120, 0.4);
-  }
-  100% {
-    box-shadow: 0 0 60px rgba(255, 180, 70, 0.7);
-  }
-}
-
-.pillar-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 30px rgba(255, 200, 100, 0.5);
-}
-
-.pillar-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 0 25px rgba(255, 220, 150, 0.4);
-  margin-bottom: 20px;
-  position: relative;
-  z-index: 1;
-}
-
-.pillar-card h3,
-.pillar-card p,
-.read-more {
-  position: relative;
-  z-index: 1;
-}
-
-.pillar-card h3 {
-  color: #074e9b;
-  font-size: 1.4rem;
-  margin-bottom: 15px;
-}
-
-.pillar-card p {
-  color: #333;
-  font-size: 1rem;
-  line-height: 1.7;
-  margin-bottom: 20px;
-}
-
-.read-more {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #ed1c24;
-  color: #fff;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.read-more:hover {
-  background: #074e9b;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .pillars-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .pillar-card {
-    max-width: 400px;
-  }
-}
-
-</style>
-
 <section class="founders-section">
 
   <div class="section-heading"><h2>The Pillars of Our Mission</h2></div>
@@ -1213,7 +950,7 @@ font-size: 1rem;
         By harmoniously integrating knowledge, devotion, and selfless action in his own life, he set a powerful ideal that inspired 
 		and transformed the lives of thousands, ushering in the auspicious beginning of a new era.
       </p>
-      <a href="/founders/nandkishor-sharda" class="know-more-btn">Know More</a>
+      <a href="./bhaiyaji.html" class="know-more-btn">Know More</a>
     </div>
   </div>
 
@@ -1236,7 +973,7 @@ font-size: 1rem;
 		values, and spirituality in the lives of thousands of students—especially girls—so that they might grow into responsible and 
 		capable citizens. Bhaiyaji and Mother Basanti Ji were true pioneers of women’s empowerment.
       </p>
-      <a href="/founders/maa-basanti" class="know-more-btn">Know More</a>
+      <a href="./basanti_maa.html" class="know-more-btn">Know More</a>
     </div>
   </div>
 
@@ -1259,7 +996,7 @@ font-size: 1rem;
 		associated with “Manidweep” through spiritual discourses, distributing food grains to the needy, and running free yoga classes 
 		and a tailoring center, among other service initiatives.
       </p>
-      <a href="/founders/madhu-maa" class="know-more-btn">Know More</a>
+      <a href="./madhu_maa.html" class="know-more-btn">Know More</a>
     </div>
   </div>
 
@@ -1318,7 +1055,7 @@ font-size: 1rem;
   display: flex;
   align-items: center;
   gap: 2.5rem;
-  padding: 2.5rem;
+  padding: 1rem;
   margin-bottom: 2rem;
   border-radius: 16px;
 
@@ -1334,7 +1071,7 @@ font-size: 1rem;
 
 /* Backgrounds */
 .founders-section {
-  background: linear-gradient(135deg, #f6e1c3, #fff0da);
+  background: #fffaf0; /*linear-gradient(135deg, #f6e1c3, #fff0da); */
   
  } 
 .bg-founder-1 {
