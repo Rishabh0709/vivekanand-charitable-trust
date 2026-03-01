@@ -180,6 +180,11 @@ main.container {
 background-color: var(--color-warm-bg);
 }
 
+p {
+	 text-align: justify;
+    text-justify: inter-word;
+}
+	
 
 /* @media (max-width: 768px) {
   .header-wrapper {

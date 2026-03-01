@@ -184,13 +184,13 @@
 </section>
 <!-- Trust Name and About -->
 <section class="hero">
-  <h1>Swami Vivekanand Students’ Welfare Charitable Trust</h1>
-  <p>Blending education with <i>sanskar</i> for true women empowerment </p>
-  <!--<button class="btn">Know More</button>-->
+  <h1>
+    Swami Vivekanand Students’ Welfare Charitable Trust
+    <span class="tagline" style="color:red">A Ray Of Hope...</span>
+  </h1>
 </section>
-
 <!-- HERO SECTION -->
-<section class="hero-section d-flex align-items-center" style="background: linear-gradient(135deg,#fff2e6,#fef7de); 
+<section class="hero-section d-flex align-items-center" style=" 
 				padding: 50px 0; position: relative; overflow: hidden;">
   <div class="container">
     <div class="row align-items-center">
@@ -206,12 +206,26 @@
   </div>
 </section>
 <style>
-.p {
-  max-width: 700px;
-  font-size: clamp(1rem, 1.5vw, 1.25rem);
-  line-height: 1.6;
+.hero {
+  text-align: center;   /* keeps the heading centered */  
+}
+.hero h1 {
+  position: relative;
+  display: inline-block; 
+  text-align: center;
+  padding-bottom: 10px; /* extra space below headline */
 }
 
+.tagline {
+  position: absolute;
+  bottom: -28px;   /* shifts tagline downward */
+  right: 0;        /* keeps it aligned to the right edge */
+  font-size: 0.5em;
+  font-weight: 300;
+  font-style: italic;
+  white-space: nowrap;
+  opacity: 0.9;
+}
 @keyframes fadeInUp {
   to { opacity: 1; transform: translateY(0); }
 }
@@ -431,17 +445,18 @@
 </style>
 <!-- ~~~~~~~~~~~~~~~~ Our Objectives And Priciples ~~~~~~~~~~~~~~~~   -->
 
-<section class="pillars-section">
-  <div class="section-heading">
+<section class="foundation-section">
+  <div class="section-heading text-align-center">
     <h2>Foundations of Our Trust</h2>
-    <p>
-      Each initiative of our Trust is built on strong values — guiding us from vision to impact.
-    </p>
+    <p class="divider"></p>
+	<h5 class="text-center fst-italic mb-4" style="font-size: 1.05rem; color: #99215D;">
+	Each initiative of our Trust is built on strong values — guiding us from vision to impact.
+	</h5>
   </div>
 
-  <div class="pillars-container">
+  <div class="foundation-container">
     <!-- Subsection 1 -->
-    <div class="pillar-card">
+    <div class="foundation-card">
       <img src="/assets/images/cc2.jpg" alt="Our Objectives">
       <h3>Our Objectives</h3>
       <p>
@@ -455,8 +470,8 @@
     </div>
 
     <!-- Subsection 2 -->
-    <div class="pillar-card">
-      <img src="/assets/images/book-01.png" alt="Our Guiding Principles">
+    <div class="foundation-card">
+      <img src="/assets/images/girls2.png" alt="Our Guiding Principles">
       <h3>Our Guiding Principles</h3>
       <p>
        <!-- Inspired by divine compassion and guided by eternal values and a spirit of selfless service, the Trust is devoted to ensuring that 
@@ -478,7 +493,7 @@
   </div>
 </section>
 <style>
-.pillars-section {
+.foundation-section {
   background: linear-gradient(135deg, #fff8e7, #fef7de);
   padding: 80px 10%;
   text-align: center;
@@ -513,14 +528,14 @@
   margin-bottom: 50px;
 }
 
-.pillars-container {
+.foundation-container {
   display: flex;
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
 }
 
-.pillar-card {
+.foundation-card {
   flex: 1;
   min-width: 300px;
   background: #ffffffcc;
@@ -534,7 +549,7 @@
   max-width: 420px;
   min-width: 300px;
 }
-.pillar-card p {
+.foundation-card p {
     text-align: justify; /* ensures text is justified */
     text-justify: inter-word; /* better spacing in most browsers */
     line-height: 1.7; 
@@ -546,26 +561,26 @@
 }
 
 
-.pillar-card h3,
-.pillar-card p,
+.foundation-card h3,
+.foundation-card p,
 .read-more {
   position: relative;
   z-index: 1;
 }
 
-.pillar-card h3 {
+.foundation-card h3 {
   color: #074e9b;
   font-size: 1.4rem;
   margin-bottom: 15px;
 }
 
-.pillar-card p {
+.foundation-card p {
   
 }
 
 
 /* Spiritual Glow on Hover */
-.pillar-card::before {
+.foundation-card::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -578,7 +593,7 @@
   z-index: 0;
 }
 
-.pillar-card:hover::before {
+.foundation-card:hover::before {
   opacity: 1;
   animation: auraPulse 3s ease-in-out infinite alternate;
 }
@@ -592,12 +607,12 @@
   }
 }
 
-.pillar-card:hover {
+.foundation-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 0 30px rgba(255, 200, 100, 0.5);
 }
 
-.pillar-card img {
+.foundation-card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
@@ -625,11 +640,11 @@
 
 /* Responsive */
 @media (max-width: 900px) {
-  .pillars-container {
+  .foundation-container {
     flex-direction: column;
     align-items: center;
   }
-  .pillar-card {
+  .foundation-card {
     max-width: 400px;
   }
 }
@@ -691,242 +706,386 @@
   </div>
   
 <!-- The Spirit of Our Trust -->
-<section class="container my-5 text-center">
+<section class="trust-premium-section my-5 text-center">
   <!--<h2 class="mb-5" style= "font-weight:700;">From Education to Empowerment</h2>-->
-  <section class="section-heading fade-in">
-  <h2>The Spirit of Our Trust</h2>
-  <p class="divider">
-  <img src="/assets/images/divider1.png" alt="Lotus Divider">
-</p>
-
-  <p class="subtitle">Empowering Education, Enriching Lives</p>
-</section>
-<style>
-.section-heading .divider {
-  font-size: 1.5rem;
-  margin: 10px 0;
-  color: var(--color-gold);
-}
-
-.section-heading .subtitle {
-  font-size: 1.2rem;
-  color: #555;
-  font-style: italic;
-  letter-spacing: 0.5px;
-}
-
-.section-heading .divider img {
-  width: 75px;
-  opacity: 0.85;
-  margin: 12px auto;
-}
-
-/* Fade-in animation */
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 1s ease forwards;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Optional: fade only when in viewport (JS-free trick for short pages) */
-@media (prefers-reduced-motion: no-preference) {
-  .fade-in {
-    animation-delay: 0.2s;
-  }
-}
-
-@media (max-width: 800px) {
-.section-heading .subtitle{
-font-size: 1rem;
-}
-}
-
-</style>
-
-<section class="trust-cards-section">
-  <div class="trust-cards-container">
-
+  <div class="section-heading text-align-center">
+    <h2>The Spirit of Our Trust</h2>
+    <p class="divider"></p>
+	<h5 class="text-center fst-italic mb-4" style="font-size: 1.05rem; color: #99215D;">
+	Empowering Education, Enriching Lives
+	</h5>
+  </div>
+  
+  <div class="trust-premium-container">
+    
     <!-- Card 1 -->
-    <div class="trust-card">
-      <div class="trust-card-inner">
-        <div class="trust-card-front">
-          <img src="/assets/images/scholarship_2.jpg" alt="Dignity">
-        </div>
-        <div class="trust-card-back">
-          <p>Every donation received is dedicated entirely to scholarship distribution. Administrative expenses are minimal and covered voluntarily, ensuring that your contribution directly benefits deserving students.</p>
-        </div>
+    <div class="trust-premium-card">
+      <div class="trust-premium-img-wrapper">
+        <img src="/assets/images/scholarship_2.jpg" alt="Every Rupee for Education">
       </div>
-      <h5 class="trust-card-title">💸🎓 Every Rupee for Education</h5>
+      <div class="trust-premium-content">
+        <h3>💸🎓 Every Rupee for Education</h3>
+        <p>
+          Every donation received is dedicated entirely to scholarship distribution.
+          Administrative expenses are minimal and covered voluntarily, ensuring that
+          your contribution directly benefits deserving students.
+        </p>
+      </div>
     </div>
-	
+
     <!-- Card 2 -->
-    <div class="trust-card">
-      <div class="trust-card-inner">
-        <div class="trust-card-front">
-          <img src="/assets/images/scholarship.jpg" alt="Dignity">
-        </div>
-        <div class="trust-card-back">
-          <p>We believe this support is not an act of charity, but every girl’s rightful share in the Divine plan. This belief preserves self-respect, nurtures inner strength, and teaches her to accept help with grace, gratitude, and pride.</p>
-        </div>
+    <div class="trust-premium-card">
+      <div class="trust-premium-img-wrapper">
+        <img src="/assets/images/scholarship.jpg" alt="Rightful Share">
       </div>
-      <h5 class="trust-card-title">💫 Not Charity, But Her Rightful Share</h5>
+      <div class="trust-premium-content">
+        <h3>💫 Not Charity, But Her Rightful Share</h3>
+        <p>
+          We believe this support is not an act of charity, but every girl’s rightful
+          share in the Divine plan. This belief preserves self-respect, nurtures inner strength, 
+		  and teaches her to accept help with grace, gratitude, and pride.
+        </p>
+      </div>
     </div>
 
     <!-- Card 3 -->
-    <div class="trust-card">
-      <div class="trust-card-inner">
-        <div class="trust-card-front">
-          <img src="/assets/images/sanskar_classes.jpg" alt="Nurture">
-        </div>
-        <div class="trust-card-back">
-          <p>Through scholarships and Sanskar classes, we nurture compassion, gratitude, and moral strength — raising young women 
+    <div class="trust-premium-card">
+      <div class="trust-premium-img-wrapper">
+        <img src="/assets/images/sanskar_classes.jpg" alt="Nurturing Hearts">
+      </div>
+      <div class="trust-premium-content">
+        <h3>🌱 Nurturing Hearts and Minds</h3>
+        <p>
+          Through scholarships and Sanskar classes, we nurture compassion, gratitude, and moral strength — raising young women 
 		  who are not only educated but enlightened, ready to illuminate the world with their goodness.
-		 <b> This nurturing bond creates a deep sense of belonging — the girls know the Trust stands with them, always</b></p>
-        </div>
+		 <b> This nurturing bond creates a deep sense of belonging — the girls know the Trust stands with them, always</b>
+        </p>
       </div>
-      <h5 class="trust-card-title">🌱 Nurturing Hearts and Minds</h5>
     </div>
-	<!-- Card 4 -->
-    <div class="trust-card">
-      <div class="trust-card-inner">
-        <div class="trust-card-front">
-          <img src="/assets/images/girl_speech.jpg" alt="Faith">
-        </div>
-        <div class="trust-card-back">
-          <p>The Trust transforms fear into faith and uncertainty into confidence — empowering girls to live with courage, dignity, and purpose.</p>
-        </div>
+
+    <!-- Card 4 -->
+    <div class="trust-premium-card">
+      <div class="trust-premium-img-wrapper">
+        <img src="/assets/images/girl_speech.jpg" alt="From Fear to Faith">
       </div>
-      <h5 class="trust-card-title">🕊️ From Fear to Faith</h5>
+      <div class="trust-premium-content">
+        <h3>🕊️ From Fear to Faith</h3>
+        <p>
+		Many of these girls come from challenging backgrounds, lacking resources and confidence. 
+		The Trust lifts their financial burden and provides academic guidance, mentorship, and lifelong support — 
+		helping them rise from fear and uncertainty to faith, confidence, and purpose.
+
+        </p>
+      </div>
     </div>
-	
+
   </div>
-</section>
 
 <style>
-.trust-cards-section {
-  padding: 40px 15px;
+/* Section */
+.trust-premium-section {
+  padding: 70px 20px;
+  background: linear-gradient(to bottom, #fffaf3, #fff6e8);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-.trust-cards-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2x2 grid on desktop */
-  gap: 30px;
-  max-width: 1000px;
-  width: 100%;
-}
-
-/* Card wrapper with 3D tilt effect */
-.trust-card {
-  perspective: 1000px;
-  cursor: pointer;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.trust-card:hover {
-  transform: translateY(-5px) rotateX(2deg) rotateY(3deg); /* subtle 3D tilt */
-  
-}
-
-/* Inner flip layer */
-.trust-card-inner {
+/* Section Heading */
+.trust-premium-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #3b2f1f;
+  margin-bottom: 45px;
   position: relative;
-  width: 100%;
-  height: 300px;
-  transition: transform 1s ease-in-out; /* slower, smooth flip */
-  transform-style: preserve-3d;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08); /* soft shadow */
 }
 
-/* Flip on hover */
-.trust-card:hover .trust-card-inner {
-  transform: rotateY(180deg);
-}
-
-/* Front side */
-.trust-card-front {
+.trust-premium-heading::after {
+  content: "";
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(90deg, #c7a866, #e5c98d);
   position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 4px;
 }
 
-.trust-card-front img {
+/* Grid Layout */
+.trust-premium-container {
+  max-width: 1150px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+/* Card */
+.trust-premium-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 1px solid rgba(255, 225, 180, 0.4);
+}
+
+.trust-premium-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+}
+
+/* Image section */
+.trust-premium-img-wrapper {
+  height: 240px;
+  overflow: hidden;
+}
+
+.trust-premium-img-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 16px;
+  transition: transform 0.9s ease;
 }
 
-/* Back side */
-.trust-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  transform: rotateY(180deg);
-  background: linear-gradient(135deg, #fff2e6, #ffe0b3); /* lighter, spiritual gradient */
-  color: #333; /* darker text for contrast */
-  display: flex;
-  /*justify-content: right;*/
-  align-items: center;
-  padding: 18px;
-  box-sizing: border-box;
-  text-align: justify;
-  font-size: clamp(1rem, 1.2vw, 1.3rem); 
-  line-height: 1.6;
-  border-radius: 16px; /* match front */
-  overflow-wrap: break-word; /* prevent overflow */
+.trust-premium-card:hover img {
+  transform: scale(1.06);
 }
 
-/* Heading below card */
-.trust-card-title {
-  margin-top: 12px;
-  font-size: 1.05rem;
+/* Content styling */
+.trust-premium-content {
+  padding: 22px 24px 28px;
+  text-align: left;
+}
+
+.trust-premium-content h3 {
+  margin: 0 0 12px;
+  font-size: 1.20rem;
   font-weight: 600;
-  color: #222;
+  color: #3a2e1f;
 }
 
-@media (max-width: 800px) {
-  .trust-cards-container {
-    grid-template-columns: 1fr; /* stack on mobile */
-  }
-  .trust-card-inner {
-    height: 220px;
-  }
-  .trust-card-title {
-    font-size: 1rem;
-  }
-}
-@media (max-width: 600px) {
-  .trust-card-inner {
-    height: 240px; /* slightly taller for mobile */
-  }
-  .trust-card-back {
-    font-size: 0.9rem;
-    padding: 14px;
-  }
+.trust-premium-content p {
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: #4a3d2c;
 }
 
+/* Responsive */
+@media (max-width: 900px) {
+  .trust-premium-container {
+    grid-template-columns: 1fr;
+  }
+  .trust-premium-img-wrapper {
+    height: 210px;
+  }
+}
 </style>
-
 </section>
 
+<!-- Our Trust in Numbers -->
+<section class="container my-5 text-center">
+  <div class="section-heading text-align-center">
+    <h2>Our Trust in Numbers</h2>
+    <p class="divider"></p>
+	<h5 class="text-center fst-italic mb-4" style="font-size: 1.05rem; color: #99215D;">
+	A snapshot of our journey in nurturing young minds. Every number tells a story of hope, opportunity, and growth.
+	</h5>
+  </div>
+  <div class="row g-4">
 
-<section class="founders-section">
+    <!-- Card 1 -->
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="p-4 shadow rounded bg-light h-100 d-flex flex-column align-items-center counter-card"
+           data-img="/assets/images/chart1.png"
+		   style="background: linear-gradient(135deg, #FFF8E7, #F5E6C8)";>
+        <i class="fa-solid fa-graduation-cap fa-3x text-primary mb-3"></i>
+        <div class="fs-2 fw-bold" style="color:#99215D" >35K+</div>
+        <div class="fs-6 mt-2">Girl students have been supported via scholarship</div>
+      </div>
+    </div>
 
-  <div class="section-heading"><h2>The Pillars of Our Mission</h2></div>
+    <!-- Card 2 -->
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="p-4 shadow rounded bg-light h-100 d-flex flex-column align-items-center counter-card"
+           data-img="/assets/images/chart2.png"
+		   style="background: linear-gradient(135deg, #FFF8E7, #F5E6C8)";>
+        <i class="fa-solid fa-indian-rupee-sign fa-3x text-primary mb-3"></i>
+        <div class="fs-2 fw-bold" style="color:#99215D">₹3.96 Crore</div>
+        <div class="fs-6 mt-2">Worth of scholarships distributed so far</div>
+      </div>
+    </div>
 
+    <!-- Card 3 -->
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="p-4 shadow rounded h-100 d-flex flex-column align-items-center counter-card"
+           data-img="/assets/images/school_list.png"
+		   style="background: linear-gradient(135deg, #FFF8E7, #F5E6C8)";>
+        <i class="fa-solid fa-school fa-3x text-primary mb-3"></i>
+        <div class="fs-2 fw-bold" style="color:#99215D">45</div>
+        <div class="fs-6 mt-2">Beneficiary Schools Covered</div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="p-4 shadow rounded bg-light h-100 d-flex flex-column align-items-center counter-card"
+           data-img="/assets/images/college_list.png"
+		   style="background: linear-gradient(135deg, #FFF8E7, #F5E6C8)";>
+        <i class="fa-solid fa-landmark fa-3x text-primary mb-3"></i>
+        <div class="fs-2 fw-bold" style="color:#99215D">32</div>
+        <div class="fs-6 mt-2">Colleges whose students are beneficiaries of the trust</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Glassmorphic Pop-up Overlay -->
+<div class="glass-popup-overlay" id="glassPopup">
+  <div class="glass-popup-content">
+    <button class="glass-popup-close" id="popupClose">&times;</button>
+    <img src="" id="popupImage" alt="Card Image">
+  </div>
+</div>
+<style>
+/* Hover effect for counter cards */
+.counter-card {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  position: relative;
+}
+
+.counter-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15), 0 0 20px rgba(255, 184, 84, 0.35);
+  border: 1px solid rgba(255, 184, 84, 0.4);
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15), 0 0 20px rgba(255, 184, 84, 0.35);
+  }
+  50% {
+    box-shadow: 0 14px 40px rgba(0,0,0,0.18), 0 0 30px rgba(255, 184, 84, 0.45);
+  }
+  100% {
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15), 0 0 20px rgba(255, 184, 84, 0.35);
+  }
+}
+
+.counter-card:hover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  animation: glowPulse 1.2s infinite;
+  pointer-events: none;
+}
+
+/* Glassmorphic Pop-up Overlay */
+.glass-popup-overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.glass-popup-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 85%;
+  padding: 20px;
+  background: rgba(255,255,255,0.35);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 223, 120, 0.4);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: scaleUp 0.3s ease forwards;
+}
+
+.glass-popup-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+.glass-popup-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255,255,255,0.5);
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 36px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.glass-popup-close:hover {
+  background: rgba(255,255,255,0.75);
+  transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+@keyframes scaleUp { from {transform: scale(0.8);} to {transform: scale(1);} }
+
+@media(max-width:768px){
+  .glass-popup-content { padding: 15px; }
+  .glass-popup-close { width: 35px; height: 35px; font-size: 1.3rem; }
+}
+</style>
+<script>
+const cards = document.querySelectorAll('.counter-card');
+const popup = document.getElementById('glassPopup');
+const popupImage = document.getElementById('popupImage');
+const closeBtn = document.getElementById('popupClose');
+
+cards.forEach(card => {
+  card.addEventListener('click', () => {
+    popupImage.src = card.getAttribute('data-img');
+    popup.style.display = 'flex';
+  });
+});
+
+closeBtn.addEventListener('click', () => {
+  popup.style.display = 'none';
+});
+
+popup.addEventListener('click', e => {
+  if(e.target === popup) popup.style.display = 'none';
+});
+</script>
+
+
+<section class="pillars-section text-center">
+
+  <!--<div class="section-heading"><h2>The Pillars of Our Mission</h2></div>-->
+<div class="section-heading text-align-center">
+    <h2>The Pillars of Our Mission</h2>
+    <p class="divider"></p>
+	<!--<h5 class="text-center fst-italic mb-4" style="font-size: 1.05rem; color: #99215D;">
+	A snapshot of our journey in nurturing young minds. Every number tells a story of hope, opportunity, and growth.
+	</h5>-->
+  </div>
 
   <div class="container">	
   <!-- Founder 1 -->
@@ -1001,49 +1160,19 @@ font-size: 1rem;
   </div>
 
  </div>
-</section>
-
 <style>
 :root {
   --primary-color: #6b2d2d;
   --text-color: #333;
 }
 
+
 /* Section */
-.founders-section {
-  padding: 4rem 2rem;
-}
 
-.section-heading h2 {
-  font-size: 2.4rem;
-  color: #074e9b;
-  font-weight: 700;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  position: relative;
-  display: inline-block;
-}
-
-.section-heading h2::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90px;
-  height: 4px;
-  background: #ed1c24;
-  border-radius: 2px;
-}
-
-.section-heading p {
-  font-size: 1.1rem;
-  color: #444;
-  margin-top: 20px;
-  margin-bottom: 50px;
-}
-
-.container {
+.pillars-section {
+  background: linear-gradient(135deg, #fffaf2, #fff4da);
+  padding: 80px 10%;
+  text-align: center;
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -1075,15 +1204,15 @@ font-size: 1rem;
   
  } 
 .bg-founder-1 {
-  background: linear-gradient(135deg, #fef7de, #fff8e7);
+  background: linear-gradient(135deg, #fff7d1, #fff3e0);
 }
 
 .bg-founder-2 {
-  background: linear-gradient(135deg, #fff6d8, #fffbea);
+  background: linear-gradient(135deg, #fff1e5, #ffe8d4);
 }
 
 .bg-founder-3 {
-  background: linear-gradient(135deg, #fff1f5, #ffffff);
+  background: linear-gradient(135deg, #fff0f4, #ffffff);
 }
 
 /* Image */
@@ -1160,15 +1289,21 @@ font-size: 1rem;
 
   rows.forEach(row => observer.observe(row));
 </script>
-
+</section>
 
 
 <!-- Divider between sections -->
 <!--<hr class="my-5" style="border-top:2px solid #d2d2d2;">-->
 
 <!-- Success Stories Section as Cards -->
-<section class="container my-5" >
-  <h2 class="text-center mb-4">Success Stories</h2>
+<section class="stories-section text-center">
+  <div class="section-heading text-align-center">
+    <h2>Success Stories</h2>
+    <p class="divider"></p>
+	<h5 class="text-center fst-italic mb-4" style="font-size: 1.05rem; color: #99215D;">
+	From Uncertainty to Unshakable Strength — Journeys That Inspire
+	</h5>
+  </div>
   <div class="swiper success-stories-swiper">
     <div class="swiper-wrapper">
 	<!-- Slide 1 -->
@@ -1247,10 +1382,29 @@ font-size: 1rem;
     <div class="swiper-button-next"></div>
   </div>
 </section>
+<style>
+.stories-section {
+  background: linear-gradient(135deg, #fff8e7, #fef7de);
+  padding: 80px 10%;
+  text-align: center;
+}
+.card-img-top {
+width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+</style>
+
 
 <!-- Testimonials (slider) -->
-<section class="container my-5">
-  <h2 class="text-center mb-4">Our Testimonials</h2>
+<section class="testimonial-section">
+  <div class="section-heading text-align-center">
+    <h2>Our Testimonials</h2>
+    <p class="divider"></p>
+	<h5 class="text-center fst-italic mb-4" style="font-size: 1.05rem; color: #99215D;">
+	From Guidance to Growth — Reflections That Resonate
+	</h5>
+  </div>
   <div class="swiper testimonials-swiper">
     <div class="swiper-wrapper text-center">
       <!-- Testimonial 1 -->
@@ -1305,11 +1459,23 @@ and mentors, rather than outsiders.</b> Even my family thanks this trust for bri
     <div class="swiper-button-next"></div>
   </div>
 </section>
-
+<style>
+.testimonial-section {
+  background: linear-gradient(135deg, #fffdf6, #fff7eb);
+  padding: 80px 10%;
+  text-align: center;
+}
+</style>
 <!-- Media: Scholarship & Trust in News -->
 <!-- Media Section -->
-<section class="container my-5">
-  <h2 class="text-center mb-4">Media</h2>
+<section class="image-section">
+  <div class="section-heading text-align-center">
+    <h2>Image Gallery</h2>
+    <p class="divider"></p>
+	<!--<h5 class="text-center fst-italic mb-4" style="font-size: 1.05rem; color: #99215D;">
+	From Simple Frames to Powerful Stories — Images That Inspire
+	</h5>-->
+  </div>
   <div class="row">
     <div class="col-md-6 mb-4">
 	<a href="./gallery_scholarship.html" class="card-link-wrapper text-decoration-none d-block">
@@ -1335,7 +1501,13 @@ and mentors, rather than outsiders.</b> Even my family thanks this trust for bri
     </div>
   </div>
 </section>
-
+<style>
+.image-section {
+  background: linear-gradient(135deg, #fffdf6, #fff7eb);
+  padding: 80px 10%;
+  text-align: center;
+}
+</style>
 <!-- Footer will load here -->
   <div id="footer-placeholder"></div>
 
