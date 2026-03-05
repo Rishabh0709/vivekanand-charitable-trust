@@ -231,16 +231,23 @@
 }
 
 </style>
+
+
  
+<!-- combined wrapper for vision and mission -->
+<section class="vm-wrapper-modern">
 	<!--Our Vision-->
 <section class="vision-section">
   <div class="vision-container">
-  <section class="section-heading text-align-center">
-	 <h2>Our Vision</h2>
-     <p class="divider"></p>
-	 </section>
-	 <div class="container py-2">
-    <div class="section-text row align-items-center">
+  <div class="vm-heading">
+      <h2>Our Vision</h2>
+      <p class="divider-modern"></p>
+      <h5 class="mission-subtitle-modern">
+       <!-- Empowering girls through education, values, and self-reliance -->
+      </h5>
+    </div>
+	<div class="container">
+	 <div class="section-text row align-items-center">
 	<div class="col-md-5 vision-image">
 	 <img src="/assets/images/sanskar_classes2.jpg" alt="Founder" />
 	</div>
@@ -254,8 +261,7 @@
 		and invaluable contributors to the nation — guided by a harmonious balance between individual rights and responsibilities.
       </p>
 	 </div>
-	  
-    </div>
+	 </div> 
     </div>
   </div>
 </section>
@@ -292,24 +298,7 @@
   border-radius: 10px;
   margin-left: 0;
   margin-right: 0;
- <!-- box-shadow: 0 0 40px 10px rgba(255, 215, 100, 0.6),
-              0 0 80px 20px rgba(255, 165, 0, 0.4),
-              0 0 120px 30px rgba(255, 240, 180, 0.5);
-  animation: auraGlow 4s ease-in-out infinite alternate;-->
-}
-<!--
-@keyframes auraGlow {
-  from {
-    box-shadow: 0 0 30px 8px rgba(255, 210, 120, 0.5),
-                0 0 60px 15px rgba(255, 180, 70, 0.3),
-                0 0 90px 20px rgba(255, 230, 180, 0.4);
-  }
-  to {
-    box-shadow: 0 0 45px 12px rgba(255, 230, 140, 0.7),
-                0 0 100px 25px rgba(255, 200, 100, 0.5),
-                0 0 150px 35px rgba(255, 240, 190, 0.6);
-  }
-} -->
+ }
 
 /* 2. Increase gap between the image and the text */
 .section-text .col-md-5 {
@@ -334,128 +323,148 @@
 }
 </style>	
 
-<section class="mission-section">
-  <div class="section-heading text-align-center">
-    <h2>Our Mission</h2>
-    <p class="divider"></p>
-	<h5 class="text-center fst-italic mb-4" style="font-size: 1.05rem; color: #99215D;">
-	Empowering girls through education, values, and self-reliance
-	</h5>
-  </div>
 
-  <div class="mission-grid">
+  <!-- ============ MISSION SECTION ============ -->
+  <section class="mission-modern">
 
-    <!-- Mission 1 -->
-    <article class="mission-card">
-      <figure class="mission-image">
-        <img src="/assets/images/scholarship3.jpg" alt="Providing education support to girls">
-      </figure>
-      <h3>Education Without Discrimination</h3>
-      <p>
-        We ensure that no girl studying in any government or community-run 
-        school adopted by us is deprived of education due to financial constraints,
-        irrespective of her caste, community, or religion.
-      </p>
-    </article>
+    <div class="vm-heading">
+      <h2>Our Mission</h2>
+      <p class="divider-modern"></p>
+      <h5 class="mission-subtitle-modern">
+        Empowering girls through education, values, and self-reliance
+      </h5>
+    </div>
 
-    <!-- Mission 2 -->
-    <article class="mission-card">
-      <figure class="mission-image">
-        <img src="/assets/images/school_visit.jpg" alt="Trust members interacting with students">
-      </figure>
-      <h3>Holistic Development & Self-Belief</h3>
-      <p>
-        Through regular school visits and inspiring interactions,
-        we nurture self-respect, confidence, dignity, and core human
-        values — guiding girls toward a self-reliant and purposeful life.
-      </p>
-    </article>
+    <div class="mission-grid-modern">
 
-    <!-- Mission 3 -->
-    <article class="mission-card">
-      <figure class="mission-image">
-        <img src="/assets/images/f4.jpg" alt="Spiritual and value-based guidance">
-      </figure>
-      <h3>Cycle of Gratitude & Service</h3>
-      <p>
-        To nuture core values, we inspire girls to pray daily, pursue education with determination,
-        and once independent, support other needy sisters—continuing this
-        sacred Gyan Yagna of service and belonging.
-      </p>
-    </article>
+      <!-- CARD 1 -->
+      <article class="mission-card-modern glass-card">
+        <img src="/assets/images/scholarship3.jpg" alt="">
+        <h3>Education Without Discrimination</h3>
+        <p>
+          We ensure that no girl studying in any government or community-run school adopted by us is deprived of education 
+		  due to financial constraints, irrespective of her caste, community, or religion.
+        </p>
+      </article>
 
-  </div>
+      <!-- CARD 2 -->
+      <article class="mission-card-modern glass-card">
+        <img src="/assets/images/school_visit.jpg" alt="">
+        <h3>Holistic Development & Self-Belief</h3>
+        <p>
+          Through regular school visits and inspiring interactions, we nurture self-respect, confidence, dignity, and core human values — 
+		  guiding girls toward a self-reliant and purposeful life.
+        </p>
+      </article>
+
+      <!-- CARD 3 -->
+      <article class="mission-card-modern glass-card">
+        <img src="/assets/images/f4.jpg" alt="">
+        <h3>Cycle of Gratitude & Service</h3>
+        <p>
+          To nuture core values, we inspire girls to pray daily, pursue education with determination, and once independent, 
+		  support other needy sisters—continuing this sacred Gyan Yagna of service and belonging.
+        </p>
+      </article>
+
+    </div>
+  </section>
 </section>
+
+
+<!-- ============ MODERN CSS ============ -->
 <style>
-.mission-section {
-  background: linear-gradient(135deg, #fffdf6, #fff7eb);
-  text-align: center;
-  padding: 50px ;
+
+/* WRAPPER */
+.vm-wrapper-modern {
+  background: linear-gradient(135deg, #fef7de, #fff8e7);
+  padding: 20px 20px;
+  backdrop-filter: blur(10px);
 }
 
-.mission-title {
+/* HEADINGS */
+.vm-heading h2 {
   font-size: 2.2rem;
-  color: var(--primary-color, #6b2d2d);
-  margin-bottom: 0.6rem;
+  color: #5c2141;
+  text-align: center;
+  margin-bottom: 5px;
 }
 
-.mission-subtitle {
-  font-size: 1.05rem;
-  color: #555;
-  max-width: 650px;
-  margin: 0 auto 3rem;
+.divider-modern {
+  width: 60px;
+  height: 4px;
+  margin: 10px auto 25px;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #a9537a, #d9a54e);
 }
 
-.mission-grid {
+/* ============ MISSION SECTION ============ */
+
+.mission-modern {
+  margin-top: 30px;
+}
+
+.mission-subtitle-modern {
+  color: #8a2d61;
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.mission-grid-modern {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
-  margin-top: 50px;
+  gap: 35px;
 }
 
-.mission-card {
-  background: #ffffff;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+/* Glass cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 20px;
+  border-radius: 18px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.mission-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.15);
 }
 
-
-.mission-image img {
+/* Mission Card */
+.mission-card-modern img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  border-radius: 14px;
+  margin-bottom: 15px;
 }
 
-.mission-card h3 {
-  padding: 10px;
+.mission-card-modern h3 {
   font-size: 1.25rem;
   color: #6b4f1d;
+  margin-bottom: 8px;
 }
 
-.mission-card p {
-  padding: 0 10px;
-  color: #444;
-  line-height: 1.6;
+.mission-card-modern p {
+  color: #333;
+  line-height: 1.55;
   font-size: 0.95rem;
-  align-items: justify;
-  
 }
 
-/* Responsive */
+/* Responsive Vision Section */
 @media (max-width: 768px) {
-  .mission-title {
-    font-size: 1.8rem;
+  .vision-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+  .vision-img img {
+    max-width: 280px;
   }
 }
 
 </style>
+
 <!-- ~~~~~~~~~~~~~~~~ Our Objectives And Priciples ~~~~~~~~~~~~~~~~   -->
 
 <section class="foundation-section">
@@ -664,9 +673,6 @@
 
 </style>
 
-
-
-  
   <!-- Carousel -->
   <div class="container mt-5">
     <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="hover">
