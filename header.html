@@ -39,6 +39,27 @@
   color: var(--color-white);
 }
 
+/* Position submenu to the right */
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-left: 0.1rem;
+  display: none;
+  border-radius: 8px;
+}
+
+/* Show submenu on hover (desktop) */
+.dropdown-submenu:hover > .dropdown-menu {
+  display: block;
+}
+
+/* Optional: arrow indicator */
+.dropdown-submenu > .dropdown-toggle::after {
+  float: right;
+  margin-top: 6px;
+  transform: rotate(-90deg);
+}
+
 /* =========================================================
    HEADER WRAPPER (Top area including nav)
    ========================================================= */
@@ -201,24 +222,40 @@
           <!-- your nav items -->
 		  <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Our Story</a>
-          <ul class="dropdown-menu">
-			<li><a class="dropdown-item" href="bhaiya_thoughts.html">How It Started</a></li>
-		    <li><a class="dropdown-item" href="about_us.html">About Us</a></li>
-            <li><a class="dropdown-item" href="vision.html">Our Vision & Mission </a></li>
-            <li><a class="dropdown-item" href="objectives.html">Our Objectives</a></li>
-            <li><a class="dropdown-item" href="features.html">What Makes Us Unique</a></li>
-			<!--<li><a class="dropdown-item" href="journey.html">Our Journey So Far</a></li>-->
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+    About Us
+  </a>
+
+  <ul class="dropdown-menu">
+
+    <li><a class="dropdown-item" href="bhaiya_thoughts.html">How It Started</a></li>
+    <li><a class="dropdown-item" href="about_us.html">About Us</a></li>
+    <li><a class="dropdown-item" href="objectives.html">Our Objectives</a></li>
+    <li><a class="dropdown-item" href="principles.html">Our Guiding Principles</a></li>
+
+    <!-- Submenu -->
+    <li class="dropdown-submenu position-relative">
+      <a class="dropdown-item dropdown-toggle" href="#">
+        The Torch Bearers
+      </a>
+
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="bhaiyaji.html">Shri Nandkishore Sharda</a></li>
+        <li><a class="dropdown-item" href="basanti_maa.html">Maa Basanti Manihar</a></li>
+        <li><a class="dropdown-item" href="madhu_maa.html">Maa Madhu Advani</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</li>
+       <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Torch Bearers</a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="bhaiyaji.html">Shri Nandkishore Sharda</a></li>
             <li><a class="dropdown-item" href="basanti_maa.html">Maa Basanti Manihar</a></li>
             <li><a class="dropdown-item" href="madhu_maa.html">Maa Madhu Advani</a></li>
           </ul>
-        </li>
+        </li>-->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Women Empowerment</a>
           <ul class="dropdown-menu">

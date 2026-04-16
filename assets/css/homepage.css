@@ -839,20 +839,370 @@ font-size:1.8rem;
 
 
 /* stories */
-
-.stories-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:30px;
+/* =========================
+   SECTION
+========================= */
+.stories-section {
+  padding: 100px 8%;
+  background: linear-gradient(135deg, #fdfaf6, #f7f1e8);
 }
 
-.story img{
-width:100%;
-border-radius:12px;
-margin-bottom:15px;
+/* =========================
+   SWIPER CORE (DO NOT BREAK)
+========================= */
+.success-stories-swiper {
+  margin-top: 50px;
+  overflow: hidden;
 }
 
+.success-stories-swiper .swiper-wrapper {
+  display: flex;
+  flex-wrap: nowrap;            /* 🔥 critical for slider */
+  align-items: stretch;
+}
 
+.success-stories-swiper .swiper-slide {
+  flex-shrink: 0;               /* 🔥 prevents shrinking */
+  display: flex;
+  padding: 10px;
+  height: auto;
+}
+
+/* =========================
+   STORY CARD
+========================= */
+.story-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  border: 1px solid rgba(255,255,255,0.3);
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+/* Hover */
+.story-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   IMAGE
+========================= */
+.story-img {
+  height: 240px;
+  overflow: hidden;
+}
+
+.story-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.story-card:hover img {
+  transform: scale(1.05);
+}
+
+/* =========================
+   CONTENT
+========================= */
+.story-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.story-content h5 {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #2a2a2a;
+}
+
+.story-content p {
+  font-size: 0.95rem;
+  color: #5f5f5f;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.story-btn {
+  margin-top: 15px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #a6782e;
+  border-bottom: 1px solid transparent;
+  width: fit-content;
+  transition: all 0.3s ease;
+}
+
+.story-btn:hover {
+  border-bottom: 1px solid #a6782e;
+}
+
+/* =========================
+   PAGINATION (OPTIONAL POLISH)
+========================= */
+.swiper-pagination-bullet {
+  background: #a6782e;
+  opacity: 0.4;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #a6782e;
+  transform: scale(0.8);
+}
+
+/******Pillars of our mission *********/
+/* =========================
+   SECTION
+========================= */
+.pillars-section {
+  padding: 110px 8%;
+  background: linear-gradient(135deg, #fdfaf6, #f7f1e8);
+}
+
+/* =========================
+   ROW LAYOUT
+========================= */
+.founder-row {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 80px;
+
+  padding: 30px;
+  border-radius: 20px;
+
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.3);
+
+  transition: all 0.4s ease;
+  opacity: 1;
+  transform: none;
+}
+
+/* Alternate layout */
+.founder-row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Hover */
+.founder-row:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+}
+
+/* Show animation */
+.founder-row.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   IMAGE
+========================= */
+.founder-image {
+  flex: 0 0 300px;
+}
+
+.founder-image img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.founder-row:hover img {
+  transform: scale(1.04);
+}
+
+/* =========================
+   CONTENT
+========================= */
+.founder-content {
+  flex: 1;
+  text-align: left;
+}
+
+.founder-content h3 {
+  font-size: 1.6rem;
+  color: #2b2b2b;
+  margin-bottom: 15px;
+}
+
+.founder-content p {
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: #5f5f5f;
+  margin-bottom: 12px;
+}
+
+/* =========================
+   BUTTON (consistent with stories)
+========================= */
+.know-more-btn {
+  margin-top: 10px;
+  display: inline-block;
+  font-size: 0.9rem;
+  color: #a6782e;
+  text-decoration: none;
+  position: relative;
+}
+
+.know-more-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 1px;
+  background: #a6782e;
+  transition: width 0.3s ease;
+}
+
+.know-more-btn:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 992px) {
+  .founder-row {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .founder-row.reverse {
+    flex-direction: column;
+  }
+
+  .founder-content {
+    text-align: center;
+  }
+
+  .founder-image {
+    flex: unset;
+    width: 220px;
+  }
+}
+/**/
+
+/*********Image Gallery  ********/
+/* =========================
+   SECTION
+========================= */
+.image-section {
+  padding: 100px 8%;
+  background: linear-gradient(135deg, #fdfaf6, #f7f1e8);
+}
+
+/* =========================
+   GRID (replaces bootstrap row)
+========================= */
+.gallery-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* =========================
+   CARD
+========================= */
+.gallery-card {
+  display: block;
+  text-decoration: none;
+
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  overflow: hidden;
+
+  border: 1px solid rgba(255,255,255,0.3);
+  transition: all 0.35s ease;
+}
+
+/* Hover */
+.gallery-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   IMAGE
+========================= */
+.gallery-img {
+  height: 220px;
+  overflow: hidden;
+}
+
+.gallery-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* 🔥 FIXED */
+  transition: transform 0.4s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.05);
+}
+
+/* =========================
+   CONTENT
+========================= */
+.gallery-content {
+  padding: 20px;
+  text-align: left;
+}
+
+.gallery-content h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2b2b2b;
+  margin-bottom: 8px;
+}
+
+.gallery-content p {
+  font-size: 0.95rem;
+  color: #5f5f5f;
+  line-height: 1.5;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 992px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/**/
 
 
 /* responsive */

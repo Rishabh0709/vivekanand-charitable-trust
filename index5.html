@@ -11,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- FontAwesome for Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="/assets/css/style.css" />
 	<link rel="stylesheet" href="/assets/css/homepage.css" />
 	
@@ -54,7 +55,7 @@ Know More About Us
 <!--- STATS SECTION ---------->
 <section class="stats-section">
 
-<h2 class="stats-heading">Our Trust in Numbers</h2>
+<h2 class="heading">Our Trust in Numbers</h2>
 <div class="divider"></div>
 <p class="subtext">
 	A snapshot of our journey in nurturing young minds. Every number tells a story of hope, opportunity, and growth.
@@ -371,54 +372,286 @@ document.getElementById("statModal").style.display = "none";
 
   </div>
 </section>
-<!-- stories -->
 
-<section>
 
-<div class="container">
+<!-- STORIES SECTION -->
 
-<h2 class="section-title">Stories of Hope</h2>
+<section class="stories-section">
+  <div class="container">
 
-<div class="stories-grid">
+    <!-- Heading -->
+    <div class="heading">
+      <h2>Stories Of Hope</h2>
+      <div class="divider"></div>
+      <p class="subtext">
+        From Uncertainty to Unshakable Strength — Journeys That Inspire
+      </p>
+	</div>
+    <!-- Swiper -->
+    <div class="swiper success-stories-swiper">
+      <div class="swiper-wrapper">
 
-<div class="glass-card story">
+        <!-- Card -->
+        <div class="swiper-slide">
+          <div class="story-card">
+            <div class="story-img">
+              <img src="/assets/images/neetu-deora.png" alt="Neetu Deora">
+            </div>
+            <div class="story-content">
+              <h5>Neetu Deora</h5>
+              <p>
+                Beginning her journey as a young student with aspirations, she found consistent guidance through the Trust. 
+				With continuous financial and academic support from Class 9th to M.Com, her path remained steady and focused. 
+				Today, she has been serving at SBI, Jodhpur for over 17 years. She stands as a symbol of stability, dedication, and self-reliance..
+              </p>
+              <a href="./story1.html" class="story-btn">Read Story</a>
+            </div>
+          </div>
+        </div>
 
-<img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644">
+        <!-- Card -->
+        <div class="swiper-slide">
+          <div class="story-card">
+            <div class="story-img">
+              <img src="/assets/images/sejal-rathore.png" alt="Sejal Rathore">
+            </div>
+            <div class="story-content">
+              <h5>Sejal Rathore</h5>
+              <p>
+                With aspirations to build a meaningful career, she was supported and nurtured by the Trust. 
+				Beyond financial aid, the Trust helped shape her confidence and personality. 
+				Today, she is working as a Software Engineer at Wells Fargo, Hyderabad. She represents growth driven by belief, guidance, and determination.
+              </p>
+              <a href="./story5.html" class="story-btn">Read Story</a>
+            </div>
+          </div>
+        </div>
 
-<h3>Anita Sharma</h3>
+        <!-- Card -->
+        <div class="swiper-slide">
+          <div class="story-card">
+            <div class="story-img">
+              <img src="/assets/images/poonam-mishra.png" alt="Poonam Mishra">
+            </div>
+            <div class="story-content">
+              <h5>Poonam Mishra</h5>
+              <p>
+                Starting her journey at a young age, she remained committed to her education with the Trust’s support. 
+				From Class 6th to M.Sc, she received continuous financial assistance and mentorship. 
+				Today, she serves as the <strong>Principal of Wisdom International School, Jodhpur.</strong> 
+				She reflects leadership shaped through education and perseverance.
+              </p>
+              <a href="./story2.html" class="story-btn">Read Story</a>
+            </div>
+          </div>
+        </div>
+		
+		<!-- Card -->
+        <div class="swiper-slide">
+          <div class="story-card">
+            <div class="story-img">
+              <img src="/assets/images/jyoti-soni.png" alt="Poonam Mishra">
+            </div>
+            <div class="story-content">
+              <h5>Jyoti Soni (CA, CS)</h5>
+              <p>
+                Her life took a difficult turn after the loss of her father, bringing immense uncertainty. 
+				With the Trust’s financial support, moral guidance, and Sanskar classes, she rebuilt her path with strength. 
+				She went on to become a <strong>Chartered Accountant and Company Secretary</strong>. Today, she stands as a confident and self-reliant professional.
+              </p>
+              <a href="./story2.html" class="story-btn">Read Story</a>
+            </div>
+          </div>
+        </div>
+		
+		<!-- Card -->
+        <div class="swiper-slide">
+          <div class="story-card">
+            <div class="story-img">
+              <img src="/assets/images/kumudini-dadhich.png" alt="Poonam Mishra">
+            </div>
+            <div class="story-content">
+              <h5>Dr. Kumudini Dhadhich</h5>
+              <p>
+                At a stage where continuing education seemed uncertain, her journey found new direction through the Trust. 
+				With guidance, support, and encouragement, she continued her academic path with determination. 
+				Today, she is a <strong>Chemistry Lecturer</strong>. She represents transformation through resilience and the power of right support.
+              </p>
+              <a href="./story2.html" class="story-btn">Read Story</a>
+            </div>
+          </div>
+        </div>
 
-<p>From village classroom to medical college.</p>
+        <!-- Add remaining cards similarly -->
 
-</div>
+      </div>
+	  <!-- Pagination -->
+    <div class="swiper-pagination"></div>
 
-<div class="glass-card story">
+    <!-- Navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    </div>
 
-<img src="https://images.unsplash.com/photo-1509062522246-3755977927d7">
-
-<h3>Priya Jain</h3>
-
-<p>Scholarship helped her become an engineer.</p>
-
-</div>
-
-<div class="glass-card story">
-
-<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330">
-
-<h3>Neha Gupta</h3>
-
-<p>Education transformed her family’s future.</p>
-
-</div>
-
-</div>
-
-</div>
-
+  </div>
 </section>
+
+
+<!-----------------Pillars of our mission ---------------->
+<section class="pillars-section">
+
+  <!--<div class="section-heading"><h2>The Pillars of Our Mission</h2></div>-->
+<div class="heading text-align-center">
+    <h2>The Pillars of Our Mission</h2>
+    <p class="divider"></p>
+  </div>
+
+  <div class="container">	
+  <!-- Founder 1 -->
+  <div class="founder-row fade-in">
+    <div class="founder-image">
+      <img src="/assets/images/bhaiyaji_2.jpg" alt="Yugpravartak Shri Nandkishor Sharda">
+    </div>
+    <div class="founder-content">
+      <h3>Yugpravartak Shri Nandkishore Sharda</h3>
+      <p>
+        He was an exceptional thinker and spiritual practitioner who, through selfless love,
+        complete surrender, and rigorous spiritual discipline, attained direct realization of Jagatjanani Maa Tripurasundari.
+        Accepting Her as his Guru, he received knowledge suited to the modern age and demonstrated that God is a living reality
+        who grants direct spiritual experience.
+      </p>
+      <p>
+        For the holistic development of humanity and the fulfillment of life’s true purpose, he offered a simple, universal, 
+		and effective practice of "Buddhi Vivek Yog Sadhna". Through this path, balance is established between material and spiritual life,
+		enabling individuals to live stress-free, joyful, peaceful, and meaningful lives.      </p>
+      <p>
+        By harmoniously integrating knowledge, devotion, and selfless action in his own life, he set a powerful ideal that inspired 
+		and transformed the lives of thousands, ushering in the auspicious beginning of a new era.
+      </p>
+      <a href="./bhaiyaji.html" class="know-more-btn">Know More</a>
+    </div>
+  </div>
+
+  <!-- Founder 2 -->
+  <div class="founder-row fade-in reverse">
+    <div class="founder-image">
+      <img src="/assets/images/maa_1.jpg" alt="Kumari Basanti Manihar">
+    </div>
+    <div class="founder-content">
+      <h3>Kumari Basanti Manihar</h3>
+      <p>
+        She chose the spiritual path in 1964. Under the guidance and spiritual empowerment of her mentor, 
+		Shri Nandkishor Ji Sharda, she attained the grace of Jagatjanani Maa through childlike devotion, unwavering dedication, 
+		and complete surrender. After Bhaiyaji assumed his chaitanya (divine conscious) form, she carried forward his divine knowledge 
+		and spiritual methodology, skillfully advancing all the noble initiatives he had begun.
+      </p>
+      <p>
+        By resolving the spiritual and practical questions of thousands of seekers, she brought about a positive transformation in their outlook 
+		on life and taught them the art of living with joy, peace, and inner happiness. Alongside this, she sowed the seeds of education, 
+		values, and spirituality in the lives of thousands of students—especially girls—so that they might grow into responsible and 
+		capable citizens. Bhaiyaji and Mother Basanti Ji were true pioneers of women’s empowerment.
+      </p>
+      <a href="./basanti_maa.html" class="know-more-btn">Know More</a>
+    </div>
+  </div>
+
+  <!-- Founder 3 -->
+  <div class="founder-row fade-in bg-founder-3">
+    <div class="founder-image">
+      <img src="/assets/images/madhu_maa2.1.jpg" alt="Kumari Madhubala Advani">
+    </div>
+    <div class="founder-content">
+      <h3>Kumari Madhubala Advani</h3>
+      <p>
+        She embraced the spiritual path in 1970 under the guidance of Maa Basanti and Bhaiyaji. 
+		Through rigorous spiritual disciplines imparted by them, she was blessed with the grace of numerous divine powers. 
+		For the past 55 years, she has remained steadfastly dedicated to spiritual practice.
+      </p>
+      <p>
+        After Maa Basanti left for heavenly abode in year 2021, Madhu Maa has been seamlessly and devotedly carrying forward all the 
+		responsibilities entrusted by Mother and Bhaiyaji. These include the administration of all Trust activities, publication 
+		and distribution of spiritual literature, nurturing education, values, and spirituality among students, guiding seekers 
+		associated with “Manidweep” through spiritual discourses, distributing food grains to the needy, and running free yoga classes 
+		and a tailoring center, among other service initiatives.
+      </p>
+      <a href="./madhu_maa.html" class="know-more-btn">Know More</a>
+    </div>
+  </div>
+
+ </div>
+</section>
+
+<!-- -->
+
+<!-- Gallery -->
+<section class="image-section">
+  <div class="container">
+
+    <div class="heading text-center">
+      <h2>Image Gallery</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="gallery-grid">
+
+      <!-- Card 1 -->
+      <a href="./gallery_scholarship.html" class="gallery-card">
+        <div class="gallery-img">
+          <img src="/assets/images/sch_prg.jpeg" alt="Scholarship Programme">
+        </div>
+        <div class="gallery-content">
+          <h5>Scholarship Programme</h5>
+          <p>See our ongoing and past scholarship award events for deserving girls.</p>
+        </div>
+      </a>
+
+      <!-- Card 2 (NEW) -->
+      <a href="./gallery_personality.html" class="gallery-card">
+        <div class="gallery-img">
+          <img src="/assets/images/sanskar_classes.jpg" alt="Personality Development Classes">
+        </div>
+        <div class="gallery-content">
+          <h5>Personality Development Classes</h5>
+          <p>Moments from our sessions focused on building confidence, values, and life skills.</p>
+        </div>
+      </a>
+	  
+	  <!-- Card 2 -->
+      <a href="./awards.html" class="gallery-card">
+        <div class="gallery-img">
+          <img src="/assets/images/aw4.jpg" alt="Trust in News">
+        </div>
+        <div class="gallery-content">
+          <h5>Awards & Recognitions</h5>
+          <p>Recognitions and honors received for our continued commitment to education, empowerment, and social impact.</p>
+        </div>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+<!-- -->
 
 <!-- Footer will load here -->
   <div id="footer-placeholder"></div>
+
+<!-- Bootstrap Bundle JS -->
+ 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <!-- Main JS -->
+  <script src="/assets/js/script.js"></script>
+
+<script>
+  AOS.init({
+    duration: 800,
+    easing: 'ease-in-out',
+    once: true,
+  });
+</script>
+
 
 <!-- JS to load partials -->
   <script>
@@ -434,6 +667,9 @@ document.getElementById("statModal").style.display = "none";
     loadHTML('header-placeholder', 'header.html');
     loadHTML('footer-placeholder', 'footer.html');
   </script>
+  
+   <!-- Main JS -->
+  <script src="/assets/js/script.js"></script>
 </body>
 
 </html>

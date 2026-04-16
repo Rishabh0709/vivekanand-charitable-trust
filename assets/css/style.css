@@ -305,35 +305,6 @@ object-fit: contain;	/* smaller height for mobile */
 /*................*/
 
 
-
-/* Swiper slide - success stories */
-
-.swiper-wrapper {
-  display: flex;           /* already true by Swiper */
-  align-items: stretch;    /* forces all slides to same height */
-}
-/* Ensure Swiper slides stretch */
-.swiper-slide {
-  display: flex;
-  padding: 0.5rem;
-  flex-direction: column;
-}
-
-/* Stretch cards inside slides */
-.swiper-slide .card {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.swiper-slide .card:hover {
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
-  transform: translateY(-6px);
-}
-
-
-
 /* === Footer === */
 footer {
   background-color: var(--color-maroon);

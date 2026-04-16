@@ -41,38 +41,37 @@
   });
 });
 
- 
- const swiper = new Swiper('.success-stories-swiper', {
-  slidesPerView: 3,       // Show 3 cards per view
-  spaceBetween: 30,       // Space between cards
-  autoHeight: false,      // disable auto height
-  loop: true,             // Infinite loop of slides
-  
-  // Autoplay settings
-  autoplay: {
-    delay: 3000,          // 3 seconds per slide
-    disableOnInteraction: false, // continue autoplay after manual swipe
-	pauseOnMouseEnter: true,   // ✅ pauses when mouse enters, resumes on leave
 
-  },
+// For Success Stories Swiper
+document.addEventListener("DOMContentLoaded", function () {
+  const swiper = new Swiper('.success-stories-swiper', {
+    slidesPerView: 3,
+    slidesPerGroup: 1,
+    spaceBetween: 30,
+    loop: true,
 
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  breakpoints: {
-    320: { slidesPerView: 1, spaceBetween: 10 },   // Small devices: 1 card
-    768: { slidesPerView: 2, spaceBetween: 20 },   // Medium devices: 2 cards
-    992: { slidesPerView: 3, spaceBetween: 30 },   // Desktop: 3 cards
-  },
-});
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
 
-window.addEventListener('load', () => {
-  swiper.update();
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    breakpoints: {
+      320: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      992: { slidesPerView: 3 },
+    },
+  });
 });
 
 
