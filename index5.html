@@ -77,13 +77,20 @@ Know More About Us
 
 </div>
 
+<!--
 <div class="glass-card stat" onclick="openStat('img3')">
 <i class="fa-solid fa-school fa-3x text-primary mb-3"></i>
 <h2 class="counter" data-target="45">0</h2>
 <p>Beneficiary Schools Covered</p>
 </div>
+-->
+<div class="glass-card stat" onclick="openGallery('schools')">
+  <i class="fa-solid fa-school fa-3x text-primary mb-3"></i>
+  <h2 class="counter" data-target="45">0</h2>
+  <p>Beneficiary Schools Covered</p>
+</div>
 
-<div class="glass-card stat" onclick="openStat('img4')">
+<div class="glass-card stat" onclick="openGallery('colleges')">
 <i class="fa-solid fa-graduation-cap fa-3x text-primary mb-3"></i>
 <h2 class="counter" data-target="32">0</h2>
 <p>Colleges whose students are beneficiaries of the trust</p>
@@ -95,6 +102,20 @@ Know More About Us
 
 <div id="statModal" class="stat-modal" onclick="closeStat()">
 <img id="statImage" src="">
+</div>
+
+<!-- Gallery Modal -->
+<div id="galleryModal" class="gallery-modal">
+  <span class="close-btn" onclick="closeGallery()">&times;</span>
+
+  <div class="swiper gallery-swiper">
+    <div class="swiper-wrapper" id="galleryWrapper">
+      <!-- Slides will be injected -->
+    </div>
+
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
 </div>
 
 </section>
@@ -737,7 +758,7 @@ document.getElementById("statModal").style.display = "none";
 
   <!-- Main JS -->
   <script src="/assets/js/script.js"></script>
-
+  
 <script>
   AOS.init({
     duration: 800,

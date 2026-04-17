@@ -40,6 +40,57 @@
     }
   });
 });
+// For image gallery - stats section
+const galleries = {
+  schools: [
+    "/assets/images/school_list1.PNG",
+    "/assets/images/school_list2.PNG",
+    "/assets/images/school_list3.PNG",
+	"/assets/images/school_list4.PNG"
+  ],
+  colleges: [
+  "/assets/images/college_list1.PNG",
+    "/assets/images/college_list2.PNG"
+  ]
+};
+
+let gallerySwiper;
+
+function openGallery(type) {
+  const modal = document.getElementById("galleryModal");
+  const wrapper = document.getElementById("galleryWrapper");
+
+  wrapper.innerHTML = "";
+
+  galleries[type].forEach(img => {
+    wrapper.innerHTML += `
+      <div class="swiper-slide">
+        <img src="${img}" />
+      </div>
+    `;
+  });
+
+  modal.classList.add("active");
+
+  // init swiper AFTER content injected
+  gallerySwiper = new Swiper(".gallery-swiper", {
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+}
+
+function closeGallery() {
+  document.getElementById("galleryModal").classList.remove("active");
+
+  if (gallerySwiper) {
+    gallerySwiper.destroy(true, true);
+  }
+}
+
+//
 
 
 // For Success Stories Swiper
@@ -73,6 +124,8 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 });
+
+
 
 
 const testimonialsSwiper = new Swiper('.testimonials-swiper', {
