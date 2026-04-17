@@ -53,11 +53,21 @@
   display: block;
 }
 
-/* Optional: arrow indicator */
+/* Fix submenu trigger alignment */
+.dropdown-submenu > .dropdown-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Arrow styling */
 .dropdown-submenu > .dropdown-toggle::after {
-  float: right;
-  margin-top: 6px;
+  margin-left: 10px;
   transform: rotate(-90deg);
+}
+/* Prevent text wrapping */
+.dropdown-menu .dropdown-item {
+  white-space: nowrap;
 }
 
 /* =========================================================
@@ -199,7 +209,7 @@
   margin-left: 0.1rem;
 }
 
-</style>
+</style
 
 <header class="header-wrapper" style="height:120px; position:relative;">
   <nav id="mainNav" class="navbar navbar-expand-lg" style="height:120px;">
@@ -228,16 +238,14 @@
 
   <ul class="dropdown-menu">
 
-    <li><a class="dropdown-item" href="bhaiya_thoughts.html">How It Started</a></li>
-    <li><a class="dropdown-item" href="about_us.html">About Us</a></li>
-    <li><a class="dropdown-item" href="objectives.html">Our Objectives</a></li>
-    <li><a class="dropdown-item" href="principles.html">Our Guiding Principles</a></li>
+    <li><a class="dropdown-item" href="bhaiya_thoughts.html">Our Inspiration</a></li>
+    <li><a class="dropdown-item" href="about_us.html">About The Trust</a></li>
+    <!--<li><a class="dropdown-item" href="objectives.html">Our Objectives</a></li>
+    <li><a class="dropdown-item" href="principles.html">Our Guiding Principles</a></li>-->
 
     <!-- Submenu -->
     <li class="dropdown-submenu position-relative">
-      <a class="dropdown-item dropdown-toggle" href="#">
-        The Torch Bearers
-      </a>
+      <a class="dropdown-item dropdown-toggle" href="#">The Torch Bearers</a>
 
       <ul class="dropdown-menu">
         <li><a class="dropdown-item" href="bhaiyaji.html">Shri Nandkishore Sharda</a></li>
