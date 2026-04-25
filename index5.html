@@ -30,7 +30,7 @@
 <!-- HERO SECTION -->
 
 <section class="hero">
-
+<img src="/assets/images/girls2.png" class="hero-bg" alt="">
 <div class="hero-content">
 
 <h1 class="trust-name">Swami Vivekanand Students' Welfare Charitable Trust</h1>
@@ -394,6 +394,376 @@ document.getElementById("statModal").style.display = "none";
   </div>
 </section>
 
+<!---- Impact --------------------------->
+<section class="journey-section">
+
+  <div class="journey-heading text-center">
+    <h2>From Learning to Life Transformation</h2>
+    <p class="divider"></p>
+  </div>
+
+  <div class="journey-container">
+
+    <!-- Step 1 -->
+    <div class="journey-step">
+      <div class="journey-content">
+        <h3>Academic & Personal Growth</h3>
+        <p>
+          Through continuous mentorship and guidance, girls develop a genuine love for learning, 
+          leading to improved academic performance, confidence, and mental resilience.
+        </p>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="journey-step">
+      <div class="journey-content">
+        <h3>Confidence & Character Building</h3>
+        <p>
+          Sanskar-based sessions nurture values like humility, compassion, gratitude, and discipline— 
+          shaping confident and balanced individuals.
+        </p>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="journey-step">
+      <div class="journey-content">
+        <h3>Career & Independence</h3>
+        <p>
+          Many girls pursue professional careers such as Engineering, Medicine, MBA, and CA, 
+          becoming financially independent and self-reliant.
+        </p>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="journey-step">
+      <div class="journey-content">
+        <h3>Lifestyle Transformation</h3>
+        <p>
+          Girls adopt healthier lifestyles, oppose social evils, embrace sustainability, 
+          and develop strong decision-making abilities rooted in values.
+        </p>
+      </div>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="journey-step">
+      <div class="journey-content">
+        <h3>Impact on Families & Society</h3>
+        <p>
+          Homes transform into spaces of harmony and positivity, as these girls 
+          become responsible citizens and torchbearers of change.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<style>
+.journey-section {
+  position: relative;
+  padding: 120px 10%;
+  background: linear-gradient(135deg, #fffdf6, #fff7eb);
+  overflow: hidden;
+}
+
+/* Heading */
+.journey-heading h2 {
+  font-size: 2.3rem;
+  margin-bottom: 10px;
+}
+
+.journey-container {
+  margin-top: 80px;
+}
+
+/* Each step */
+.journey-step {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.8s ease;
+}
+
+/* animation only when JS is active */
+.js-enabled .journey-step {
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+.journey-step.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Card */
+.journey-content {
+  max-width: 700px;
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.3);
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+  transition: all 0.4s ease;
+}
+
+.journey-content:hover {
+  transform: translateY(-5px);
+}
+
+/* Typography */
+.journey-content h3 {
+  font-size: 1.6rem;
+  color: #6b2d2d;
+  margin-bottom: 15px;
+}
+
+.journey-content p {
+  color: #5f5f5f;
+  line-height: 1.7;
+}
+</style>
+<script>
+  const steps = document.querySelectorAll('.journey-step');
+
+  const observer2 = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.3 });
+
+  steps.forEach(step => observer2.observe(step));
+</script>
+<!-- -->
+
+<!----- Combination of top 2 --------->
+<section class="impact-section">
+
+  <!-- Heading -->
+  <div class="heading text-center">
+    <h2>How Sanskar Shapes Lives</h2>
+    <p class="divider"></p>
+    <p class="subtext">From inner transformation to meaningful impact in society</p>
+  </div>
+
+  <div class="container">
+
+    <!-- ===================== -->
+    <!-- PART 1: TRANSFORMATION JOURNEY -->
+    <!-- ===================== -->
+    <div class="timeline-wrapper2">
+
+      <div class="timeline-item2 glass-card">
+        <h3>🕊️ From Fear to Faith</h3>
+        <p>
+          Many girls begin their journey with hesitation and uncertainty. With guidance and support, 
+          fear gives way to faith, and self-doubt transforms into confidence.
+        </p>
+      </div>
+
+      <div class="timeline-item2 glass-card">
+        <h3>🌿 Shaping Mindsets</h3>
+        <p>
+          Through Sanskar and holistic development, values, awareness, and inner strength are nurtured— 
+          helping each girl grow into a balanced and purpose-driven individual.
+        </p>
+      </div>
+
+      <div class="timeline-item2 glass-card">
+        <h3>💫 Self-Reliance & Growth</h3>
+        <p>
+          With continuous mentorship and support, girls evolve into confident, self-reliant individuals— 
+          ready to shape their futures with dignity and purpose.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Transition Line -->
+    <div class="section-transition">
+  <span>And this journey creates a lasting impact</span>
+	</div>
+    <!-- ===================== -->
+    <!-- PART 2: IMPACT (SCROLL REVEAL) -->
+    <!-- ===================== -->
+    <div class="impact-container">
+
+      <div class="impact-grid">
+        <div class="impact-card glass-card">
+          <h3>Academic Growth</h3>
+          <p>
+            A genuine love for learning develops, improving academic performance, focus, and confidence.
+          </p>
+        </div>
+        <div class="impact-card glass-card">
+          <h3>Confidence & Character</h3>
+          <p>
+            Values like humility, compassion, and discipline shape strong, balanced personalities.
+          </p>
+        </div>      
+        <div class="impact-card glass-card">
+          <h3>Career & Independence</h3>
+          <p>
+            Girls pursue professional careers and become financially independent and self-reliant.
+          </p>
+        </div>      
+        <div class="impact-card glass-card">
+          <h3>Lifestyle Transformation</h3>
+          <p>
+            They embrace conscious living, oppose social evils, and make value-driven life decisions.
+          </p>
+        </div>
+        <div class="impact-card glass-card">
+          <h3>Impact on Society</h3>
+          <p>
+            Families transform into spaces of harmony and positivity, shaping responsible citizens.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<style>
+.impact-section {
+  background: linear-gradient(135deg, #fffdf6, #fff7eb);
+  padding: 100px 10%;
+}
+
+/* Heading */
+.subtext {
+  color: #7a6f60;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+/* ===================== */
+/* TIMELINE */
+/* ===================== */
+
+.timeline-wrapper2 {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.timeline-item2 {
+  padding: 30px;
+  border-radius: 18px;
+  text-align: center;
+}
+
+/* ===================== */
+/* TRANSITION */
+/* ===================== */
+
+.section-transition {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 100px 0 60px;
+}
+
+.section-transition::before,
+.section-transition::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #d4af37);
+}
+
+.section-transition::after {
+  background: linear-gradient(to left, transparent, #d4af37);
+}
+
+.section-transition span {
+  padding: 10px 22px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.4);
+
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  color: #a6782e;
+}
+/* ===================== */
+/* IMPACT STEPS */
+/* ===================== */
+
+.impact-container {
+  margin-top: 40px;
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.impact-card {
+  padding: 30px;
+  border-radius: 18px;
+
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.impact-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.impact-card h3 {
+  color: #6b2d2d;
+  margin-bottom: 15px;
+}
+
+.impact-card p {
+  color: #5f5f5f;
+  line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .impact-step {
+    min-height: auto;
+    margin-bottom: 40px;
+  }
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const cards = document.querySelectorAll('.impact-card');
+
+	const observer3 = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      cards.forEach((card, index) => {
+        setTimeout(() => {
+          card.classList.add('show');
+        }, index * 120);
+      });
+    }
+  });
+}, { threshold: 0.2 });
+
+observer3.observe(document.querySelector('.impact-grid'));
+
+});
+</script>
+<!-- -->
 
 <!-- STORIES SECTION -->
 
@@ -758,6 +1128,7 @@ document.getElementById("statModal").style.display = "none";
 
   <!-- Main JS -->
   <script src="/assets/js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   
 <script>
   AOS.init({

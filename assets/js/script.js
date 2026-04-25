@@ -1,13 +1,4 @@
- // Shrink navbar logo on scroll
-  /* window.addEventListener('scroll', function() {
-  const header = document.querySelector('.header-wrapper');
-  if(window.scrollY > 40) {   // threshold equals top bar height
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
-  }
-}); */
-  // Counter animation for "Our Impact"
+// Counter animation for "Our Impact"
   document.addEventListener("DOMContentLoaded", function(){
     function animateCounter(el) {
       let end = +el.getAttribute('data-count');
@@ -25,21 +16,6 @@
     document.querySelectorAll('.impact-counter').forEach(animateCounter);
   });
  
- document.querySelectorAll('.dropdown-submenu > a').forEach(el => {
-  el.addEventListener('click', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-
-    let submenu = this.nextElementSibling;
-    if (submenu.classList.contains('show')) {
-      submenu.classList.remove('show');
-    } else {
-      // Close other open submenus
-      this.closest('.dropdown-menu').querySelectorAll('.show').forEach(menu => menu.classList.remove('show'));
-      submenu.classList.add('show');
-    }
-  });
-});
 // For image gallery - stats section
 const galleries = {
   schools: [

@@ -1,307 +1,346 @@
 <style>
-/* =========================================================
-   NAVBAR BASE STYLING
-   ========================================================= */
+
+/* ================= NAVBAR BASE ================= */
 .navbar {
-  background-color: white;
-  padding-top: 0;
-  padding-bottom: 0;
+  background: #fff;
+  padding: 0;
 }
 
-.navbar-brand,
-.navbar a.nav-link {
+.navbar .nav-link {
   color: var(--color-maroon);
   font-weight: 600;
-  padding: 0.5rem 1rem;
+  padding: 8px 14px;
   border-radius: 6px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: 0.25s;
 }
 
-.navbar a.nav-link:hover,
-.navbar a.nav-link:focus,
-.navbar a.nav-link.active {
-  background-color: var(--color-brown);
-  color: var(--color-white);
+.navbar .nav-link:hover {
+  background: var(--color-brown);
+  color: #fff;
 }
 
-/* Dropdown menu items */
-.dropdown-menu a.dropdown-item {
-  color: var(--color-maroon);
-  font-weight: 500;
-  padding: 0.5rem 1rem;
+.navbar-toggler {
+  position: relative;
+  z-index: 10000;
+}
+
+/* ================= DROPDOWN ================= */
+.dropdown-menu {
+  border-radius: 10px;
+  border: none;
+  padding: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.dropdown-item {
   border-radius: 6px;
-  transition: background 0.3s ease, color 0.3s ease;
+  padding: 8px 12px;
 }
 
-.dropdown-menu a.dropdown-item:hover,
-.dropdown-menu a.dropdown-item:focus {
-  background-color: var(--color-brown);
-  color: var(--color-white);
+/* Desktop submenu */
+@media (min-width: 992px) {
+  .dropdown-submenu {
+    position: relative;
+  }
+
+  .dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    display: none;
+  }
+
+  .dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+  }
 }
 
-/* Position submenu to the right */
-.dropdown-submenu .dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-left: 0.1rem;
-  display: none;
-  border-radius: 8px;
-}
-
-/* Show submenu on hover (desktop) */
-.dropdown-submenu:hover > .dropdown-menu {
-  display: block;
-}
-
-/* Fix submenu trigger alignment */
-.dropdown-submenu > .dropdown-toggle {
+/* ================= HEADER ================= */
+.header-wrapper {
+  height: 110px;
+  background: var(--color-gold);
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
-/* Arrow styling */
-.dropdown-submenu > .dropdown-toggle::after {
-  margin-left: 10px;
-  transform: rotate(-90deg);
-}
-/* Prevent text wrapping */
-.dropdown-menu .dropdown-item {
-  white-space: nowrap;
+.navbar-brand img {
+  max-height: 90px;
 }
 
-/* =========================================================
-   HEADER WRAPPER (Top area including nav)
-   ========================================================= */
-.header-wrapper {
-  height: 140px;
-  background: var(--color-gold);
-  position: relative;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: height 0.4s ease, background 0.3s ease;
-}
-
-/* Shrink effect on scroll */
-.header-wrapper.scrolled {
+/* ================= MOBILE DRAWER ================= */
+.mobile-menu {
   position: fixed;
   top: 0;
-  left: 0;
   right: 0;
-  height: 60px;
-  background: var(--color-white);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-  z-index: 1050;
+  width: 85%;
+  height: 100%;
+  background: #fff;
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
+  z-index: 9999;
+  padding: 20px;
+  overflow-y: auto;
 }
 
-/* =========================================================
-   LOGO
-   ========================================================= */
-.navbar-brand img {
-  max-height: 120px;
-  width: auto;
+.mobile-menu.active {
+  transform: translateX(0);
+}
+
+.mobile-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 9998;
+   pointer-events: none;
+}
+
+.mobile-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Mobile nav */
+.mobile-nav li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.mobile-nav a,
+.menu-link {
   display: block;
-  transition: max-height 0.4s;
+  padding: 12px;
+  font-weight: 600;
+  color: var(--color-maroon);
+  text-decoration: none;
 }
 
-/* Shrink logo on scroll */
-.header-wrapper.scrolled .navbar-brand img {
-  max-height: 55px;
+.menu-link {
+  cursor: pointer;
 }
 
-/* =========================================================
-   NAVBAR STRUCTURE
-   ========================================================= */
-#mainNav .container-fluid {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: nowrap !important;
+/* Submenu */
+.submenu {
+  display: none;
+  padding-left: 15px;
 }
 
-/* Burger icon on right */
-#mainNav .navbar-toggler {
-  margin-left: auto;
-  z-index: 1100;
+.has-submenu.active > .submenu {
+  display: block;
 }
 
-/* Menu aligned right */
-#mainNav .navbar-collapse {
-  margin-left: auto;
-  justify-content: flex-end;
-}
-
-/* =========================================================
-   MOBILE BEHAVIOR
-   ========================================================= */
-/* =========================================================
-   PERFECT MOBILE MENU (No flicker + No header shift)
-   ========================================================= */
+/* Hide bootstrap menu on mobile */
 @media (max-width: 991px) {
-
-  /* Make collapse a floating panel */
-  #mainNav .navbar-collapse {
-    position: absolute;
-    top: 100%;                    /* → Appears right under burger icon */
-    right: 0;
-    left: 0;
-    background: #ffffff;
-    padding: 12px 16px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    border-radius: 0 0 12px 12px;
-    z-index: 9999;
-  }
-
-  /* BUT keep it hidden when collapsed */
-  #mainNav .navbar-collapse.collapse {
+  .navbar-collapse {
     display: none !important;
   }
-
-  #mainNav .navbar-collapse.show {
-    display: block !important;
-  }
-
-  /* Prevent logo from shrinking or moving */
-  .header-wrapper {
-    height: 140px !important;
-  }
-  .navbar-brand img {
-    max-height: 80px;
-  }
 }
 
-/* =========================================================
-   SMALL MOBILE (≤ 768px)
-   ========================================================= */
-@media (max-width: 768px) {
-  .header-wrapper {
-    height: auto !important;
-    padding-bottom: 0.5rem;
-  }
+</style>
 
-  .navbar-brand img {
-    max-height: 70px;
-  }
-}
+<header class="header-wrapper">
+  <nav class="navbar navbar-expand-lg w-100">
+    <div class="container-fluid">
 
-@media (max-width: 767px) {
-    #mainNav {
-        height: 80px !important;  /* fix navbar height in mobile */
-        padding: 10px 20px !important;
-    }
-
-    #mainNav.navbar-shrink {
-        height: 80px !important; /* disable shrink on scroll in mobile */
-    }
-}
-
-
-/* =========================================================
-   MULTI-LEVEL DROPDOWNS
-   ========================================================= */
-.dropdown-submenu {
-  position: relative;
-}
-
-.dropdown-submenu > .dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-left: 0.1rem;
-}
-
-</style
-
-<header class="header-wrapper" style="height:120px; position:relative;">
-  <nav id="mainNav" class="navbar navbar-expand-lg" style="height:120px;">
-    <div class="container-fluid d-flex align-items-center">
-
-      <!-- Logo as navbar-brand (left) -->
-      <a class="navbar-brand d-flex align-items-center" href="index.html" style="padding-left:16px;">
-        <img src="/assets/images/logo.png" alt="Trust Logo" class="img-fluid logo-img">
+      <!-- Logo -->
+      <a class="navbar-brand" href="index.html">
+        <img src="/assets/images/logo.png">
       </a>
 
-      <!-- Toggler (right, same line) -->
-      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-              aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <!-- Toggle -->
+      <button class="navbar-toggler" id="menuToggle">
+        ☰
       </button>
 
-      <!-- Collapsible menu -->
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <!-- Menu -->
+      <div class="collapse navbar-collapse">
         <ul class="navbar-nav ms-auto">
-          <!-- your nav items -->
-		  <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-    About Us
-  </a>
 
-  <ul class="dropdown-menu">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
 
-    <li><a class="dropdown-item" href="bhaiya_thoughts.html">Our Inspiration</a></li>
-    <li><a class="dropdown-item" href="about_us.html">About The Trust</a></li>
-    <!--<li><a class="dropdown-item" href="objectives.html">Our Objectives</a></li>
-    <li><a class="dropdown-item" href="principles.html">Our Guiding Principles</a></li>-->
+          <!-- ABOUT -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              About Us
+            </a>
 
-    <!-- Submenu -->
-    <li class="dropdown-submenu position-relative">
-      <a class="dropdown-item dropdown-toggle" href="#">The Torch Bearers</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="bhaiya_thoughts.html">Our Inspiration</a></li>
+              <li><a class="dropdown-item" href="about_us.html">About The Trust</a></li>
 
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="bhaiyaji.html">Shri Nandkishore Sharda</a></li>
-        <li><a class="dropdown-item" href="basanti_maa.html">Kumari Basanti Manihar</a></li>
-        <li><a class="dropdown-item" href="madhu_maa.html">Kumari Madhubala Advani</a></li>
-      </ul>
-    </li>
+              <!-- Submenu -->
+              <li class="dropdown-submenu">
+                <a class="dropdown-item dropdown-toggle" href="#">
+                  The Torch Bearers
+                </a>
 
-  </ul>
-</li>
-       <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Torch Bearers</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="bhaiyaji.html">Shri Nandkishore Sharda</a></li>
-            <li><a class="dropdown-item" href="basanti_maa.html">Maa Basanti Manihar</a></li>
-            <li><a class="dropdown-item" href="madhu_maa.html">Maa Madhu Advani</a></li>
-          </ul>
-        </li>-->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Women Empowerment</a>
-          <ul class="dropdown-menu">
-		  <li><a class="dropdown-item" href="why_women_empowerment.html">Why It's Important</a></li>
-		  <li><a class="dropdown-item" href="modus_operandi.html">How We Operate</a></li>
-          <li><a class="dropdown-item" href="scholarship_distribution.html">Scholarship Distribution</a></li>
-          <li><a class="dropdown-item" href="sunday_classes.html">Personality Development Classes</a></li>
-		  <li><a class="dropdown-item" href="infrastructure.html">Basic Infrastructure Support</a></li>
-		  
-          </ul>
-        </li>
-		<li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Our Impact</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="success_stories.html">Success Stories</a></li>
-			<li><a class="dropdown-item" href="testimonial.html">Testimonials</a></li>
-          </ul>
-        </li>
-		<li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
-          <ul class="dropdown-menu">
-			<li><a class="dropdown-item" href="certificates.html">Legal Certificates</a></li>
-			<li><a class="dropdown-item" href="balance_sheet.html">Financial Reports</a></li>
-			<li><a class="dropdown-item" href="scholarship_certificate.html">Scholarship Receipt Certificates</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gallery</a>
-          <ul class="dropdown-menu">
-		  <li><a class="dropdown-item" href="awards.html">Awards & Recognitions</a></li>
-            <li><a class="dropdown-item" href="gallery_scholarship.html">Scholarship Programme</a></li>
-            <li><a class="dropdown-item" href="gallery_news.html">Trust in News</a></li>
-          </ul>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="contact_us.html">Contact Us</a></li>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="bhaiyaji.html">Shri Nandkishore Sharda</a></li>
+                  <li><a class="dropdown-item" href="basanti_maa.html">Kumari Basanti Manihar</a></li>
+                  <li><a class="dropdown-item" href="madhu_maa.html">Kumari Madhubala Advani</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <!-- WOMEN EMPOWERMENT -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              Women Empowerment
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="why_women_empowerment.html">Why It's Important</a></li>
+              <li><a class="dropdown-item" href="modus_operandi.html">How We Operate</a></li>
+              <li><a class="dropdown-item" href="scholarship_distribution.html">Scholarship Distribution</a></li>
+              <li><a class="dropdown-item" href="sunday_classes.html">Personality Development Classes</a></li>
+              <li><a class="dropdown-item" href="infrastructure.html">Basic Infrastructure Support</a></li>
+            </ul>
+          </li>
+
+          <!-- IMPACT -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              Our Impact
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="success_stories.html">Success Stories</a></li>
+              <li><a class="dropdown-item" href="testimonial.html">Testimonials</a></li>
+            </ul>
+          </li>
+
+          <!-- RESOURCES -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              Resources
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="certificates.html">Legal Certificates</a></li>
+              <li><a class="dropdown-item" href="balance_sheet.html">Financial Reports</a></li>
+              <li><a class="dropdown-item" href="scholarship_certificate.html">Scholarship Receipts</a></li>
+            </ul>
+          </li>
+
+          <!-- GALLERY -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              Gallery
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="awards.html">Awards & Recognitions</a></li>
+              <li><a class="dropdown-item" href="gallery_scholarship.html">Scholarship Programme</a></li>
+              <li><a class="dropdown-item" href="gallery_news.html">Trust in News</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contact_us.html">Contact Us</a>
+          </li>
+
         </ul>
       </div>
     </div>
   </nav>
+	
+   <!-- MOBILE DRAWER -->
+<div class="mobile-overlay"></div>
+
+<div class="mobile-menu">
+  <ul class="mobile-nav">
+
+    <li><a href="index.html">Home</a></li>
+
+    <li class="has-submenu">
+      <div class="menu-link">About Us <span>›</span></div>
+      <ul class="submenu">
+        <li><a href="bhaiya_thoughts.html">Our Inspiration</a></li>
+        <li><a href="about_us.html">About The Trust</a></li>
+
+        <li class="has-submenu">
+          <div class="menu-link">The Torch Bearers <span>›</span></div>
+          <ul class="submenu">
+            <li><a href="bhaiyaji.html">Shri Nandkishore Sharda</a></li>
+            <li><a href="basanti_maa.html">Kumari Basanti Manihar</a></li>
+            <li><a href="madhu_maa.html">Kumari Madhubala Advani</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li><a href="scholarship_distribution.html">Scholarship Distribution</a></li>
+    <li><a href="sunday_classes.html">Personality Development Classes</a></li>
+    <li><a href="success_stories.html">Success Stories</a></li>
+    <li><a href="contact_us.html">Contact Us</a></li>
+
+  </ul>
+</div>	
+  
 </header>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const menu = document.querySelector(".mobile-menu");
+  const overlay = document.querySelector(".mobile-overlay");
+  const toggle = document.getElementById("menuToggle");
+
+  if (!menu || !overlay || !toggle) return;
+
+  // =========================
+  // OPEN MENU
+  // =========================
+  function openMenu(e) {
+    if (e) e.preventDefault();
+
+    menu.classList.add("active");
+    overlay.classList.add("active");
+    document.body.style.overflow = "hidden"; // prevent background scroll
+  }
+
+  // =========================
+  // CLOSE MENU
+  // =========================
+  function closeMenu() {
+    menu.classList.remove("active");
+    overlay.classList.remove("active");
+    document.body.style.overflow = ""; // restore scroll
+  }
+
+  // =========================
+  // EVENTS (click + touch safe)
+  // =========================
+  toggle.addEventListener("click", openMenu);
+  toggle.addEventListener("touchstart", openMenu);
+
+  overlay.addEventListener("click", closeMenu);
+  overlay.addEventListener("touchstart", closeMenu);
+
+  // =========================
+  // SUBMENU ACCORDION
+  // =========================
+  document.querySelectorAll(".menu-link").forEach(link => {
+    link.addEventListener("click", function () {
+
+      const parent = this.parentElement;
+
+      // Close others (optional but premium UX)
+      document.querySelectorAll(".has-submenu").forEach(item => {
+        if (item !== parent) item.classList.remove("active");
+      });
+
+      parent.classList.toggle("active");
+    });
+  });
+
+  // =========================
+  // CLOSE ON ESC (desktop)
+  // =========================
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeMenu();
+  });
+
+});
+</script>
