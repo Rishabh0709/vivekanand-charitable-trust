@@ -16,8 +16,25 @@
     document.querySelectorAll('.impact-counter').forEach(animateCounter);
   });
  
+document.getElementById("galleryModal")
+  .addEventListener("click", function(e){
+
+    if(e.target === this){
+      closeGallery();
+    }
+
+}); 
+ 
 // For image gallery - stats section
 const galleries = {
+	  img1: [
+    "/assets/images/chart1.png"
+  ],
+
+  img2: [
+    "/assets/images/chart2.png"
+  ],
+
   schools: [
     "/assets/images/school_list1.PNG",
     "/assets/images/school_list2.PNG",
@@ -33,38 +50,74 @@ const galleries = {
 let gallerySwiper;
 
 function openGallery(type) {
+
+  const images = galleries[type];
+
+  // Safety check
+  if (!images || images.length === 0) {
+    console.error("Gallery not found:", type);
+    return;
+  }
+
   const modal = document.getElementById("galleryModal");
   const wrapper = document.getElementById("galleryWrapper");
 
   wrapper.innerHTML = "";
 
-  galleries[type].forEach(img => {
+  images.forEach(img => {
+
     wrapper.innerHTML += `
       <div class="swiper-slide">
-        <img src="${img}" />
+        <img src="${img}" alt="">
       </div>
     `;
+
   });
 
   modal.classList.add("active");
 
-  // init swiper AFTER content injected
+  // destroy old swiper first
+  if (gallerySwiper) {
+    gallerySwiper.destroy(true, true);
+  }
+
   gallerySwiper = new Swiper(".gallery-swiper", {
-    loop: true,
+    loop: images.length > 1,
+
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
   });
+
+  document.body.style.overflow = "hidden";
 }
 
 function closeGallery() {
-  document.getElementById("galleryModal").classList.remove("active");
+
+  document.getElementById("galleryModal")
+    .classList.remove("active");
+
+  document.body.style.overflow = "auto";
 
   if (gallerySwiper) {
     gallerySwiper.destroy(true, true);
+    gallerySwiper = null;
   }
 }
+
+
+/*This section for closing gallery modal even when someone click outside image area*/
+const galleryModal = document.getElementById("galleryModal");
+
+galleryModal.addEventListener("click", function(e) {
+
+  // if clicked outside actual swiper container
+  if (!e.target.closest(".gallery-swiper")) {
+    closeGallery();
+  }
+
+});
 
 //
 
@@ -132,86 +185,62 @@ const testimonialsSwiper = new Swiper('.testimonials-swiper', {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-  if (window.innerWidth >= 992) {
+
+  function handleDesktopDropdowns() {
     const dropdowns = document.querySelectorAll('.navbar .dropdown');
 
     dropdowns.forEach(dropdown => {
-      dropdown.addEventListener('mouseenter', function () {
-        this.classList.add('show');
-        const menu = this.querySelector('.dropdown-menu');
-        menu.classList.add('show');
-      });
+      dropdown.classList.remove('show');
 
-      dropdown.addEventListener('mouseleave', function () {
-        this.classList.remove('show');
-        const menu = this.querySelector('.dropdown-menu');
-        menu.classList.remove('show');
-      });
+      dropdown.onmouseenter = null;
+      dropdown.onmouseleave = null;
     });
+
+    if (window.innerWidth >= 992) {
+      dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('mouseenter', function () {
+          this.classList.add('show');
+          this.querySelector('.dropdown-menu')?.classList.add('show');
+        });
+
+        dropdown.addEventListener('mouseleave', function () {
+          this.classList.remove('show');
+          this.querySelector('.dropdown-menu')?.classList.remove('show');
+        });
+      });
+    }
   }
-});
 
-/* document.addEventListener('DOMContentLoaded', function () {
-  // Inject Back to Top button only once per page
-  if (!document.getElementById('backToTopBtn')) {
-    const btn = document.createElement('button');
-    btn.id = 'backToTopBtn';
-    btn.title = 'Go to top';
-    btn.innerHTML = '↑';
-    btn.style.display = 'none';
-    btn.style.position = 'fixed';
-    btn.style.bottom = '30px';
-    btn.style.right = '30px';
-    btn.style.zIndex = '99';
-    btn.style.border = 'none';
-    btn.style.outline = 'none';
-    btn.style.background = '#007bff';
-    btn.style.color = 'white';
-    btn.style.cursor = 'pointer';
-    btn.style.padding = '12px 18px';
-    btn.style.borderRadius = '50%';
-    btn.style.fontSize = '24px';
-    btn.style.boxShadow = '0 4px 10px rgba(0,0,0,0.17)';
-    btn.onclick = function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
-    document.body.appendChild(btn);
+  handleDesktopDropdowns();
 
-    window.onscroll = function () {
-      btn.style.display = (window.scrollY > 100) ? 'block' : 'none';
-    };
-  }
-}); */
-
-document.addEventListener("DOMContentLoaded", function () {
-  if (!document.getElementById("backToTopBtn")) {
-    const btn = document.createElement("button");
-    btn.id = "backToTopBtn";
-    btn.title = "Go to top";
-    btn.innerHTML = "↑";
-    btn.setAttribute("aria-label", "Back to top");
-    btn.setAttribute("role", "button");
-    btn.setAttribute("data-aos", "fade-up"); // ✅ use AOS attribute
-    document.body.appendChild(btn);
-
-    // Show/hide on scroll
-    window.addEventListener(
-      "scroll",
-      () => {
-        if (window.scrollY > 0) {
-          btn.classList.add("show");
-        } else {
-          btn.classList.remove("show");
-        }
-      },
-      { passive: true }
-    );
-
-    // Scroll to top on click
-    btn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  }
+  window.addEventListener('resize', handleDesktopDropdowns);
 });
 
 
+/* BackToTop Button*/
+window.addEventListener("load", function () {
+
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  if (!backToTopBtn) return;
+
+  window.addEventListener("scroll", function () {
+
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.add("show");
+    } else {
+      backToTopBtn.classList.remove("show");
+    }
+
+  });
+
+  backToTopBtn.addEventListener("click", function () {
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+  });
+
+});

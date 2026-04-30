@@ -28,11 +28,18 @@
 
 /*.............................Some styling for all the pages......................*/
 /* === Global Styles === */
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   background:#FFFDF9;
   color:#333; 
   line-height:1.8;
+  padding-top: 0;
 }
 
  
@@ -40,9 +47,22 @@ body {
 
 
 /* === Headings Spacing */
-
-h1, h2, h3, h4, h5, p {
+h1, h2, h3, h4, h5 {
   font-family: 'Playfair Display', serif;
+}
+
+p {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 56px;
+  line-height: 1.15;
+  font-weight: 700;
 }
 
 h2, h3, h4, h5 {
@@ -60,12 +80,34 @@ h3{
   font-size: 30px;
   margin-bottom: 25px;
   line-height: 1.3;
-  color: #0000FF;
+  color: #99215D;
+}
+
+h4{
+color: #7a184a;
+font-size: 24px;
+  line-height: 1.4;
 }
 
 h5{
 	font-size: 17px;
 	color: #0000FF;
+	line-height: 1.4;
+}
+
+/* For first paragraph */
+.lead {
+  font-size: 19px;
+  line-height: 1.7;
+  color: #222;
+  font-weight: 500;
+}
+
+/* For subtitle or heading description */
+.small-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #777;
 }
 
 /* ==============================
@@ -328,36 +370,6 @@ object-fit: contain;	/* smaller height for mobile */
 
 /*................*/
 
-
-/* === Footer === */
-footer {
-  background-color: var(--color-maroon);
-  color: var(--color-white);
-  text-align: left;
-  padding: 1rem 1rem;
-  font-size: 0.9rem;
-	}
-/* Footer styles */
-footer h5 {
-  margin-bottom: 1rem;
-}
-
-footer a {
-  color: var(--color-gold);
-  font-weight: 500;
-  padding: 0.25rem 0.5rem;   /* some breathing space */
-  border-radius: 6px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-footer a:hover,
-footer a:focus {
-  background-color: var(--color-gold); /* same highlight style */
-  color: var(--color-white);
-  text-decoration: none; /* remove underline */
-}
-
-
  /*Show dropdown menu on hover for desktop*/
 @media (min-width: 992px) {
   .navbar-nav .dropdown:hover > .dropdown-menu {
@@ -406,33 +418,9 @@ img.rounded-logo {
 }
  */
  
- /* back-to-top.css */
-#backToTopBtn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 99;
-  border: none;
-  outline: none;
-  background: #007bff;
-  color: white;
-  cursor: pointer;
-  padding: 12px 18px;
-  border-radius: 50%;
-  font-size: 24px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.17);
-  transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.3s ease;
-  opacity: 0;
-  visibility: hidden;
-}
-
-#backToTopBtn.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(-10px); /* slight lift effect */
-}
-
-#backToTopBtn:hover {
-  background: #0056b3;
-  transform: scale(1.1);
+.footer-modern p,
+.footer-modern span,
+.footer-modern li,
+.footer-modern a {
+  color: inherit;
 }

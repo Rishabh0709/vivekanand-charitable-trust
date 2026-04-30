@@ -1,0 +1,79 @@
+/* =========================
+   PAGE HERO (COMMON)
+========================= */
+
+.page-hero {
+  padding: var(--space-7) var(--space-4);
+  background: linear-gradient(135deg, #fff8e7, #fffdf9);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Heading */
+.page-hero h1 {
+  font-size: var(--fs-3xl);
+  font-weight: 700;
+  color: var(--clr-primary);
+  margin-bottom: var(--space-3);
+}
+
+/* Subtext */
+.page-hero-subtext {
+  font-size: var(--fs-lg);
+  color: var(--clr-muted);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+
+/* ============================
+For pages where hero is with background image (for now only homepage, can be extended to other pages as well)
+=============================== */
+
+.page-hero--image {
+  background: url('/assets/images/hero-bg.jpg') center/cover no-repeat;
+  color: #fff;
+  position: relative;
+}
+
+.page-hero--image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.page-hero--image .container {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =========
+Centered premium look
+========== */
+
+.page-hero--boxed {
+  max-width: 900px;
+  margin: var(--space-6) auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+/* =========================
+   MOBILE OPTIMIZATION
+========================= */
+
+@media (max-width: 768px) {
+  .page-hero {
+    padding: var(--space-5) var(--space-3);
+  }
+
+  .page-hero h1 {
+    font-size: var(--fs-2xl);
+  }
+
+  .page-hero-subtext {
+    font-size: var(--fs-md);
+  }
+}
