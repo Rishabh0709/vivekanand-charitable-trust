@@ -3,171 +3,410 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
   <title>Success Stories | Swami Vivekanand Students’ Welfare Charitable Trust</title>
 
-  <!-- Bootstrap CSS -->
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+
+  <!-- Main CSS -->
   <link rel="stylesheet" href="/assets/css/style.css"/>
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <style>
-    .story-card {
-      border-radius: 0.5rem;
-      box-shadow: 0 2px 18px rgba(10,20,40,.07);
-      border: none;
-      background: #fafcff;
-      transition: transform 0.3s, box-shadow 0.3s;
+
+    :root{
+      --primary-maroon:#7f1d1d;
+      --primary-gold:#fbbf24;
+      --soft-bg:#f8f5f2;
+      --text-dark:#2b2b2b;
     }
 
-    .story-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 32px rgba(10,20,40,.15);
+    body{
+      background: linear-gradient(to bottom, #f8f5f2, #fff);
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+    }
+    
+    /* =========================================================
+       STORIES GRID
+    ========================================================= */
+
+    .stories-wrapper{
+      padding: 20px 0 100px;
     }
 
-    .story-card img {
-      border-top-left-radius: 0.5rem;
-      border-top-right-radius: 0.5rem;
-      object-fit: cover;
-      height: 220px;
-      width: 100%;
+    .story-card{
+      position:relative;
+      border:none;
+      border-radius:28px;
+      overflow:hidden;
+
+      background: rgba(255,255,255,0.65);
+      backdrop-filter: blur(18px);
+
+      box-shadow:
+        0 10px 35px rgba(0,0,0,0.08),
+        inset 0 1px 0 rgba(255,255,255,0.4);
+
+      transition: all 0.4s ease;
+
+      height:100%;
+	   display:flex;
+  flex-direction:column;
     }
 
-	.story-card .card-body {
-		display: flex;
-		flex-direction: column;
-		height: 100%;
-	}
-
-	.story-card .card-body p {
-		flex-grow: 1; /* Takes up remaining space */
-	}
-
-    .read-more-btn {
-      background: #1a237e;
-      color: #fff;
-      font-weight: 500;
-      border-radius: 2rem;
-      padding: 0.4rem 1.2rem;
-      transition: background 0.18s;
-      text-decoration: none;
-	  align-self: start; /* Keeps button aligned left, adjust if needed */
-	  margin-top: 1rem;  /* Space above button */
+    .story-card:hover{
+      transform: translateY(-8px);
+      box-shadow:
+        0 18px 50px rgba(0,0,0,0.12);
     }
 
-    .read-more-btn:hover {
-      background: #3949ab;
-      color: #fff;
+    .story-img{
+      position:relative;
+      overflow:hidden;
+      height:280px;
     }
+
+    .story-img img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition: transform 0.6s ease;
+    }
+
+    .story-card:hover .story-img img{
+      transform: scale(1.05);
+    }
+
+    .story-content{
+      padding:28px;
+      display:flex;
+      flex-direction:column;
+      height:100%;
+	  flex:1;
+    }
+
+    .story-content h5{
+      font-family:'Playfair Display', serif;
+      font-size:1.45rem;
+      color:var(--primary-maroon);
+      margin-bottom:14px;
+      line-height:1.4;
+    }
+
+    .story-content p{
+      flex-grow:1;
+      color:#555;
+      line-height:1.9;
+      margin-bottom:24px;
+      font-size:0.97rem;
+    }
+
+    /* =========================================================
+       BUTTON
+    ========================================================= */
+
+    .story-btn{
+	 display:inline-flex;
+  align-items:center;
+  justify-content:center;
+      align-self:flex-start;
+
+      background: linear-gradient(
+        135deg,
+        var(--primary-gold),
+        #f59e0b
+      );
+
+      color:#4b130f;
+      font-weight:600;
+      text-decoration:none;
+
+      padding:12px 24px;
+      border-radius:999px;
+
+      transition: all 0.3s ease;
+
+      box-shadow: 0 8px 20px rgba(251,191,36,0.25);
+	  
+    }
+
+    .story-btn:hover{
+      transform: translateY(-3px);
+      color:#4b130f;
+
+      box-shadow: 0 12px 28px rgba(251,191,36,0.35);
+    }
+	
+	.story-btn:visited,
+.story-btn:focus,
+.story-btn:active{
+  color:#4b130f;
+  text-decoration:none;
+}
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width:991px){
+
+      .stories-hero{
+        padding-top:100px;
+      }
+
+      .story-img{
+        height:240px;
+      }
+
+    }
+
+    @media (max-width:768px){
+
+      .stories-wrapper{
+        padding-bottom:70px;
+      }
+
+      .story-content{
+        padding:24px;
+      }
+
+      .story-content h5{
+        font-size:1.3rem;
+      }
+
+      .story-content p{
+        font-size:0.95rem;
+      }
+
+    }
+
   </style>
 </head>
+
 <body>
 
   <!-- Header -->
   <div id="header-placeholder"></div>
 
-  <main class="container">
-    <h1>Success Stories</h1>
-    <p>
-      This page showcases stories of some of the girls who benefitted from the Trust's support. 
-      The Trust not only helped them achieve financial independence but also nurtured their overall growth.
-    </p>
+  <!-- HERO -->
+    <div class="section-heading">
 
-    <div class="row g-4">
+      <h2>Stories of Hope & Transformation</h2>
 
-      <!-- Story 1 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card story-card h-100">
-          <img src="/assets/images/neetu-deora.png" alt="Neetu Deora"/>
-          <div class="card-body">
-            <h5>Neetu Deora: Senior Assistant - SBI</h5>
-            <p>With the Trust’s support from 9th Class (1998) to M.Com.(2007), I continued my studies even after losing my father, gaining dignity, a career at SBI, and guidance for a peaceful family life.</p>
-            <a href="./story1.html" class="read-more-btn btn btn-sm mt-2">Read More</a>
+      <div class="divider"></div>
+
+      <p>
+        Every journey represented here reflects courage, resilience, and transformation.
+        Through education, mentorship, and compassionate support, these girls overcame
+        challenges to build lives of dignity, confidence, and purpose.
+      </p>
+
+    </div>
+
+
+  <!-- STORIES -->
+  <section class="stories-wrapper">
+
+    <div class="container">
+
+      <div class="row g-4">
+
+        <!-- Story 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="story-card">
+
+            <div class="story-img">
+              <img src="/assets/images/neetu-deora.png" alt="Neetu Deora">
+            </div>
+
+            <div class="story-content">
+              <h5>Neetu Deora<br>Senior Assistant – SBI</h5>
+
+              <p>
+                With the Trust’s support from Class 9th to M.Com,
+                she continued her education despite difficult circumstances
+                after losing her father and went on to build a dignified,
+                stable career at SBI.
+              </p>
+
+              <a href="./story1.html" class="story-btn">Read Story</a>
+            </div>
+
           </div>
         </div>
-      </div>
 
-      <!-- Story 2 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card story-card h-100">
-          <img src="/assets/images/poonam-mishra.png" alt="Poonam Mishra"/>
-          <div class="card-body">
-            <h5>Poonam Mishra: School Principal</h5>
-            <p>Supported from 6th Class (1998) to M.Sc.(2010), the Trust ensured my studies continued during financial hardships after my father lost his job.</p>
-            <a href="./story2.html" class="read-more-btn btn btn-sm mt-2">Read More</a>
+        <!-- Story 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="story-card">
+
+            <div class="story-img">
+              <img src="/assets/images/poonam-mishra.png" alt="Poonam Mishra">
+            </div>
+
+            <div class="story-content">
+              <h5>Poonam Mishra<br>School Principal</h5>
+
+              <p>
+                From Class 6th to M.Sc, the Trust supported her journey
+                through financial hardships, helping her continue her education
+                and eventually emerge as an inspiring educational leader.
+              </p>
+
+              <a href="./story2.html" class="story-btn">
+                Read Story
+              </a>
+            </div>
+
           </div>
         </div>
-      </div>
 
-      <!-- Story 3 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card story-card h-100">
-          <img src="/assets/images/jyoti-soni.png" alt="Jyoti Soni"/>
-          <div class="card-body">
-            <h5>Jyoti Soni - CA, CS</h5>
-            <p>After losing her father in Class 12, Jyoti overcame challenges with financial and moral support, completing CA and CS in 2016 with renewed confidence.</p>
-            <a href="./story3.html" class="read-more-btn btn btn-sm mt-2">Read More</a>
+        <!-- Story 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="story-card">
+
+            <div class="story-img">
+              <img src="/assets/images/jyoti-soni.png" alt="Jyoti Soni">
+            </div>
+
+            <div class="story-content">
+              <h5>Jyoti Soni<br>CA & CS</h5>
+
+              <p>
+                After losing her father during Class 12, she rebuilt her life
+                through determination, guidance, and support —
+                eventually qualifying as both a Chartered Accountant and Company Secretary.
+              </p>
+
+              <a href="./story3.html" class="story-btn">
+                Read Story
+              </a>
+            </div>
+
           </div>
         </div>
-      </div>
 
-      <!-- Story 4 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card story-card h-100">
-          <img src="/assets/images/kumudini-dadhich.png" alt="Dr. Kumudini Dhadhich"/>
-          <div class="card-body">
-            <h5>Dr. Kumudini Dhadhich</h5>
-            <p>From almost leaving school in Class 10 to becoming a Chemistry Lecturer, the Trust’s support, guidance, and values have been my guiding light.</p>
-            <a href="./story4.html" class="read-more-btn btn btn-sm mt-2">Read More</a>
+        <!-- Story 4 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="story-card">
+
+            <div class="story-img">
+              <img src="/assets/images/kumudini-dadhich.png" alt="Dr Kumudini Dhadhich">
+            </div>
+
+            <div class="story-content">
+              <h5>Dr. Kumudini Dhadhich<br>Chemistry Lecturer</h5>
+
+              <p>
+                From nearly leaving school in Class 10 to becoming a lecturer,
+                her journey reflects how encouragement, education,
+                and inner strength can completely transform a life.
+              </p>
+
+              <a href="./story4.html" class="story-btn">
+                Read Story
+              </a>
+            </div>
+
           </div>
         </div>
-      </div>
 
-      <!-- Story 5 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card story-card h-100">
-          <img src="/assets/images/sejal-rathore.png" alt="Er. Sejal Rathore"/>
-          <div class="card-body">
-            <h5>Er. Sejal Rathore</h5>
-            <p>Listen to her journey on how the Trust's support helped her overcome life struggles and secure a job in an MNC.</p>
-            <a href="./story5.html" class="read-more-btn btn btn-sm mt-2">Read More</a>
+        <!-- Story 5 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="story-card">
+
+            <div class="story-img">
+              <img src="/assets/images/sejal-rathore.png" alt="Sejal Rathore">
+            </div>
+
+            <div class="story-content">
+              <h5>Er. Sejal Rathore<br>Software Engineer</h5>
+
+              <p>
+                Through consistent support and mentorship,
+                she overcame life challenges and built a successful
+                professional career in a leading multinational company.
+              </p>
+
+              <a href="./story5.html" class="story-btn">
+                Read Story
+              </a>
+            </div>
+
           </div>
         </div>
-      </div>
 
-      <!-- Story 6 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card story-card h-100">
-          <img src="/assets/images/meenu-tanwar.png" alt="Meenu Tanwar"/>
-          <div class="card-body">
-            <h5>Meenu Tanwar</h5>
-            <p>Learn how the Trust's support helped her excel academically and grow personally.</p>
-            <a href="./story6.html" class="read-more-btn btn btn-sm mt-2">Read More</a>
+        <!-- Story 6 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="story-card">
+
+            <div class="story-img">
+              <img src="/assets/images/meenu-tanwar.png" alt="Meenu Tanwar">
+            </div>
+
+            <div class="story-content">
+              <h5>Meenu Tanwar</h5>
+
+              <p>
+                Her journey highlights how educational support,
+                emotional encouragement, and values-based guidance
+                can shape both academic excellence and personal growth.
+              </p>
+
+              <a href="./story6.html" class="story-btn">
+                Read Story
+              </a>
+            </div>
+
           </div>
         </div>
+
       </div>
 
     </div>
-  </main>
+
+  </section>
 
   <!-- Footer -->
   <div id="footer-placeholder"></div>
 
-  <!-- Bootstrap and JS -->
+  <!-- Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Main JS -->
   <script src="/assets/js/script.js"></script>
 
+  <!-- Load Partials -->
   <script>
+
     async function loadHTML(id, url) {
+
       try {
+
         const res = await fetch(url);
         const text = await res.text();
+
         document.getElementById(id).innerHTML = text;
-      } catch (error) {
+
+      } catch(error) {
+
         console.error(`Failed to load ${url}:`, error);
+
       }
+
     }
+
     loadHTML('header-placeholder', 'header.html');
     loadHTML('footer-placeholder', 'footer.html');
+
   </script>
+
 </body>
 </html>
