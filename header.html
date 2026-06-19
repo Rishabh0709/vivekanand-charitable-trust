@@ -51,11 +51,18 @@
   position: relative;
 }
 
+/* Default: hidden, positioned for the desktop flyout */
 .dropdown-submenu > .dropdown-menu {
+  display: none;
+  position: absolute;
   top: 0;
   left: 100%;
   margin-left: 0.2rem;
-  display: none;
+}
+
+/* Opened via click/keyboard (.show) — identical behavior on every device */
+.dropdown-submenu.show > .dropdown-menu {
+  display: block;
 }
 
 @media (min-width: 992px) {
@@ -75,6 +82,32 @@
   margin-left: 8px;
   transform: rotate(-90deg);
 }
+
+.dropdown-submenu.show > .dropdown-toggle::after {
+  transform: rotate(90deg);
+}
+
+/* Make the new button look identical to the old a tag */
+.submenu-toggle {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font: inherit;
+}
+
+/* Mobile: cancel the desktop flyout positioning (the fix from earlier) */
+@media (max-width: 991px) {
+  .dropdown-submenu > .dropdown-menu {
+    position: static;
+    left: 0;
+    top: 0;
+    margin-left: 0;
+    padding-left: 1rem;
+    box-shadow: none;
+  }
+}
+
 
 /* =========================================================
    HEADER WRAPPER
@@ -148,9 +181,14 @@
     padding: 10px 12px;
   }
 
-  /* Submenu behaves like accordion */
   .dropdown-submenu > .dropdown-menu {
-    display: none;
+    position: static;     /* cancel Bootstrap's default absolute positioning */
+    left: 0;               /* cancel the desktop left: 100% offset */
+    top: 0;
+    margin-left: 0;        /* cancel the desktop 0.2rem gap */
+    padding-left: 1rem;    /* small indent so it visually reads as a sub-level */
+    box-shadow: none;      /* it's inline now, doesn't need the floating shadow */
+    display: none;         /* keep your existing toggle logic */
   }
 
   .dropdown-submenu.show > .dropdown-menu {
@@ -197,7 +235,10 @@
       <!-- Toggler -->
       <button class="navbar-toggler ms-auto" type="button"
               data-bs-toggle="collapse"
-              data-bs-target="#navbarNavDropdown">
+              data-bs-target="#navbarNavDropdown"
+			  aria-controls="navbarNavDropdown"
+			  aria-expanded="false"
+              aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -221,16 +262,17 @@
 
               <!-- Submenu -->
               <li class="dropdown-submenu">
-                <a class="dropdown-item dropdown-toggle submenu-toggle" href="#">
-                  The Torch Bearers
-                </a>
+				<button class="dropdown-item dropdown-toggle submenu-toggle" type="button"
+				aria-expanded="false" aria-haspopup="true">
+					The Torch Bearers
+				</button>
 
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="bhaiyaji.html">Shri Nandkishore Sharda</a></li>
-                  <li><a class="dropdown-item" href="basanti_maa.html">Kumari Basanti Manihar</a></li>
-                  <li><a class="dropdown-item" href="madhu_maa.html">Kumari Madhubala Advani</a></li>
-                </ul>
-              </li>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="bhaiyaji.html">Shri Nandkishore Sharda</a></li>
+    <li><a class="dropdown-item" href="basanti_maa.html">Kumari Basanti Manihar</a></li>
+    <li><a class="dropdown-item" href="madhu_maa.html">Kumari Madhubala Advani</a></li>
+  </ul>
+</li>
             </ul>
           </li>
 
@@ -298,31 +340,31 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  document.querySelectorAll(".submenu-toggle").forEach(function (el) {
-    el.addEventListener("click", function (e) {
+  document.querySelectorAll(".submenu-toggle").forEach(function (toggle) {
 
-      if (window.innerWidth <= 991) {
-        e.preventDefault();
-        e.stopPropagation(); // VERY IMPORTANT
+    function toggleSubmenu(e) {
+      e.preventDefault();
+      e.stopPropagation();
 
-        let parent = this.parentElement;
-        let submenu = this.nextElementSibling;
+      const parent = toggle.parentElement;
+      const submenu = toggle.nextElementSibling;
+      const isOpen = parent.classList.contains("show");
 
-        // Close other open submenus
-        document.querySelectorAll(".dropdown-submenu").forEach(item => {
-          if (item !== parent) {
-            item.classList.remove("show");
-            let menu = item.querySelector(".dropdown-menu");
-            if (menu) menu.classList.remove("show");
-          }
-        });
+      // Close any other open submenus first
+      document.querySelectorAll(".dropdown-submenu").forEach(item => {
+        if (item !== parent) {
+          item.classList.remove("show");
+          item.querySelector(".dropdown-menu")?.classList.remove("show");
+          item.querySelector(".submenu-toggle")?.setAttribute("aria-expanded", "false");
+        }
+      });
 
-        // Toggle current submenu
-        parent.classList.toggle("show");
-        submenu.classList.toggle("show");
-      }
+      parent.classList.toggle("show");
+      submenu.classList.toggle("show");
+      toggle.setAttribute("aria-expanded", String(!isOpen));
+    }
 
-    });
+    toggle.addEventListener("click", toggleSubmenu);
   });
 
 });
