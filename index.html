@@ -65,31 +65,31 @@ Know More About Us
 </div>
 <div class="container stats-grid">
 
-<div class="glass-card stat" onclick="openGallery('img1')">
-<i class="fa-solid fa-user-graduate fa-3x text-primary mb-3"></i>
+<button class="glass-card stat" onclick="openGallery('img1')" aria-label="chart showing numbers of girls supported till date">
+<i class="ti ti-woman text-primary mb-3" style="font-size: 3rem;"></i>
 <h2 class="counter" data-target="37564">0</h2>
 <p>Girl students have been supported via scholarship</p>
-</div>
+</button>
 
-<div class="glass-card stat" onclick="openGallery('img2')">
+<button class="glass-card stat" onclick="openGallery('img2')" aria-label="chart showing total amount distributed till date">
 <!--<h2 class="counter" data-target="396">0</h2>-->
-<i class="fa-solid fa-indian-rupee-sign fa-3x text-primary mb-3"></i>
+<i class="ti ti-currency-rupee text-primary mb-3" style="font-size: 3rem;"></i>
 <h2><span class="currency">₹</span><span class="counter" data-target="4.51">0</span> Cr</h2>
 <p>Worth of scholarships distributed so far</p>
 
-</div>
+</button>
 
-<div class="glass-card stat" onclick="openGallery('schools')">
-  <i class="fa-solid fa-school fa-3x text-primary mb-3"></i>
+<button class="glass-card stat" onclick="openGallery('schools')" aria-label="View list of schools covered">
+ <i class="ti ti-building-community text-primary mb-3" style="font-size: 3rem;"></i>
   <h2 class="counter" data-target="45">0</h2>
   <p>Beneficiary Schools Covered</p>
-</div>
+</button>
 
-<div class="glass-card stat" onclick="openGallery('colleges')">
-<i class="fa-solid fa-graduation-cap fa-3x text-primary mb-3"></i>
+<button class="glass-card stat" onclick="openGallery('colleges')" aria-label="View list of colleges covered">
+<i class="ti ti-school text-primary mb-3" style="font-size: 3rem;"></i>
 <h2 class="counter" data-target="32">0</h2>
 <p>Colleges whose students are beneficiaries of the trust</p>
-</div>
+</button>
 
 </div>
 </section>
@@ -184,11 +184,6 @@ counters.forEach(counter => observer.observe(counter));
   <!-- MISSION -->
   <div class="mission-block">
 
-    <!-- Mission Intro -->
-    <div class="mission-intro">
-	<p class="subtext"></p>
-	</div>
-
     <!-- Mission Pillars -->
     <div class="mission-pillars">
 
@@ -268,7 +263,7 @@ counters.forEach(counter => observer.observe(counter));
 	
 	<div class="trust-premium-container">
   <!-- Card 1 -->
-  <div class="trust-premium-card glass-card highlight-card">
+  <div class="trust-premium-card glass-card">
     <h4>Need-Based, Not Merit-Based</h4>
     <p>
       Financial assistance is extended purely on the basis of genuine need, without regard to academic performance, 
@@ -277,7 +272,7 @@ counters.forEach(counter => observer.observe(counter));
   </div>
 
   <!-- Card 2 -->
-   <div class="trust-premium-card glass-card highlight-card">
+   <div class="trust-premium-card glass-card">
     <h4>A Right, Not a Favour</h4>
     <p>We believe this support is not an act of charity, but every girl’s rightful
           share in the Divine plan. This belief preserves self-respect, nurtures inner strength, 
@@ -286,7 +281,7 @@ counters.forEach(counter => observer.observe(counter));
   </div>
    
   <!-- Card 3 -->
-  <div class="trust-premium-card glass-card highlight-card">
+  <div class="trust-premium-card glass-card">
     <h4>Every Contribution, Direct Impact</h4>
     <p>
       Every donation received is dedicated entirely to scholarship distribution.
@@ -598,7 +593,7 @@ observer3.observe(document.querySelector('.impact-grid'));
     <!-- ===== FOUNDER 1 ===== -->
     <div class="founder fade-in">
       <div class="founder-image">
-        <img src="/assets/images/bhaiyaji_2.jpg" alt="">
+        <img src="/assets/images/bhaiyaji_2.jpg" alt="Shri Nandkishore Sharda">
       </div>
 
       <div class="founder-content">
@@ -635,7 +630,7 @@ observer3.observe(document.querySelector('.impact-grid'));
     <!-- ===== FOUNDER 2 ===== -->
     <div class="founder reverse fade-in">
       <div class="founder-image">
-        <img src="/assets/images/maa_1.jpg" alt="">
+        <img src="/assets/images/maa_1.jpg" alt="Kumari Basanti Manihar">
       </div>
 
       <div class="founder-content">
@@ -669,7 +664,7 @@ observer3.observe(document.querySelector('.impact-grid'));
     <!-- ===== FOUNDER 3 ===== -->
     <div class="founder fade-in">
       <div class="founder-image">
-        <img src="/assets/images/madhu_maa2.1.jpg" alt="">
+        <img src="/assets/images/madhu_maa2.1.jpg" alt="Kumari Madhubala Advani">
       </div>
 
       <div class="founder-content">
