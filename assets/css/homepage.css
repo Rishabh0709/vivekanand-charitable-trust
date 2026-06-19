@@ -514,54 +514,86 @@ section {
 /* =====================
    RESOLUTIONS
 ===================== */
-
-.mission-resolutions {
-  margin-top: 20px;
-}
-
-.resolution-container {
+.resolution-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 30px;
-
-  max-width: 1150px;
-  margin: 0 auto;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: stretch;
+  gap: 16px;
+  margin-top: 32px;
 }
 
-.resolution {
-  background: rgba(255,255,255,0.65);
-
-  backdrop-filter: blur(12px);
-
-  border-radius: 18px;
-
-  padding: 30px 24px;
-
+.resolution-card {
+  padding: 28px 22px;
   text-align: center;
-
-  transition: 0.3s ease;
+  box-sizing: border-box;
 }
 
-.resolution:hover {
-  transform: translateY(-6px);
+.resolution-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent-light, #EEEDFE);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
 }
 
-.resolution span {
-  font-size: 34px;
-  display: block;
-  margin-bottom: 14px;
+.resolution-icon i {
+  font-size: 22px;
+  color: var(--accent-color, #534AB7);
 }
 
-.resolution h5 {
-  margin-bottom: 12px;
+.resolution-card h4 {
+  margin: 0 0 8px;
+  font-size: 17px;
 }
 
-.resolution p {
-  margin-bottom: 0;
-  text-align: center;
+.resolution-card p {
+  margin: 0 0 6px;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
+
+.flow-arrow {
+  font-size: 24px;
+  color: var(--accent-color, #534AB7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tablet and below: stack, arrows rotate */
+@media (max-width: 900px) {
+  .resolution-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .flow-arrow {
+    transform: rotate(90deg);
+    font-size: 20px;
+    padding: 2px 0;
+  }
+}
+
+/* Small phones: tighten spacing and type */
+@media (max-width: 480px) {
+  .heading h3 {
+    font-size: 20px;
+  }
+
+  .resolution-card {
+    padding: 22px 18px;
+  }
+
+  .resolution-card h4 {
+    font-size: 16px;
+  }
+
+  .resolution-card p,
+}
 /* =====================================================
    TABLET RESPONSIVE
 ===================================================== */
@@ -581,10 +613,6 @@ section {
   }
 
   .mission-pillars {
-    grid-template-columns: 1fr;
-  }
-
-  .resolution-container {
     grid-template-columns: 1fr;
   }
 
@@ -615,10 +643,6 @@ section {
 
   .pillar {
     padding: 28px 22px;
-  }
-
-  .resolution {
-    padding: 28px 20px;
   }
 
   .section-transition {
@@ -674,14 +698,14 @@ section {
 ========================================================= */
 
 .trust-premium-container {
-  max-width: 1150px;
+  max-width: 1200px;
 
   margin: auto;
 
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 
-  gap: 35px;
+  gap: 40px;
 }
 
 @media (max-width: 992px) {
@@ -720,122 +744,157 @@ section {
 /* ===================== */
 /* IMPACT SECTION */
 /* ===================== */
+/* ==================
+	IMPACT SECTION
+	=================== */
 
-.impact-container {
-  margin-top: 50px;
-  width: 100%;
-}
-
-/* GRID */
 .impact-grid {
   display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 28px;
-
-  align-items: stretch;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
 }
-
-/* CARD */
-.impact-card {
-  padding: 32px 26px;
-
-  border-radius: 20px;
-
-  height: 100%;
-
-  transition: all 0.35s ease;
-
-  opacity: 0;
-  transform: translateY(30px);
-}
-
-.impact-card.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Heading */
-.impact-card h5 {
-  margin-bottom: 14px;
-  line-height: 1.4;
-}
-
-/* Text */
-.impact-card p {
-  margin-bottom: 0;
-  line-height: 1.8;
-}
-
-/* Hover */
-.impact-card:hover {
-  transform: translateY(-6px);
-}
-
-/* ===================== */
-/* TABLET */
-/* ===================== */
 
 @media (max-width: 992px) {
-
-  .impact-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 22px;
-  }
-
+  .impact-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* ===================== */
-/* MOBILE */
-/* ===================== */
+@media (max-width: 600px) {
+  .impact-grid { grid-template-columns: repeat(2, 1fr); }
+}
 
-@media (max-width: 768px) {
+.impact-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 28px 18px;
+}
 
-  .impact-container {
-    margin-top: 35px;
-  }
+.impact-icon {
+  font-size: 26px;
+  color: var(--brand-accent, #0F6E56); /* swap for your site's accent color */
+}
 
-  .impact-grid {
+.impact-card h5 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.impact-card p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--text-secondary, #5f5e5a);
+}	
+
+
+/* =========================
+   DIFFERENCE SECTION
+========================= */
+
+.difference-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.flow-arrow {
+  font-size: 26px;
+  color: var(--accent-color, #D85A30); /* match your brand accent */
+  text-align: center;
+  line-height: 1;
+}
+
+/*
+.glass-card {
+  padding: 28px 24px;
+  box-sizing: border-box;
+}
+
+.glass-card ul {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+}
+
+.glass-card li {
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  font-size: 14px;
+}
+
+.glass-card li:last-child {
+  border-bottom: none;
+}
+
+
+*/
+
+.highlight-card {
+  transform: scale(1.05);
+  position: relative;
+  z-index: 1;
+}
+
+
+.highlight-icon {
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 4px 12px;
+  font-size: 12px;
+  border-radius: 999px;
+  background: var(--accent-light, #FAECE7);
+  color: var(--accent-dark, #4A1B0C);
+}
+
+/* Tablet and below: stack vertically, arrows rotate to point down */
+@media (max-width: 900px) {
+  .difference-grid {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 12px;
   }
 
-  .impact-card {
-    padding: 24px 20px;
+  .flow-arrow {
+    transform: rotate(90deg);
+    font-size: 22px;
+    padding: 4px 0;
   }
 
-  .impact-card h5 {
+  .highlight-card {
+    transform: scale(1); /* avoid overflow when full-width on mobile */
+  }
+}
+
+/* Small phones: tighten spacing and type */
+@media (max-width: 480px) {
+  .heading h3 {
     font-size: 20px;
   }
 
-  .impact-card p {
-    font-size: 15px;
-    line-height: 1.7;
-  }
-
-}
-
-/* ===================== */
-/* SMALL MOBILE */
-/* ===================== */
-
-@media (max-width: 480px) {
-
-  .impact-card {
-    padding: 22px 18px;
-    border-radius: 16px;
-  }
-
-  .impact-card h5 {
-    font-size: 18px;
-  }
-
-  .impact-card p {
+  .subtext {
     font-size: 14px;
   }
 
+  .glass-card {
+    padding: 20px 16px;
+  }
+
+  .glass-card li,
+  .glass-card p {
+    font-size: 13.5px;
+  }
 }
+
+
+
 
 /* =========================================================
    STORIES SECTION
