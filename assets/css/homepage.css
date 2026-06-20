@@ -130,7 +130,7 @@ section {
 .hero-btn {
   display: inline-block;
 
-  background: #E57C23;
+  background: var(--color-orange);
   color: white;
 
   padding: 14px 34px;
@@ -531,7 +531,7 @@ section {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: var(--accent-light, #EEEDFE);
+  background: var(--accent-light);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -540,7 +540,7 @@ section {
 
 .resolution-icon i {
   font-size: 22px;
-  color: var(--accent-color, #534AB7);
+  color: var(--accent-color);
 }
 
 .resolution-card h4 {
@@ -557,7 +557,7 @@ section {
 
 .flow-arrow {
   font-size: 24px;
-  color: var(--accent-color, #534AB7);
+  color: var(--color-brown);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -591,7 +591,9 @@ section {
     font-size: 16px;
   }
 
-  .resolution-card p,
+  .resolution-card p{
+  font-size: 13px;
+  }
 }
 /* =====================================================
    TABLET RESPONSIVE
@@ -772,7 +774,7 @@ section {
 
 .impact-icon {
   font-size: 26px;
-  color: var(--brand-accent, #0F6E56); /* swap for your site's accent color */
+  color: var(--brand-accent); /* swap for your site's accent color */
 }
 
 .impact-card h5 {
@@ -802,7 +804,7 @@ section {
 
 .flow-arrow {
   font-size: 26px;
-  color: var(--accent-color, #D85A30); /* match your brand accent */
+  color: var(--color-brown); /* match your brand accent */
   text-align: center;
   line-height: 1;
 }
@@ -812,6 +814,7 @@ section {
   padding: 28px 24px;
   box-sizing: border-box;
 }
+*/
 
 .glass-card ul {
   list-style: none;
@@ -829,8 +832,6 @@ section {
   border-bottom: none;
 }
 
-
-*/
 
 .highlight-card {
   transform: scale(1.05);
@@ -1023,7 +1024,7 @@ section {
   align-self: flex-start;
 
   text-decoration: none;
-  color: #a6782e;
+  color: var(--color-brown);
 
   font-size: 0.92rem;
   font-weight: 600;
@@ -1294,7 +1295,7 @@ section {
 
   border: none;
 
-  color: #8b5e3c;
+  color: var(--color-brown);
 
   font-weight: 600;
 
@@ -1312,7 +1313,7 @@ section {
 
   margin-top: 14px;
 
-  color: #8b5e3c;
+  color: var(--color-brown);
 
   font-weight: 600;
 

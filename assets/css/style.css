@@ -2,29 +2,26 @@
 
 /* === Color Palette === */
 :root {
-  --color-maroon: #7B2123; /*#99215d; */       /* Deep Maroon */
-  --color-orange: #F19D38;       /* Warm Orange */
-  --color-gold: #FFC35C;         /* Golden Yellow */
-  --color-vivid-blue: #084d9b;   /* Dark Slate Blue - text */
-  --color-warm-bg: ##fffdfa;      /* Soft warm off-white */
-  --color-white: #FFFFFF;
-  --color-muted-text: #6c757d;   /* For secondary text */
-  --color-warm-blue: #f1fdfd;    /* light blue shade*/
-  --color-brown: #87402c; 		 /*Brown*/
-  
-  
-  /* Palette from logo */
-  --crimson: #ed1c24;
-  --venice-blue: #074e9b;
-  --turbo: #ffec00;
-  --half-dutch-white: #fef7de;
-  --casablanca: #f7aa52;
-  --sweet-corn: #fce786;
-  --old-rose: #b97f72;
-  --old-brick: #951a19;
+  /* Core brand palette, from the logo */
+  --color-maroon: #7B2123;       /* deep maroon — primary text/headings */
+  --color-brick: #951a19;        /* brighter logo-red — strong backgrounds, footer */
+  --color-orange: #F19D38;       /* warm orange — accents, secondary icons */
+  --color-gold: #FFC35C;         /* golden yellow — dividers, buttons, badges */
+  --color-brown: #87402c;        /* brown — links, tertiary accents */
+  --color-vivid-blue: #084d9b;   /* navy — the logo's underused 5th color */
+  --color-cream: #fef7de;        /* warm cream — light backgrounds, icon circles */
+  --color-warm-bg: #fffdfa;      /* page background */
 
+  /* Text */
+  --text-primary: #2b2b2b;
+  --text-secondary: #5A5450;     /* warm gray, replaces the scattered #555/#666/#5f5e5a */
+
+  /* Semantic aliases — these are the ones that were undefined before */
+  --accent-color: var(--color-maroon);
+  --accent-light: var(--color-cream);
+  --accent-dark: var(--color-maroon);
+  --brand-accent: var(--color-orange);
 }
-
 
 /*.............................Some styling for all the pages......................*/
 /* === Global Styles === */
@@ -71,7 +68,7 @@ h2, h3, h4, h5 {
 }
 
 h2{
-  color:#99215D;
+  color:var(--color-maroon);
   font-size: 44px;
   line-height: 1.2;
 }
@@ -80,19 +77,23 @@ h3{
   font-size: 30px;
   margin-bottom: 25px;
   line-height: 1.3;
-  color: #99215D;
+  color: var(--color-maroon);
 }
 
 h4{
-color: #7a184a;
+color: var(--color-brown);
 font-size: 24px;
   line-height: 1.4;
 }
 
 h5{
 	font-size: 17px;
-	color: #0000FF;
+	color: var(--color-vivid-blue);
 	line-height: 1.4;
+}
+
+h6{
+color: var(--color-brown);
 }
 
 /* For first paragraph */
@@ -131,7 +132,7 @@ h5{
   margin-top: 10px;
   font-size: 17px;
   line-height: 1.7;
-  color: #666;
+  color: var(--text-secondary);
   text-align:center;
 }
 
@@ -442,9 +443,7 @@ object-fit: contain;	/* smaller height for mobile */
 
  /*Show dropdown menu on hover for desktop*/
 @media (min-width: 992px) {
-  .navbar-nav .dropdown:hover > .dropdown-menu {
-    display: block;
-  }
+
   /* Optional: add fade effect */
   .navbar-nav .dropdown > .dropdown-menu {
     transition: opacity 0.3s ease;
@@ -488,9 +487,3 @@ img.rounded-logo {
 }
  */
  
-.footer-modern p,
-.footer-modern span,
-.footer-modern li,
-.footer-modern a {
-  color: inherit;
-}
