@@ -1,3 +1,22 @@
+// For submenu toggle
+function initHeaderSubmenu() {
+  document.querySelectorAll(".submenu-toggle").forEach(toggle => {
+    toggle.addEventListener("click", e => { /* existing logic */ });
+  });
+}
+function initBackToTop() { /* existing back-to-top logic, moved here */ }
+
+async function loadHTML(id, url, callback) {
+  try {
+    const res = await fetch(url);
+    document.getElementById(id).innerHTML = await res.text();
+    callback?.();
+  } catch (err) { console.error(`Failed to load ${url}:`, err); }
+}
+loadHTML('header-placeholder', 'header.html', initHeaderSubmenu);
+loadHTML('footer-placeholder', 'footer.html', initBackToTop);
+
+
 // Counter animation for "Our Impact"
   document.addEventListener("DOMContentLoaded", function(){
     function animateCounter(el) {

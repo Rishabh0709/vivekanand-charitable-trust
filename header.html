@@ -335,38 +335,3 @@
   </nav>
 	 
 </header>
-
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  document.querySelectorAll(".submenu-toggle").forEach(function (toggle) {
-
-    function toggleSubmenu(e) {
-      e.preventDefault();
-      e.stopPropagation();
-
-      const parent = toggle.parentElement;
-      const submenu = toggle.nextElementSibling;
-      const isOpen = parent.classList.contains("show");
-
-      // Close any other open submenus first
-      document.querySelectorAll(".dropdown-submenu").forEach(item => {
-        if (item !== parent) {
-          item.classList.remove("show");
-          item.querySelector(".dropdown-menu")?.classList.remove("show");
-          item.querySelector(".submenu-toggle")?.setAttribute("aria-expanded", "false");
-        }
-      });
-
-      parent.classList.toggle("show");
-      submenu.classList.toggle("show");
-      toggle.setAttribute("aria-expanded", String(!isOpen));
-    }
-
-    toggle.addEventListener("click", toggleSubmenu);
-  });
-
-});
-</script>
-
