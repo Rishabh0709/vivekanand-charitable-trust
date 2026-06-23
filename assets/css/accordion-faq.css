@@ -1,0 +1,27 @@
+    .summary {
+    margin: 24px auto 12px auto;
+	padding: 20px;
+    line-height: 1.5;
+	}
+    .page-title {
+      max-width: 900px;
+      margin: 0 auto 40px auto;
+      text-align: center;
+      font-weight: 700;
+      font-size: 2.5rem;
+      color: #99215d;
+    }
+    .accordion-button {
+      background-color: #ffedca;
+      color: #4b2b99;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    .accordion-button:not(.collapsed) {
+      background-color: #99215d;
+      color: white;
+    }
+    .accordion-body {
+      font-size: 1rem;
+      color: #3d297c;
+    }

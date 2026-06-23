@@ -1,0 +1,13 @@
+    .pdf-icon {
+      font-size: 4rem;
+      color: #d32f2f;
+      transition: color 0.2s;
+    }
+    .pdf-download:hover .pdf-icon {
+      color: #b71c1c;
+    }
+    .pdf-caption {
+      margin-top: 8px;
+      font-size: 1.1rem;
+      color: #333;
+    }

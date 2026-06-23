@@ -11,105 +11,23 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <!-- Main CSS -->
   <link rel="stylesheet" href="/assets/css/style.css" />
-  
-  <style>
-       .description {
-    max-width: 900px;
-    margin: 24px auto 12px auto;
-    font-size: 1.15em;
-    line-height: 1.5;
-    color: #5a4db7;  /* soft accent color */
-    text-align: center;
-    font-weight: 500;
-  }
-   
-
-    .section {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-	.section-heading h3 {
-      color: #084d9b;
-	  text-align: center;
-      margin-bottom: 24px;
-      font-weight: bold;
-      font-size: 1.9em;
-    }
-
-    .section img {
-      max-width: 230px;
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(110, 110, 110, 0.08);
-    }
-	.image img {
-      max-width: 150px;
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(110, 110, 110, 0.08);
-    }
-    .text {
-      flex: 1;
-      min-width: 280px;
-      line-height: 1.55;
-      text-align: justify;
-     
-    }
-    .p{
-      flex: 1;
-      min-width: 280px;
-      line-height: 1.55;
-      text-align: justify;
-    }
-
-    /* Structure for alternating sections */
-    .section:nth-child(odd) {
-      flex-direction: row;
-    }
-    .section:nth-child(even) {
-      flex-direction: row-reverse;
-    }
-
-    /* Heading alignment & spacing */
-    .section-heading + .section {
-      margin-top: 8px;
-    }
-
-    @media (max-width: 780px) {
-      .section {
-        flex-direction: column !important;
-        margin-bottom: 40px;
-      }
-      .section img,
-      .text {
-        max-width: 100%;
-        min-width: 0;
-      }
-      .section:nth-child(even) {
-        flex-direction: column !important;
-      }
-    }
-	
-	.image-group {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.image-group img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(110,110,110,0.08);
-  }
-  </style>
-</head>
+  <link rel="stylesheet" href="/assets/css/torch-bearers.css"/>
+ </head>
 <body>
 
  <!-- Header will load here -->
  <div id="header-placeholder"></div>
+ 
+ <!-- BREADCRUMB COMPONENT -->
+<nav class="breadcrumb-nav" style="padding: 15px 0; background-color: #f9fafb; border-bottom: 1px solid #e5e7eb;">
+    <div class="container" style="max-width: 1140px; margin: 0 auto; padding: 0 20px; font-size: 14px;">
+        <a href="index.html" style="color: #4b5563; text-decoration: none;">Home</a> 
+        <span style="color: #9ca3af; margin: 0 8px;">/</span> 
+        <a href="about_us.html" style="color: #4b5563; text-decoration: none;">About Us</a> 
+        <span style="color: #9ca3af; margin: 0 8px;">/</span> 
+        <span style="color: #b45309; font-weight: 600;">Kumari Basanti Manihar</span>
+    </div>
+</nav>
 
 <div class="page-wrapper">
 <h1 style="color:#084d9b; text-align:center;">Kumari Basanti Manihar</h1>

@@ -12,6 +12,18 @@
 
   <style>
     /* =========================================================
+       PAGE BACKGROUND
+    ========================================================= */
+    body {
+      background: linear-gradient(135deg, #fdfaf6, #f7f1e8);
+    }
+
+    /* Offset anchor targets so the fixed header doesn't overlap */
+    section[id] {
+      scroll-margin-top: 90px;
+    }
+
+    /* =========================================================
        GLASS CARD  (local until shared components.css exists)
     ========================================================= */
     .glass-card {
@@ -33,23 +45,42 @@
        PAGE HERO
     ========================================================= */
     .about-hero {
-      padding: 80px 20px 50px;
-      text-align: center;
-    }
+            background-color: #ffffff;
+            padding: 80px 0 50px 0;
+            text-align: center;
+        }
 
-    .about-hero h1 {
-      color: var(--color-maroon);
-    }
+        .about-hero .tagline {
+            color: var(--accent-amber);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            font-size: 13px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .about-hero h1 {
+            font-size: 38px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin: 0 0 20px 0;
+        }
+
+        .about-hero p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 18px;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
 
     .about-intro {
       max-width: 780px;
       margin: 24px auto 0;
       padding: 28px 36px;
-      background: rgba(255, 245, 220, 0.7);
-      backdrop-filter: blur(12px);
-      border-radius: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.4);
-    }
+     
+      }
 
     .about-intro p {
       font-size: 1.08rem;
@@ -75,7 +106,7 @@
     }
 
     /* =========================================================
-       PULL-QUOTE
+       PULL-QUOTE — for the two highlighted philosophical statements
     ========================================================= */
     .pull-quote {
       position: relative;
@@ -85,9 +116,10 @@
         rgba(255, 245, 220, 0.25));
       border-radius: 0 14px 14px 0;
       padding: 22px 28px 22px 32px;
-      margin: 28px 0 0;
+      margin: 28px 0;
     }
 
+    /* Decorative large opening mark */
     .pull-quote::before {
       content: "\201C";
       position: absolute;
@@ -103,7 +135,7 @@
 
     .pull-quote p {
       font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
+      font-size: 1.08rem;
       line-height: 1.8;
       font-style: italic;
       color: var(--color-maroon);
@@ -129,6 +161,7 @@
       line-height: 1.8;
     }
 
+    /* Split layout for Block 3 (text + image) */
     .story-split {
       display: flex;
       align-items: center;
@@ -159,67 +192,6 @@
     .text-highlight {
       color: var(--color-brown);
       font-weight: 600;
-    }
-
-    /* =========================================================
-       THREE PILLARS GRID
-    ========================================================= */
-    .pillars-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 28px;
-    }
-
-    /* Nested inside a glass-card so we use solid white
-       rather than another backdrop-filter (blur-on-blur degrades) */
-    .pillar-card {
-      background: rgba(255, 255, 255, 0.8);
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      border-radius: 14px;
-      padding: 26px 22px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .pillar-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-    }
-
-    /* Centre card — Sanskar — elevated to signal primacy */
-    .pillar-featured {
-      background: linear-gradient(145deg,
-        rgba(255, 195, 92, 0.22),
-        rgba(255, 245, 220, 0.45));
-      border: 2px solid var(--color-gold);
-      transform: translateY(-5px);
-      box-shadow: 0 14px 32px rgba(166, 120, 46, 0.14);
-    }
-
-    .pillar-featured:hover {
-      transform: translateY(-9px);
-      box-shadow: 0 20px 40px rgba(166, 120, 46, 0.2);
-    }
-
-    .pillar-card h4 {
-      font-size: 1.02rem;
-      color: var(--color-maroon);
-      margin: 0 0 10px;
-    }
-
-    .pillar-featured h4 {
-      color: var(--color-brown);
-    }
-
-    .pillar-card p {
-      font-size: 0.88rem;
-      color: var(--text-secondary);
-      line-height: 1.65;
-      margin: 0;
-    }
-
-    .pillar-featured p {
-      color: var(--color-maroon);
     }
 
     /* =========================================================
@@ -280,7 +252,7 @@
     ========================================================= */
     .leadership-track {
       display: flex;
-      align-items: stretch;
+      align-items: center;
       justify-content: center;
       flex-wrap: wrap;
       gap: 16px;
@@ -289,14 +261,12 @@
     }
 
     .leader-card {
-      display: flex;
-      flex-direction: column;
+      display: block;
       text-decoration: none;
       color: inherit;
-      width: 290px;
-      padding: 0 0 24px;
-      overflow: hidden;       /* clip image corners cleanly */
-      border-radius: 18px;    /* matches glass-card */
+      width: 280px;
+      padding: 28px 22px;
+      text-align: center;
     }
 
     .leader-card.glass-card:hover {
@@ -305,43 +275,26 @@
       text-decoration: none;
       color: inherit;
     }
-		
-	/* Leader Image */
-.leader-img {
-  width: 90px;
-  height: 90px;
-  margin: 10px auto 15px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid rgba(166, 120, 46, 0.2);
-  transition: all 0.3s ease;
-}
 
-.leader-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+    .leader-avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 16px;
+      border: 3px solid rgba(166, 120, 46, 0.2);
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
 
-/* HOVER EFFECT */
-.leader-card:hover .leader-img {
-  transform: scale(1.08);
-  border-color: #a6782e;
-}
+    .leader-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-	
-	
-	
-	
-	
-	
-
-    /* Text block below the photo */
-    .leader-body {
-      padding: 20px 20px 0;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
+    .leader-card:hover .leader-avatar {
+      border-color: var(--color-brown);
+      transform: scale(1.06);
     }
 
     .leader-name {
@@ -354,54 +307,49 @@
 
     .leader-role {
       font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       color: var(--color-orange);
-      margin: 0 0 3px;
+      margin: 0 0 4px;
     }
 
     .leader-years {
       font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       color: #aaa;
       margin: 0 0 10px;
     }
 
     .leader-desc {
-      font-size: 0.86rem;
+      font-size: 0.88rem;
       color: var(--text-secondary);
       line-height: 1.55;
-      margin: 0 0 16px;
-      flex: 1;
+      margin: 0 0 14px;
     }
 
-    /* "View Biography" — visible by default, fills on hover */
-    .btn-biography {
-      display: inline-block;
-      align-self: flex-start;
-      padding: 8px 20px;
-      border-radius: 999px;
-      border: 1.5px solid var(--color-brown);
-      color: var(--color-brown);
+    .leader-cta {
       font-family: 'Inter', sans-serif;
       font-size: 0.82rem;
+      color: var(--color-brown);
       font-weight: 600;
-      transition: background 0.25s ease, color 0.25s ease;
+      opacity: 0;
+      transform: translateY(6px);
+      display: inline-block;
+      transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
-    .leader-card:hover .btn-biography {
-      background: var(--color-brown);
-      color: #fff;
+    .leader-card:hover .leader-cta {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    /* Animated connector between cards */
+    /* Animated connector line between cards */
     .connector {
       width: 48px;
       height: 2px;
       flex-shrink: 0;
-      align-self: center;
       position: relative;
       background: linear-gradient(to right, #e6dccf, var(--color-brown));
       overflow: hidden;
@@ -430,12 +378,6 @@
       .story-split,
       .philosophy-layout,
       .philosophy-layout.reverse { flex-direction: column; text-align: center; }
-
-      .pillars-grid { grid-template-columns: 1fr; gap: 14px; }
-
-      /* Remove vertical lift on pillars when stacked */
-      .pillar-featured { transform: none; }
-      .pillar-featured:hover { transform: translateY(-4px); }
     }
 
     @media (max-width: 768px) {
@@ -449,12 +391,12 @@
       .pull-quote { padding: 18px 20px 18px 24px; }
       .pull-quote::before { font-size: 4rem; top: -8px; left: 10px; }
 
+      /* Leadership: stack vertically, connector becomes a vertical bar */
       .leadership-track { flex-direction: column; align-items: center; }
 
       .connector {
         width: 2px;
         height: 36px;
-        align-self: center;
         background: linear-gradient(to bottom, #e6dccf, var(--color-brown));
       }
 
@@ -472,7 +414,7 @@
         to   { top: 120%; }
       }
 
-      .leader-card { width: 100%; max-width: 340px; }
+      .leader-card { width: 100%; max-width: 320px; }
     }
   </style>
 </head>
@@ -489,15 +431,15 @@
     <h1>About Us</h1>
     <div class="about-intro">
       <p>
-        Fostering the holistic development, financial backing, and value-embedded higher
-        education pathways for underprivileged rural girl students in Western Rajasthan
-        since 1996.
+        Fostering the holistic development, financial backing, and value-embedded higher education pathways 
+		for underprivileged rural girl students in Western Rajasthan since 1996.
       </p>
     </div>
   </div>
 
   <!-- =============================================
        SECTION 1 — OUR INSPIRATION
+       Content from bhaiya_thoughts.html
   ============================================== -->
   <section id="inspiration" class="about-section">
     <div class="container">
@@ -516,10 +458,12 @@
         <h3>The Reality We Witnessed</h3>
         <p>
           Two decades ago in western Rajasthan, girls' education was an impossible dream
-          for families struggling with poverty, unemployment, and deeply rooted son
-          preference. Government schools in these areas often had dilapidated buildings,
-          broken furniture, inadequate drinking water, and lacked basics like proper
-          seating — even during harsh winters. In these conditions, while most looked away,
+          for families struggling with poverty, unemployment, and deeply rooted son preference.
+        </p>
+        <p>
+          Government schools in these areas often had dilapidated buildings, broken furniture,
+          inadequate drinking water, and lacked basics like proper seating — even during harsh
+          winters. In these conditions, while most looked away,
           <span class="text-highlight">Shri Nandkishore Sharda</span> — fondly called
           "Bhaiya ji" — stepped in to champion the cause of marginalized girls.
         </p>
@@ -533,37 +477,17 @@
         </div>
       </div>
 
-      <!-- Block 2: Building the Vision — three pillars -->
+      <!-- Block 2: Building the Vision -->
       <div class="story-block glass-card">
         <h3>Building the Vision for Empowerment</h3>
         <p>
-          In 1995, Nandkishore Ji critically audited the prevailing educational paradigms
-          and championed a comprehensive reform model. He advocated that standard academic
-          achievement must be fundamentally integrated with deep moral values and
-          self-reliance, giving rise to our three core organisational pillars:
+          In 1995, Nandkishore Ji critically examined the prevailing education system and
+          recognized the urgent need for reform. He advocated that academic learning must be
+          complemented by moral and spiritual development — <em>sanskar</em> — so that girls
+          would grow not just in knowledge, but as compassionate, confident, and responsible
+          citizens. He also emphasized vocational skills — sewing, computer literacy — to
+          ensure financial independence.
         </p>
-
-        <div class="pillars-grid">
-
-          <div class="pillar-card">
-            <h4>Academic Access</h4>
-            <p>Providing critical financial stability, material packages, and baseline
-            security support so learning remains unhindered.</p>
-          </div>
-
-          <div class="pillar-card pillar-featured">
-            <h4>Moral Roots <em>(Sanskar)</em></h4>
-            <p>Cultivating humility, ethics, and values. Bhaiya Ji routinely advised
-            that skill without moral standing results in narrow self-arrogance.</p>
-          </div>
-
-          <div class="pillar-card">
-            <h4>Self-Reliance</h4>
-            <p>Weaving vocational skills — sewing, computer literacy — alongside
-            academics to build self-sustaining, independent careers.</p>
-          </div>
-
-        </div>
 
         <div class="pull-quote">
           <p>
@@ -574,7 +498,7 @@
         </div>
       </div>
 
-      <!-- Block 3: The First Step — split layout with image -->
+      <!-- Block 3: The First Step — split with image -->
       <div class="story-block glass-card">
         <div class="story-split">
           <div class="text-col">
@@ -610,6 +534,7 @@
 
   <!-- =============================================
        SECTION 2 — OUR PHILOSOPHY
+       From about_us.html
   ============================================== -->
   <section id="philosophy" class="about-section alt-bg">
     <div class="container">
@@ -619,6 +544,7 @@
         <div class="divider"></div>
       </div>
 
+      <!-- Philosophy block 1 -->
       <div class="philosophy-block glass-card">
         <div class="philosophy-layout">
           <div class="text-col">
@@ -626,9 +552,9 @@
             <p>
               The Trust ensures every student is treated with dignity and self-respect —
               where support is not seen as charity, but as rightful empowerment. Special
-              emphasis is placed on nurturing curiosity, discipline, and dedication from
-              an early age. Alongside academic learning, strong cultural values and ethics
-              are instilled to ensure true holistic development.
+              emphasis is placed on nurturing curiosity, discipline, and dedication from an
+              early age. Alongside academic learning, strong cultural values and ethics are
+              instilled to ensure true holistic development.
             </p>
           </div>
           <div class="image-col">
@@ -639,17 +565,18 @@
         </div>
       </div>
 
+      <!-- Philosophy block 2 -->
       <div class="philosophy-block glass-card">
         <div class="philosophy-layout reverse">
           <div class="text-col">
             <h5>Building Confident &amp; Capable Individuals</h5>
             <p>
-              Through Personality Development and Sanskar Classes, students are guided
-              to define their goals, understand them, and take meaningful action with
-              clarity and confidence. This approach strengthens decision-making ability,
+              Through Personality Development and Sanskar Classes, students are guided to
+              define their goals, understand them, and take meaningful action with clarity
+              and confidence. This approach strengthens decision-making ability,
               self-awareness, and emotional balance — enabling students to grow into
-              self-reliant individuals who contribute positively to family, society,
-              and the nation.
+              self-reliant individuals who contribute positively to family, society, and
+              the nation.
             </p>
           </div>
           <div class="image-col">
@@ -665,7 +592,7 @@
 
   <!-- =============================================
        SECTION 3 — OUR LEADERSHIP
-       Full-width rectangular photo + always-visible button
+       Cards link to individual bio pages
   ============================================== -->
   <section id="leadership" class="about-section">
     <div class="container">
@@ -682,55 +609,49 @@
       <div class="leadership-track">
 
         <a href="bhaiyaji.html" class="leader-card glass-card">
-          <div class="leader-img">
+          <div class="leader-avatar">
             <img src="/assets/images/bhaiyaji_2.jpg" alt="Shri Nandkishore Sharda">
           </div>
-          <div class="leader-body">
-            <p class="leader-name">Shri Nandkishore Sharda</p>
-            <p class="leader-role">Founder &amp; First President</p>
-            <p class="leader-years">June 1996 – January 2003</p>
-            <p class="leader-desc">
-              Established the foundation with a vision of value-based education and
-              holistic development for every underprivileged girl in western Rajasthan.
-            </p>
-            <span class="btn-biography">View Biography</span>
-          </div>
+          <p class="leader-name">Shri Nandkishore Sharda</p>
+          <p class="leader-role">Founder &amp; First President</p>
+          <p class="leader-years">June 1996 – January 2003</p>
+          <p class="leader-desc">
+            Established the foundation with a vision of value-based education and
+            holistic development for every underprivileged girl in western Rajasthan.
+          </p>
+          <span class="leader-cta">View Full Profile →</span>
         </a>
 
         <div class="connector" aria-hidden="true"></div>
 
         <a href="basanti_maa.html" class="leader-card glass-card">
-          <div class="leader-img">
+          <div class="leader-avatar">
             <img src="/assets/images/maa_1.jpg" alt="Kumari Basanti Manihar">
           </div>
-          <div class="leader-body">
-            <p class="leader-name">Kumari Basanti Manihar</p>
-            <p class="leader-role">Founder &amp; Former President</p>
-            <p class="leader-years">January 2003 – May 2021</p>
-            <p class="leader-desc">
-              Carried forward the mission with steadfast resolve, expanding the Trust's
-              reach and deepening its impact across Rajasthan and beyond.
-            </p>
-            <span class="btn-biography">View Biography</span>
-          </div>
+          <p class="leader-name">Kumari Basanti Manihar</p>
+          <p class="leader-role">Founder &amp; Former President</p>
+          <p class="leader-years">January 2003 – May 2021</p>
+          <p class="leader-desc">
+            Carried forward the mission with steadfast resolve, expanding the Trust's
+            reach and deepening its impact across Rajasthan and beyond.
+          </p>
+          <span class="leader-cta">View Full Profile →</span>
         </a>
 
         <div class="connector" aria-hidden="true"></div>
 
         <a href="madhu_maa.html" class="leader-card glass-card">
-          <div class="leader-img">
+          <div class="leader-avatar">
             <img src="/assets/images/madhu_maa2.1.jpg" alt="Kumari Madhubala Advani">
           </div>
-          <div class="leader-body">
-            <p class="leader-name">Kumari Madhubala Advani</p>
-            <p class="leader-role">President</p>
-            <p class="leader-years">May 2021 – Present</p>
-            <p class="leader-desc">
-              Continues the legacy with dedication, strengthening education, values, and
-              spirituality initiatives across all of the Trust's programmes.
-            </p>
-            <span class="btn-biography">View Biography</span>
-          </div>
+          <p class="leader-name">Kumari Madhubala Advani</p>
+          <p class="leader-role">President</p>
+          <p class="leader-years">May 2021 – Present</p>
+          <p class="leader-desc">
+            Continues the legacy with dedication, strengthening education, values, and
+            spirituality initiatives across all of the Trust's programmes.
+          </p>
+          <span class="leader-cta">View Full Profile →</span>
         </a>
 
       </div>
