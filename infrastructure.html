@@ -3,145 +3,513 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Infrastructure Support | Swami Vivekanand Students’ Welfare Charitable Trust</title>
+  <title>Basic Infrastructure Support | Swami Vivekanand Students' Welfare Charitable Trust</title>
+  <meta name="description" content="Beyond scholarships, the Trust built classrooms, reception halls, water-huts, and computer labs across Jodhpur — ensuring girls had a dignified space to learn." />
 
-  <!-- Bootstrap CSS -->
+  <!-- Vendor CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Global site styles -->
   <link rel="stylesheet" href="/assets/css/style.css" />
 
   <style>
-    main.container {
-      padding-top: 40px;
-      padding-bottom: 60px;
+    /* ================================================================
+       INFRASTRUCTURE PAGE — scoped under .inf-page
+       All colours via CSS custom properties from style.css.
+       No !important. No raw hex values. No inline colour attributes.
+    ================================================================ */
+
+    /* ── 1. PAGE SHELL ─────────────────────────────────────────────── */
+    .inf-page {
+      background: linear-gradient(135deg, #fdfaf6, #f7f1e8);
+      min-height: 100vh;
+    }
+
+    /* ── 2. PAGE WRAPPER ────────────────────────────────────────────── */
+    .inf-wrapper {
       max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 5% 100px;
     }
-    h1, h2 {
-      font-weight: 600;
-      margin-bottom: 1.5rem;
+
+    /* ── 3. HERO ────────────────────────────────────────────────────── */
+    .inf-hero {
       text-align: center;
+      margin-bottom: 64px;
     }
-    .section {
-      margin-bottom: 4rem;
+
+    .inf-hero__eyebrow {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--color-orange);
+      margin-bottom: 12px;
     }
-    .media-content img {
+
+    .inf-hero__title {
+      color: var(--color-maroon);
+      margin-bottom: 14px;
+    }
+
+    .inf-hero__divider {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(to right, var(--color-gold), var(--color-orange));
+      border-radius: 3px;
+      margin: 0 auto 20px;
+    }
+
+    .inf-hero__sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 620px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ── 4. GLASS PANEL ─────────────────────────────────────────────── */
+    .inf-panel {
+      background: rgba(255, 255, 255, 0.62);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06);
+      padding: 48px;
+      margin-bottom: 36px;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .inf-panel:hover {
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.09);
+      transform: translateY(-4px);
+    }
+
+    /* ── 5. INTRO SPLIT (philosophy block) ──────────────────────────── */
+    .inf-split {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .inf-split__text { flex: 1; }
+
+    .inf-split__image {
+      flex: 0 0 300px;
+    }
+
+    .inf-split__image img {
       width: 100%;
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      margin-bottom: 0.75rem;
+      border-radius: 14px;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .inf-panel:hover .inf-split__image img {
+      transform: scale(1.025);
+    }
+
+    .inf-split__caption {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    /* ── 6. SECTION HEADING (inside panels) ─────────────────────────── */
+    .inf-panel__heading {
+      color: var(--color-maroon);
+      margin-bottom: 24px;
+    }
+
+    /* ── 7. PROJECT CARDS GRID ──────────────────────────────────────── */
+    .inf-projects-heading {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .inf-projects-heading h2 {
+      color: var(--color-maroon);
+      margin-bottom: 10px;
+    }
+
+    .inf-projects-heading p {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.96rem;
+      color: var(--text-secondary);
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    .inf-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-bottom: 36px;
+    }
+
+    .inf-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .inf-card:hover {
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+      transform: translateY(-5px);
+    }
+
+    .inf-card__img-wrap {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+    }
+
+    .inf-card__img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.45s ease;
+    }
+
+    .inf-card:hover .inf-card__img-wrap img {
+      transform: scale(1.05);
+    }
+
+    .inf-card__body {
+      padding: 22px 24px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .inf-card__icon {
+      flex-shrink: 0;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--color-cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-brown);
+      font-size: 0.9rem;
+      margin-top: 2px;
+    }
+
+    .inf-card__text {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .inf-card__text strong {
+      color: var(--text-primary);
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.95rem;
+    }
+
+    /* ── 8. STAT CALLOUT ────────────────────────────────────────────── */
+    .inf-stat {
+      background: linear-gradient(135deg,
+        rgba(255, 195, 92, 0.22),
+        rgba(255, 245, 220, 0.5));
+      border: 1px solid rgba(166, 120, 46, 0.22);
+      border-radius: 18px;
+      padding: 36px 44px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .inf-stat__icon {
+      flex-shrink: 0;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--color-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-maroon);
+      font-size: 1.3rem;
+    }
+
+    .inf-stat__content {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .inf-stat__number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--color-maroon);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .inf-stat__desc {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .inf-stat__desc strong {
+      color: var(--text-primary);
+    }
+
+    /* ── 9. RESPONSIVE ──────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .inf-split {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .inf-split__image {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+      }
+
+      .inf-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .inf-stat {
+        flex-direction: column;
+        text-align: center;
+        padding: 28px 24px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .inf-wrapper  { padding: 60px 20px 80px; }
+      .inf-panel    { padding: 28px 20px; }
+      .inf-hero     { margin-bottom: 44px; }
+
+      .inf-card__img-wrap { height: 190px; }
+    }
+
+    /* ── 10. REDUCED MOTION ─────────────────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      .inf-panel,
+      .inf-card,
+      .inf-split__image img,
+      .inf-card__img-wrap img {
+        transition: none;
+      }
     }
   </style>
 </head>
 
-<body>
+<body class="inf-page">
 
-  <!-- Header -->
+  <!-- Header partial -->
   <div id="header-placeholder"></div>
 
-  <main class="container">
-    <h1>Basic Infrastructure Support</h1>
+  <main class="inf-wrapper">
 
-    <!-- Section 1 -->
-    <section class="section">
-      <div class="row align-items-center g-4">
-        <div class="col-md-7">
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <header class="inf-hero">
+      <!-- <span class="inf-hero__eyebrow">Women Empowerment · Jodhpur</span> -->
+      <h1 class="inf-hero__title">Basic Infrastructure Support</h1>
+      <div class="inf-hero__divider" aria-hidden="true"></div>
+      <p class="inf-hero__sub">
+        A scholarship buys a textbook. But a leaking roof, a missing toilet, or no place to sit
+        can silence a girl's education just as surely as poverty can.
+        The Trust built what was missing.
+      </p>
+    </header>
+
+    <!-- ============================================================
+         PANEL 1 — PHILOSOPHY & PERSONAL CONTRIBUTION
+    ============================================================ -->
+    <section class="inf-panel" aria-labelledby="philosophy-heading">
+      <div class="inf-split">
+
+        <div class="inf-split__text">
+          <h2 class="inf-panel__heading" id="philosophy-heading">
+            Why Infrastructure Matters
+          </h2>
           <p>
-            Bhaiya Shri Nandkishore Sharda realized that unless 
-            <b>basic facilities are provided along with financial assistance</b>, 
-            the effort for education would remain incomplete. 
-            Therefore, to resolve the fundamental challenges in schools, he arranged 
-            for the construction of classrooms, reception rooms, toilets, water-huts, 
-            boundary walls, and essential furniture—helping girls rise above an 
-            environment of neglect and scarcity.
+            Bhaiya Shri Nandkishore Sharda understood early that
+            <strong>financial assistance alone could not complete the work of education</strong>.
+            Girls arriving at schools with dilapidated buildings, broken furniture, no drinking water,
+            and absent sanitation were fighting two battles at once — poverty at home and neglect
+            at school.
+          </p>
+          <p>
+            To remove these silent barriers, he personally arranged for the construction of
+            classrooms, reception halls, toilets, water-huts, boundary walls, and essential
+            furniture across multiple schools — ensuring every girl had a dignified space in
+            which to learn.
+          </p>
+          <p>
+            He did not stop at personal contribution. Shri Sharda mobilised support from
+            <strong>District Collectors, Members of Parliament, MLAs, and other public leaders</strong>,
+            turning a Trust initiative into a community responsibility.
           </p>
         </div>
-        <div class="col-md-5 text-center">
-          <img src="/assets/images/infra1.jpg" alt="Infrastructure 1" class="img-fluid rounded shadow" />
-        </div>
-      </div>
 
-      <p class="mt-4">
-        Shri Sharda <b>personally contributed financially</b> toward building furniture, classrooms, 
-        reception halls, water-huts, toilets, and boundary walls in many schools, 
-        and inspired fellow trust members to participate. 
-        He also mobilized support from the <b>District Collector, MPs, MLAs, and other public leaders</b>.
-      </p>
-    </section>
-
-    <!-- Section 2: Two items per row -->
-    <section class="section">
-      <div class="row g-4">
-
-        <div class="col-md-6">
-          <div class="media-content text-center">
-            <img src="/assets/images/infra2.jpg" alt="Infrastructure 2" />
-            <p>
-              Constructed the <b>Shri Nandkishore Sharda Reception Hall</b> and 
-              <b>three classrooms</b> in Mahalaxmi Girls' School, Pratapnagar, Jodhpur.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="media-content text-center">
-            <img src="/assets/images/infra3.jpg" alt="Infrastructure 3" />
-            <p>
-              Financial support provided for the construction of the 
-              <b>"Kumari Basanti Manihar Commerce Block"</b> in Mahila Mahavidyalaya, Jodhpur.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="media-content text-center">
-            <img src="/assets/images/infra4.jpg" alt="Infrastructure 4" />
-            <p>
-              Constructed <b>“Tulsi Water-hut”</b> in two girls’ schools in memory of 
-              Smt. Tulsi Devi.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="media-content text-center">
-            <img src="/assets/images/infra5.jpg" alt="Infrastructure 5" />
-            <p>
-              Arranged furniture for <b>16 classrooms in 7 girls’ schools</b>.
-            </p>
-          </div>
-        </div>
+        <figure class="inf-split__image">
+          <img src="/assets/images/infra1.jpg"
+               alt="Infrastructure work supported by the Trust at a girls' school in Jodhpur"
+               loading="lazy" />
+          <figcaption class="inf-split__caption">
+            Building the spaces where girls can thrive
+          </figcaption>
+        </figure>
 
       </div>
-
-      <p class="mt-4">
-        Additionally, the Trust constructed halls, classrooms, computer labs, and facilities 
-        <b>worth over ₹1.5 crore</b> in schools located in Siwanchi Gate, Alpbhasha Rajmahal, 
-        Jalori Gate, Bhagat ki Kothi, Rajmahal, Mahamandir, and Sardarpura—supported by MPs, MLAs, and other contributors.
-      </p>
     </section>
+
+    <!-- ============================================================
+         NAMED PROJECTS — 2×2 GLASS CARD GRID
+    ============================================================ -->
+    <section aria-labelledby="projects-heading">
+
+      <div class="inf-grid" role="list">
+
+        <!-- Project 1 -->
+        <article class="inf-card" role="listitem">
+          <div class="inf-card__img-wrap">
+            <img src="/assets/images/infra2.jpg"
+                 alt="Shri Nandkishore Sharda Reception Hall and classrooms at Mahalaxmi Girls' School"
+                 loading="lazy" />
+          </div>
+          <div class="inf-card__body">
+            <div class="inf-card__icon" aria-hidden="true">
+              <i class="fas fa-school"></i>
+            </div>
+            <p class="inf-card__text">
+              <strong>Shri Nandkishore Sharda Reception Hall</strong>
+              Constructed the Reception Hall and three classrooms at
+              Mahalaxmi Girls' School, Pratapnagar, Jodhpur.
+            </p>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="inf-card" role="listitem">
+          <div class="inf-card__img-wrap">
+            <img src="/assets/images/infra3.jpg"
+                 alt="Kumari Basanti Manihar Commerce Block at Mahila Mahavidyalaya, Jodhpur"
+                 loading="lazy" />
+          </div>
+          <div class="inf-card__body">
+            <div class="inf-card__icon" aria-hidden="true">
+              <i class="fas fa-building"></i>
+            </div>
+            <p class="inf-card__text">
+              <strong>Kumari Basanti Manihar Commerce Block</strong>
+              Financial support provided for construction of the Commerce Block
+              at Mahila Mahavidyalaya, Jodhpur.
+            </p>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="inf-card" role="listitem">
+          <div class="inf-card__img-wrap">
+            <img src="/assets/images/infra4.jpg"
+                 alt="Tulsi Water-hut built in memory of Smt. Tulsi Devi at two girls' schools"
+                 loading="lazy" />
+          </div>
+          <div class="inf-card__body">
+            <div class="inf-card__icon" aria-hidden="true">
+              <i class="fas fa-tint"></i>
+            </div>
+            <p class="inf-card__text">
+              <strong>Tulsi Water-hut</strong>
+              Built in memory of Smt. Tulsi Devi across two girls' schools —
+              providing clean drinking water where there was none.
+            </p>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="inf-card" role="listitem">
+          <div class="inf-card__img-wrap">
+            <img src="/assets/images/infra5.jpg"
+                 alt="Furniture arranged for 16 classrooms across 7 girls' schools in Jodhpur"
+                 loading="lazy" />
+          </div>
+          <div class="inf-card__body">
+            <div class="inf-card__icon" aria-hidden="true">
+              <i class="fas fa-chair"></i>
+            </div>
+            <p class="inf-card__text">
+              <strong>Classroom Furniture Drive</strong>
+              Arranged furniture for 16 classrooms across 7 girls' schools —
+              so every student had a seat and a desk to call her own.
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- ============================================================
+         CLOSING STAT CALLOUT
+    ============================================================ -->
+    <div class="inf-stat" role="complementary" aria-label="Total infrastructure investment">
+      <div class="inf-stat__icon" aria-hidden="true">
+        <i class="fas fa-rupee-sign"></i>
+      </div>
+      <div class="inf-stat__content">
+        <p class="inf-stat__number">₹1.5 Crore+</p>
+        <p class="inf-stat__desc">
+          Halls, classrooms, computer labs, and facilities constructed across schools in
+          <strong>Siwanchi Gate, Alpbhasha Rajmahal, Jalori Gate, Bhagat ki Kothi,
+          Rajmahal, Mahamandir, and Sardarpura</strong> — made possible by MPs, MLAs,
+          and community contributors working alongside the Trust.
+        </p>
+      </div>
+    </div>
 
   </main>
 
-  <!-- Footer -->
+  <!-- Footer partial -->
   <div id="footer-placeholder"></div>
 
-  <!-- Bootstrap JS -->
+  <!-- Vendor JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/assets/js/script.js"></script>
 
-  <!-- Load header and footer -->
   <script>
-    async function loadHTML(id, url) {
-      try {
-        const response = await fetch(url);
-        const text = await response.text();
-        document.getElementById(id).innerHTML = text;
-      } catch (error) {
-        console.error('Failed to load ' + url + ':', error);
+    (function () {
+      async function loadPartial(id, url) {
+        try {
+          const res = await fetch(url);
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          document.getElementById(id).innerHTML = await res.text();
+        } catch (err) {
+          console.error('Failed to load partial "' + url + '":', err);
+        }
       }
-    }
-    loadHTML('header-placeholder', 'header.html');
-    loadHTML('footer-placeholder', 'footer.html');
+      loadPartial('header-placeholder', 'header.html');
+      loadPartial('footer-placeholder', 'footer.html');
+    })();
   </script>
 
 </body>

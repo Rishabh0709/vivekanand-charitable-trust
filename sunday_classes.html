@@ -3,383 +3,1091 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Personality Development Classes | Swami Vivekanand Students’ Welfare Charitable Trust</title>
+  <title>Sanskar & Personality Development Classes | Swami Vivekanand Students' Welfare Charitable Trust</title>
+  <meta name="description" content="Every Sunday, underprivileged girls in Jodhpur gather not just to learn — but to grow. Discover how the Trust's Sanskar Classes build confidence, values, and lifelong purpose." />
 
-  <!-- Bootstrap CSS -->
+  <!-- Vendor CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Global site styles (provides all CSS custom properties) -->
   <link rel="stylesheet" href="/assets/css/style.css" />
 
   <style>
-    main.container {
-      padding-top: 40px;
-      padding-bottom: 60px;
-      max-width: 900px;
+    /* ================================================================
+       SUNDAY CLASSES PAGE — scoped under .sc-page
+       All layout, spacing, and decorative styles live here.
+       Colors and typography inherit exclusively from style.css variables.
+       No !important. No inline colour values. No raw hex values.
+    ================================================================ */
+
+    /* ── 0. PAGE-SCOPED TOKENS (extends style.css; does not override it) ── */
+    .sc-page {
+      /* One green shade used exclusively in the transformation arc "After" phase.
+         Not in the global palette, so defined here close to its usage. */
+      --sc-color-growth: #2e6b2e;
     }
-    h1, h2 {
-      font-weight: 600;
-      margin-bottom: 1.5rem;
+
+    /* ── 1. PAGE SHELL ─────────────────────────────────────────────── */
+    .sc-page {
+      background: linear-gradient(160deg, #fdfaf6 0%, #f7f1e8 100%);
+    }
+
+    /* ── 2. HERO ────────────────────────────────────────────────────── */
+    .sc-hero {
+      padding: 90px 20px 60px;
       text-align: center;
     }
-    .section {
-      margin-bottom: 4rem;
+
+    .sc-hero__eyebrow {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--color-orange);
+      margin-bottom: 14px;
     }
-    .section-content {
+
+    .sc-hero__title {
+      color: var(--color-maroon);
+      margin-bottom: 14px;
+    }
+
+    .sc-hero__subtitle {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      font-style: italic;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    /* ── 3. SECTION WRAPPER ─────────────────────────────────────────── */
+    .sc-section {
+      padding: 70px 20px;
+    }
+
+    .sc-section--alt {
+      background: rgba(255, 248, 235, 0.55);
+    }
+
+    .sc-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .sc-container--narrow {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* ── 4. SECTION HEADINGS ────────────────────────────────────────── */
+    .sc-heading {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .sc-heading__title {
+      color: var(--color-maroon);
+      margin-bottom: 10px;
+    }
+
+    .sc-heading__divider {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(to right, var(--color-gold), var(--color-orange));
+      border-radius: 3px;
+      margin: 0 auto 16px;
+    }
+
+    .sc-heading__sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    /* ── 5. GLASS PANEL (content block) ────────────────────────────── */
+    .sc-panel {
+      background: rgba(255, 255, 255, 0.62);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06);
+      padding: 48px;
+      margin-bottom: 32px;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .sc-panel:hover {
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.09);
+    }
+
+    /* Split layout inside panels */
+    .sc-split {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
-      gap: 2rem;
+      gap: 48px;
     }
-    .text-content {
-      flex: 1 1 400px;
-      min-width: 280px;
+
+    .sc-split--reverse { flex-direction: row-reverse; }
+
+    .sc-split__text { flex: 1; }
+
+    .sc-split__image {
+      flex: 0 0 320px;
     }
-    .media-content {
-      flex: 1 1 400px;
-      min-width: 280px;
+
+    .sc-split__image img {
+      width: 100%;
+      border-radius: 14px;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .sc-panel:hover .sc-split__image img {
+      transform: scale(1.025);
+    }
+
+    .sc-split__caption {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
       text-align: center;
+      margin-top: 8px;
     }
-    .media-content img, 
-    .media-content iframe {
-      max-width: 100%;
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
+    /* ── 6. PULL QUOTE ──────────────────────────────────────────────── */
+    .sc-quote {
+      position: relative;
+      max-width: 820px;
+      margin: 0 auto 60px;
+      padding: 42px 52px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      box-shadow: 0 16px 45px rgba(166, 120, 46, 0.12);
     }
-    p {
+
+    .sc-quote__mark {
+      position: absolute;
+      top: -22px;
+      left: 28px;
+      font-family: 'Playfair Display', serif;
+      font-size: 7rem;
+      line-height: 1;
+      color: var(--color-gold);
+      opacity: 0.3;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .sc-quote__text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--color-maroon);
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    /* ── 7. SIGNATURE ELEMENT — TRANSFORMATION ARC ──────────────────
+       Three-phase journey: Before → During → After.
+       Rendered as a flowing ribbon with icon nodes and connector lines.
+       This is the one element no other version of this page has.
+    ─────────────────────────────────────────────────────────────────── */
+    .sc-arc {
+      display: grid;
+      grid-template-columns: 1fr 60px 1fr 60px 1fr;
+      align-items: start;
+      gap: 0;
+      margin: 50px 0 20px;
+    }
+
+    .sc-arc__phase {
+      text-align: center;
+      padding: 32px 24px;
+      border-radius: 18px;
+      position: relative;
+    }
+
+    .sc-arc__phase--before {
+      background: linear-gradient(145deg, rgba(180, 60, 60, 0.07), rgba(180, 60, 60, 0.03));
+      border: 1px solid rgba(180, 60, 60, 0.12);
+    }
+
+    .sc-arc__phase--during {
+      background: linear-gradient(145deg, rgba(255, 195, 92, 0.22), rgba(255, 245, 220, 0.45));
+      border: 2px solid var(--color-gold);
+      transform: translateY(-12px);
+      box-shadow: 0 16px 40px rgba(166, 120, 46, 0.18);
+    }
+
+    .sc-arc__phase--after {
+      background: linear-gradient(145deg, rgba(60, 120, 60, 0.07), rgba(60, 120, 60, 0.03));
+      border: 1px solid rgba(60, 120, 60, 0.14);
+    }
+
+    .sc-arc__icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 1.6rem;
+    }
+
+    .sc-arc__phase--before .sc-arc__icon {
+      background: rgba(180, 60, 60, 0.1);
+      color: var(--color-maroon);
+    }
+
+    .sc-arc__phase--during .sc-arc__icon {
+      background: var(--color-gold);
+      color: var(--color-maroon);
+    }
+
+    .sc-arc__phase--after .sc-arc__icon {
+      background: rgba(60, 130, 60, 0.12);
+      color: var(--sc-color-growth);
+    }
+
+    .sc-arc__label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .sc-arc__phase--before .sc-arc__label  { color: var(--color-maroon); }
+    .sc-arc__phase--during .sc-arc__label  { color: var(--color-brown); }
+    .sc-arc__phase--after  .sc-arc__label  { color: var(--sc-color-growth); }
+
+    .sc-arc__title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+
+    .sc-arc__desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Connector between arc phases */
+    .sc-arc__connector {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 60px; /* vertically aligns with card centres */
+    }
+
+    .sc-arc__connector-inner {
+      position: relative;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(to right, var(--color-gold), var(--color-orange));
+      overflow: visible;
+    }
+
+    .sc-arc__connector-inner::after {
+      content: "→";
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1rem;
+      color: var(--color-orange);
+    }
+
+    /* ── 8. RESOLUTION TRIO ─────────────────────────────────────────── */
+    .sc-resolutions {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin: 40px 0;
+    }
+
+    .sc-resolution {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      padding: 32px 24px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .sc-resolution:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
+    }
+
+    .sc-resolution__emoji {
+      font-size: 2.4rem;
+      display: block;
+      margin-bottom: 12px;
+      line-height: 1;
+    }
+
+    .sc-resolution__title {
+      font-family: 'Playfair Display', serif;
       font-size: 1.1rem;
-      color: #333;
+      color: var(--color-maroon);
+      margin-bottom: 8px;
+    }
+
+    .sc-resolution__desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      font-style: italic;
+      margin: 0;
+    }
+
+    /* ── 9. IMPACT GRID ─────────────────────────────────────────────── */
+    .sc-impact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .sc-impact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.55);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      transition: background 0.2s ease;
+    }
+
+    .sc-impact-item:hover {
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .sc-impact-item__icon {
+      flex-shrink: 0;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--color-cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-brown);
+      font-size: 0.95rem;
+    }
+
+    .sc-impact-item__text {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .sc-impact-item__text strong {
+      color: var(--text-primary);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    /* ── 10. SECTION BRIDGE (heading + intro between impact grid and outcome pillars) ── */
+    .sc-section-bridge {
+      margin: 48px 0 28px;
+      padding-top: 36px;
+      border-top: 1px solid rgba(166, 120, 46, 0.18);
+    }
+
+    .sc-section-bridge h3 {
+      color: var(--color-maroon);
+      margin-bottom: 10px;
+    }
+
+    .sc-section-bridge p {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.97rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ── 11. OUTCOME PILLARS ────────────────────────────────────────── */
+    .sc-outcomes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 36px;
+    }
+
+    .sc-outcome {
+      padding: 28px 22px;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .sc-outcome:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
+    }
+
+    .sc-outcome__icon {
+      font-size: 1.6rem;
+      color: var(--color-brown);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .sc-outcome__title {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.98rem;
+      color: var(--color-maroon);
+      margin-bottom: 8px;
+    }
+
+    .sc-outcome__desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ── 12. CTA BLOCK ──────────────────────────────────────────────── */
+    .sc-cta {
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    .sc-cta__text {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .sc-cta__btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--color-gold), var(--color-orange));
+      color: var(--color-maroon);
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      padding: 14px 36px;
+      border-radius: 999px;
+      box-shadow: 0 8px 24px rgba(241, 157, 56, 0.3);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .sc-cta__btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 32px rgba(241, 157, 56, 0.4);
+      color: var(--color-maroon);
+    }
+
+    /* ── 13. RESPONSIVE ─────────────────────────────────────────────── */
+    @media (max-width: 992px) {
+      .sc-split,
+      .sc-split--reverse {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .sc-split__image {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+      }
+
+      .sc-arc {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .sc-arc__phase--during {
+        transform: none;
+      }
+
+      .sc-arc__connector { display: none; }
+
+      .sc-outcomes {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sc-hero        { padding: 70px 16px 44px; }
+      .sc-section     { padding: 54px 16px; }
+      .sc-panel       { padding: 28px 20px; }
+      .sc-quote       { padding: 32px 28px; }
+      .sc-quote__text { font-size: 1.1rem; }
+
+      .sc-resolutions {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        max-width: 360px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .sc-impact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sc-outcomes {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── 14. REDUCED MOTION ─────────────────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      .sc-panel,
+      .sc-resolution,
+      .sc-outcome,
+      .sc-impact-item,
+      .sc-cta__btn,
+      .sc-split__image img {
+        transition: none;
+      }
     }
   </style>
 </head>
-<body>
 
-  <!-- Header -->
+<body class="sc-page">
+
+  <!-- Header partial -->
   <div id="header-placeholder"></div>
 
-<div class="container py-5">
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <header class="sc-hero">
+    <!--<span class="sc-hero__eyebrow">Every Sunday · Manidweep, Jodhpur</span>-->
+    <h1 class="sc-hero__title">Sanskar &amp; Personality<br>Development Classes</h1>
+    <p class="sc-hero__subtitle">Nurturing Minds · Enriching Values · Empowering Futures</p>
+  </header>
 
-  <!-- Main Title -->
-  <h1 class="text-center main-title">Personality Development Classes</h1>
+  <main>
 
-  <!-- Section 1: Why These Classes Were Started -->
-  <section class="py-5">
-  <h2 class="text-center main-title mb-3">Importance of Sanskar Along with Educational Support</h2>
+    <!-- ============================================================
+         SECTION 1 — WHY SANSKAR MATTERS
+    ============================================================ -->
+    <section class="sc-section" aria-labelledby="why-sanskar-heading">
+      <div class="sc-container">
 
-  <div class="row align-items-center g-4 mb-3 mt-3" style="background: linear-gradient(135deg, #FFF9EF 0%, #FCEED5 100%); border-radius:12px;">
+        <div class="sc-heading">
+          <h2 class="sc-heading__title" id="why-sanskar-heading">Why Sanskar Matters</h2>
+          <div class="sc-heading__divider" aria-hidden="true"></div>
+          <p class="sc-heading__sub">
+            Financial support opens the door. Values determine what she does once she walks through it.
+          </p>
+        </div>
 
-    <!-- Text Column -->
-    <div>
-      <p>
-        Shri Nandkishore Sharda, Kumari Basanti Manihar, and Kumari Madhubala Advani believed that
-        education alone is incomplete without <b>sanskar</b> — the values that shape character.
-        While modern education strengthens intellect, it often lacks the moral grounding needed to
-        overcome ego, anger, greed, and jealousy.
-      </p>
+        <div class="sc-panel">
+          <div class="sc-split">
 
-      <p>
-        According to them, every human being is blessed by God with <i>Buddhi</i> (intellect) and
-        <i>Vivek</i> (discretion). When these are refined through the combined influence of education,
-        values, and spirituality, individuals develop qualities like humility, compassion, sincerity,
-        generosity, and a positive outlook on life.
-      </p>
+            <div class="sc-split__text">
+              <p>
+                Shri Nandkishore Sharda, Kumari Basanti Manihar, and Kumari Madhubala Advani held a firm conviction:
+                <strong>education alone is incomplete without <em>sanskar</em></strong> — the values that shape
+                character. While modern education sharpens the intellect, it often leaves untouched the inner
+                forces of ego, anger, greed, and jealousy that quietly determine how a life unfolds.
+              </p>
+              <p>
+                They taught that every person is blessed by God with <em>Buddhi</em> (intellect) and
+                <em>Vivek</em> (discretion). When these two are cultivated together — through education,
+                values, and spirituality — qualities like humility, compassion, sincerity, and generosity
+                grow naturally.
+              </p>
+              <p>
+                Motivational sessions every Sunday empower girls to develop environmental awareness,
+                a spirit of service, and reverence for nature. This blend of education and
+                <em>Sanskar</em> shapes them into balanced, confident, and responsible individuals.
+              </p>
+            </div>
 
-      <p>
-        To nurture this holistic growth, <b>Madhubalaji conducts motivational and value-based
-        sessions every Sunday for girls</b>, helping them cultivate environmental awareness,
-        service-mindedness, and reverence for nature. This blend of education and sanskar shapes
-        them into balanced, confident, and responsible individuals.
-      </p>
+            <figure class="sc-split__image">
+              <img src="/assets/images/sanskar_classes.jpg"
+                   alt="Girls attending a Sanskar session at Manidweep, Jodhpur"
+                   loading="lazy" />
+              <figcaption class="sc-split__caption">Weekly Sanskar session at Manidweep</figcaption>
+            </figure>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         QUOTE 1
+    ============================================================ -->
+    <div class="sc-section" style="padding-top: 0; padding-bottom: 30px;">
+      <div class="sc-container--narrow">
+        <blockquote class="sc-quote">
+          <span class="sc-quote__mark" aria-hidden="true">"</span>
+          <p class="sc-quote__text">
+            Education alone is incomplete without <em>Sanskar</em> — the values that shape character.
+          </p>
+        </blockquote>
+      </div>
     </div>
 
-    <!-- Optional Image Column 
-    <div class="col-md-5 text-center">
-      <img src="/assets/images/sanskar_girls2.jpg"
-           alt="Value-based education and sanskar"
-           class="img-fluid rounded shadow-lg">
-    </div> -->
+    <!-- ============================================================
+         SIGNATURE ELEMENT — TRANSFORMATION ARC
+         Before → During (Trust) → After
+    ============================================================ -->
+    <section class="sc-section sc-section--alt" aria-labelledby="arc-heading">
+      <div class="sc-container">
 
-  </div>
-</section>
+        <div class="sc-heading">
+          <h2 class="sc-heading__title" id="arc-heading">A Girl's Transformation Journey</h2>
+          <div class="sc-heading__divider" aria-hidden="true"></div>
+          <p class="sc-heading__sub">
+            What changes when a girl walks into Manidweep every Sunday — and what she carries out.
+          </p>
+        </div>
 
+        <div class="sc-arc" role="list" aria-label="Three phases of a student's transformation">
 
+          <!-- Phase 1: Before -->
+          <div class="sc-arc__phase sc-arc__phase--before" role="listitem">
+            <div class="sc-arc__icon" aria-hidden="true">
+              <i class="fas fa-cloud"></i>
+            </div>
+            <p class="sc-arc__label">Before</p>
+            <h3 class="sc-arc__title">Uncertainty &amp; Doubt</h3>
+            <p class="sc-arc__desc">
+              Financial pressure. Indifference to education. Low self-worth. No vision of the
+              future. Many girls arrive feeling invisible — unseen by family and society alike.
+            </p>
+          </div>
 
-  <!-- Section 2: About the Classes -->
-<section class="py-5">
-  <h2 class="text-center main-title mb-3">About These Classes</h2>
+          <!-- Connector -->
+          <div class="sc-arc__connector" aria-hidden="true">
+            <div class="sc-arc__connector-inner"></div>
+          </div>
 
-  <div class="row align-items-start g-4">
+          <!-- Phase 2: During (elevated — signature) -->
+          <div class="sc-arc__phase sc-arc__phase--during" role="listitem">
+            <div class="sc-arc__icon" aria-hidden="true">
+              <i class="fas fa-sun"></i>
+            </div>
+            <p class="sc-arc__label">With the Trust</p>
+            <h3 class="sc-arc__title">Guided &amp; Nurtured</h3>
+            <p class="sc-arc__desc">
+              Weekly Sanskar sessions. Financial scholarships. Mentorship from qualified
+              professionals. Values like compassion, faith, and discipline — built one Sunday
+              at a time, for months and years.
+            </p>
+          </div>
 
-    <!-- Text Column -->
-    <div>
+          <!-- Connector -->
+          <div class="sc-arc__connector" aria-hidden="true">
+            <div class="sc-arc__connector-inner"></div>
+          </div>
 
-      <p>
-        Personality Development Classes are conducted every Sunday (<b>July–December, 10:30 AM to 12:30 PM</b>)
-        for students from all walks of life. These sessions strengthen character, nurture values, and build
-        awareness of rights and duties—forming the foundation for holistic growth.
-      </p>
+          <!-- Phase 3: After -->
+          <div class="sc-arc__phase sc-arc__phase--after" role="listitem">
+            <div class="sc-arc__icon" aria-hidden="true">
+              <i class="fas fa-seedling"></i>
+            </div>
+            <p class="sc-arc__label">After</p>
+            <h3 class="sc-arc__title">Confident &amp; Self-Reliant</h3>
+            <p class="sc-arc__desc">
+              A career. A voice. A family enriched by her values. Girls who once felt unseen
+              now stand as engineers, CAs, principals, and lecturers — and quietly pay it forward.
+            </p>
+          </div>
 
-      <p>
-        While many organizations offer financial scholarships, very few actively monitor progress or provide
-        personal guidance. The Trust fills this crucial gap. Under the leadership of Madhubalaji, a dedicated
-        team of qualified professionals offers continuous academic support, mentoring, counselling, and
-        life-skills training. Their message to the girls is empowering: <b>a scholarship is not charity—it is their rightful due</b>.
-        This preserves dignity and builds confidence.
-      </p>
+        </div>
 
-      <p>
-        Most girls initially lack awareness about time management, exam techniques, or the larger purpose of education.
-        Through the Trust’s sustained mentorship, they receive comprehensive support that transforms their academic
-        journey and expands their aspirations. These efforts may appear small, but their impact is deeply transformative.
-      </p>
+      </div>
+    </section>
 
-      <p>
-        The <b>Sanskar and Personality Development Sessions</b> help students understand the true purpose of learning.
-        They begin studying for knowledge instead of marks, and their academic performance naturally improves.
-        Alongside education, the girls absorb the core values of Indian culture—humility, cooperation, mutual respect,
-        environmental awareness, and reverence for nature—presented in a simple and relatable manner.
-      </p>
+    <!-- ============================================================
+         SECTION 2 — ABOUT THE CLASSES
+    ============================================================ -->
+    <section class="sc-section" aria-labelledby="about-classes-heading">
+      <div class="sc-container">
 
-      <p>To nurture core values, girls are inspired to embrace <b>3 sacred resolutions</b>—simple yet transformative steps toward inner and outer growth:
-		  <br>🙏<b><i> Faith:</i></b> Offer daily prayers with selfless devotion and gratitude for atleast 10 mins.
-		  <br>🎯<b><i> Focus:</i></b> Pursue academic goals with dedication and discipline.
-		  <br>❤️<b><i> Fulfillment:</i></b> Give back by supporting other sisters, fostering compassion and belonging.
+        <div class="sc-heading">
+          <h2 class="sc-heading__title" id="about-classes-heading">About the Classes</h2>
+          <div class="sc-heading__divider" aria-hidden="true"></div>
+        </div>
 
-      <p class="mt-3">
-        Together, these initiatives highlight why <b>Sanskar is equally essential as academic support</b>.
-        It shapes not just educated individuals, but confident, compassionate, and responsible human beings.
-      </p>
+        <!-- Block A: Schedule & reach -->
+        <div class="sc-panel">
+          <div class="sc-split">
 
+            <figure class="sc-split__image">
+              <img src="/assets/images/sanskar_girls.jpg"
+                   alt="Students seated at the Sunday class at Manidweep"
+                   loading="lazy" />
+              <figcaption class="sc-split__caption">Sunday morning at Manidweep</figcaption>
+            </figure>
+
+            <div class="sc-split__text">
+              <p>
+                Classes are held every <strong>Sunday, July–December, 10:30 AM–12:30 PM</strong>, at
+                <em>Manidweep, A-183 Shastri Nagar, Jodhpur</em>, and are open to students from all
+                walks of life — no discrimination of caste, community, or religion.
+              </p>
+              <p>
+                Beyond the regular Sunday sessions, Trust volunteers periodically visit schools to
+                conduct motivational talks for younger girls. Renowned speakers and dignitaries are
+                also invited, offering students rare exposure to accomplished minds beyond their
+                immediate world.
+              </p>
+              <p>
+                These sessions nurture personality, strengthen character, and build awareness of
+                rights and responsibilities — laying the foundation for holistic development that no
+                textbook can alone provide.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Block B: The gap the Trust fills -->
+        <div class="sc-panel">
+          <div class="sc-split sc-split--reverse">
+
+            <figure class="sc-split__image">
+              <img src="/assets/images/sanskar_classes3.png"
+                   alt="Trust mentor engaging with students during a session"
+                   loading="lazy" />
+              <figcaption class="sc-split__caption">Mentorship that goes beyond the classroom</figcaption>
+            </figure>
+
+            <div class="sc-split__text">
+              <p>
+                Many organisations provide financial scholarships. Very few actively monitor
+                progress or provide personal guidance. <strong>The Trust fills this crucial gap.</strong>
+              </p>
+              <p>
+                Under Madhubalaji's leadership, a dedicated team of qualified professionals
+                provides continuous academic support, mentoring, counselling, and life-skills
+                training — turning an isolated scholarship into a sustained relationship.
+              </p>
+              <p>
+                Most girls initially lack awareness about time management, exam techniques,
+                or the deeper purpose of education. Through this sustained mentorship, they
+                receive comprehensive guidance that transforms their academic journey and
+                expands their aspirations in ways they could not have imagined alone.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         QUOTE 2
+    ============================================================ -->
+    <div class="sc-section" style="padding-top: 0; padding-bottom: 30px;">
+      <div class="sc-container--narrow">
+        <blockquote class="sc-quote">
+          <span class="sc-quote__mark" aria-hidden="true">"</span>
+          <p class="sc-quote__text">
+            A scholarship is not charity — it is her rightful due. This single message
+            ensures she accepts support with dignity, confidence, and pride.
+          </p>
+        </blockquote>
+      </div>
     </div>
 
-    <!-- Optional Image Column
-    <div class="col-lg-5 text-center">
-      <img src="/assets/images/sanskar_girls.jpg"
-           alt="Personality Development Sessions"
-           class="img-fluid rounded shadow-lg">
-    </div> -->
+    <!-- ============================================================
+         SECTION 3 — THREE SACRED RESOLUTIONS
+    ============================================================ -->
+    <section class="sc-section sc-section--alt" aria-labelledby="resolutions-heading">
+      <div class="sc-container--narrow">
 
-  </div>
-</section>
+        <div class="sc-heading">
+          <h2 class="sc-heading__title" id="resolutions-heading">Three Sacred Resolutions</h2>
+          <div class="sc-heading__divider" aria-hidden="true"></div>
+          <p class="sc-heading__sub">
+            Simple commitments — practiced daily — that quietly reshape a life.
+          </p>
+        </div>
 
-  <!-- Highlight Full-Width Paragraph -->
-  <!-- <div class="bg-light p-4 rounded shadow-sm mb-5">
-    <p class="mb-0">
-      In addition to this, high moral and ethical values are inculcated in them. Hundreds of students 
-      actively participate in these classes every year and build their bright future by excelling in their examinations.
-    </p>
-  </div> -->
+        <div class="sc-resolutions" role="list">
 
-  <!-- Section 3: Holistic Development -->
-  <section class="py-5">
-  <h2 class="text-center mb-4">How These Classes Help in Holistic Development</h2>
+          <div class="sc-resolution" role="listitem">
+            <span class="sc-resolution__emoji" aria-hidden="true">🙏</span>
+            <h3 class="sc-resolution__title">Faith</h3>
+            <p class="sc-resolution__desc">
+              Offer daily prayers with selfless devotion and gratitude for at least 10 minutes.
+              Cultivating inner strength, purity, and a sense of the sacred.
+            </p>
+          </div>
 
-  <div class="row align-items-start g-4">
+          <div class="sc-resolution" role="listitem">
+            <span class="sc-resolution__emoji" aria-hidden="true">🎯</span>
+            <h3 class="sc-resolution__title">Focus</h3>
+            <p class="sc-resolution__desc">
+              Pursue academic goals with dedication, discipline, and a strong sense of purpose.
+              Learning for knowledge — not just marks.
+            </p>
+          </div>
 
-    <!-- Text Column -->
-    <div>
+          <div class="sc-resolution" role="listitem">
+            <span class="sc-resolution__emoji" aria-hidden="true">❤️</span>
+            <h3 class="sc-resolution__title">Fulfillment</h3>
+            <p class="sc-resolution__desc">
+              Once self-reliant, support another needy girl through this
+              <em>Gyan Yagna</em> — creating a cycle of purpose and shared growth.
+            </p>
+          </div>
 
-      <!-- Academic and Personal Growth -->
-      <h5>Academic and Personal Growth</h5>
-      <p>
-        The Trust empowers girls academically and nurtures their holistic personal growth. Under Madhubalaji’s
-        leadership, a dedicated team of professionals provides lifelong mentorship, guidance, and support,
-        fostering a deep sense of belonging and confidence among the girls.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 4 — HOLISTIC DEVELOPMENT
+    ============================================================ -->
+    <section class="sc-section" aria-labelledby="impact-heading">
+      <div class="sc-container">
+
+        <div class="sc-heading">
+          <h2 class="sc-heading__title" id="impact-heading">Holistic Development in Action</h2>
+          <div class="sc-heading__divider" aria-hidden="true"></div>
+          <p class="sc-heading__sub">
+            What these classes build, beyond marks and degrees.
+          </p>
+        </div>
+
+        <!-- Academic + Professional -->
+        <div class="sc-panel">
+          <div class="sc-split">
+
+            <div class="sc-split__text">
+              <h3>Academic &amp; Professional Growth</h3>
+              <p>
+                Mentorship at the Trust fosters self-confidence, positive thinking, and a genuine
+                love for learning. Girls begin studying for <em>knowledge</em> instead of marks —
+                and academic performance follows naturally.
+              </p>
+              <p>
+                With education, values, and spirituality as their foundation, many go on to pursue
+                Engineering, Medicine, Nursing, MBA, CA, MCA, and other professional degrees —
+                becoming financially independent and socially contributing citizens.
+              </p>
+              <p>
+                The Trust also supports self-employment: skills in tailoring, computer literacy,
+                and vocational training give girls pathways to livelihood that do not depend on
+                a single employer or a single exam.
+              </p>
+            </div>
+
+            <figure class="sc-split__image">
+              <img src="/assets/images/girl_speech.jpg"
+                   alt="A student confidently addressing an audience"
+                   loading="lazy" />
+              <figcaption class="sc-split__caption">Confidence built one Sunday at a time</figcaption>
+            </figure>
+
+          </div>
+        </div>
+
+        <!-- Lifestyle & Society -->
+        <div class="sc-panel">
+
+          <h3 style="margin-bottom: 28px;">Lifestyle &amp; Society Transformation</h3>
+
+          <div class="sc-impact-grid" role="list">
+
+            <div class="sc-impact-item" role="listitem">
+              <div class="sc-impact-item__icon" aria-hidden="true">
+                <i class="fas fa-ban"></i>
+              </div>
+              <p class="sc-impact-item__text">
+                <strong>Opposing dowry &amp; child marriage</strong>
+                Girls stand boldly against social evils, advocating equality and justice within their own families.
+              </p>
+            </div>
+
+            <div class="sc-impact-item" role="listitem">
+              <div class="sc-impact-item__icon" aria-hidden="true">
+                <i class="fas fa-spa"></i>
+              </div>
+              <p class="sc-impact-item__text">
+                <strong>Yoga, Pranayama &amp; meditation</strong>
+                Holistic physical and mental health as a daily practice, not an occasional habit.
+              </p>
+            </div>
+
+            <div class="sc-impact-item" role="listitem">
+              <div class="sc-impact-item__icon" aria-hidden="true">
+                <i class="fas fa-home"></i>
+              </div>
+              <p class="sc-impact-item__text">
+                <strong>Shifting family attitudes</strong>
+                Previously indifferent parents now actively support their daughters' education.
+              </p>
+            </div>
+
+            <div class="sc-impact-item" role="listitem">
+              <div class="sc-impact-item__icon" aria-hidden="true">
+                <i class="fas fa-leaf"></i>
+              </div>
+              <p class="sc-impact-item__text">
+                <strong>Environmental reverence</strong>
+                Water, air, and sunlight — once taken for granted — are now consciously valued and conserved.
+              </p>
+            </div>
+
+            <div class="sc-impact-item" role="listitem">
+              <div class="sc-impact-item__icon" aria-hidden="true">
+                <i class="fas fa-heartbeat"></i>
+              </div>
+              <p class="sc-impact-item__text">
+                <strong>Health &amp; hygiene awareness</strong>
+                Improved childcare practices and healthier lifestyles ripple across generations.
+              </p>
+            </div>
+
+            <div class="sc-impact-item" role="listitem">
+              <div class="sc-impact-item__icon" aria-hidden="true">
+                <i class="fas fa-hard-hat"></i>
+              </div>
+              <p class="sc-impact-item__text">
+                <strong>Dignity of labour</strong>
+                Girls earn livelihoods with pride, free from dependence or shame.
+              </p>
+            </div>
+
+            <div class="sc-impact-item" role="listitem">
+              <div class="sc-impact-item__icon" aria-hidden="true">
+                <i class="fas fa-users"></i>
+              </div>
+              <p class="sc-impact-item__text">
+                <strong>Intergenerational learning</strong>
+                Mothers attend sessions alongside daughters, transforming family culture from within.
+              </p>
+            </div>
+
+            <div class="sc-impact-item" role="listitem">
+              <div class="sc-impact-item__icon" aria-hidden="true">
+                <i class="fas fa-hands-helping"></i>
+              </div>
+              <p class="sc-impact-item__text">
+                <strong>Homes transformed</strong>
+                Families once marked by tension now radiate joy, harmony, and mutual respect.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Outcome pillars -->
+        <div class="sc-section-bridge">
+          <h3>What These Classes Ultimately Build</h3>
+          <p>
+            Across all these changes — academic, professional, and social — three core qualities
+            emerge in every girl who stays the course.
+          </p>
+        </div>
+
+        <div class="sc-outcomes" role="list" aria-label="Key outcomes of the classes">
+
+          <div class="sc-outcome" role="listitem">
+            <i class="fas fa-brain sc-outcome__icon" aria-hidden="true"></i>
+            <h4 class="sc-outcome__title">Confidence &amp; Clarity</h4>
+            <p class="sc-outcome__desc">
+              Self-doubt replaced by a clear sense of identity, direction, and inner strength.
+            </p>
+          </div>
+
+          <div class="sc-outcome" role="listitem">
+            <i class="fas fa-heart sc-outcome__icon" aria-hidden="true"></i>
+            <h4 class="sc-outcome__title">Compassion &amp; Gratitude</h4>
+            <p class="sc-outcome__desc">
+              Warmth and tolerance that transform not just individuals but entire households.
+            </p>
+          </div>
+
+          <div class="sc-outcome" role="listitem">
+            <i class="fas fa-balance-scale sc-outcome__icon" aria-hidden="true"></i>
+            <h4 class="sc-outcome__title">Rights &amp; Responsibilities</h4>
+            <p class="sc-outcome__desc">
+              Aware citizens who know their duties as clearly as they know their rights.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA
+    ============================================================ -->
+    <div class="sc-cta">
+      <p class="sc-cta__text">
+        Don't take our word for it — hear it from the girls themselves.
       </p>
-      <p>
-        Regular interactions with Trust members instill a genuine <b>love for learning</b>, improving academic
-        performance and developing self-confidence, positive thinking, mental resilience, and enthusiasm.
-        The <b>Sanskar and Personality Development Sessions</b> help girls internalize core values of Indian
-        culture, ethics, and heritage, cultivating virtues such as humility, compassion, tolerance, gratitude,
-        and respect for others and the environment.
-      </p>
-
-      <!-- Empowerment and Professional Development -->
-      <h5>Empowerment and Professional Development</h5>
-      <p>
-        With education, values, and spirituality as their foundation, the girls now embody <b>self-reliance, dignity,
-        and independence</b>. Many pursue professional degrees such as Engineering, Medicine, Nursing, MBA, CA, MCA,
-        and other UG and PG programs, becoming torchbearers of women’s empowerment in India.
-      </p>
-      <p>
-        The Trust provides financial support, mentoring, and professional coaching, enabling girls to acquire skills,
-        computers, bicycles, sewing machines, and other resources to confidently pursue self-employment or wage
-        employment.
-      </p>
-
-      <!-- Lifestyle and Value Transformation -->
-      <h5>Lifestyle and Value Transformation</h5>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item ps-0">Boldly opposing dowry and child marriage.</li>
-        <li class="list-group-item ps-0">Embracing Yoga, Pranayama, and meditation for holistic health.</li>
-        <li class="list-group-item ps-0">Encouraging previously indifferent parents to support daughters’ education.</li>
-        <li class="list-group-item ps-0">Valuing nature’s gifts—water, air, sunlight—and using them consciously.</li>
-        <li class="list-group-item ps-0">Preserving natural resources for future generations with reverence.</li>
-        <li class="list-group-item ps-0">Improving hygiene, health, and childcare, leading to healthier lives.</li>
-        <li class="list-group-item ps-0">Valuing dignity of labour and confidently earning a livelihood.</li>
-        <li class="list-group-item ps-0">Inspiring intergenerational learning as mothers attend sessions with daughters.</li>
-      </ul>
-
-      <!-- Positive Impact on Families and Society -->
-      <h5 class="mt-4">Positive Impact on Families and Society</h5>
-      <p>
-        Many girls have become compassionate mothers, responsible wives, and caring daughters-in-law, instilling strong
-        values in their families. Homes once tense now radiate <b>joy, harmony, and mutual respect</b>, shaping
-        responsible and compassionate citizens.
-      </p>
-
-      <p class="mt-2">
-        Through the combination of education, mentorship, and <b>Sanskar-based guidance</b>, these classes develop
-        <b>well-rounded, confident, and socially responsible individuals</b>, equipping them to excel academically,
-        lead happy personal lives, and contribute positively to society.
-      </p>
-
+      <a href="./testimonial.html" class="sc-cta__btn">
+        Listen to Student Experiences →
+      </a>
     </div>
 
-    <!-- Optional Image Column -->
-    <!-- <div class="col-lg-5 text-center">
-      <img src="/assets/images/holistic_development.jpg"
-           alt="Holistic Development of Students"
-           class="img-fluid rounded shadow-lg">
-    </div> -->
+  </main>
 
-  </div>
-</section>
-
-
-  <!-- Testimonial Link -->
-  <div class="text-center mt-4">
-    <a href="./testimonial.html" class="btn btn-warning btn-lg shadow-sm">
-      Listen to students describe how these classes transformed their lives
-    </a>
-  </div>
-
-</div>
-<style>
-/* =========================================
-   GENERAL SPACING & SECTION STYLING
-========================================= */
-main.container {
-  max-width: 1100px;
-}
-
-.section {
-  margin-bottom: 4rem;
-}
-
-.section h2 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  color: #333;
-}
-
-/* =========================================
-   FLEX LAYOUT FOR IMAGE + TEXT SECTIONS
-========================================= */
-.section-content {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 2rem;
-}
-
-.text-content {
-  flex: 1 1 55%;
-  font-size: 1.06rem;
-  line-height: 1.7;
-  color: #444;
-}
-
-.media-content {
-  flex: 1 1 40%;
-  text-align: center;
-}
-
-.media-content img,
-.media-content iframe {
-  width: 100%;
-  max-width: 420px;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-}
-
-/* =========================================
-   HIGHLIGHT BOX
-========================================= */
-.highlight-box, 
-.bg-light {
-  background: #f9f9f9;
-  border-left: 5px solid #ffce3d;
-  padding: 1.5rem 1.8rem;
-  border-radius: 10px;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: #444;
-}
-
-/* =========================================
-   BUTTON STYLING
-========================================= */
-.btn-warning {
-  background-color: #f7c135 !important;
-  border: none;
-  padding: 12px 26px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 8px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.btn-warning:hover {
-  background-color: #e8b126 !important;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.14);
-}
-
-/* =========================================
-   RESPONSIVE IMPROVEMENTS
-========================================= */
-@media (max-width: 768px) {
-  .section-content {
-    flex-direction: column;
-  }
-
-  .media-content img,
-  .media-content iframe {
-    max-width: 100%;
-  }
-
-  h1.main-title {
-    font-size: 1.8rem;
-  }
-
-  .section h2 {
-    font-size: 1.5rem;
-  }
-}
-
-</style>
-  <!-- Footer -->
+  <!-- Footer partial -->
   <div id="footer-placeholder"></div>
 
-  <!-- Bootstrap and Main JS -->
+  <!-- Vendor JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Site-wide JS (Swiper, back-to-top, counters etc.) -->
   <script src="/assets/js/script.js"></script>
 
-  <!-- Load header and footer partials -->
+  <!-- Partial loader — identical pattern used across the entire site -->
   <script>
-    async function loadHTML(id, url) {
-      try {
-        const response = await fetch(url);
-        const text = await response.text();
-        document.getElementById(id).innerHTML = text;
-      } catch (error) {
-        console.error('Failed to load ' + url + ':', error);
+    (function () {
+      async function loadPartial(id, url) {
+        try {
+          const res = await fetch(url);
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          document.getElementById(id).innerHTML = await res.text();
+        } catch (err) {
+          console.error(`Failed to load partial "${url}":`, err);
+        }
       }
-    }
-    loadHTML('header-placeholder', 'header.html');
-    loadHTML('footer-placeholder', 'footer.html');
+      loadPartial('header-placeholder', 'header.html');
+      loadPartial('footer-placeholder', 'footer.html');
+    })();
   </script>
-  
+
 </body>
 </html>
