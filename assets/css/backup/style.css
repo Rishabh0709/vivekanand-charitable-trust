@@ -1,0 +1,489 @@
+/* main.css */
+
+/* === Color Palette === */
+:root {
+  /* Core brand palette, from the logo */
+  --color-maroon: #7B2123;       /* deep maroon — primary text/headings */
+  --color-brick: #951a19;        /* brighter logo-red — strong backgrounds, footer */
+  --color-orange: #F19D38;       /* warm orange — accents, secondary icons */
+  --color-gold: #FFC35C;         /* golden yellow — dividers, buttons, badges */
+  --color-brown: #87402c;        /* brown — links, tertiary accents */
+  --color-vivid-blue: #084d9b;   /* navy — the logo's underused 5th color */
+  --color-cream: #fef7de;        /* warm cream — light backgrounds, icon circles */
+  --color-warm-bg: #fffdfa;      /* page background */
+
+  /* Text */
+  --text-primary: #2b2b2b;
+  --text-secondary: #5A5450;     /* warm gray, replaces the scattered #555/#666/#5f5e5a */
+
+  /* Semantic aliases — these are the ones that were undefined before */
+  --accent-color: var(--color-maroon);
+  --accent-light: var(--color-cream);
+  --accent-dark: var(--color-maroon);
+  --brand-accent: var(--color-orange);
+}
+
+/*.............................Some styling for all the pages......................*/
+/* === Global Styles === */
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background:#FFFDF9;
+  color:#333; 
+  line-height:1.8;
+  padding-top: 0;
+}
+
+ 
+/* === Headings === */
+
+
+/* === Headings Spacing */
+h1, h2, h3, h4, h5 {
+  font-family: 'Playfair Display', serif;
+}
+
+p {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 56px;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+h2, h3, h4, h5 {
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+h2{
+  color:var(--color-maroon);
+  font-size: 44px;
+  line-height: 1.2;
+}
+
+h3{
+  font-size: 30px;
+  margin-bottom: 25px;
+  line-height: 1.3;
+  color: var(--color-maroon);
+}
+
+h4{
+color: var(--color-brown);
+font-size: 24px;
+  line-height: 1.4;
+}
+
+h5{
+	font-size: 17px;
+	color: var(--color-vivid-blue);
+	line-height: 1.4;
+}
+
+h6{
+color: var(--color-brown);
+}
+
+/* For first paragraph */
+.lead {
+  font-size: 19px;
+  line-height: 1.7;
+  color: #222;
+  font-weight: 500;
+}
+
+/* For subtitle or heading description */
+.small-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #777;
+}
+
+/* ==============================
+   TYPOGRAPHY / HEADINGS
+============================== */
+.heading {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+/* Divider (premium gold line) */
+.divider {
+  width: 70px;
+  height: 3px;
+  margin: 14px auto 18px;
+  background: linear-gradient(to right, #d4af37, #f5d77a);
+  border-radius: 3px;
+}
+
+.subtext {
+  margin-top: 10px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  text-align:center;
+}
+
+/* container */
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+
+/* Main container of each page */
+
+main.container {
+      padding-top: 40px;
+      padding-bottom: 60px;
+      max-width: 1000px;
+	  background: linear-gradient(135deg, #fef7de, #fff8e7);
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+	  margin: 50px auto;
+    }
+
+/* === Text Muted === */
+.text-muted {
+  color: var(--color-muted-text) !important;
+}
+
+
+/* =========================================================
+  
+ ============  HEADING FOR EACH SECTION ====================
+ 
+========================================================= */
+
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 70px 0 40px;
+}
+
+.section-heading h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-maroon);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.section-heading .divider {
+  width: 80px;
+  height: 4px;
+  background: var(--color-gold);
+  margin: 0 auto 18px;
+  border-radius: 10px;
+}
+
+.section-heading p {
+  max-width: 760px;
+  margin: auto;
+  color: #555;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+/* =========================================================
+   TABLET RESPONSIVE
+========================================================= */
+
+@media (max-width: 992px) {
+
+  .section-heading {
+    padding: 60px 20px 35px;
+    margin-bottom: 40px;
+  }
+
+  .section-heading h2 {
+    font-size: 2rem;
+  }
+
+  .section-heading p {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .section-heading {
+    padding: 45px 18px 30px;
+    margin-bottom: 32px;
+  }
+
+  .section-heading h2 {
+    font-size: 1.75rem;
+    line-height: 1.3;
+  }
+
+  .section-heading .divider {
+    width: 60px;
+    margin-bottom: 14px;
+  }
+
+  .section-heading p {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .section-heading {
+    padding: 38px 16px 25px;
+  }
+
+  .section-heading h2 {
+    font-size: 1.5rem;
+  }
+
+  .section-heading p {
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+}
+/*section text - For text under all sections*/
+
+.section-text {
+  flex: 1;
+  min-width: 300px;
+  padding-right: 40px;
+}
+
+.section-text h2 {
+  font-size: 2.2rem;
+  color: #074e9b;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.section-text h2::after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 4px;
+  background: #ed1c24;
+  bottom: -10px;
+  left: 0;
+  border-radius: 2px;
+}
+
+.section-text p {
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section-text {
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+}
+
+#mission.text-center {
+background-color: var(--color-warm-bg);
+}
+
+p {
+	 text-align: justify;
+    text-justify: inter-word;
+}
+	
+
+/* @media (max-width: 768px) {
+  .header-wrapper {
+    height: auto;
+  }
+  .logo-container {
+    position: static;
+    width: 100%;
+    padding-left: 0;
+    justify-content: center;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  #topContactBar, #mainNav {
+    margin-left: 0;
+  }
+}
+ */
+
+/* Standard size for carousel images */
+#imageCarousel .carousel-inner img {
+  width: 100%;
+  height: 500px;
+  object-fit: contain;      /* show entire image, may add letterboxing */
+  background-color: var(--color-warm-bg) /* neutral background for empty space */
+}
+
+/* Optional: make it responsive */
+@media (max-width: 768px) {
+  #imageCarousel .carousel-inner img {
+    height: 250px;
+object-fit: contain;	/* smaller height for mobile */
+  }
+}
+
+/*animated counter card: on-hover effect */
+.counter-card {
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+  }
+
+.counter-card:hover {
+  box-shadow: 0 16px 40px rgba(0, 0, 255, 0.25);
+  transform: translateY(-4px);
+}
+
+/* Card images */
+.card-img-top {
+  width: 100%;
+  height: 350px;
+  aspect-ratio: 4/3;
+  object-fit: contain;  /* ensures full image is shown */
+  background-color: #f8f9fa; /* neutral background for empty space */
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+
+
+/*...........(Torch Bearer, Our highlights).....................*/
+/* Effect for entire card  */
+.card-hover-effect {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  border-radius: 0.25rem;
+}
+
+.card-hover-effect:hover {
+  box-shadow: 0 12px 24px rgba(217, 119, 6, 0.25);
+  transform: translateY(-6px);
+}
+
+/* Card body layout */
+.card-body.card-custom-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+/* Button alignment at bottom */
+.card-body .btn {
+  margin-top: auto; /* pushes button to bottom */
+}
+
+/* Card body */
+.card-custom-body {
+  background-color: var(--color-white);
+  padding: 1.5rem;
+  border-radius: 0 0 0.5rem 0.5rem; /* smooth bottom corners if needed */
+  transition: background-color 0.3s ease , box-shadow 0.3s ease;
+}
+
+.card-custom-body h5 {
+  color: var(--color-maroon);
+  font-weight: 700;
+  /*text-align: center; */
+}
+.card:hover .card-custom-body {
+/* background-color: #F59E0B; /* Darker warm orange on hover */
+  box-shadow: 0 8px 20px rgba(217, 119, 6, 0.5); /* Warm orange shadow */
+ transform: translateY(-4px);
+}
+
+/*--------Some additional settings---------*/
+.card-hover-effect {
+  background: linear-gradient(180deg, #fff8e7 0%, #fef7de 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-img-top {
+  box-shadow: 0 0 25px rgba(255, 220, 150, 0.4); /* warm aura */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover-effect:hover .card-img-top {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(255, 200, 100, 0.6);
+}
+
+
+/*................*/
+
+ /*Show dropdown menu on hover for desktop*/
+@media (min-width: 992px) {
+
+  /* Optional: add fade effect */
+  .navbar-nav .dropdown > .dropdown-menu {
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    display: block;
+    visibility: hidden;
+  }
+  .navbar-nav .dropdown:hover > .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.contact-info span {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Responsive adjustments
+@media (max-width: 768px) {
+  .header-bar nav {
+    padding-left: 0 !important;
+  }
+  .logo-container {
+    position: static;
+    transform: none !important;
+    top: auto !important;
+    left: auto !important;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+  }
+}*/
+
+/*  === Responsive Image with Rounded Corners === 
+img.rounded-logo {
+  border-radius: 0.75rem;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 6px 15px rgba(26, 35, 126, 0.2);
+}
+ */
+ 

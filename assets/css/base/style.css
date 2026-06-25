@@ -1,0 +1,194 @@
+
+ 
+
+/* For first paragraph */
+.lead {
+  font-size: 19px;
+  line-height: 1.7;
+  color: #222;
+  font-weight: 500;
+}
+
+/* For subtitle or heading description */
+.small-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #777;
+}
+
+
+
+
+#mission.text-center {
+background-color: var(--color-warm-bg);
+}
+
+p {
+	 text-align: justify;
+    text-justify: inter-word;
+}
+	
+
+/* @media (max-width: 768px) {
+  .header-wrapper {
+    height: auto;
+  }
+  .logo-container {
+    position: static;
+    width: 100%;
+    padding-left: 0;
+    justify-content: center;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  #topContactBar, #mainNav {
+    margin-left: 0;
+  }
+}
+ */
+
+/* Standard size for carousel images */
+#imageCarousel .carousel-inner img {
+  width: 100%;
+  height: 500px;
+  object-fit: contain;      /* show entire image, may add letterboxing */
+  background-color: var(--color-warm-bg) /* neutral background for empty space */
+}
+
+/* Optional: make it responsive */
+@media (max-width: 768px) {
+  #imageCarousel .carousel-inner img {
+    height: 250px;
+object-fit: contain;	/* smaller height for mobile */
+  }
+}
+
+/*animated counter card: on-hover effect */
+.counter-card {
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+  }
+
+.counter-card:hover {
+  box-shadow: 0 16px 40px rgba(0, 0, 255, 0.25);
+  transform: translateY(-4px);
+}
+
+/* Card images */
+.card-img-top {
+  width: 100%;
+  height: 350px;
+  aspect-ratio: 4/3;
+  object-fit: contain;  /* ensures full image is shown */
+  background-color: #f8f9fa; /* neutral background for empty space */
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+
+
+/*...........(Torch Bearer, Our highlights).....................*/
+/* Effect for entire card  */
+.card-hover-effect {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  border-radius: 0.25rem;
+}
+
+.card-hover-effect:hover {
+  box-shadow: 0 12px 24px rgba(217, 119, 6, 0.25);
+  transform: translateY(-6px);
+}
+
+/* Card body layout */
+.card-body.card-custom-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+/* Button alignment at bottom */
+.card-body .btn {
+  margin-top: auto; /* pushes button to bottom */
+}
+
+/* Card body */
+.card-custom-body {
+  background-color: var(--color-white);
+  padding: 1.5rem;
+  border-radius: 0 0 0.5rem 0.5rem; /* smooth bottom corners if needed */
+  transition: background-color 0.3s ease , box-shadow 0.3s ease;
+}
+
+.card-custom-body h5 {
+  color: var(--color-maroon);
+  font-weight: 700;
+  /*text-align: center; */
+}
+.card:hover .card-custom-body {
+/* background-color: #F59E0B; /* Darker warm orange on hover */
+  box-shadow: 0 8px 20px rgba(217, 119, 6, 0.5); /* Warm orange shadow */
+ transform: translateY(-4px);
+}
+
+/*--------Some additional settings---------*/
+.card-hover-effect {
+  background: linear-gradient(180deg, #fff8e7 0%, #fef7de 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-img-top {
+  box-shadow: 0 0 25px rgba(255, 220, 150, 0.4); /* warm aura */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover-effect:hover .card-img-top {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(255, 200, 100, 0.6);
+}
+
+
+/*................*/
+
+ /*Show dropdown menu on hover for desktop*/
+@media (min-width: 992px) {
+
+  /* Optional: add fade effect */
+  .navbar-nav .dropdown > .dropdown-menu {
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    display: block;
+    visibility: hidden;
+  }
+  .navbar-nav .dropdown:hover > .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.contact-info span {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Responsive adjustments
+@media (max-width: 768px) {
+  .header-bar nav {
+    padding-left: 0 !important;
+  }
+  .logo-container {
+    position: static;
+    transform: none !important;
+    top: auto !important;
+    left: auto !important;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+  }
+}*/
+
+/*  === Responsive Image with Rounded Corners === 
+img.rounded-logo {
+  border-radius: 0.75rem;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 6px 15px rgba(26, 35, 126, 0.2);
+}
+ */
+ 

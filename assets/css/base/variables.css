@@ -1,0 +1,22 @@
+/* === Color Palette === */
+:root {
+  /* Core brand palette, from the logo */
+  --color-maroon: #7B2123;       /* deep maroon — primary text/headings */
+  --color-brick: #951a19;        /* brighter logo-red — strong backgrounds, footer */
+  --color-orange: #F19D38;       /* warm orange — accents, secondary icons */
+  --color-gold: #FFC35C;         /* golden yellow — dividers, buttons, badges */
+  --color-brown: #87402c;        /* brown — links, tertiary accents */
+  --color-vivid-blue: #084d9b;   /* navy — the logo's underused 5th color */
+  --color-cream: #fef7de;        /* warm cream — light backgrounds, icon circles */
+  --color-warm-bg: #fffdfa;      /* page background */
+
+  /* Text */
+  --text-primary: #2b2b2b;
+  --text-secondary: #5A5450;     /* warm gray, replaces the scattered #555/#666/#5f5e5a */
+
+  /* Semantic aliases — these are the ones that were undefined before */
+  --accent-color: var(--color-maroon);
+  --accent-light: var(--color-cream);
+  --accent-dark: var(--color-maroon);
+  --brand-accent: var(--color-orange);
+}

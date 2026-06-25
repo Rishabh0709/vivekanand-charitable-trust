@@ -1,0 +1,178 @@
+
+/* ==============================
+   TYPOGRAPHY / HEADINGS
+============================== */
+.heading {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+/* Divider (premium gold line) */
+.divider {
+  width: 70px;
+  height: 3px;
+  margin: 14px auto 18px;
+  background: linear-gradient(to right, #d4af37, #f5d77a);
+  border-radius: 3px;
+}
+
+.subtext {
+  margin-top: 10px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  text-align:center;
+}
+
+
+
+/* =========================================================
+  
+ ============  HEADING FOR EACH SECTION ====================
+ 
+========================================================= */
+
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 70px 0 40px;
+}
+
+.section-heading h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-maroon);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.section-heading .divider {
+  width: 80px;
+  height: 4px;
+  background: var(--color-gold);
+  margin: 0 auto 18px;
+  border-radius: 10px;
+}
+
+.section-heading p {
+  max-width: 760px;
+  margin: auto;
+  color: #555;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+/* =========================================================
+   TABLET RESPONSIVE
+========================================================= */
+
+@media (max-width: 992px) {
+
+  .section-heading {
+    padding: 60px 20px 35px;
+    margin-bottom: 40px;
+  }
+
+  .section-heading h2 {
+    font-size: 2rem;
+  }
+
+  .section-heading p {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .section-heading {
+    padding: 45px 18px 30px;
+    margin-bottom: 32px;
+  }
+
+  .section-heading h2 {
+    font-size: 1.75rem;
+    line-height: 1.3;
+  }
+
+  .section-heading .divider {
+    width: 60px;
+    margin-bottom: 14px;
+  }
+
+  .section-heading p {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .section-heading {
+    padding: 38px 16px 25px;
+  }
+
+  .section-heading h2 {
+    font-size: 1.5rem;
+  }
+
+  .section-heading p {
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+}
+/*section text - For text under all sections*/
+
+.section-text {
+  flex: 1;
+  min-width: 300px;
+  padding-right: 40px;
+}
+
+.section-text h2 {
+  font-size: 2.2rem;
+  color: #074e9b;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.section-text h2::after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 4px;
+  background: #ed1c24;
+  bottom: -10px;
+  left: 0;
+  border-radius: 2px;
+}
+
+.section-text p {
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section-text {
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+}
