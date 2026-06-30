@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Why Women Empowerment is Important</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <style>
+    
+    main.container {
+      padding-top: 40px;
+      padding-bottom: 60px;
+      max-width: 1000px;
+	  background: linear-gradient(135deg, #fef7de, #fff8e7);
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+	  margin: 50px auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+
+    <h2>Historical Perspective</h2>
+    <p>
+      In the last century, it was a menace in a large section of the society that despite being the pivot of the family,
+      the woman did not get the place she was entitled to. The main reason for this was the age-old evils,
+      superstitions and narrow-mindedness towards girl child education. For the last two decades, under the women
+      empowerment programme, sensitivity and concern have been expressed on socio-economic, political and legal issues
+      related to women.
+    </p>
+    <p>
+      <b>Women empowerment</b> is the process of empowering women by creating awareness and self-confidence in them at all
+      levels—physical, mental and spiritual. In general, women empowerment emphasizes only the rights of women, but
+      there is very little awareness about duties. This is the reason our country has not been able to fully reap the
+      benefits of “Women Empowerment” even after so many years.
+    </p>
+    <p>
+      The ancient Indian education system combined education with moral values. The Gurukul System was prevalent during
+      those days, where men and women enjoyed equal rights, leading to a strong foundation of family and society. Later,
+      during British rule, Lord Macaulay introduced an education system devoid of moral values, causing India to lose
+      its cultural strength and pride.
+    </p>
+
+    <h2>How Women Empowerment Will Help</h2>
+    <p>
+      For true women empowerment, it is essential that women have a balanced sense of both duties and rights. Education
+      must also inculcate moral and ethical values, along with awareness of our cultural heritage. Only when these are
+      integrated into daily life can women empowerment be achieved in the true sense, helping the nation solve its many
+      complex challenges.
+    </p>
+
+    <p>
+      Sanitary and health awareness is also an integral part of women empowerment. Girls must learn the art of living a
+      healthy life, for a healthy mind resides in a healthy body. Good health should be the highest priority. A Sanskrit
+      verse states:
+      <br>
+      <b><i>"Dharm arth kaam mokshaanaam, aarogya mul karanam"</i></b>
+    </p>
+
+    <p>
+      It means that a healthy body is the basis of Dharma (righteousness), Artha (livelihood), Kama (fulfilment) and
+      Moksha (liberation). This highlights the significance of good health in every aspect of life.
+    </p>
+
+    <p>
+      Our ancient sages strongly emphasized Yoga and Pranayama for good health and longevity. A healthy mother gives
+      birth to a healthy child, ultimately contributing to the creation of a strong and prosperous nation.
+    </p>
+
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/script.js"></script>
+
+  <!-- Load header and footer partials -->
+  <script>
+    async function loadHTML(id, url) {
+      try {
+        const res = await fetch(url);
+        const text = await res.text();
+        document.getElementById(id).innerHTML = text;
+      } catch (error) {
+        console.error(`Failed to load ${url}:`, error);
+      }
+    }
+    loadHTML('header-placeholder', 'header.html', initHeaderSubmenu);
+    loadHTML('footer-placeholder', 'footer.html', initBackToTop);
+  </script>
+
+</body>
+</html>

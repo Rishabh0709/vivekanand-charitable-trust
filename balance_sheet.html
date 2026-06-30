@@ -237,17 +237,8 @@
 
   <!-- Load partials -->
   <script>
-    async function loadHTML(id, url) {
-      try {
-        const res = await fetch(url);
-        const text = await res.text();
-        document.getElementById(id).innerHTML = text;
-      } catch (err) {
-        console.error(`Failed to load ${url}:`, err);
-      }
-    }
-    loadHTML('header-placeholder', 'header.html');
-    loadHTML('footer-placeholder', 'footer.html');
+    loadHTML('header-placeholder', 'header.html', initHeaderSubmenu);
+    loadHTML('footer-placeholder', 'footer.html', initBackToTop);
   </script>
 
 

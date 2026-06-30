@@ -1,0 +1,305 @@
+/* ==========================================================================
+   bio-page.css  —  TORCH BEARER BIOGRAPHY PAGES
+   Used by: bhaiyaji.html, basanti_maa.html, madhu_maa.html
+   Depends on: style.css (tokens, .glass-panel, .split-layout, .pull-quote,
+               .eyebrow, .section-heading, .highlight-snippet)
+   Load order: style.css → bio-page.css
+   ========================================================================== */
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+   1. PAGE SHELL
+───────────────────────────────────────────────────────────────────────── */
+.bio-page {
+  background: var(--gradient-page);
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+   2. BREADCRUMB
+   Replaces the inline-styled breadcrumb repeated on all 3 pages.
+───────────────────────────────────────────────────────────────────────── */
+.bio-breadcrumb {
+  padding: 14px 0;
+  background-color: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+}
+
+.bio-breadcrumb a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.bio-breadcrumb a:hover {
+  color: var(--color-brown);
+}
+
+.bio-breadcrumb .sep {
+  color: #c2c2c2;
+  margin: 0 8px;
+}
+
+.bio-breadcrumb .current {
+  color: var(--color-orange);
+  font-weight: 600;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+   3. BIO HERO
+   Name + role + dates + opening line. Sits above the first section.
+───────────────────────────────────────────────────────────────────────── */
+.bio-hero {
+  text-align: center;
+  padding: 56px 20px 10px;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.bio-hero__role {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-orange);
+  margin-bottom: 10px;
+}
+
+.bio-hero__years {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: -10px;
+  margin-bottom: 22px;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+   4. BIO SECTION
+   Standard vertical rhythm for each named chapter of the biography.
+───────────────────────────────────────────────────────────────────────── */
+.bio-section {
+  padding: 60px 20px;
+}
+
+.bio-section--alt {
+  background: var(--gradient-cream);
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+   5. QUOTE CARD
+   A distinct, slightly more prominent variant of .pull-quote — used for
+   the single most important framing statement early in each biography
+   (replaces the ad-hoc "quote-card" div in madhu_maa.html).
+───────────────────────────────────────────────────────────────────────── */
+.bio-quote-card {
+  max-width: 820px;
+  margin: 0 auto 32px;
+  padding: 32px 36px;
+  background: #fffefa;
+  border-left: 6px solid var(--color-maroon);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+.bio-quote-card p {
+  text-align: left;
+}
+
+.bio-quote-card .lead-line {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.08rem;
+  color: var(--color-maroon);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+   6. TIMELINE BLOCK
+   A single image + text milestone within a .glass-panel. Multiple stack
+   inside one panel to read as a connected chapter rather than isolated
+   rows (replaces the bespoke .row / .col-md-* Bootstrap grid pairs).
+───────────────────────────────────────────────────────────────────────── */
+.timeline-block {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  margin-bottom: 36px;
+}
+
+.timeline-block:last-child { margin-bottom: 0; }
+
+.timeline-block--reverse { flex-direction: row-reverse; }
+
+.timeline-block__image {
+  flex: 0 0 280px;
+}
+
+.timeline-block__image img {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  object-fit: cover;
+  max-height: 280px;
+}
+
+/* Stacked image variant — e.g. multiple book covers together */
+.timeline-block__image--stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.timeline-block__image--stack img { max-height: 150px; }
+
+.timeline-block__text { flex: 1; }
+
+.timeline-block__text p:last-child { margin-bottom: 0; }
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+   7. HONOR GRID
+   Roads/awards named after the leader (bhaiyaji.html "honor-section").
+───────────────────────────────────────────────────────────────────────── */
+.honor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.honor-card {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.honor-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.13);
+}
+
+.honor-card__img {
+  height: 190px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.honor-card__body {
+  padding: 18px 20px 22px;
+  text-align: center;
+}
+
+.honor-card__title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-maroon);
+  margin-bottom: 4px;
+}
+
+.honor-card__date {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.honor-card__desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  text-align: center;
+  margin: 0;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+   8. LEGACY CLOSER
+   Final reflective passage + portrait, closing each biography.
+───────────────────────────────────────────────────────────────────────── */
+.legacy-closer {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.legacy-closer__text { flex: 1.3; }
+.legacy-closer__text p:last-child { margin-bottom: 0; }
+
+.legacy-closer__image { flex: 1; }
+
+.legacy-closer__image img {
+  width: 100%;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+/* Single-line epitaph beneath the closer */
+.legacy-line {
+  text-align: center;
+  max-width: 720px;
+  margin: 36px auto 0;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.08rem;
+  color: var(--color-maroon);
+  font-weight: 600;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+   9. RETURN-TO-HUB CTA
+   Closing call-out linking back to about_us.html#leadership.
+───────────────────────────────────────────────────────────────────────── */
+.bio-return {
+  text-align: center;
+  padding: 54px 20px;
+  background-color: var(--color-cream);
+  border-top: 1px solid rgba(166, 120, 46, 0.15);
+}
+
+.bio-return p {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+   10. RESPONSIVE
+───────────────────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .timeline-block,
+  .timeline-block--reverse,
+  .legacy-closer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .timeline-block__image,
+  .legacy-closer__image {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .honor-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .bio-section     { padding: 44px 16px; }
+  .bio-quote-card  { padding: 24px 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .honor-card { transition: none; }
+}

@@ -497,19 +497,8 @@
   <script src="/assets/js/script.js"></script>
 
   <script>
-    (function () {
-      async function loadPartial(id, url) {
-        try {
-          const res = await fetch(url);
-          if (!res.ok) throw new Error('HTTP ' + res.status);
-          document.getElementById(id).innerHTML = await res.text();
-        } catch (err) {
-          console.error('Failed to load partial "' + url + '":', err);
-        }
-      }
-      loadPartial('header-placeholder', 'header.html');
-      loadPartial('footer-placeholder', 'footer.html');
-    })();
+    loadHTML('header-placeholder', 'header.html', initHeaderSubmenu);
+    loadHTML('footer-placeholder', 'footer.html', initBackToTop);
   </script>
 
 </body>

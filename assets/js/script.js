@@ -1,55 +1,109 @@
-/* ==========================================================================
-   1. Dynamic Partials Loader Engine
-   ========================================================================== */
 
-// For header/submenu toggle on mobile
-function initHeaderSubmenu() {
-  document.querySelectorAll(".submenu-toggle").forEach(toggle => {
-    toggle.addEventListener("click", e => { /* existing logic */ });
-  });
-  // Safely trigger desktop navbar tracking logic once loaded
-  handleDesktopDropdowns();
-}
+/* ---------------------------------------------------------
+   BACK TO TOP BUTTON
+   Call this once, after footer.html has been injected.
+--------------------------------------------------------- */
+function initBackToTop() {
+  const backBtn = document.getElementById('backToTopBtn');
+  if (!backBtn) return;
 
-// Fixed Back-to-Top initializer running strictly AFTER footer insertion
-function initBackToTop() { 
-  const backToTopBtn = document.getElementById("backToTopBtn");
-  if (!backToTopBtn) return;
+  // Guard against double-initialization if loadHTML's callback
+  // ever fires more than once for the same element.
+  if (backBtn.dataset.initialized === 'true') return;
+  backBtn.dataset.initialized = 'true';
 
-  window.addEventListener("scroll", function () {
+  window.addEventListener('scroll', () => {
     if (window.scrollY > 300) {
-      backToTopBtn.classList.add("show");
+      backBtn.classList.add('show');
     } else {
-      backToTopBtn.classList.remove("show");
+      backBtn.classList.remove('show');
     }
   });
 
-  backToTopBtn.addEventListener("click", function () {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
+  backBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
-}
 
-// Asynchronous layout patcher
-async function loadHTML(id, url, callback) {
-  try {
-    const placeholder = document.getElementById(id);
-    if (!placeholder) return; // Guard clause if placeholder isn't present
-    
-    const res = await fetch(url);
-    placeholder.innerHTML = await res.text();
-    callback?.();
-  } catch (err) { 
-    console.error(`Failed to load ${url}:`, err); 
+  // In case the page is already scrolled on load (e.g. anchor-link
+  // navigation, or a reload mid-page), set the initial state correctly
+  // instead of waiting for the next scroll event.
+  if (window.scrollY > 300) {
+    backBtn.classList.add('show');
   }
 }
 
-// Initialize components
-loadHTML('header-placeholder', 'header.html', initHeaderSubmenu);
-loadHTML('footer-placeholder', 'footer.html', initBackToTop);
 
+/* ---------------------------------------------------------
+   HEADER SUBMENU (if/when the nested "Torch Bearers" submenu
+   pattern is reintroduced anywhere — kept here as the single
+   place such logic should live, never inside header.html itself)
+--------------------------------------------------------- */
+/* ==========================================================================
+   Dynamic Partials Loader Engine
+   ========================================================================== */
+
+function initHeaderSubmenu() {
+  document.querySelectorAll('.submenu-toggle').forEach((toggle) => {
+    function toggleSubmenu(e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const parent = toggle.parentElement;
+      const submenu = toggle.nextElementSibling;
+      const isOpen = parent.classList.contains('show');
+
+      document.querySelectorAll('.dropdown-submenu').forEach((item) => {
+        if (item !== parent) {
+          item.classList.remove('show');
+          item.querySelector('.dropdown-menu')?.classList.remove('show');
+          item.querySelector('.submenu-toggle')?.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      parent.classList.toggle('show');
+      submenu.classList.toggle('show');
+      toggle.setAttribute('aria-expanded', String(!isOpen));
+    }
+
+    toggle.addEventListener('click', toggleSubmenu);
+  });
+}
+
+
+/* ---------------------------------------------------------
+   PARTIAL LOADER  (replaces the loadHTML() copy-pasted at the
+   bottom of every page). Accepts an optional callback that
+   fires only after innerHTML has actually been set — this is
+   what was missing before, and why "fixes" inside header.html /
+   footer.html's own <script> tags never ran.
+--------------------------------------------------------- */
+async function loadHTML(id, url, callback) {
+  try {
+    const res = await fetch(url);
+    const text = await res.text();
+    document.getElementById(id).innerHTML = text;
+    if (typeof callback === 'function') callback();
+  } catch (error) {
+    console.error(`Failed to load ${url}:`, error);
+  }
+}
+
+
+/* ---------------------------------------------------------
+   USAGE — replace the per-page loader block at the bottom of
+   every HTML file with this:
+
+   <script>
+     loadHTML('header-placeholder', 'header.html', initHeaderSubmenu);
+     loadHTML('footer-placeholder', 'footer.html', initBackToTop);
+   </script>
+
+   Do NOT keep a second, page-local loadHTML() definition once
+   this one is in script.js — having two definitions of the same
+   function name is harmless (the later one wins) but confusing
+   and worth cleaning up across all 38 pages as part of the wider
+   consolidation already tracked in the site audit.
+--------------------------------------------------------- */
 
 /* ==========================================================================
    2. DOM-Dependent Page Components (Wrapped Safely)

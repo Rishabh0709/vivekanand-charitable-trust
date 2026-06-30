@@ -363,17 +363,8 @@
   <script src="/assets/js/script.js"></script>
 
   <script>
-    async function loadHTML(id, url) {
-      try {
-        const res = await fetch(url);
-        const text = await res.text();
-        document.getElementById(id).innerHTML = text;
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    loadHTML('header-placeholder', 'header.html');
-    loadHTML('footer-placeholder', 'footer.html');
+    loadHTML('header-placeholder', 'header.html', initHeaderSubmenu);
+    loadHTML('footer-placeholder', 'footer.html', initBackToTop);
   </script>
 
 </body>

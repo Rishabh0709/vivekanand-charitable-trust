@@ -924,17 +924,8 @@
       rows.forEach((row) => observer.observe(row));
     })();
 
-    /* Partials HTML Loading Injections */
-    async function loadHTML(id, url) {
-      try {
-        const res = await fetch(url);
-        document.getElementById(id).innerHTML = await res.text();
-      } catch (err) {
-        console.error('Failed to load partial: ' + url, err);
-      }
-    }
-    loadHTML('header-placeholder', 'header.html');
-    loadHTML('footer-placeholder', 'footer.html');
+    loadHTML('header-placeholder', 'header.html', initHeaderSubmenu);
+    loadHTML('footer-placeholder', 'footer.html', initBackToTop);
   </script>
 
 </body>

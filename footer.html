@@ -106,7 +106,12 @@
 
   </div>
 
-  <!-- Back To Top -->
+  <!-- Back To Top
+       NOTE: no <script> here. Scripts injected via innerHTML (which is how
+       loadHTML() in every page brings this partial in) are never executed
+       by the browser — this button's listeners must live in script.js and
+       be (re)initialized after the footer fetch resolves. See initBackToTop()
+       in script.js, invoked via the loadHTML() callback in each page. -->
   <button id="backToTopBtn" aria-label="Back to top">
   <i class="fa-solid fa-arrow-up"></i>
 </button>
@@ -335,20 +340,3 @@
 }
 
 </style>
-
-<script>
-  (function() {
-    // This runs automatically as soon as footer.html gets injected into any page
-    const backBtn = document.getElementById('backToTopBtn');
-    if (!backBtn) return;
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) backBtn.classList.add('show');
-      else backBtn.classList.remove('show');
-    });
-
-    backBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  })();
-</script>
