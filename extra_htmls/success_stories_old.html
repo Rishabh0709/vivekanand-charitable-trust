@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <title>Success Stories | Swami Vivekanand Students’ Welfare Charitable Trust</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css"/>
+
+  <style>
+
+    :root{
+      --primary-maroon:#7f1d1d;
+      --primary-gold:#fbbf24;
+      --soft-bg:#f8f5f2;
+      --text-dark:#2b2b2b;
+    }
+
+    body{
+      background: linear-gradient(to bottom, #f8f5f2, #fff);
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+    }
+    
+    /* =========================================================
+       STORIES GRID
+    ========================================================= */
+
+    .stories-wrapper{
+      padding: 20px 0 100px;
+    }
+
+    .story-card{
+      position:relative;
+      border:none;
+      border-radius:28px;
+      overflow:hidden;
+
+      background: rgba(255,255,255,0.65);
+      backdrop-filter: blur(18px);
+
+      box-shadow:
+        0 10px 35px rgba(0,0,0,0.08),
+        inset 0 1px 0 rgba(255,255,255,0.4);
+
+      transition: all 0.4s ease;
+
+      height:100%;
+	   display:flex;
+  flex-direction:column;
+    }
+
+    .story-card:hover{
+      transform: translateY(-8px);
+      box-shadow:
+        0 18px 50px rgba(0,0,0,0.12);
+    }
+
+    .story-img{
+      position:relative;
+      overflow:hidden;
+      height:280px;
+    }
+
+    .story-img img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition: transform 0.6s ease;
+    }
+
+    .story-card:hover .story-img img{
+      transform: scale(1.05);
+    }
+
+    .story-content{
+      padding:28px;
+      display:flex;
+      flex-direction:column;
+      height:100%;
+	  flex:1;
+    }
+
+    .story-content h5{
+      font-family:'Playfair Display', serif;
+      font-size:1.45rem;
+      color:var(--primary-maroon);
+      margin-bottom:14px;
+      line-height:1.4;
+    }
+
+    .story-content p{
+      flex-grow:1;
+      color:#555;
+      line-height:1.9;
+      margin-bottom:24px;
+      font-size:0.97rem;
+    }
+
+    /* =========================================================
+       BUTTON
+    ========================================================= */
+
+    .story-btn{
+	 display:inline-flex;
+  align-items:center;
+  justify-content:center;
+      align-self:flex-start;
+
+      background: linear-gradient(
+        135deg,
+        var(--primary-gold),
+        #f59e0b
+      );
+
+      color:#4b130f;
+      font-weight:600;
+      text-decoration:none;
+
+      padding:12px 24px;
+      border-radius:999px;
+
+      transition: all 0.3s ease;
+
+      box-shadow: 0 8px 20px rgba(251,191,36,0.25);
+	  
+    }
+
+    .story-btn:hover{
+      transform: translateY(-3px);
+      color:#4b130f;
+
+      box-shadow: 0 12px 28px rgba(251,191,36,0.35);
+    }
+	
+	.story-btn:visited,
+.story-btn:focus,
+.story-btn:active{
+  color:#4b130f;
+  text-decoration:none;
+}
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width:991px){
+
+      .stories-hero{
+        padding-top:100px;
+      }
+
+      .story-img{
+        height:240px;
+      }
+
+    }
+
+    @media (max-width:768px){
+
+      .stories-wrapper{
+        padding-bottom:70px;
+      }
+
+      .story-content{
+        padding:24px;
+      }
+
+      .story-content h5{
+        font-size:1.3rem;
+      }
+
+      .story-content p{
+        font-size:0.95rem;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+
+  <!-- HERO -->
+    <div class="section-heading">
+
+      <h2>Stories of Hope & Transformation</h2>
+
+      <div class="divider"></div>
+
+      <p>
+        Every journey represented here reflects courage, resilience, and transformation.
+        Through education, mentorship, and compassionate support, these girls overcame
+        challenges to build lives of dignity, confidence, and purpose.
+      </p>
+
+    </div>
+
+
+  <!-- STORIES -->
+  <section class="stories-wrapper" style="background: var(--gradient-page); min-height: 100vh;">
+  <div class="container">
+  
+    <div class="row g-4">
+	<!-- Story 1 -->
+      <div class="col-md-6 col-lg-4 d-flex">
+        <div class="glass-card w-100 d-flex flex-column justify-content-between p-4 border-0" style="background: rgba(255, 255, 255, 0.65); backdrop-filter: blur(14px); border-radius: 24px; transition: transform 0.3s ease;">
+          
+          <div class="card-top-content">
+            <div class="story-img-frame mb-3" style="width: 100%; height: 240px; border-radius: 16px; overflow: hidden; background: #f8f9fa;">
+              <img src="/assets/images/neetu-deora.png" alt="Neetu Deora" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            
+            <h4 style="font-family: var(--font-serif); color: var(--color-maroon); font-weight: 600;" class="mb-2">Neetu Deora</h4>
+            <p class="small text-uppercase tracking-wider mb-3" style="color: var(--color-orange); font-weight: 600; font-family: var(--font-sans);">Senior Assistant, SBI</p>
+            <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem;">
+              With the Trust’s support from Class 9th to M.Com, she continued her education despite difficult circumstances after losing her father and went on to build a dignified, stable career at SBI.
+            </p>
+          </div>
+
+          <div class="card-bottom-action mt-4">
+            <a href="./story1.html" class="btn text-white w-100 py-2.5" style="background: var(--color-maroon); border-radius: 50px; font-weight: 600; font-family: var(--font-sans); transition: all 0.3s ease;">
+              Read Full Journey →
+            </a>
+          </div>
+
+        </div>
+      </div>
+	  
+	  <!-- Story 2 -->
+      <div class="col-md-6 col-lg-4 d-flex">
+        <div class="glass-card w-100 d-flex flex-column justify-content-between p-4 border-0" style="background: rgba(255, 255, 255, 0.65); backdrop-filter: blur(14px); border-radius: 24px; transition: transform 0.3s ease;">
+          
+          <div class="card-top-content">
+            <div class="story-img-frame mb-3" style="width: 100%; height: 240px; border-radius: 16px; overflow: hidden; background: #f8f9fa;">
+              <img src="/assets/images/poonam-mishra.png" alt="Poonam Mishra" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            
+            <h4 style="font-family: var(--font-serif); color: var(--color-maroon); font-weight: 600;" class="mb-2">Poonam Mishra</h4>
+            <p class="small text-uppercase tracking-wider mb-3" style="color: var(--color-orange); font-weight: 600; font-family: var(--font-sans);">Principal, Modern School, Jodhpur</p>
+            <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem;">
+              From Class 6th to M.Sc, the Trust supported her journey
+                through financial hardships, helping her continue her education
+                and eventually emerge as an inspiring educational leader.
+            </p>
+          </div>
+
+          <div class="card-bottom-action mt-4">
+            <a href="./story2.html" class="btn text-white w-100 py-2.5" style="background: var(--color-maroon); border-radius: 50px; font-weight: 600; font-family: var(--font-sans); transition: all 0.3s ease;">
+              Read Full Journey →
+            </a>
+          </div>
+
+        </div>
+      </div>
+	  
+	  <!-- Story 3 -->
+      <div class="col-md-6 col-lg-4 d-flex">
+        <div class="glass-card w-100 d-flex flex-column justify-content-between p-4 border-0" style="background: rgba(255, 255, 255, 0.65); backdrop-filter: blur(14px); border-radius: 24px; transition: transform 0.3s ease;">
+          
+          <div class="card-top-content">
+            <div class="story-img-frame mb-3" style="width: 100%; height: 240px; border-radius: 16px; overflow: hidden; background: #f8f9fa;">
+              <img src="/assets/images/jyoti-soni.png" alt="Jyoti Soni" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            
+            <h4 style="font-family: var(--font-serif); color: var(--color-maroon); font-weight: 600;" class="mb-2">Jyoti Soni</h4>
+            <p class="small text-uppercase tracking-wider mb-3" style="color: var(--color-orange); font-weight: 600; font-family: var(--font-sans);">C.A, C.S</p>
+            <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem;">
+              After losing her father during Class 12, she rebuilt her life
+                through determination, guidance, and support —
+                eventually qualifying as both a Chartered Accountant and Company Secretary.
+            </p>
+          </div>
+
+          <div class="card-bottom-action mt-4">
+            <a href="./story3.html" class="btn text-white w-100 py-2.5" style="background: var(--color-maroon); border-radius: 50px; font-weight: 600; font-family: var(--font-sans); transition: all 0.3s ease;">
+              Read Full Journey →
+            </a>
+          </div>
+
+        </div>
+      </div>
+      
+	  <!-- Story 4 -->
+      <div class="col-md-6 col-lg-4 d-flex">
+        <div class="glass-card w-100 d-flex flex-column justify-content-between p-4 border-0" style="background: rgba(255, 255, 255, 0.65); backdrop-filter: blur(14px); border-radius: 24px; transition: transform 0.3s ease;">
+          
+          <div class="card-top-content">
+            <div class="story-img-frame mb-3" style="width: 100%; height: 240px; border-radius: 16px; overflow: hidden; background: #f8f9fa;">
+              <img src="/assets/images/kumudini-dadhich.png" alt="Dr Kumudini Dadhich" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            
+            <h4 style="font-family: var(--font-serif); color: var(--color-maroon); font-weight: 600;" class="mb-2">Dr. Kumudini Dadhich</h4>
+            <p class="small text-uppercase tracking-wider mb-3" style="color: var(--color-orange); font-weight: 600; font-family: var(--font-sans);">Chemistry Lecturer</p>
+            <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem;">
+              From nearly leaving school in Class 10 to becoming a lecturer,
+                her journey reflects how encouragement, education,
+                and inner strength can completely transform a life.
+            </p>
+          </div>
+
+          <div class="card-bottom-action mt-4">
+            <a href="./story4.html" class="btn text-white w-100 py-2.5" style="background: var(--color-maroon); border-radius: 50px; font-weight: 600; font-family: var(--font-sans); transition: all 0.3s ease;">
+              Read Full Journey →
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+	  <!-- Story 5 -->
+      <div class="col-md-6 col-lg-4 d-flex">
+        <div class="glass-card w-100 d-flex flex-column justify-content-between p-4 border-0" style="background: rgba(255, 255, 255, 0.65); backdrop-filter: blur(14px); border-radius: 24px; transition: transform 0.3s ease;">
+          
+          <div class="card-top-content">
+            <div class="story-img-frame mb-3" style="width: 100%; height: 240px; border-radius: 16px; overflow: hidden; background: #f8f9fa;">
+              <img src="/assets/images/sejal-rathore.png" alt="Sejal Rathore" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            
+            <h4 style="font-family: var(--font-serif); color: var(--color-maroon); font-weight: 600;" class="mb-2">Sejal Rathore</h4>
+            <p class="small text-uppercase tracking-wider mb-3" style="color: var(--color-orange); font-weight: 600; font-family: var(--font-sans);">Software Engineer, Wells Fargo</p>
+            <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem;">
+              Through consistent support and mentorship,
+                she overcame life challenges and built a successful
+                professional career in a leading multinational company.
+            </p>
+          </div>
+
+          <div class="card-bottom-action mt-4">
+            <a href="./story5.html" class="btn text-white w-100 py-2.5" style="background: var(--color-maroon); border-radius: 50px; font-weight: 600; font-family: var(--font-sans); transition: all 0.3s ease;">
+              Read Full Journey →
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+	  <!-- Story 6 -->
+      <div class="col-md-6 col-lg-4 d-flex">
+        <div class="glass-card w-100 d-flex flex-column justify-content-between p-4 border-0" style="background: rgba(255, 255, 255, 0.65); backdrop-filter: blur(14px); border-radius: 24px; transition: transform 0.3s ease;">
+          
+          <div class="card-top-content">
+            <div class="story-img-frame mb-3" style="width: 100%; height: 240px; border-radius: 16px; overflow: hidden; background: #f8f9fa;">
+              <img src="/assets/images/meenu-tanwar.png" alt="Meenu Tanwar" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            
+            <h4 style="font-family: var(--font-serif); color: var(--color-maroon); font-weight: 600;" class="mb-2">Meenu Tanwar</h4>
+            <p class="small text-uppercase tracking-wider mb-3" style="color: var(--color-orange); font-weight: 600; font-family: var(--font-sans);"></p>
+            <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem;">
+              Her journey highlights how educational support,
+                emotional encouragement, and values-based guidance
+                can shape both academic excellence and personal growth.
+            </p>
+          </div>
+
+          <div class="card-bottom-action mt-4">
+            <a href="./story6.html" class="btn text-white w-100 py-2.5" style="background: var(--color-maroon); border-radius: 50px; font-weight: 600; font-family: var(--font-sans); transition: all 0.3s ease;">
+              Read Full Journey →
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Main JS -->
+  <script src="/assets/js/script.js"></script>
+
+  <!-- Load Partials -->
+  <script>
+
+    loadHTML('header-placeholder', 'header.html', initHeaderSubmenu);
+    loadHTML('footer-placeholder', 'footer.html', initBackToTop);
+
+  </script>
+
+</body>
+</html>

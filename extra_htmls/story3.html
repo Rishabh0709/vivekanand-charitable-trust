@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jyoti Soni | Success Story</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/success_story.css" />
+ <link rel="stylesheet" href="/assets/css/success_story.css" />
+</head>
+<body>
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+
+  <main class="container">
+    <!-- Breadcrumbs -->
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="success_stories.html">Success Stories</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Jyoti Soni</li>
+      </ol>
+    </nav>
+	
+	 <div class="my-5 text-center">
+  <!--<h5 class="mb-3 text-primary">Watch Poonam Mishra’s Journey</h5> -->
+   <iframe src="https://drive.google.com/file/d/1wbj7UIM2IAeWLzgwtunA6bJ5DViH81bH/preview" 
+        width="100%" height="500" allow="autoplay" allowfullscreen>
+</iframe>
+  <div class="d-flex flex-column align-items-center mb-4">
+          <div class="info-name">Jyoti Soni</div>
+      <div class="info-designation">Chartered Accountant - Soni Arora & Co.</div>
+    </div>
+  </div>
+    <div class="desc">
+    I have been associated with the <b>Swami Vivekanand Student Welfare Charitable Trust</b> for the past <b>13 years</b>, 
+	and I truly consider it a privilege and blessing to be part of such a noble and spiritually enriching institution. 
+	The Trust has not only guided me on the path of spiritual and personal development 
+	but also helped me balance life’s materialistic needs with inner growth and peace.
+	<p>
+	Looking back, I was always sincere about my studies. However, in 2010, during my 12th standard, I lost my father. 
+	His sudden demise shook our family, both emotionally and financially. Coming from a humble, middle-class background, 
+	I was devastated and fell into depression. Continuing my education seemed almost impossible.
+	</p>
+	<p>
+	At that low point in my life, someone recommended that I approach the Trust at <b>Manidweep, Shastri Nagar, Jodhpur,</b> for support. 
+	That moment marked a true turning point in my journey.
+	</p>
+	<p>
+	<b>Maa Basanti Manihar</b>, the then President of the Trust, did not just extend financial help—she became a guiding light in my life. 
+	Through her compassion and mentorship, I learned how to live with purpose, strength, and joy. Every Sunday morning, the Trust 
+	organizes <b><i>free Personality Development and Sanskar classes</b></i> for college girls, and it was in these classes that my transformation began.</p>
+	<p>
+	At the Trust, we weren’t just taught how to study—we were taught how to live: how to stay calm and composed, how to manage emotions like anger, 
+	and how to nurture a healthy and meaningful life. 
+	We were also given simple yet impactful health tips—like the importance of drinking enough water, getting fresh air, and absorbing sunlight.
+	</p>
+	<p>
+	The girl who once struggled with depression and hopelessness found a new lease on life. My focus improved, my mind calmed, and happiness returned. 
+	With renewed strength, I pursued my dreams—and in 2016, I proudly qualified as a <b>Chartered Accountant (CA) and Company Secretary (CS).</b>
+	</p>
+	<p>
+	I began my career as an <b>Internal Auditor</b> at Mehrangarh Fort Trust in December 2016. 
+	Since July 2018, I have been practicing as a CA with Soni Arora & Co. The selfless support and unwavering guidance of <b>Maa Basanti Manihar and 
+	other Trust members</b> have been the foundation of my success—like an escalator lifting me up when I had no strength to climb.
+	</p> 
+	<p>Today, I am a more confident, joyful, and independent person. On behalf of myself and the countless other girls whose lives 
+	have been transformed, I extend my heartfelt gratitude to Maa Basanti Manihar and all the dedicated members of the Trust. 
+	You have shaped not only my career but also my character and my life.
+	</p>
+	Thank you from the bottom of my heart.
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/script.js"></script>
+  <!-- Load header and footer partials -->
+  <script>
+    async function loadHTML(id, url) {
+      try {
+        const res = await fetch(url);
+        const text = await res.text();
+        document.getElementById(id).innerHTML = text;
+      } catch (error) {
+        console.error(`Failed to load ${url}:`, error);
+      }
+    }
+    loadHTML('header-placeholder', 'header.html', initHeaderSubmenu);
+    loadHTML('footer-placeholder', 'footer.html', initBackToTop);
+  </script>
+</body>
+</html>
