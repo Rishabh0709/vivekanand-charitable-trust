@@ -1,30 +1,99 @@
-[
-  {
-    "name": "Priya Sen",
-    "designation": "Medical Student, Jodhpur",
-    "photo": "https://randomuser.me/api/portraits/women/10.jpg",
-    "summary": "From village to medical college, enabled by scholarship.",
-    "link": "story1.html"
+{
+  "neetu_deora": {
+    "title": "Neetu Deora | Success Story | Swami Vivekanand Students' Welfare Charitable Trust",
+    "meta_description": "After losing her father, Neetu Deora nearly had to abandon her education. With the Trust's support from Class 9 to M.Com, she built a stable career at SBI — and now gives back.",
+    "name": "Neetu Deora",
+    "profile": "Stability Through Loss",
+    "hook": "“When my father passed away, I nearly lost my future with him. The Trust became the steady ground our family needed — long enough for me to build my own.”",
+    "role": "Senior Assistant",
+    "organization": "SBI, Shastri Nagar Branch, Jodhpur (Raj.)",
+    "videoUrl": "https://drive.google.com/file/d/1TMwFEWTtJkQ-sNSc53cclivpyiLoV93w/preview",
+    "cta_text": "Girls like Neetu are waiting right now — their ability is not in question, only their access. Your support removes that barrier.",
+    "paragraphs": [
+      "I received support from the <strong>Swami Vivekanand Students Welfare Charitable Trust</strong> for my education from <strong>9th class (1998)</strong> through to the completion of my <strong>M.Com. in 2007.</strong> I am deeply grateful to the Trust for standing by me during one of the most challenging periods of my life — after the loss of my father.",
+      "The education I received during those crucial years not only shaped my career but also helped me earn a <strong>dignified place in society.</strong> Since <strong>2008</strong>, I have been working at <strong>State Bank of India (SBI)</strong>, currently serving as a Senior Assistant.",
+      "The values and guidance imparted to me — especially by <strong>Maa Basanti Manihar</strong>, the Founder and President of the Trust — have had a lasting impact on my life. Her wisdom has also helped me build and maintain a happy and peaceful married life.",
+      "As a humble gesture of gratitude, I regularly contribute financially to the Trust. It is my way of giving back to the institution that helped shape my future and continues to uplift many others."
+    ]
   },
-  {
-    "name": "Geeta Choudhary",
-    "designation": "STEM Mentor",
-    "photo": "https://randomuser.me/api/portraits/women/12.jpg",
-    "summary": "Excelled in STEM, now gives back as mentor.",
-    "link": "story-geeta-choudhary.html"
+  "poonam_mishra": {
+    "title": "Poonam Mishra | Success Story | Swami Vivekanand Students' Welfare Charitable Trust",
+    "meta_description": "One of four siblings in a family that struggled to pay rent, Poonam Mishra received the Trust's support from Class 6 to M.Sc. Today she leads Wisdom International School, Jodhpur.",
+    "name": "Poonam Mishra",
+    "profile": "Breaking Circumstantial Ceilings",
+    "hook": "“A household that could not pay rent once held a girl who would go on to lead a school. The Trust refused to let our circumstances define our ceiling.”",
+    "role": "Principal",
+    "organization": "Wisdom International School, Jodhpur",
+    "videoUrl": "https://drive.google.com/file/d/1HChzBi3TY92-1DZgwaW4RAf2oxVdvx1b/preview",
+    "cta_text": "Behind every school Poonam leads stands a classroom someone once funded. You can be that someone for the next Poonam.",
+    "paragraphs": [
+      "I became a part of the <strong>Swami Vivekanand Students Welfare Charitable Trust</strong> in <strong>1998</strong>, while studying in <strong>Class 6</strong>. From that point until the completion of my <strong>M.Sc. in 2010</strong>, the Trust generously supported all my educational expenses.",
+      "As one of four siblings in a financially struggling household, our situation became especially challenging when my father lost his job due to the closure of the Alcobex Factory in Jodhpur. Managing even basic household needs and rent became a daily struggle, and continuing our education seemed out of reach.",
+      "Today, I am honoured to serve as the <strong>Principal of Wisdom International School</strong> in Bhagat Ki Kothi, Jodhpur. This milestone would not have been possible without the unwavering support of <strong>Maa Basanti Manihar</strong>, the Founder and President of the Trust.",
+      "I am equally thankful to <strong>Shri Nandkishore Ji Sharda</strong> and <strong>Maa Madhubala Advani</strong> for their encouragement throughout my journey. I will always remain deeply grateful to the Trust for shaping not just my career, but my character and values."
+    ]
   },
-  {
-    "name": "Suresh Meena",
-    "designation": "Community Leader",
-    "photo": "https://randomuser.me/api/portraits/men/11.jpg",
-    "summary": "First in family to graduate; leads community workshops.",
-    "link": "story-suresh-meena.html"
+  "jyoti_soni": {
+    "title": "Jyoti Soni | Success Story | Swami Vivekanand Students' Welfare Charitable Trust",
+    "meta_description": "When Jyoti Soni lost her father during Class 12, depression took hold. The Trust gave her more than financial help — it gave her purpose. She went on to qualify as both a Chartered Accountant and Company Secretary.",
+    "name": "Jyoti Soni",
+    "profile": "From Darkness to Purpose",
+    "hook": "“I arrived at Manidweep at 17, broken and in depression, certain my life had no direction. I left with something money cannot buy — the belief that it still did.”",
+    "role": "Chartered Accountant & Company Secretary",
+    "organization": "Soni Arora & Co.",
+    "videoUrl": "https://drive.google.com/file/d/1wbj7UIM2IAeWLzgwtunA6bJ5DViH81bH/preview",
+    "cta_text": "Every Sunday class that helped Jyoti find herself was made possible by people who chose to care. Will you?",
+    "paragraphs": [
+      "I have been associated with the <strong>Swami Vivekanand Student Welfare Charitable Trust</strong> for the past <strong>thirteen years</strong>, and I truly consider it a privilege and blessing to be part of such a noble and spiritually enriching institution. The Trust has not only guided me on the path of personal development but also helped me balance life’s materialistic needs with inner growth and peace.",
+      "In 2010, during my 12th standard, I lost my father. His sudden demise shook our family, both emotionally and financially. Coming from a humble, middle-class background, I was devastated and fell into depression. Continuing my education seemed almost impossible.",
+      "At that low point, someone recommended that I approach the Trust at <strong>Manidweep, Shastri Nagar, Jodhpur</strong>. That moment marked a true turning point. <strong>Maa Basanti Manihar</strong>, the then President, did not just extend financial help — she became a guiding light. Through her compassion, I learned how to live with purpose, strength, and joy.",
+      "Every Sunday morning, the Trust organises <em>free Personality Development and Sanskar classes</em> for college girls, and it was in these classes that my transformation began. With renewed strength, I pursued my dreams — and in 2016, I proudly qualified as a <strong>Chartered Accountant (CA) and Company Secretary (CS)</strong>. Today I practise as a CA with Soni Arora & Co."
+    ]
   },
-  {
-    "name": "Radha Sharma",
-    "designation": "Village Teacher",
-    "photo": "https://randomuser.me/api/portraits/women/15.jpg",
-    "summary": "Empowered by education, inspires girls in her community.",
-    "link": "story-radha-sharma.html"
+  "kumudini_dadhich": {
+    "title": "Dr. Kumudini Dhadhich | Success Story | Swami Vivekanand Students' Welfare Charitable Trust",
+    "meta_description": "Dr. Kumudini Dhadhich nearly left school in Class 10 due to financial hardship. With the Trust’s support from Class 6 through her PhD, she became a Chemistry Lecturer in Rajasthan’s State Education Department.",
+    "name": "Dr. Kumudini Dhadhich",
+    "profile": "From Near-Dropout to Doctoral Guide",
+    "hook": "“At Class 10, I nearly stopped. Today I guide students through doctoral research. The distance between those two lives was built, one scholarship at a time, by the Trust.”",
+    "role": "Chemistry Lecturer",
+    "organization": "State Education Department, Rajasthan",
+    "videoUrl": "https://drive.google.com/file/d/1pvuJwGEqMuM8oUPOGqan4GYfYoM5B1c4/preview",
+    "cta_text": "The distance from Class 10 dropout to PhD researcher is built by belief. Your donation is that belief, given form.",
+    "paragraphs": [
+      "I am currently serving as a <strong>Chemistry Lecturer</strong> in the <strong>State Education Department since 2016</strong>. My educational journey has been deeply supported by the <strong>Swami Vivekanand Students Welfare Charitable Trust</strong>, which provided financial assistance from <strong>Class 6 to my PhD (2012)</strong>.",
+      "During <strong>Class 10</strong>, my family faced severe financial difficulties, and I was on the verge of discontinuing my studies. It was during this critical phase that the Trust came to my aid — not only with financial help, but with much-needed inspiration, spiritual strength, and values that empowered me to keep going.",
+      "Thanks to the Trust, I was able to complete my education and today hold a <strong>respectable position in the education department</strong>. I remain committed to passing on the knowledge and life lessons I received from the Trust to future generations. I am deeply grateful to the Trust for shaping both my career and my life."
+    ]
+  },
+  "sejal_rathore": {
+    "title": "Sejal Rathore | Success Story | Swami Vivekanand Students' Welfare Charitable Trust",
+    "meta_description": "Backed by the Trust’s financial support and mentorship, Sejal Rathore built the confidence to aim beyond her circumstances — today she is a Software Engineer at Wells Fargo.",
+    "name": "Sejal Rathore",
+    "profile": "Beyond Horizons",
+    "hook": "“The Trust saw a future in me before I could see it myself. That belief carried a girl from Jodhpur to a career at a global financial institution.”",
+    "role": "Software Engineer",
+    "organization": "Wells Fargo Ltd.",
+    "videoUrl": "https://drive.google.com/file/d/1nLAPMmEkuyYnpqZhU1VgfMpvBxgQATwW/preview",
+    "cta_text": "A girl from Jodhpur can reach Wells Fargo. What you give today funds the journey for the next Sejal.",
+    "paragraphs": [
+      "When financial barriers threaten to limit potential, belief and timely support can change everything. For Sejal, the journey from Jodhpur to engineering software systems at a premier global financial institution like Wells Fargo was made possible by the Trust’s unwavering backing.",
+      "While financial relief cleared her path, it was the mentorship and confidence instilled through the Trust’s leadership and Sunday classes that allowed her to dream beyond immediate circumstances. Today, she stands as a powerful example of how community investment can launch a girl onto the global technology stage."
+    ]
+  },
+  "meenu_tanwar": {
+    "title": "Meenu Tanwar | Success Story | Swami Vivekanand Students' Welfare Charitable Trust",
+    "meta_description": "Freed from financial worry by the Trust’s support, Meenu Tanwar channelled all her energy into her studies — earning a Gold Medal in M.Com from JNVU, Jodhpur.",
+    "name": "Meenu Tanwar",
+    "profile": "Pursuit of Excellence",
+    "hook": "“I did not just want to pass. I wanted to excel. The Trust taught me that excellence, when rooted in gratitude and purpose, is not arrogance — it is responsibility.”",
+    "role": "M.Com Gold Medalist",
+    "organization": "JNVU, Jodhpur (Raj.)",
+    "videoUrl": "https://drive.google.com/file/d/1uCgBMn3nchQ2J60zwtq6JxBvdHPM_5o5/preview",
+    "cta_text": "Gold medals begin with someone deciding to pay a girl’s fees. Be part of the next achievement.",
+    "paragraphs": [
+      "True education goes beyond textbooks — it builds character, resilience, and an unyielding pursuit of excellence. As an M.Com student at JNVU Jodhpur, Meenu did not merely complete her academic requirements; she dominated them, graduating at the very top of her class as a <strong>Gold Medalist</strong>.",
+      "Her remarkable achievement was nurtured and sustained by the Swami Vivekanand Students Welfare Charitable Trust. By relieving her family of the financial pressures of higher education, the Trust allowed Meenu to focus entirely on her studies while grounding her success in the values of gratitude, leadership, and service to society."
+    ]
   }
-]
+}

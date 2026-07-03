@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!--
+    Title and description are set dynamically in initStoryPage().
+    The placeholders below are visible only if JS fails to run.
+  -->
+  <title>Success Story | Swami Vivekanand Students&#x2019; Welfare Charitable Trust</title>
+  <meta name="description" content="">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!--
+    Google Fonts and Font Awesome are loaded by header.html via innerHTML injection.
+    <link> tags injected that way execute correctly in all modern browsers.
+    No redundant font link is needed here.
+  -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/success_story.css" />
+</head>
+
+<body class="page-bg">
+
+  <div id="header-placeholder"></div>
+
+  <!--
+    aria-live="polite": notifies screen readers when JS populates the region
+    after the async JSON fetch completes.
+  -->
+  <main class="container my-4" aria-live="polite" aria-label="Success story content">
+
+    <!-- ── Breadcrumb ───────────────────────────────────────────────── -->
+    <nav aria-label="breadcrumb" class="mb-4">
+      <ol class="breadcrumb custom-breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="success_stories.html">Success Stories</a></li>
+        <li class="breadcrumb-item active" id="breadcrumb-name" aria-current="page"></li>
+      </ol>
+    </nav>
+
+    <!-- ── Opening hook ─────────────────────────────────────────────── -->
+    <div class="glass-panel impact-summary-quote">
+      <span class="eyebrow d-block mb-3" id="impact-profile"></span>
+      <blockquote class="mb-0">
+        <!--
+          Semantic: the opening statement is a <p> inside <blockquote>,
+          not a heading — headings are structural, not emphatic.
+        -->
+        <p class="story-hook-text mb-3" id="story-hook"></p>
+        <footer class="story-hook__attr" id="story-author-sub"></footer>
+      </blockquote>
+    </div>
+
+    <!-- ── Main narrative panel ─────────────────────────────────────── -->
+    <div class="glass-panel story-panel">
+      <!--
+        flex-column-reverse: on mobile the video column appears ABOVE the
+        text column (user sees the face before reading the story).
+        flex-lg-row: restores side-by-side on desktop.
+      -->
+      <div class="row align-items-start g-5 flex-column-reverse flex-lg-row">
+
+        <!-- Written testimony column -->
+        <div class="col-lg-7">
+          <!-- h1: primary page subject — person's name -->
+                   <!-- Paragraphs injected via initStoryPage() -->
+          <div class="desc" id="story-paragraphs"></div>
+        </div>
+
+        <!-- Video + attribution column -->
+        <div class="col-lg-5">
+          <div class="story-video-wrap">
+            <!--
+              src and title set by JS.
+              No width/height attributes — CSS handles all sizing
+              (380px fixed on desktop, 16:9 intrinsic ratio on mobile).
+            -->
+            <iframe
+              id="story-video"
+              src=""
+              title=""
+              allow="autoplay"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="story-video__meta text-center">
+             <h1 class="story-panel__name" id="profile-name"></h1>
+          <span class="eyebrow d-block story-panel__role" id="profile-role"></span>
+			
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── Donate CTA ────────────────────────────────────────────────── -->
+    <div class="glass-panel cta-story-footer">
+      <!-- h2: second-level heading after h1 (person's name) -->
+      <h2 id="cta-headline"></h2>
+      <p class="story-cta-sub" id="cta-text"></p>
+      <div class="d-flex flex-wrap justify-content-center align-items-center gap-3">
+        <a href="donate.html" class="btn-cta">Donate Now &#x2192;</a>
+        <a href="success_stories.html" class="story-cta-link">View Other Journeys</a>
+      </div>
+    </div>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/script.js"></script>
+
+  <script>
+    /* ── Partial loaders — callbacks are mandatory.
+       Without them, initHeaderSubmenu and initBackToTop never run.
+       (See site-audit finding C-2: local loadHTML without callbacks.) */
+    loadHTML('header-placeholder', 'header.html', initHeaderSubmenu);
+    loadHTML('footer-placeholder', 'footer.html', initBackToTop);
+
+    /* ── Story data pipeline ────────────────────────────────────────────
+       1. Reads ?id= from URL.
+       2. Fetches the matching story from the JSON data file.
+       3. Populates every element in the template above.
+
+       Called directly — no DOMContentLoaded wrapper needed.
+       Scripts at the bottom of <body> execute after all preceding HTML
+       has been parsed; wrapping in DOMContentLoaded is redundant and
+       introduces a race condition if the event has already fired.
+    ─────────────────────────────────────────────────────────────────── */
+    async function initStoryPage() {
+      const storyId = new URLSearchParams(window.location.search).get('id');
+
+      /* Redirect to listing if no id provided */
+      if (!storyId) {
+        window.location.replace('success_stories.html');
+        return;
+      }
+
+      try {
+        const res = await fetch('/assets/json/success_stories.json');
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+        const data  = await res.json();
+        const story = data[storyId];
+
+        /* Unknown id → redirect rather than showing a broken page */
+        if (!story) {
+          window.location.replace('success_stories.html');
+          return;
+        }
+
+        /* ── Document metadata ── */
+        document.title = story.title;
+        document.querySelector('meta[name="description"]')
+                .setAttribute('content', story.meta_description);
+
+        /* ── Breadcrumb + hook ── */
+        document.getElementById('breadcrumb-name').textContent  = story.name;
+        document.getElementById('impact-profile').textContent   = story.profile;
+        document.getElementById('story-hook').textContent       = story.hook;
+        document.getElementById('story-author-sub').textContent =
+          `\u2014 ${story.name}, ${story.role}`;
+
+        /* ── Person identity ── */
+        document.getElementById('profile-name').textContent = story.name;
+        document.getElementById('profile-role').textContent =
+          `${story.role}\u00A0\u00B7\u00A0${story.organization}`;
+        // Safe check assignment to avoid console errors if element doesn't exist
+        const orgTarget = document.getElementById('profile-org');
+        if (orgTarget) orgTarget.textContent = story.organization;
+        /* ── Video ── */
+        const iframe  = document.getElementById('story-video');
+        iframe.src    = story.videoUrl;
+        iframe.title  = `${story.name} \u2014 video testimony`;
+
+        /* ── CTA (use first name only for natural tone) ── */
+        const firstName = story.name.split(' ')[0];
+        document.getElementById('cta-headline').textContent =
+          `Support More Girls Like ${firstName}`;
+        document.getElementById('cta-text').textContent = story.cta_text;
+
+        /* ── Paragraphs ──
+           innerHTML preserves <strong>/<em> markup stored in the JSON.
+           The JSON is trust-controlled, so innerHTML here is acceptable;
+           never use innerHTML with user-supplied or third-party content. */
+        const container = document.getElementById('story-paragraphs');
+        container.innerHTML = '';
+        story.paragraphs.forEach(html => {
+          const p    = document.createElement('p');
+          p.innerHTML = html;
+          container.appendChild(p);
+        });
+
+      } catch (err) {
+        /* Log and redirect — never leave the user on a broken template */
+        console.error('Story data load failed:', err);
+        window.location.replace('success_stories.html');
+      }
+    }
+
+    initStoryPage();
+  </script>
+
+</body>
+</html>
