@@ -8,6 +8,8 @@
 
 /* ─────────────────────────────────────────────────────────────────────────
    HERO SECTION
+   Structure: kicker (org name) → divider → h1 (tagline) → description →
+   actions (one .btn-cta + one text link) → stat-line → ribbon
 ───────────────────────────────────────────────────────────────────────── */
 .hero {
   position: relative;
@@ -32,11 +34,13 @@
 
 .hero:hover .hero-bg { transform: scale(1.05); }
 
+/* Warm dark scrim (maroon-black, not flat grey) so text holds contrast
+   on any photo without fighting the brand palette */
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: linear-gradient(180deg, rgba(30, 12, 10, 0.35) 0%, rgba(30, 12, 10, 0.72) 100%);
   z-index: 1;
 }
 
@@ -44,56 +48,146 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 1000px;
+  max-width: 780px;
   padding: 0 24px;
 }
 
-.trust-name {
-  font-size: clamp(2.2rem, 6vw, 4rem);
-  line-height: 1.15;
+/* Org name — the first thing a new visitor should register.
+   Sized and weighted to read clearly on its own, while the tagline
+   below still carries the larger emotional headline. */
+.hero-org-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.15rem, 2.6vw, 1.55rem);
+  font-weight: 700;
+  letter-spacing: 0.3px;
   color: #fff;
-  margin-bottom: 16px;
+  margin-bottom: 0;
 }
 
+/* .divider (global, gold gradient bar) is reused directly in the markup
+   between .hero-kicker and .hero-tagline — no override needed here */
+
 .hero-tagline {
-  font-size: clamp(1rem, 2.4vw, 1.4rem);
-  line-height: 1.6;
-  color: #f6d7b0;
-  margin-bottom: 20px;
-  font-weight: 500;
-  text-align:right;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
+  line-height: 1.18;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 18px;
+  text-align: center;
 }
 
 .hero-description {
-  max-width: 850px;
-  margin: 0 auto 30px;
-  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  max-width: 620px;
+  margin: 0 auto 32px;
+  font-size: clamp(0.95rem, 2vw, 1.08rem);
   line-height: 1.8;
-  color: #f3f3f3;
+  color: #f3ede7;
 }
 
-/* Hero CTA — extends .btn-cta from style.css */
-.hero-btn {
-  display: inline-block;
-  background: var(--color-orange);
-  color: #fff;
-  padding: 14px 34px;
-  border-radius: 40px;
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 26px;
+}
+
+/* Primary CTA reuses .btn-cta (defined in style.css) so the hero matches
+   every other page's call-to-action instead of introducing a one-off style */
+
+/* Secondary action — a quiet text link, not a competing button */
+.hero-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 0.95rem;
+  color: #fff;
   text-decoration: none;
-  transition: all var(--transition-base);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  padding-bottom: 3px;
+  transition: border-color var(--transition-base), gap var(--transition-base), color var(--transition-base);
 }
 
-.hero-btn:hover {
-  background: #c96a20;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+.hero-link:hover {
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+  gap: 12px;
 }
+
+.hero-link i { font-size: 1rem; }
+
 
 @media (max-width: 992px) { .hero { min-height: 80vh; } .hero-content { padding: 0 30px; } }
 @media (max-width: 768px) { .hero { min-height: 75vh; padding: 40px 0; } .hero-bg { object-position: 65% center; } }
-@media (max-width: 480px) { .hero { min-height: 70vh; } .hero-btn { width: 100%; max-width: 260px; } }
+@media (max-width: 480px) {
+  .hero { min-height: 70vh; }
+  .hero-actions { flex-direction: column; gap: 16px; }
+  .btn-cta { width: 100%; max-width: 280px; text-align: center; }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   HERO TRUST RIBBON
+   Glass-card language (matches .stat / .story-card) instead of a flat
+   black bar with emoji, so it reads as part of the same site.
+───────────────────────────────────────────────────────────────────────── */
+.hero-ribbon {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: rgba(20, 10, 8, 0.55);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 195, 92, 0.25);
+}
+
+.hero-ribbon-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 34px;
+  flex: 1 1 240px;
+  justify-content: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.hero-ribbon-item:last-child { border-right: none; }
+
+.hero-ribbon-icon {
+  font-size: 1.5rem;
+  color: var(--color-gold);
+}
+
+.hero-ribbon-text strong {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.hero-ribbon-text p {
+  margin: 2px 0 0;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .hero-ribbon-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    flex: 1 1 100%;
+    justify-content: flex-start;
+  }
+  .hero-ribbon-item:last-child { border-bottom: none; }
+}
 
 
 .trust-badge {

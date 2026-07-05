@@ -701,6 +701,41 @@ section { padding: 80px 0; }
 .section-bridge p  { font-size: 0.97rem; color: var(--text-secondary); line-height: 1.7; margin: 0; }
 
 
+/**/
+/* ── Pillar card — text link CTA (used on homepage Education pillar) ── */
+.pillar-card__link {
+  display        : inline-block;
+  margin-top     : 14px;
+  font-family    : 'Inter', sans-serif;
+  font-size      : 0.84rem;
+  font-weight    : 600;
+  color          : var(--color-brown);
+  text-decoration: none;
+  transition     : color var(--transition-base), gap var(--transition-base);
+}
+
+.pillar-card__link:hover { color: var(--color-maroon); }
+
+/* ── Selection criteria CTA band (homepage — after impact block) ── */
+.selection-cta {
+  padding    : 60px 20px;
+  text-align : center;
+  background : var(--gradient-cream);
+  border-top : 1px solid rgba(166, 120, 46, 0.15);
+}
+
+.selection-cta h3 {
+  color         : var(--color-maroon);
+  margin-bottom : 14px;
+}
+
+.selection-cta p {
+  max-width  : 680px;
+  margin     : 0 auto 28px;
+  text-align : center;
+}
+/**/
+
 /* ─────────────────────────────────────────────────────────────────────────
    20. CTA BUTTON  (shared pill button — sunday_classes, scholarship,
        about_us, story pages)
