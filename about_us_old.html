@@ -407,26 +407,6 @@
     }
 
     /* =========================================================
-       INSPIRATION — read-more collapse
-       (Same interaction idea as the founder bios elsewhere on the
-       site: show the strongest block by default, rest on demand)
-    ========================================================= */
-    .inspiration-more {
-      overflow: hidden;
-      max-height: 0;
-      transition: max-height 0.6s ease;
-    }
-
-    .inspiration-more.expanded {
-      max-height: 3000px;
-    }
-
-    .inspiration-toggle-wrap {
-      text-align: center;
-      margin-top: 8px;
-    }
-
-    /* =========================================================
        RESPONSIVE
     ========================================================= */
     @media (max-width: 992px) {
@@ -477,103 +457,6 @@
 
       .leader-card { width: 100%; max-width: 340px; }
     }
-    /* =========================================================
-       SECTION 4 — TRUST & REACH (merged)
-    ========================================================= */
-    .trust-reach-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-top: 30px;
-      align-items: stretch;
-    }
-
-    .trust-reach-col {
-      display: flex;
-      flex-direction: column;
-      padding: 34px 30px;
-      text-align: center;
-    }
-
-    .trust-reach-col h3 {
-      color: var(--color-maroon);
-      font-size: 1.15rem;
-      margin-bottom: 14px;
-    }
-
-    .trust-reach-col p {
-      color: var(--text-secondary);
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-
-    .trust-reach-col .btn-outline {
-      margin-top: auto;
-      align-self: center;
-    }
-
-    .reach-grid-compact {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-
-    .reach-grid-compact .reach-card {
-      background: rgba(255, 248, 235, 0.55);
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      border-radius: 12px;
-      padding: 16px 8px;
-    }
-
-    .reach-grid-compact .reach-number {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.25rem, 3vw, 1.6rem);
-      font-weight: 700;
-      color: var(--color-maroon);
-      margin-bottom: 4px;
-    }
-
-    .reach-grid-compact .reach-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.74rem;
-      color: var(--text-secondary);
-      line-height: 1.3;
-    }
-
-    /* =========================================================
-       SECTION 5 — CLOSING CTA
-    ========================================================= */
-    .about-closing-cta {
-      text-align: center;
-      padding: 70px 20px 90px;
-      background: linear-gradient(135deg, #fdf6f0, #f7f1e8);
-    }
-
-    .about-closing-cta h2 {
-      color: var(--color-maroon);
-      margin-bottom: 14px;
-    }
-
-    .about-closing-cta p {
-      max-width: 600px;
-      margin: 0 auto 30px;
-      color: var(--text-secondary);
-      text-align: center;
-    }
-
-    .about-closing-actions {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 26px;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 768px) {
-      .trust-reach-grid { grid-template-columns: 1fr; gap: 16px; }
-      .about-closing-cta { padding: 55px 16px 70px; }
-    }
   </style>
 </head>
 
@@ -590,8 +473,7 @@
     <div class="about-intro">
       <p>
         Since 1996, we have walked alongside underprivileged girls in western Rajasthan — providing education, guidance, 
-		and the values needed to shape their own futures. We are a registered public charitable trust
-		(12A &amp; 80G compliant, NGO Darpan registered), headquartered at <strong>"Manidweep", A-183 Shastri Nagar, Jodhpur</strong>.
+		and the values needed to shape their own futures.
       </p>
     </div>
   </div>
@@ -633,88 +515,76 @@
         </div>
       </div>
 
-      <!-- Block 2 & 3 collapse behind "Read the Full Founding Story" by default,
-           so a first-time visitor sees the strongest hook without a long scroll -->
-      <div id="inspiration-more" class="inspiration-more">
+      <!-- Block 2: Building the Vision — three pillars -->
+      <div class="story-block glass-card">
+        <h3>Building the Vision for Empowerment</h3>
+        <p>
+          In 1995, Nandkishore Ji critically audited the prevailing educational paradigms
+          and championed a comprehensive reform model. He advocated that standard academic
+          achievement must be fundamentally integrated with deep moral values and
+          self-reliance, giving rise to our three core organisational pillars:
+        </p>
 
-        <!-- Block 2: Building the Vision — three pillars -->
-        <div class="story-block glass-card">
-          <h3>Building the Vision for Empowerment</h3>
+        <div class="pillars-grid">
+
+          <div class="pillar-card">
+            <h4>Academic Access</h4>
+            <p>Providing critical financial stability, material packages, and baseline
+            security support so learning remains unhindered.</p>
+          </div>
+
+          <div class="pillar-card pillar-featured">
+            <h4>Moral Roots <em>(Sanskar)</em></h4>
+            <p>Cultivating humility, ethics, and values. Bhaiya Ji routinely advised
+            that skill without moral standing results in narrow self-arrogance.</p>
+          </div>
+
+          <div class="pillar-card">
+            <h4>Self-Reliance</h4>
+            <p>Weaving vocational skills — sewing, computer literacy — alongside
+            academics to build self-sustaining, independent careers.</p>
+          </div>
+
+        </div>
+
+        <div class="pull-quote">
           <p>
-            In 1995, Nandkishore Ji critically audited the prevailing educational paradigms
-            and championed a comprehensive reform model. He advocated that standard academic
-            achievement must be fundamentally integrated with deep moral values and
-            self-reliance, giving rise to our three core organisational pillars:
+            Bhaiya Ji cautioned that education deprived of values could lead to arrogance
+            and a narrow focus on rights over responsibilities. Only a holistic approach
+            could nurture women who would strengthen family, community, and nation.
           </p>
-
-          <div class="pillars-grid">
-
-            <div class="pillar-card">
-              <h4>Academic Access</h4>
-              <p>Providing critical financial stability, material packages, and baseline
-              security support so learning remains unhindered.</p>
-            </div>
-
-            <div class="pillar-card pillar-featured">
-              <h4>Moral Roots <em>(Sanskar)</em></h4>
-              <p>Cultivating humility, ethics, and values. Bhaiya Ji routinely advised
-              that skill without moral standing results in narrow self-arrogance.</p>
-            </div>
-
-            <div class="pillar-card">
-              <h4>Self-Reliance</h4>
-              <p>Weaving vocational skills — sewing, computer literacy — alongside
-              academics to build self-sustaining, independent careers.</p>
-            </div>
-
-          </div>
-
-          <div class="pull-quote">
-            <p>
-              Bhaiya Ji cautioned that education deprived of values could lead to arrogance
-              and a narrow focus on rights over responsibilities. Only a holistic approach
-              could nurture women who would strengthen family, community, and nation.
-            </p>
-          </div>
         </div>
-
-        <!-- Block 3: The First Step — split layout with image -->
-        <div class="story-block glass-card">
-          <div class="story-split">
-            <div class="text-col">
-              <h3>The First Step: Our Foundation</h3>
-              <p>
-                To bring this vision to life, the
-                <span class="text-highlight">Swami Vivekananda Students Welfare Charitable Trust</span>
-                was established on <strong>June 10, 1996</strong>, by Maa Basanti Manihar
-                under the guidance of Divine Mother <em>Maa Tripurasundari</em>.
-              </p>
-              <p>
-                Shri Nandkishore Sharda humbly accepted the role of President, helping
-                translate his ideals into tangible action. Through the Trust, he directed
-                initiatives for girls' education and empowerment — making "girl empowerment"
-                a reality rather than a concept.
-              </p>
-              <p class="fw-semibold" style="color: var(--color-maroon);">
-                Nandkishore Ji was a pioneer, promoting women's upliftment long before it
-                became widely recognized. He believed firmly that empowering the girl child
-                would naturally lay the foundation for true women's empowerment in society.
-              </p>
-            </div>
-            <div class="image-col">
-              <img src="/assets/images/trust.png"
-                   alt="Trust certificate of establishment — June 10, 1996">
-              <span class="year-label">June 10, 1996</span>
-            </div>
-          </div>
-        </div>
-
       </div>
 
-      <div class="inspiration-toggle-wrap">
-        <button type="button" class="btn-outline" id="inspiration-toggle" onclick="toggleInspiration()">
-          Read the Full Founding Story ↓
-        </button>
+      <!-- Block 3: The First Step — split layout with image -->
+      <div class="story-block glass-card">
+        <div class="story-split">
+          <div class="text-col">
+            <h3>The First Step: Our Foundation</h3>
+            <p>
+              To bring this vision to life, the
+              <span class="text-highlight">Swami Vivekananda Students Welfare Charitable Trust</span>
+              was established on <strong>June 10, 1996</strong>, by Maa Basanti Manihar
+              under the guidance of Divine Mother <em>Maa Tripurasundari</em>.
+            </p>
+            <p>
+              Shri Nandkishore Sharda humbly accepted the role of President, helping
+              translate his ideals into tangible action. Through the Trust, he directed
+              initiatives for girls' education and empowerment — making "girl empowerment"
+              a reality rather than a concept.
+            </p>
+            <p class="fw-semibold" style="color: var(--color-maroon);">
+              Nandkishore Ji was a pioneer, promoting women's upliftment long before it
+              became widely recognized. He believed firmly that empowering the girl child
+              would naturally lay the foundation for true women's empowerment in society.
+            </p>
+          </div>
+          <div class="image-col">
+            <img src="/assets/images/trust.png"
+                 alt="Trust certificate of establishment — June 10, 1996">
+            <span class="year-label">June 10, 1996</span>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -850,70 +720,6 @@
     </div>
   </section>
 
-  <!-- =============================================
-       SECTION 4 — TRUST & REACH (merged)
-  ============================================== -->
-  <section id="trust-reach" class="about-section alt-bg">
-    <div class="container">
-
-      <div class="heading">
-        <h2>Trust &amp; Reach</h2>
-        <div class="divider"></div>
-        <p class="subtext">
-          Registered and audited since 1996 — and growing every year.
-        </p>
-      </div>
-
-      <div class="trust-reach-grid">
-
-        <div class="trust-reach-col glass-card">
-          <h3>Legally Registered</h3>
-          <p>
-            Recognised under Section 12A and Section 80G of the Income Tax Act,
-            registered with NGO Darpan, and holding valid FCRA registration.
-          </p>
-          <a href="certificates.html" class="btn-outline">View All Legal Certificates →</a>
-        </div>
-
-        <div class="trust-reach-col glass-card">
-          <h3>Our Reach Today</h3>
-          <div class="reach-grid-compact">
-            <div class="reach-card">
-              <div class="reach-number">37,564</div>
-              <div class="reach-label">Girls supported</div>
-            </div>
-            <div class="reach-card">
-              <div class="reach-number">45</div>
-              <div class="reach-label">Schools</div>
-            </div>
-            <div class="reach-card">
-              <div class="reach-number">32</div>
-              <div class="reach-label">Colleges</div>
-            </div>
-          </div>
-          <a href="scholarship_distribution.html" class="btn-outline">See the Full Scholarship Report →</a>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =============================================
-       SECTION 5 — CLOSING CTA
-  ============================================== -->
-  <section class="about-closing-cta">
-    <h2>This Vision Became Real Lives</h2>
-    <p>
-      From one man's conviction to thousands of girls who became engineers,
-      officers, doctors, and mentors of their own — see where this story leads.
-    </p>
-    <div class="about-closing-actions">
-      <a href="success_stories.html" class="btn-cta">See the Impact — Real Stories →</a>
-      <a href="donate.html" class="btn-outline">Sponsor a Girl's Education</a>
-    </div>
-  </section>
-
   <!-- Footer -->
   <div id="footer-placeholder"></div>
 
@@ -923,13 +729,6 @@
   
      loadHTML('header-placeholder', 'header.html', initHeaderSubmenu);
      loadHTML('footer-placeholder', 'footer.html', initBackToTop);
-
-     function toggleInspiration() {
-       const panel = document.getElementById('inspiration-more');
-       const btn   = document.getElementById('inspiration-toggle');
-       const expanded = panel.classList.toggle('expanded');
-       btn.textContent = expanded ? 'Show Less ↑' : 'Read the Full Founding Story ↓';
-     }
    </script>
 
 </body>

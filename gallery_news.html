@@ -3,86 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Trust In News | Swami Vivekanand Students’ Welfare Charitable Trust</title>
+  <title>Trust in News | Swami Vivekanand Students' Welfare Charitable Trust</title>
+  <meta name="description" content="News coverage of the Swami Vivekanand Students' Welfare Charitable Trust from 1996 to today." />
 
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/style.css" />
-
-  <style>
-    body {
-      overflow-x: hidden;
-    }
-    main.container {
-      padding-top: 40px;
-      padding-bottom: 60px;
-      max-width: 1100px;
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    .year-btns {
-      max-width: auto;
-    }
-    .year-btns .btn {
-      width: 100%;
-      margin-bottom: 10px;
-      text-align: center;
-      font-weight: 600;
-      color: #1a237e;
-      background-color: #f0f4ff;
-      border: none;
-      border-radius: 0.3rem;
-      transition: background-color 0.2s ease;
-    }
-    .year-btns .btn:hover,
-    .year-btns .btn.active {
-      background-color: #1a237e;
-      color: white;
-    }
-    .gallery-images {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1.2rem;
-      padding-left: 20px;
-	  object-position: top;
-    }
-    .gallery-images img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 14px rgba(26, 35, 126, 0.1);
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-    .gallery-images img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 20px rgba(26, 35, 126, 0.2);
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/css/gallery.css" />
 </head>
-<body>
+<body class="gallery-page">
 
-  <!-- Header -->
   <div id="header-placeholder"></div>
 
-  <main class="container">
-    <h1>Trust In News</h1>
-      <div class="year-btns d-flex gap-2 mb-3">
-        <button class="btn active" data-year="2021-2025">2021-2025</button>
-        <button class="btn" data-year="2011-2020">2011-2020</button>
-        <button class="btn" data-year="1996-2010">1996-2010</button>
-      </div>
+  <main class="container gallery-page__wrapper">
+    <div class="page-hero" style="padding-top:0;">
+      <h1>Trust In News</h1>
+    </div>
 
-      <div class="gallery-images" id="gallery">
-        <!-- Images for the selected year will appear here -->
-      </div>
+    <div class="gallery-year-btns" id="gallery-year-btns" role="tablist" aria-label="Filter by year"></div>
+    <div class="gallery-grid-images" id="gallery" aria-live="polite"></div>
   </main>
 
-  <!-- Modal for Image Slider -->
-  <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel">
+  <!-- Lightbox modal (shared markup contract with gallery-page.js) -->
+  <div class="modal fade" id="galleryImageModal" tabindex="-1" aria-labelledby="galleryImageModalLabel">
     <div class="modal-dialog modal-dialog-centered modal-xl">
       <div class="modal-content bg-dark">
         <div class="modal-header border-0">
@@ -90,9 +32,7 @@
         </div>
         <div class="modal-body p-0">
           <div id="carouselImages" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner" id="carouselInner">
-              <!-- Slides will be inserted here -->
-            </div>
+            <div class="carousel-inner"></div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselImages" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
@@ -107,95 +47,22 @@
     </div>
   </div>
 
-  <!-- Footer -->
   <div id="footer-placeholder"></div>
 
-  <!-- Bootstrap and Main JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/assets/js/script.js"></script>
-
-  <!-- Load header and footer partials -->
+  <script src="/assets/js/gallery-page.js"></script>
   <script>
     loadHTML('header-placeholder', 'header.html', initHeaderSubmenu);
     loadHTML('footer-placeholder', 'footer.html', initBackToTop);
-  </script>
 
-  <script>
-    const imageData = {
-      "2021-2025": [
-        "/assets/images/news/2025.jpg",
-        "/assets/images/news/June2025.jpg",
-		"/assets/images/news/Mar2025.jpg",
-		"/assets/images/news/Feb2024.jpg",
-		"/assets/images/news/Jan2024.jpg",
-		"/assets/images/news/Dec2023.jpg",
-		"/assets/images/news/Mar2023.jpg",
-		"/assets/images/news/Dec2022.jpg",
-		"/assets/images/news/Jan2021.jpg",
-      ],
-      "2011-2020": [
-        "/assets/images/news/Sep2020.jpg",
-		"/assets/images/news/Jan2019.jpg",
-		"/assets/images/news/Dec2018.jpg",
-		"/assets/images/news/June2017.png",
-		"/assets/images/news/Nov2016.png",
-		"/assets/images/news/Nov2015.jpg",
-		"/assets/images/news/Nov2014.png",
-		"/assets/images/news/Oct2013.png",
-		"/assets/images/news/Dec2011.png",
-		
-      ],
-      "1996-2010": [
-        "/assets/images/news/June2008.png",
-		"/assets/images/news/July2005.png",
-		"/assets/images/news/Jan2000.png",
-		"/assets/images/news/june1999.jpg",
-		"/assets/images/news/may1999.jpg",
-		"/assets/images/news/Feb1998.jpg",
-      ],
-    };
-
-    const gallery = document.getElementById('gallery');
-    const buttons = document.querySelectorAll('.year-btns .btn');
-    const carouselInner = document.getElementById('carouselInner');
-    const modal = new bootstrap.Modal(document.getElementById('imageModal'));
-
-    function loadImages(year) {
-      gallery.innerHTML = '';
-      if (imageData[year]) {
-        imageData[year].forEach((src, idx) => {
-          const img = document.createElement('img');
-          img.src = src;
-          img.alt = `Scholarship distribution event ${year} image ${idx + 1}`;
-          img.setAttribute('data-year', year);
-          img.setAttribute('data-index', idx);
-          gallery.appendChild(img);
-          img.addEventListener('click', () => openSlider(year, idx));
-        });
-      }
-    }
-
-    function openSlider(year, index) {
-      carouselInner.innerHTML = '';
-      imageData[year].forEach((src, idx) => {
-        const div = document.createElement('div');
-        div.className = 'carousel-item' + (idx === index ? ' active' : '');
-        div.innerHTML = `<img src="${src}" class="d-block w-100" alt="Scholarship distribution event ${year} image ${idx + 1}" style="max-height: 600px; object-fit: contain;">`;
-        carouselInner.appendChild(div);
-      });
-      modal.show();
-    }
-
-    buttons.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        buttons.forEach((b) => b.classList.remove('active'));
-        btn.classList.add('active');
-        loadImages(btn.getAttribute('data-year'));
-      });
+    initGalleryPage({
+      dataUrl:       '/assets/json/gallery-news.json',
+      gridId:        'gallery',
+      yearBtnsId:    'gallery-year-btns',
+      modalId:       'galleryImageModal',
+      altTextPrefix: 'Trust in News coverage'
     });
-
-    // Load initial year images
-    loadImages('2021-2025');
   </script>
 </body>
 </html>

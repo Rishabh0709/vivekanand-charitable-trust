@@ -1,0 +1,149 @@
+/* ==========================================================================
+   gallery.css
+   Shared styles for all gallery-with-lightbox pages.
+   Used by : gallery_news.html | gallery_scholarship.html | awards.html
+   Depends : style.css (design tokens: colors, radii, shadows, transitions)
+   ========================================================================== */
+
+.gallery-page {
+  overflow-x: hidden;
+}
+
+.gallery-page__wrapper {
+  padding-top: 40px;
+  padding-bottom: 60px;
+  max-width: 1100px;
+}
+
+/* ── Year filter buttons (grouped datasets only) ─────────────────────── */
+.gallery-year-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.gallery-year-btns .btn {
+  flex: 1 1 auto;
+  min-width: 140px;
+  font-weight: 600;
+  color: var(--color-vivid-blue, #1a237e);
+  background-color: #f0f4ff;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 10px 16px;
+  transition: background-color var(--transition-base, 0.2s ease),
+              color var(--transition-base, 0.2s ease);
+}
+
+.gallery-year-btns .btn:hover,
+.gallery-year-btns .btn.active {
+  background-color: var(--color-vivid-blue, #1a237e);
+  color: #fff;
+}
+
+/* ── Grid container (shared by both tile variants) ───────────────────── */
+.gallery-grid-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.2rem;
+}
+
+/* ── Variant A: plain thumbnail tile (news / scholarship galleries) ──── */
+.gallery-thumb-tile__img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: top;
+  border-radius: var(--radius-sm, 10px);
+  box-shadow: 0 4px 14px rgba(26, 35, 126, 0.1);
+  cursor: pointer;
+  transition: transform var(--transition-base, 0.2s ease),
+              box-shadow var(--transition-base, 0.2s ease);
+}
+
+.gallery-thumb-tile__img:hover,
+.gallery-thumb-tile__img:focus-visible {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(26, 35, 126, 0.2);
+}
+
+/* ── Variant B: captioned card tile (awards gallery) ─────────────────── */
+.gallery-card-tile {
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: var(--radius-md, 16px);
+  box-shadow: var(--shadow-sm, 0 4px 15px rgba(0, 0, 0, 0.06));
+  overflow: hidden;
+  transition: transform var(--transition-base, 0.2s ease),
+              box-shadow var(--transition-base, 0.2s ease);
+}
+
+.gallery-card-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md, 0 10px 35px rgba(0, 0, 0, 0.08));
+}
+
+.gallery-card-tile__img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: top;
+  cursor: pointer;
+  display: block;
+}
+
+.gallery-card-tile__body {
+  padding: 1rem;
+}
+
+.gallery-card-tile__title {
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 0.2rem;
+  color: var(--text-primary, #2b2b2b);
+}
+
+.gallery-card-tile__date {
+  font-size: 0.85rem;
+  color: var(--text-muted, #6b7280);
+  margin-bottom: 0.4rem;
+}
+
+.gallery-card-tile__desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary, #5A5450);
+  margin-bottom: 0;
+}
+
+/* Focus ring shared by both tile variants — keyboard accessibility */
+.gallery-thumb-tile__img:focus-visible,
+.gallery-card-tile__img:focus-visible {
+  outline: 3px solid var(--color-gold, #FFC35C);
+  outline-offset: 2px;
+}
+
+/* ── Empty / error state ─────────────────────────────────────────────── */
+.gallery-empty-state {
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--text-muted, #6b7280);
+  font-family: 'Inter', sans-serif;
+  grid-column: 1 / -1;
+}
+
+/* ── Modal carousel (both variants share this modal markup) ──────────── */
+.gallery-lightbox-modal .carousel-inner img {
+  width: 100%;
+  object-fit: contain;
+  max-height: 80vh;
+  margin: 0 auto;
+  background-color: #000;
+}
+
+@media (max-width: 576px) {
+  .gallery-lightbox-modal .modal-dialog {
+    max-width: 100%;
+    margin: 0 0.5rem;
+  }
+}

@@ -671,7 +671,7 @@
 .testimonial-author h6 { font-size: 18px; font-weight: 600; margin-bottom: 4px; color: var(--text-primary); }
 .testimonial-author span { font-size: 14px; color: #8a8a8a; }
 
-.swiper-slide { opacity: 0.55; transition: opacity var(--transition-base); }
+.testimonials-swiper .swiper-slide { opacity: 0.55; transition: opacity var(--transition-base); }
 .swiper-slide-active,
 .swiper-slide-next,
 .swiper-slide-prev { opacity: 1; }

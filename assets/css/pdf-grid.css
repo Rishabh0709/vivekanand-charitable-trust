@@ -1,13 +1,86 @@
-    .pdf-icon {
-      font-size: 4rem;
-      color: #d32f2f;
-      transition: color 0.2s;
-    }
-    .pdf-download:hover .pdf-icon {
-      color: #b71c1c;
-    }
-    .pdf-caption {
-      margin-top: 8px;
-      font-size: 1.1rem;
-      color: #333;
-    }
+/* ==========================================================================
+   pdf-grid.css
+   Shared styles for all "grid of downloadable PDFs" pages.
+   Used by : balance_sheet.html | certificates.html | scholarship_certificate.html
+   Depends : style.css (spacing tokens, color tokens)
+   ========================================================================== */
+
+.pdf-grid-page {
+  padding-bottom: 20px;
+}
+
+.pdf-grid-intro {
+  color: var(--text-secondary, #5A5450);
+  margin-bottom: 28px;
+}
+
+/* ── Individual PDF tile ─────────────────────────────────────────────── */
+.pdf-download {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 18px 10px;
+  border-radius: var(--radius-sm, 10px);
+  text-decoration: none;
+  color: inherit;
+  transition: background-color var(--transition-base, 0.2s ease),
+              transform var(--transition-base, 0.2s ease);
+}
+
+.pdf-download:hover,
+.pdf-download:focus-visible {
+  background-color: var(--color-cream, #fef7de);
+  transform: translateY(-3px);
+  color: inherit;
+  text-decoration: none;
+}
+
+.pdf-download:focus-visible {
+  outline: 3px solid var(--color-gold, #FFC35C);
+  outline-offset: 2px;
+}
+
+.pdf-icon {
+  font-size: 2.6rem;
+  color: var(--color-brick, #951a19);
+}
+
+.pdf-caption {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary, #2b2b2b);
+  text-align: center;
+  line-height: 1.35;
+}
+
+/* ── Featured / summary tile (e.g. "Scholarship Summary 1996–2025") ──── */
+.pdf-featured-row {
+  margin-top: 8px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(166, 120, 46, 0.18);
+}
+
+.pdf-featured-row .pdf-download {
+  max-width: 320px;
+  margin: 0 auto;
+  background: var(--gradient-cream, linear-gradient(135deg, #fef7de, #fff8e7));
+  border: 1px solid rgba(217, 119, 6, 0.2);
+}
+
+.pdf-featured-row .pdf-icon {
+  color: var(--color-maroon, #7B2123);
+}
+
+/* ── Empty / error state ─────────────────────────────────────────────── */
+.pdf-grid-empty-state {
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--text-muted, #6b7280);
+  font-family: 'Inter', sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pdf-download { transition: none; }
+}

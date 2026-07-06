@@ -1,3 +1,9 @@
+/* ==========================================================================
+   script.js — Swami Vivekanand Students' Welfare Charitable Trust
+   Site-wide behavior shared across every page.
+   Load order: script.js → stats.js (if present) → page-specific inline scripts
+   ========================================================================== */
+
 
 /* ---------------------------------------------------------
    BACK TO TOP BUTTON
@@ -34,14 +40,8 @@ function initBackToTop() {
 
 
 /* ---------------------------------------------------------
-   HEADER SUBMENU (if/when the nested "Torch Bearers" submenu
-   pattern is reintroduced anywhere — kept here as the single
-   place such logic should live, never inside header.html itself)
+   HEADER SUBMENU (nested dropdown support, e.g. "Torch Bearers")
 --------------------------------------------------------- */
-/* ==========================================================================
-   Dynamic Partials Loader Engine
-   ========================================================================== */
-
 function initHeaderSubmenu() {
   document.querySelectorAll('.submenu-toggle').forEach((toggle) => {
     function toggleSubmenu(e) {
@@ -71,11 +71,22 @@ function initHeaderSubmenu() {
 
 
 /* ---------------------------------------------------------
-   PARTIAL LOADER  (replaces the loadHTML() copy-pasted at the
-   bottom of every page). Accepts an optional callback that
-   fires only after innerHTML has actually been set — this is
-   what was missing before, and why "fixes" inside header.html /
-   footer.html's own <script> tags never ran.
+   PARTIAL LOADER
+   Fetches an HTML fragment (header.html / footer.html) into a
+   placeholder element, then runs an optional callback only after
+   innerHTML has actually been set — this is what lets initHeaderSubmenu
+   and initBackToTop reliably attach to elements that don't exist yet
+   at page-load time.
+
+   USAGE (identical on every page):
+
+     <script>
+       loadHTML('header-placeholder', 'header.html', initHeaderSubmenu);
+       loadHTML('footer-placeholder', 'footer.html', initBackToTop);
+     </script>
+
+   Do NOT keep a second, page-local loadHTML() definition once this one
+   is loaded — some pages still do; that cleanup is tracked separately.
 --------------------------------------------------------- */
 async function loadHTML(id, url, callback) {
   try {
@@ -89,103 +100,162 @@ async function loadHTML(id, url, callback) {
 }
 
 
-/* ---------------------------------------------------------
-   USAGE — replace the per-page loader block at the bottom of
-   every HTML file with this:
+/* ==========================================================================
+   SWIPER CAROUSEL FACTORY
+   -----------------------------------------------------------------------
+   Single source of truth for every Swiper instance on the site. Replaces
+   duplicated, hand-typed Swiper() config blocks (previously one per
+   carousel, able to drift out of sync with each other).
 
-   <script>
-     loadHTML('header-placeholder', 'header.html', initHeaderSubmenu);
-     loadHTML('footer-placeholder', 'footer.html', initBackToTop);
-   </script>
+   Guards against Swiper's own loop-mode requirement: loop needs at least
+   2 × the largest slidesPerView in *real* slides, or its internal slide-
+   cloning math comes out uneven — producing jumpy widths, or a single
+   oversized/mis-cropped slide. This can surface at page load, or later,
+   whenever anything on the page (async content, image loads, font
+   swaps) causes Swiper's built-in ResizeObserver to recalculate.
 
-   Do NOT keep a second, page-local loadHTML() definition once
-   this one is in script.js — having two definitions of the same
-   function name is harmless (the later one wins) but confusing
-   and worth cleaning up across all 38 pages as part of the wider
-   consolidation already tracked in the site audit.
---------------------------------------------------------- */
+   Rather than trust every future content edit to remember that
+   constraint, this factory checks the real slide count itself and
+   disables loop when it isn't safe, instead of silently shipping a
+   carousel that can break later.
+   ========================================================================== */
+
+const SWIPER_DEFAULTS = {
+  spaceBetween: 30,
+  rewind: true,
+  pagination: { el: '.swiper-pagination', clickable: true },
+  navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+  breakpoints: {
+    320: { slidesPerView: 1, spaceBetween: 10 },
+    768: { slidesPerView: 2, spaceBetween: 20 },
+    992: { slidesPerView: 3, spaceBetween: 30 },
+  },
+};
+
+/**
+ * Initializes a Swiper carousel with shared defaults, deep-merging any
+ * per-instance overrides.
+ *
+ * NAVIGATION STRATEGY — rewind by default, loop as an explicit opt-in:
+ *
+ * Swiper offers two ways to make a carousel feel "infinite":
+ *   - loop:true    clones slides at both ends for seamless wrap-around,
+ *                  but REQUIRES at least 2 × slidesPerView real slides or
+ *                  its clone math comes out uneven — producing distorted,
+ *                  wrongly-sized slides. This bit us once already.
+ *   - rewind:true  simply jumps back to slide 1 after the last slide, with
+ *                  no cloning and no slide-count requirement. Nav arrows
+ *                  never disable, matching the "always advances" feel the
+ *                  site wants, without the distortion risk.
+ *
+ * Rewind is the safer default for every carousel on this site regardless
+ * of how many slides a section currently has, so this fixes the bug class
+ * permanently rather than for today's slide counts only. True loop mode
+ * can still be requested explicitly (`loop: true` in overrides) for a
+ * carousel with plenty of slides where seamless-wrap animation is
+ * specifically wanted — the same slide-count safety check still guards
+ * that path so it can't reintroduce the distortion bug.
+ *
+ * @param {string} selector       CSS selector for the swiper container.
+ * @param {Object} [overrides={}] Per-instance config, merged over SWIPER_DEFAULTS.
+ * @returns {Swiper|null}         The Swiper instance, or null if the
+ *                                container isn't present on this page.
+ */
+function initSwiperCarousel(selector, overrides = {}) {
+  const container = document.querySelector(selector);
+  if (!container) return null;
+
+  const breakpoints = { ...SWIPER_DEFAULTS.breakpoints, ...(overrides.breakpoints || {}) };
+  const config = { ...SWIPER_DEFAULTS, ...overrides, breakpoints };
+
+  if (overrides.loop === true) {
+    const slideCount = container.querySelectorAll('.swiper-slide').length;
+    const maxSlidesPerView = Math.max(...Object.values(breakpoints).map((bp) => bp.slidesPerView || 1));
+    const canLoopSafely = slideCount >= maxSlidesPerView * 2;
+
+    if (!canLoopSafely) {
+      console.warn(
+        `initSwiperCarousel: "${selector}" requested loop:true with ${slideCount} slide(s), ` +
+        `but needs at least ${maxSlidesPerView * 2} for its widest breakpoint (${maxSlidesPerView}-up). ` +
+        `Falling back to rewind mode instead, so navigation still works without distortion.`
+      );
+      config.loop = false;
+      config.rewind = true;
+    }
+  }
+
+  return new Swiper(selector, config);
+}
+
 
 /* ==========================================================================
-   2. DOM-Dependent Page Components (Wrapped Safely)
+   DOM-DEPENDENT PAGE COMPONENTS (wrapped safely)
    ========================================================================== */
-document.addEventListener("DOMContentLoaded", function() {
-  
-  // Counter animation for "Our Impact"
+document.addEventListener('DOMContentLoaded', function () {
+
+  /* ── Legacy counter animation ──────────────────────────────────────────
+     For any remaining elements using the old data-count contract
+     (kept for backward compatibility — new counters should use
+     data-stat-counter, driven by stats.js, instead). */
   function animateCounter(el) {
-    let end = +el.getAttribute('data-count');
+    const end = +el.getAttribute('data-count');
     let start = 0;
-    let step = Math.ceil(end/80);
+    const step = Math.ceil(end / 80);
     function tick() {
       start += step;
-      if(start > end) start = end;
+      if (start > end) start = end;
       el.innerText = start.toLocaleString();
-      if(start < end) requestAnimationFrame(tick);
+      if (start < end) requestAnimationFrame(tick);
       else el.innerText = end.toLocaleString();
     }
     tick();
   }
   document.querySelectorAll('.impact-counter').forEach(animateCounter);
 
-  // SAFE GUARD: Gallery Modal Structural Verification
-  const galleryModal = document.getElementById("galleryModal");
+
+  /* ── Gallery modal (chart/list lightbox on index.html) ────────────────── */
+  const galleryModal = document.getElementById('galleryModal');
   if (galleryModal) {
-    galleryModal.addEventListener("click", function(e) {
-      if(e.target === this || !e.target.closest(".gallery-swiper")){
+    galleryModal.addEventListener('click', function (e) {
+      if (e.target === this || !e.target.closest('.gallery-swiper')) {
         closeGallery();
       }
     });
   }
 
-  // SAFE GUARD: Success Stories Swiper Initialization
-  if (document.querySelector('.success-stories-swiper')) {
-    new Swiper('.success-stories-swiper', {
-      slidesPerView: 3,
-      slidesPerGroup: 1,
-      spaceBetween: 30,
-      loop: true,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-      },
-      pagination: { el: '.swiper-pagination', clickable: true },
-      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-      breakpoints: {
-        320: { slidesPerView: 1 },
-        768: { slidesPerView: 2 },
-        992: { slidesPerView: 3 },
-      },
-    });
-  }
 
-  // SAFE GUARD: Testimonials Swiper Initialization
-  if (document.querySelector('.testimonials-swiper')) {
-    new Swiper('.testimonials-swiper', {
-      slidesPerView: 3,
-      spaceBetween: 30,
-      loop: true,
-      autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-      },
-      pagination: { el: '.swiper-pagination', clickable: true },
-      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-      breakpoints: {
-        320: { slidesPerView: 1, spaceBetween: 10 },
-        768: { slidesPerView: 2, spaceBetween: 20 },
-        992: { slidesPerView: 3, spaceBetween: 30 },
-      },
-    });
-  }
+  /* ── Carousels — single factory, so a fix or config change here
+       covers every carousel on the site at once ─────────────────────────── */
+  const swiperInstances = [
+    initSwiperCarousel('.success-stories-swiper', {
+      slidesPerGroup: 1,
+      autoplay: { delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true },
+    }),
+    initSwiperCarousel('.testimonials-swiper', {
+      autoplay: { delay: 4000, disableOnInteraction: false, pauseOnMouseEnter: true },
+    }),
+  ].filter(Boolean); // drop nulls for pages missing one of these carousels
+
+  /* If stats.js is present on this page, it populates stat text and
+     animated counters asynchronously (after a fetch() resolves). That
+     DOM mutation can happen after Swiper has already measured slide
+     widths, and Swiper's own ResizeObserver may recalculate as a
+     result. Explicitly telling every active Swiper instance to
+     re-measure once stats finish loading makes that interaction
+     intentional instead of accidental. Safe to leave in place even on
+     pages that don't load stats.js — the event simply never fires. */
+  document.addEventListener('stats:loaded', () => {
+    swiperInstances.forEach((swiper) => swiper.update());
+  });
 
   // Handle dropdown setups on resize tracking
   window.addEventListener('resize', handleDesktopDropdowns);
+  handleDesktopDropdowns();
 });
 
 
 /* ==========================================================================
-   3. Shared Global Mechanics & Data Objects
+   SHARED GLOBAL MECHANICS & DATA OBJECTS
    ========================================================================== */
 
 // Global Nav Dropdown Adjustments
@@ -193,14 +263,14 @@ function handleDesktopDropdowns() {
   const dropdowns = document.querySelectorAll('.navbar .dropdown');
   if (!dropdowns.length) return;
 
-  dropdowns.forEach(dropdown => {
+  dropdowns.forEach((dropdown) => {
     dropdown.classList.remove('show');
     dropdown.onmouseenter = null;
     dropdown.onmouseleave = null;
   });
 
   if (window.innerWidth >= 992) {
-    dropdowns.forEach(dropdown => {
+    dropdowns.forEach((dropdown) => {
       dropdown.addEventListener('mouseenter', function () {
         this.classList.add('show');
         this.querySelector('.dropdown-menu')?.classList.add('show');
@@ -214,20 +284,20 @@ function handleDesktopDropdowns() {
   }
 }
 
-// Media Image Database Matrix
+// Media Image Database Matrix (index.html stats → gallery modal)
 const galleries = {
-  img1: ["/assets/images/chart1.png"],
-  img2: ["/assets/images/chart2.png"],
+  img1: ['/assets/images/chart1.png'],
+  img2: ['/assets/images/chart2.png'],
   schools: [
-    "/assets/images/school_list1.PNG",
-    "/assets/images/school_list2.PNG",
-    "/assets/images/school_list3.PNG",
-    "/assets/images/school_list4.PNG"
+    '/assets/images/school_list1.PNG',
+    '/assets/images/school_list2.PNG',
+    '/assets/images/school_list3.PNG',
+    '/assets/images/school_list4.PNG',
   ],
   colleges: [
-    "/assets/images/college_list1.PNG",
-    "/assets/images/college_list2.PNG"
-  ]
+    '/assets/images/college_list1.PNG',
+    '/assets/images/college_list2.PNG',
+  ],
 };
 
 let gallerySwiper;
@@ -236,16 +306,16 @@ let gallerySwiper;
 function openGallery(type) {
   const images = galleries[type];
   if (!images || images.length === 0) {
-    console.error("Gallery not found:", type);
+    console.error('Gallery not found:', type);
     return;
   }
 
-  const modal = document.getElementById("galleryModal");
-  const wrapper = document.getElementById("galleryWrapper");
+  const modal = document.getElementById('galleryModal');
+  const wrapper = document.getElementById('galleryWrapper');
   if (!modal || !wrapper) return;
 
-  wrapper.innerHTML = "";
-  images.forEach(img => {
+  wrapper.innerHTML = '';
+  images.forEach((img) => {
     wrapper.innerHTML += `
       <div class="swiper-slide">
         <img src="${img}" alt="">
@@ -253,29 +323,29 @@ function openGallery(type) {
     `;
   });
 
-  modal.classList.add("active");
+  modal.classList.add('active');
 
   if (gallerySwiper) {
     gallerySwiper.destroy(true, true);
   }
 
-  gallerySwiper = new Swiper(".gallery-swiper", {
+  gallerySwiper = new Swiper('.gallery-swiper', {
     loop: images.length > 1,
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
   });
 
-  document.body.style.overflow = "hidden";
+  document.body.style.overflow = 'hidden';
 }
 
 // Close Gallery Pipeline
 function closeGallery() {
-  const modal = document.getElementById("galleryModal");
-  if (modal) modal.classList.remove("active");
+  const modal = document.getElementById('galleryModal');
+  if (modal) modal.classList.remove('active');
 
-  document.body.style.overflow = "auto";
+  document.body.style.overflow = 'auto';
 
   if (gallerySwiper) {
     gallerySwiper.destroy(true, true);

@@ -1,0 +1,13 @@
+[
+  { "label": "2024-25", "href": "/assets/docs/scholarship_receipt/2024-25.pdf" },
+  { "label": "2023-24", "href": "/assets/docs/scholarship_receipt/2023-24.pdf" },
+  { "label": "2022-23", "href": "/assets/docs/scholarship_receipt/2022-23.pdf" },
+  { "label": "2021-22", "href": "/assets/docs/scholarship_receipt/2021-22.pdf" },
+  { "label": "2020-21", "href": "/assets/docs/scholarship_receipt/2020-21.pdf" },
+  {
+    "label": "Scholarship Summary (1996–2025)",
+    "href": "/assets/docs/scholarship_receipt/SUMMARY(1996-2025).pdf",
+    "filename": "scholarship-summary.pdf",
+    "featured": true
+  }
+]

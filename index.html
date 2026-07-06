@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- FontAwesome for Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.44.0/dist/tabler-icons.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="/assets/css/style.css" />
 	<link rel="stylesheet" href="/assets/css/homepage.css" />
@@ -84,27 +84,27 @@
 
 <button class="glass-card stat" onclick="openGallery('img1')" aria-label="chart showing numbers of girls supported till date">
 <i class="ti ti-woman text-primary mb-3" style="font-size: 3rem;"></i>
-<h2 class="counter" data-target="37564">0</h2>
+<h2 class="counter" data-stat-counter="girlsSupported">0</h2>
 <p>Girl students have been supported via scholarship</p>
 </button>
 
 <button class="glass-card stat" onclick="openGallery('img2')" aria-label="chart showing total amount distributed till date">
 <!--<h2 class="counter" data-target="396">0</h2>-->
 <i class="ti ti-currency-rupee text-primary mb-3" style="font-size: 3rem;"></i>
-<h2><span class="currency">₹</span><span class="counter" data-target="4.51">0</span> Cr</h2>
+<h2><span class="currency">₹</span><span class="counter" data-stat-counter="scholarshipCr">0</span> Cr</h2>
 <p>Worth of scholarships distributed so far</p>
 
 </button>
 
 <button class="glass-card stat" onclick="openGallery('schools')" aria-label="View list of schools covered">
  <i class="ti ti-building-community text-primary mb-3" style="font-size: 3rem;"></i>
-  <h2 class="counter" data-target="45">0</h2>
+  <h2 class="counter" data-stat-counter="schools">0</h2>
   <p>Beneficiary Schools Covered</p>
 </button>
 
 <button class="glass-card stat" onclick="openGallery('colleges')" aria-label="View list of colleges covered">
 <i class="ti ti-school text-primary mb-3" style="font-size: 3rem;"></i>
-<h2 class="counter" data-target="32">0</h2>
+<h2 class="counter" data-stat-counter="colleges">0</h2>
 <p>Colleges whose students are beneficiaries of the trust</p>
 </button>
 
@@ -123,52 +123,6 @@
     <div class="swiper-button-next"></div>
   </div>
 </div>
-
-<script>
-
-/* ===== COUNTER ANIMATION ===== */
-
-const counters = document.querySelectorAll(".counter");
-
-const observer = new IntersectionObserver(entries => {
-
-entries.forEach(entry => {
-
-if(entry.isIntersecting){
-
-const counter = entry.target;
-const target = +counter.getAttribute("data-target");
-
-let count = 0;
-const speed = target / 100;
-
-const update = () => {
-
-count += speed;
-
-if(count < target){
-counter.innerText = Math.floor(count).toLocaleString();
-requestAnimationFrame(update);
-}else{
-counter.innerText = target.toLocaleString();
-}
-
-};
-
-update();
-
-observer.unobserve(counter);
-
-}
-
-});
-
-},{threshold:0.6});
-
-counters.forEach(counter => observer.observe(counter));
-
-
-</script>
 
 <!-- VISION MISSION SECTION -->
  <section class="vision-mission">
@@ -929,6 +883,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   <!-- Main JS -->
   <script src="/assets/js/script.js"></script>
+  <script src="/assets/js/stats.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   
 <script>

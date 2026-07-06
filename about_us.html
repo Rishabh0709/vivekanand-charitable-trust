@@ -11,17 +11,20 @@
   <link rel="stylesheet" href="/assets/css/style.css" />
 
   <style>
-    
+
     /* =========================================================
        PAGE HERO
+       (h1 color, page-hero spacing already global; only page-
+       specific layout/typography kept here)
     ========================================================= */
     .about-hero {
       padding: 80px 20px 50px;
       text-align: center;
     }
 
-    .about-hero h1 {
-      color: var(--color-maroon);
+    .about-foundation {
+      max-width: 700px;
+      margin: 18px auto 0;
     }
 
     .about-intro {
@@ -30,71 +33,54 @@
       padding: 28px 36px;
       background: rgba(255, 245, 220, 0.7);
       backdrop-filter: blur(12px);
-      border-radius: 16px;
+      border-radius: var(--radius-md);
       border: 1px solid rgba(255, 255, 255, 0.4);
     }
 
     .about-intro p {
       font-size: 1.08rem;
       line-height: 1.75;
-      color: var(--text-secondary);
-      margin: 0;
+      text-align: left;
+      margin: 0 0 20px;
     }
+
+    .about-intro p:last-child { margin-bottom: 0; }
 
     .about-intro strong {
       color: var(--color-brown);
       font-weight: 600;
     }
 
+    /* Small link inside the fund-integrity callout — no global equivalent */
+    .fund-integrity-link {
+      display: inline-block;
+      margin-top: 8px;
+      font-weight: 700;
+      color: var(--color-maroon);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(128, 0, 32, 0.35);
+    }
+
+    .fund-integrity-link:hover {
+      color: var(--color-orange);
+      border-color: var(--color-orange);
+    }
+
     /* =========================================================
-       SHARED SECTION WRAPPER
+       SHARED SECTION WRAPPER (page-specific — no global equivalent)
     ========================================================= */
     .about-section {
       padding: 80px 20px;
     }
 
     .about-section.alt-bg {
-      background: rgba(255, 248, 235, 0.55);
-    }
-
-    /* =========================================================
-       PULL-QUOTE
-    ========================================================= */
-    .pull-quote {
-      position: relative;
-      border-left: 5px solid var(--color-gold);
-      background: linear-gradient(135deg,
-        rgba(255, 195, 92, 0.14),
-        rgba(255, 245, 220, 0.25));
-      border-radius: 0 14px 14px 0;
-      padding: 22px 28px 22px 32px;
-      margin: 28px 0 0;
-    }
-
-    .pull-quote::before {
-      content: "\201C";
-      position: absolute;
-      top: -10px;
-      left: 14px;
-      font-family: 'Playfair Display', serif;
-      font-size: 5rem;
-      line-height: 1;
-      color: var(--color-gold);
-      opacity: 0.45;
-      pointer-events: none;
-    }
-
-    .pull-quote p {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
-      line-height: 1.8;
-      font-style: italic;
-      color: var(--color-maroon);
-      margin: 0;
+      background: var(--color-cream, rgba(255, 248, 235, 0.55));
     }
 
     /* =========================================================
        INSPIRATION — story blocks
+       (.pull-quote, .glass-card, .text-highlight now global —
+       only the block wrapper itself is page-specific)
     ========================================================= */
     .story-block {
       max-width: 1150px;
@@ -102,35 +88,9 @@
       padding: 40px;
     }
 
-    .story-block h3 {
-      color: var(--color-maroon);
-      margin-bottom: 16px;
-    }
-
-    .story-block p {
-      color: var(--text-secondary);
-      line-height: 1.8;
-    }
-
-    .story-split {
-      display: flex;
-      align-items: center;
-      gap: 50px;
-    }
-
-    .story-split .text-col { flex: 1; }
-
-    .story-split .image-col {
-      flex: 0 0 230px;
-      text-align: center;
-    }
-
-    .story-split .image-col img {
-      width: 100%;
-      border-radius: 12px;
-    }
-
-    .story-split .year-label {
+    /* Caption-style year label under the founding certificate image —
+       no global equivalent, kept local */
+    .year-label {
       display: block;
       margin-top: 10px;
       font-weight: 700;
@@ -139,74 +99,30 @@
       color: var(--color-brown);
     }
 
-    .text-highlight {
-      color: var(--color-brown);
-      font-weight: 600;
-    }
-
     /* =========================================================
-       THREE PILLARS GRID
+       INSPIRATION — read-more collapse
+       (same interaction idea as the founder bios elsewhere on the
+       site: show the strongest block by default, rest on demand)
     ========================================================= */
-    .pillars-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 28px;
+    .inspiration-more {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.6s ease;
     }
 
-    /* Nested inside a glass-card so we use solid white
-       rather than another backdrop-filter (blur-on-blur degrades) */
-    .pillar-card {
-      background: rgba(255, 248, 235, 0.55);
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      border-radius: 14px;
-      padding: 26px 22px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .inspiration-more.expanded {
+      max-height: 3000px;
     }
 
-    .pillar-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-    }
-
-    /* Centre card — Sanskar — elevated to signal primacy */
-    .pillar-featured {
-      background: linear-gradient(145deg,
-        rgba(255, 195, 92, 0.22),
-        rgba(255, 245, 220, 0.45));
-      border: 2px solid var(--color-gold);
-      transform: translateY(-5px);
-      box-shadow: 0 14px 32px rgba(166, 120, 46, 0.14);
-    }
-
-    .pillar-featured:hover {
-      transform: translateY(-9px);
-      box-shadow: 0 20px 40px rgba(166, 120, 46, 0.2);
-    }
-
-    .pillar-card h4 {
-      font-size: 1.02rem;
-      color: var(--color-maroon);
-      margin: 0 0 10px;
-    }
-
-    .pillar-featured h4 {
-      color: var(--color-brown);
-    }
-
-    .pillar-card p {
-      font-size: 0.88rem;
-      color: var(--text-secondary);
-      line-height: 1.65;
-      margin: 0;
-    }
-
-    .pillar-featured p {
-      color: var(--text-secondary);
+    .inspiration-toggle-wrap {
+      text-align: center;
+      margin-top: 8px;
     }
 
     /* =========================================================
-       PHILOSOPHY — alternating image + text blocks
+       PHILOSOPHY — alternating blocks
+       (.split-layout / .split-layout--reverse / .split-layout__*
+       now global — only the block wrapper is page-specific)
     ========================================================= */
     .philosophy-block {
       max-width: 1150px;
@@ -214,248 +130,99 @@
       padding: 40px;
     }
 
-    .philosophy-layout {
-      display: flex;
-      align-items: center;
-      gap: 44px;
-    }
-
-    .philosophy-layout.reverse { flex-direction: row-reverse; }
-
-    .philosophy-layout .text-col { flex: 1; }
-
-    .philosophy-layout .text-col h5 {
-      color: var(--color-maroon);
-      font-size: 1.2rem;
-      margin-bottom: 14px;
-    }
-
-    .philosophy-layout .text-col p {
-      color: var(--text-secondary);
-      line-height: 1.75;
-    }
-
-    .philosophy-layout .image-col {
-      flex: 1;
-      text-align: center;
-    }
-
-    .philosophy-layout .image-col img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 14px;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .philosophy-block:hover .image-col img {
-      transform: scale(1.03);
-      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
-    }
-
-    .philosophy-layout .image-col p {
-      font-size: 0.88rem;
-      margin-top: 10px;
-      color: var(--text-secondary);
-    }
-
     /* =========================================================
        LEADERSHIP TRACK
+       (.leadership-track, .leader-*, .track-connector now global —
+       "View Biography" reuses .btn-outline, with a card-hover fill
+       kept as a small local addition since global .btn-outline
+       only fills on its own direct hover)
     ========================================================= */
-    .leadership-track {
-      display: flex;
-      align-items: stretch;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 16px;
-      max-width: 1100px;
-      margin: 50px auto 0;
-    }
-
-    .leader-card {
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      color: inherit;
-      width: 290px;
-      padding: 0 0 24px;
-      overflow: hidden;       /* clip image corners cleanly */
-      border-radius: 18px;    /* matches glass-card */
-    }
-
-    .leader-card.glass-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.11);
-      text-decoration: none;
-      color: inherit;
-    }
-		
-	/* Leader Image */
-.leader-img {
-  width: 90px;
-  height: 90px;
-  margin: 10px auto 15px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid rgba(166, 120, 46, 0.2);
-  transition: all 0.3s ease;
-}
-
-.leader-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* HOVER EFFECT */
-.leader-card:hover .leader-img {
-  transform: scale(1.08);
-  border-color: #a6782e;
-}
-
-	
-	
-	
-	
-	
-	
-
-    /* Text block below the photo */
-    .leader-body {
-      padding: 20px 20px 0;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-
-    .leader-name {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: 1rem;
-      color: var(--color-maroon);
-      margin: 0 0 4px;
-    }
-
-    .leader-role {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--color-orange);
-      margin: 0 0 3px;
-    }
-
-    .leader-years {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
-      color: #aaa;
-      margin: 0 0 10px;
-    }
-
-    .leader-desc {
-      font-size: 0.86rem;
-      color: var(--text-secondary);
-      line-height: 1.55;
-      margin: 0 0 16px;
-      flex: 1;
-    }
-
-    /* "View Biography" — visible by default, fills on hover */
-    .btn-biography {
-      display: inline-block;
-      align-self: flex-start;
-      padding: 8px 20px;
-      border-radius: 999px;
-      border: 1.5px solid var(--color-brown);
-      color: var(--color-brown);
-      font-family: 'Inter', sans-serif;
-      font-size: 0.82rem;
-      font-weight: 600;
-      transition: background 0.25s ease, color 0.25s ease;
-    }
-
-    .leader-card:hover .btn-biography {
+    .leader-card:hover .btn-outline {
       background: var(--color-brown);
       color: #fff;
     }
 
-    /* Animated connector between cards */
-    .connector {
-      width: 48px;
-      height: 2px;
-      flex-shrink: 0;
+    /* =========================================================
+       TRUST & REACH (merged section)
+       (.stat-card / .stat-card__* and .trio-grid now global for
+       the reach numbers — only the two-column wrapper is local)
+    ========================================================= */
+    .trust-reach-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 30px;
+      align-items: stretch;
+    }
+
+    .trust-reach-col {
+      display: flex;
+      flex-direction: column;
+      padding: 34px 30px;
+      text-align: center;
+    }
+
+    .trust-reach-col h3 {
+      color: var(--color-maroon);
+      font-size: 1.15rem;
+      margin-bottom: 14px;
+    }
+
+    .trust-reach-col p {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .trust-reach-col .btn-outline {
+      margin-top: auto;
       align-self: center;
-      position: relative;
-      background: linear-gradient(to right, #e6dccf, var(--color-brown));
-      overflow: hidden;
     }
 
-    .connector::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -50%;
-      width: 50%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 215, 140, 0.85), transparent);
-      animation: flow-glow 2.5s linear infinite;
-    }
-
-    @keyframes flow-glow {
-      from { left: -50%; }
-      to   { left: 120%; }
+    .trust-reach-col .trio-grid {
+      margin: 0 0 20px;
+      gap: 12px;
     }
 
     /* =========================================================
-       RESPONSIVE
+       CLOSING CTA (page-specific — no global equivalent)
     ========================================================= */
-    @media (max-width: 992px) {
-      .story-split,
-      .philosophy-layout,
-      .philosophy-layout.reverse { flex-direction: column; text-align: center; }
-
-      .pillars-grid { grid-template-columns: 1fr; gap: 14px; }
-
-      /* Remove vertical lift on pillars when stacked */
-      .pillar-featured { transform: none; }
-      .pillar-featured:hover { transform: translateY(-4px); }
+    .about-closing-cta {
+      text-align: center;
+      padding: 70px 20px 90px;
+      background: linear-gradient(135deg, #fdf6f0, #f7f1e8);
     }
 
-    @media (max-width: 768px) {
-      .about-hero    { padding: 60px 16px 36px; }
-      .about-intro   { padding: 22px 20px; }
-      .about-section { padding: 60px 16px; }
+    .about-closing-cta h2 {
+      color: var(--color-maroon);
+      margin-bottom: 14px;
+    }
 
+    .about-closing-cta p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      text-align: center;
+    }
+
+    .about-closing-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 26px;
+      flex-wrap: wrap;
+    }
+
+    /* =========================================================
+       RESPONSIVE  (page-specific overrides only — global
+       components already carry their own breakpoints)
+    ========================================================= */
+    @media (max-width: 768px) {
+      .about-hero      { padding: 60px 16px 36px; }
+      .about-intro     { padding: 22px 20px; }
+      .about-section   { padding: 60px 16px; }
       .story-block,
       .philosophy-block { padding: 26px 20px; margin-bottom: 20px; }
-
-      .pull-quote { padding: 18px 20px 18px 24px; }
-      .pull-quote::before { font-size: 4rem; top: -8px; left: 10px; }
-
-      .leadership-track { flex-direction: column; align-items: center; }
-
-      .connector {
-        width: 2px;
-        height: 36px;
-        align-self: center;
-        background: linear-gradient(to bottom, #e6dccf, var(--color-brown));
-      }
-
-      .connector::after {
-        top: -50%;
-        left: 0;
-        width: 100%;
-        height: 50%;
-        background: linear-gradient(180deg, transparent, rgba(255, 215, 140, 0.85), transparent);
-        animation: flow-glow-v 2.5s linear infinite;
-      }
-
-      @keyframes flow-glow-v {
-        from { top: -50%; }
-        to   { top: 120%; }
-      }
-
-      .leader-card { width: 100%; max-width: 340px; }
+      .trust-reach-grid { grid-template-columns: 1fr; gap: 16px; }
+      .about-closing-cta { padding: 55px 16px 70px; }
     }
   </style>
 </head>
@@ -470,11 +237,38 @@
   ============================================== -->
   <div class="about-hero">
     <h1>About Us</h1>
+
+    <p class="about-foundation lead">
+      Since 1996, we have walked alongside underprivileged girls in western Rajasthan — providing education, guidance,
+      and the values needed to shape their own futures.
+    </p>
+
+    <div class="container--tight">
+      <div class="pull-quote" style="text-align: left;">
+        <p>At the heart of our work lies a simple belief: financial support to a girl is not charity — it is her rightful due.</p>
+      </div>
+    </div>
+
+    <p class="about-foundation lead" style="margin-top: 20px;">
+      Scholarships here are awarded purely on need, not merit — and it is only after that support arrives that so many of our girls go on to earn merit of their own.
+    </p>
+
     <div class="about-intro">
       <p>
-        Since 1996, we have walked alongside underprivileged girls in western Rajasthan — providing education, guidance, 
-		and the values needed to shape their own futures.
+        <strong>Swami Vivekanand Students' Welfare Charitable Trust</strong> is a registered public charitable trust
+        (12A &amp; 80G compliant, NGO Darpan registered), headquartered at "Manidweep", A-183 Shastri Nagar, Jodhpur.
       </p>
+
+      <div class="stat-callout">
+        <div class="stat-callout__icon"><i class="fas fa-check-circle"></i></div>
+        <p class="stat-callout__desc">
+          This Trust is the <strong>independently registered</strong> educational and scholarship initiative of
+          Manidweep, its parent spiritual institution.
+          <strong>Every donation goes 100% toward girls' education</strong> — not religious activity.
+          <a href="manidweep.html" class="fund-integrity-link">Know more about Manidweep →</a>
+        </p>
+      </div>
+      <!-- Add further lines here -->
     </div>
   </div>
 
@@ -515,76 +309,88 @@
         </div>
       </div>
 
-      <!-- Block 2: Building the Vision — three pillars -->
-      <div class="story-block glass-card">
-        <h3>Building the Vision for Empowerment</h3>
-        <p>
-          In 1995, Nandkishore Ji critically audited the prevailing educational paradigms
-          and championed a comprehensive reform model. He advocated that standard academic
-          achievement must be fundamentally integrated with deep moral values and
-          self-reliance, giving rise to our three core organisational pillars:
-        </p>
+      <!-- Block 2 & 3 collapse behind "Read the Full Founding Story" by default,
+           so a first-time visitor sees the strongest hook without a long scroll -->
+      <div id="inspiration-more" class="inspiration-more">
 
-        <div class="pillars-grid">
-
-          <div class="pillar-card">
-            <h4>Academic Access</h4>
-            <p>Providing critical financial stability, material packages, and baseline
-            security support so learning remains unhindered.</p>
-          </div>
-
-          <div class="pillar-card pillar-featured">
-            <h4>Moral Roots <em>(Sanskar)</em></h4>
-            <p>Cultivating humility, ethics, and values. Bhaiya Ji routinely advised
-            that skill without moral standing results in narrow self-arrogance.</p>
-          </div>
-
-          <div class="pillar-card">
-            <h4>Self-Reliance</h4>
-            <p>Weaving vocational skills — sewing, computer literacy — alongside
-            academics to build self-sustaining, independent careers.</p>
-          </div>
-
-        </div>
-
-        <div class="pull-quote">
+        <!-- Block 2: Building the Vision — three pillars -->
+        <div class="story-block glass-card">
+          <h3>Building the Vision for Empowerment</h3>
           <p>
-            Bhaiya Ji cautioned that education deprived of values could lead to arrogance
-            and a narrow focus on rights over responsibilities. Only a holistic approach
-            could nurture women who would strengthen family, community, and nation.
+            In 1995, Nandkishore Ji critically audited the prevailing educational paradigms
+            and championed a comprehensive reform model. He advocated that standard academic
+            achievement must be fundamentally integrated with deep moral values and
+            self-reliance, giving rise to our three core organisational pillars:
           </p>
+
+          <div class="pillars-grid">
+
+            <div class="pillar-card">
+              <h4>Academic Access</h4>
+              <p>Providing critical financial stability, material packages, and baseline
+              security support so learning remains unhindered.</p>
+            </div>
+
+            <div class="pillar-card pillar-card--featured">
+              <h4>Moral Roots <em>(Sanskar)</em></h4>
+              <p>Cultivating humility, ethics, and values. Bhaiya Ji routinely advised
+              that skill without moral standing results in narrow self-arrogance.</p>
+            </div>
+
+            <div class="pillar-card">
+              <h4>Self-Reliance</h4>
+              <p>Weaving vocational skills — sewing, computer literacy — alongside
+              academics to build self-sustaining, independent careers.</p>
+            </div>
+
+          </div>
+
+          <div class="pull-quote">
+            <p>
+              Bhaiya Ji cautioned that education deprived of values could lead to arrogance
+              and a narrow focus on rights over responsibilities. Only a holistic approach
+              could nurture women who would strengthen family, community, and nation.
+            </p>
+          </div>
         </div>
+
+        <!-- Block 3: The First Step — split layout with image -->
+        <div class="story-block glass-card">
+          <div class="split-layout">
+            <div class="split-layout__text">
+              <h3>The First Step: Our Foundation</h3>
+              <p>
+                To bring this vision to life, the
+                <span class="text-highlight">Swami Vivekananda Students Welfare Charitable Trust</span>
+                was established on <strong>June 10, 1996</strong>, by Maa Basanti Manihar
+                under the guidance of Divine Mother <em>Maa Tripurasundari</em>.
+              </p>
+              <p>
+                Shri Nandkishore Sharda humbly accepted the role of President, helping
+                translate his ideals into tangible action. Through the Trust, he directed
+                initiatives for girls' education and empowerment — making "girl empowerment"
+                a reality rather than a concept.
+              </p>
+              <p class="fw-semibold" style="color: var(--color-maroon);">
+                Nandkishore Ji was a pioneer, promoting women's upliftment long before it
+                became widely recognized. He believed firmly that empowering the girl child
+                would naturally lay the foundation for true women's empowerment in society.
+              </p>
+            </div>
+            <div class="split-layout__image">
+              <img src="/assets/images/trust.png"
+                   alt="Trust certificate of establishment — June 10, 1996">
+              <span class="year-label">June 10, 1996</span>
+            </div>
+          </div>
+        </div>
+
       </div>
 
-      <!-- Block 3: The First Step — split layout with image -->
-      <div class="story-block glass-card">
-        <div class="story-split">
-          <div class="text-col">
-            <h3>The First Step: Our Foundation</h3>
-            <p>
-              To bring this vision to life, the
-              <span class="text-highlight">Swami Vivekananda Students Welfare Charitable Trust</span>
-              was established on <strong>June 10, 1996</strong>, by Maa Basanti Manihar
-              under the guidance of Divine Mother <em>Maa Tripurasundari</em>.
-            </p>
-            <p>
-              Shri Nandkishore Sharda humbly accepted the role of President, helping
-              translate his ideals into tangible action. Through the Trust, he directed
-              initiatives for girls' education and empowerment — making "girl empowerment"
-              a reality rather than a concept.
-            </p>
-            <p class="fw-semibold" style="color: var(--color-maroon);">
-              Nandkishore Ji was a pioneer, promoting women's upliftment long before it
-              became widely recognized. He believed firmly that empowering the girl child
-              would naturally lay the foundation for true women's empowerment in society.
-            </p>
-          </div>
-          <div class="image-col">
-            <img src="/assets/images/trust.png"
-                 alt="Trust certificate of establishment — June 10, 1996">
-            <span class="year-label">June 10, 1996</span>
-          </div>
-        </div>
+      <div class="inspiration-toggle-wrap">
+        <button type="button" class="btn-outline" id="inspiration-toggle" onclick="toggleInspiration()">
+          Read the Full Founding Story ↓
+        </button>
       </div>
 
     </div>
@@ -602,8 +408,8 @@
       </div>
 
       <div class="philosophy-block glass-card">
-        <div class="philosophy-layout">
-          <div class="text-col">
+        <div class="split-layout">
+          <div class="split-layout__text">
             <h5>Rooted in Values &amp; Dignity</h5>
             <p>
               The Trust ensures every student is treated with dignity and self-respect —
@@ -613,17 +419,17 @@
               are instilled to ensure true holistic development.
             </p>
           </div>
-          <div class="image-col">
+          <div class="split-layout__image">
             <img src="/assets/images/f6.jpg"
                  alt="Girls listening to Bhaiyaji's encouraging speech">
-            <p>Girls listening to Bhaiyaji's encouraging speech</p>
+            <p class="split-layout__caption">Girls listening to Bhaiyaji's encouraging speech</p>
           </div>
         </div>
       </div>
 
       <div class="philosophy-block glass-card">
-        <div class="philosophy-layout reverse">
-          <div class="text-col">
+        <div class="split-layout split-layout--reverse">
+          <div class="split-layout__text">
             <h5>Building Confident &amp; Capable Individuals</h5>
             <p>
               Through Personality Development and Sanskar Classes, students are guided
@@ -634,10 +440,10 @@
               and the nation.
             </p>
           </div>
-          <div class="image-col">
+          <div class="split-layout__image">
             <img src="/assets/images/sanskar_girls.jpg"
                  alt="Maa Madhubala Advani enlightening students">
-            <p>Maa Madhubala Advani enlightening students</p>
+            <p class="split-layout__caption">Maa Madhubala Advani enlightening students</p>
           </div>
         </div>
       </div>
@@ -675,11 +481,11 @@
               Established the foundation with a vision of value-based education and
               holistic development for every underprivileged girl in western Rajasthan.
             </p>
-            <span class="btn-biography">View Biography</span>
+            <span class="btn-outline">View Biography</span>
           </div>
         </a>
 
-        <div class="connector" aria-hidden="true"></div>
+        <div class="track-connector" aria-hidden="true"></div>
 
         <a href="basanti_maa.html" class="leader-card glass-card">
           <div class="leader-img">
@@ -693,11 +499,11 @@
               Carried forward the mission with steadfast resolve, expanding the Trust's
               reach and deepening its impact.
             </p>
-            <span class="btn-biography">View Biography</span>
+            <span class="btn-outline">View Biography</span>
           </div>
         </a>
 
-        <div class="connector" aria-hidden="true"></div>
+        <div class="track-connector" aria-hidden="true"></div>
 
         <a href="madhu_maa.html" class="leader-card glass-card">
           <div class="leader-img">
@@ -711,12 +517,76 @@
               Continues the legacy with dedication, strengthening education, values, and
               spirituality initiatives across all of the Trust's programmes.
             </p>
-            <span class="btn-biography">View Biography</span>
+            <span class="btn-outline">View Biography</span>
           </div>
         </a>
 
       </div>
 
+    </div>
+  </section>
+
+  <!-- =============================================
+       SECTION 4 — TRUST & REACH (merged)
+  ============================================== -->
+  <section id="trust-reach" class="about-section alt-bg">
+    <div class="container">
+
+      <div class="heading">
+        <h2>Trust &amp; Reach</h2>
+        <div class="divider"></div>
+        <p class="subtext">
+          Registered and audited since 1996 — and growing every year.
+        </p>
+      </div>
+
+      <div class="trust-reach-grid">
+
+        <div class="trust-reach-col glass-card">
+          <h3>Legally Registered</h3>
+          <p>
+            Recognised under Section 12A and Section 80G of the Income Tax Act,
+            registered with NGO Darpan, and holding valid FCRA registration.
+          </p>
+          <a href="certificates.html" class="btn-outline">View All Legal Certificates →</a>
+        </div>
+
+        <div class="trust-reach-col glass-card">
+          <h3>Our Reach Today</h3>
+          <div class="trio-grid">
+            <div class="stat-card">
+              <div class="stat-card__number">37,564</div>
+              <div class="stat-card__label">Girls supported</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card__number">45</div>
+              <div class="stat-card__label">Schools</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card__number">32</div>
+              <div class="stat-card__label">Colleges</div>
+            </div>
+          </div>
+          <a href="scholarship_distribution.html" class="btn-outline">See the Full Scholarship Report →</a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =============================================
+       SECTION 5 — CLOSING CTA
+  ============================================== -->
+  <section class="about-closing-cta">
+    <h2>This Vision Became Real Lives</h2>
+    <p>
+      From one man's conviction to thousands of girls who became engineers,
+      officers, doctors, and mentors of their own — see where this story leads.
+    </p>
+    <div class="about-closing-actions">
+      <a href="success_stories.html" class="btn-cta">See the Impact — Real Stories →</a>
+      <a href="donate.html" class="btn-outline">Sponsor a Girl's Education</a>
     </div>
   </section>
 
@@ -729,6 +599,13 @@
   
      loadHTML('header-placeholder', 'header.html', initHeaderSubmenu);
      loadHTML('footer-placeholder', 'footer.html', initBackToTop);
+
+     function toggleInspiration() {
+       const panel = document.getElementById('inspiration-more');
+       const btn   = document.getElementById('inspiration-toggle');
+       const expanded = panel.classList.toggle('expanded');
+       btn.textContent = expanded ? 'Show Less ↑' : 'Read the Full Founding Story ↓';
+     }
    </script>
 
 </body>
