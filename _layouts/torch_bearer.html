@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ page.name }} | Swami Vivekanand Students' Welfare Charitable Trust</title>
+  <meta name="description" content="{{ page.meta_description }}" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/bio-page.css" />
+</head>
+<body class="bio-page">
+
+  <div id="header-placeholder"></div>
+
+  <!-- Breadcrumb -->
+  <nav class="bio-breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <a href="/">Home</a>
+      <span class="sep">/</span>
+      <a href="/about_us/">About Us</a>
+      <span class="sep">/</span>
+      <span class="current">{{ page.name }}</span>
+    </div>
+  </nav>
+
+  <!-- ══ BIO HERO ══ -->
+  <div class="bio-hero">
+    <h1>{{ page.name }}</h1>
+    <p class="lead">{{ page.lead }}</p>
+  </div>
+
+  <main>
+
+    {{ content }}
+
+    <!-- ══ RETURN TO LEADERSHIP HUB ══ -->
+    <div class="bio-return">
+      <p>Want to meet the other torch bearers who carried this mission forward?</p>
+      <a href="/about_us/#leadership" class="btn-cta">← Back to Our Leadership</a>
+    </div>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/script.js"></script>
+  <script>
+     loadHTML('header-placeholder', '/header.html', initHeaderSubmenu);
+     loadHTML('footer-placeholder', '/footer.html', initBackToTop);
+   </script>
+</body>
+</html>

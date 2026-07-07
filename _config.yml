@@ -4,6 +4,9 @@ collections:
   success_stories:
     output: true
     permalink: /success-stories/:path/
+  torch_bearers:
+    output: true
+    permalink: /torch_bearers/:path/
 
 defaults:
   - scope:
@@ -16,3 +19,8 @@ defaults:
       type: success_stories
     values:
       layout: success_story
+  - scope:
+      path: ""
+      type: torch_bearers
+    values:
+      layout: torch_bearer
