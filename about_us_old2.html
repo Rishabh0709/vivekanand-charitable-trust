@@ -9,7 +9,222 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/style.css" />
-  <link rel="stylesheet" href="/assets/css/about-us.css" />
+
+  <style>
+
+    /* =========================================================
+       PAGE HERO
+       (h1 color, page-hero spacing already global; only page-
+       specific layout/typography kept here)
+    ========================================================= */
+    .about-hero {
+      padding: 80px 20px 50px;
+      text-align: center;
+    }
+
+    .about-foundation {
+      max-width: 700px;
+      margin: 18px auto 0;
+    }
+
+    .about-intro {
+      max-width: 780px;
+      margin: 24px auto 0;
+      padding: 28px 36px;
+      background: rgba(255, 245, 220, 0.7);
+      backdrop-filter: blur(12px);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .about-intro p {
+      font-size: 1.08rem;
+      line-height: 1.75;
+      text-align: left;
+      margin: 0 0 20px;
+    }
+
+    .about-intro p:last-child { margin-bottom: 0; }
+
+    .about-intro strong {
+      color: var(--color-brown);
+      font-weight: 600;
+    }
+
+    /* Small link inside the fund-integrity callout — no global equivalent */
+    .fund-integrity-link {
+      display: inline-block;
+      margin-top: 8px;
+      font-weight: 700;
+      color: var(--color-maroon);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(128, 0, 32, 0.35);
+    }
+
+    .fund-integrity-link:hover {
+      color: var(--color-orange);
+      border-color: var(--color-orange);
+    }
+
+    /* =========================================================
+       SHARED SECTION WRAPPER (page-specific — no global equivalent)
+    ========================================================= */
+    .about-section {
+      padding: 80px 20px;
+    }
+
+    .about-section.alt-bg {
+      background: var(--color-cream, rgba(255, 248, 235, 0.55));
+    }
+
+    /* =========================================================
+       INSPIRATION — story blocks
+       (.pull-quote, .glass-card, .text-highlight now global —
+       only the block wrapper itself is page-specific)
+    ========================================================= */
+    .story-block {
+      max-width: 1150px;
+      margin: 0 auto 32px;
+      padding: 40px;
+    }
+
+    /* Caption-style year label under the founding certificate image —
+       no global equivalent, kept local */
+    .year-label {
+      display: block;
+      margin-top: 10px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      color: var(--color-brown);
+    }
+
+    /* =========================================================
+       INSPIRATION — read-more collapse
+       (same interaction idea as the founder bios elsewhere on the
+       site: show the strongest block by default, rest on demand)
+    ========================================================= */
+    .inspiration-more {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.6s ease;
+    }
+
+    .inspiration-more.expanded {
+      max-height: 3000px;
+    }
+
+    .inspiration-toggle-wrap {
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    /* =========================================================
+       PHILOSOPHY — alternating blocks
+       (.split-layout / .split-layout--reverse / .split-layout__*
+       now global — only the block wrapper is page-specific)
+    ========================================================= */
+    .philosophy-block {
+      max-width: 1150px;
+      margin: 0 auto 32px;
+      padding: 40px;
+    }
+
+    /* =========================================================
+       LEADERSHIP TRACK
+       (.leadership-track, .leader-*, .track-connector now global —
+       "View Biography" reuses .btn-outline, with a card-hover fill
+       kept as a small local addition since global .btn-outline
+       only fills on its own direct hover)
+    ========================================================= */
+    .leader-card:hover .btn-outline {
+      background: var(--color-brown);
+      color: #fff;
+    }
+
+    /* =========================================================
+       TRUST & REACH (merged section)
+       (.stat-card / .stat-card__* and .trio-grid now global for
+       the reach numbers — only the two-column wrapper is local)
+    ========================================================= */
+    .trust-reach-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 30px;
+      align-items: stretch;
+    }
+
+    .trust-reach-col {
+      display: flex;
+      flex-direction: column;
+      padding: 34px 30px;
+      text-align: center;
+    }
+
+    .trust-reach-col h3 {
+      color: var(--color-maroon);
+      font-size: 1.15rem;
+      margin-bottom: 14px;
+    }
+
+    .trust-reach-col p {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .trust-reach-col .btn-outline {
+      margin-top: auto;
+      align-self: center;
+    }
+
+    .trust-reach-col .trio-grid {
+      margin: 0 0 20px;
+      gap: 12px;
+    }
+
+    /* =========================================================
+       CLOSING CTA (page-specific — no global equivalent)
+    ========================================================= */
+    .about-closing-cta {
+      text-align: center;
+      padding: 70px 20px 90px;
+      background: linear-gradient(135deg, #fdf6f0, #f7f1e8);
+    }
+
+    .about-closing-cta h2 {
+      color: var(--color-maroon);
+      margin-bottom: 14px;
+    }
+
+    .about-closing-cta p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      text-align: center;
+    }
+
+    .about-closing-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 26px;
+      flex-wrap: wrap;
+    }
+
+    /* =========================================================
+       RESPONSIVE  (page-specific overrides only — global
+       components already carry their own breakpoints)
+    ========================================================= */
+    @media (max-width: 768px) {
+      .about-hero      { padding: 60px 16px 36px; }
+      .about-intro     { padding: 22px 20px; }
+      .about-section   { padding: 60px 16px; }
+      .story-block,
+      .philosophy-block { padding: 26px 20px; margin-bottom: 20px; }
+      .trust-reach-grid { grid-template-columns: 1fr; gap: 16px; }
+      .about-closing-cta { padding: 55px 16px 70px; }
+    }
+  </style>
 </head>
 
 <body>
@@ -18,46 +233,42 @@
   <div id="header-placeholder"></div>
 
   <!-- =============================================
-       PAGE HERO — shared .page-hero component (style.css),
-       same contract used on every inner page (manidweep.html,
-       student_selection.html, etc.)
+       PAGE HERO
   ============================================== -->
-  <div class="page-hero">
-    <span class="page-hero__eyebrow">Our Story &amp; Mission</span>
+  <div class="about-hero">
     <h1>About Us</h1>
-    <div class="page-hero__divider"></div>
-    <p class="page-hero__sub">
-      Since 1996, we have walked alongside underprivileged girls in western Rajasthan —
-      providing education, guidance, and the values needed to shape their own futures.
-    </p>
-  </div>
 
-  <!-- =============================================
-       FOUNDING BELIEF + REGISTRATION DETAILS
-       Sits directly below the hero; deliberately not part of it, so
-       the hero itself stays visually consistent with every other page.
-  ============================================== -->
-  <div class="container container--tight py-4 py-md-5">
     <p class="about-foundation lead">
-      <span class="foundation-belief">At the heart of our work lies a simple belief: financial support to a girl is not charity — it is her rightful due.</span>
+      Since 1996, we have walked alongside underprivileged girls in western Rajasthan — providing education, guidance,
+      and the values needed to shape their own futures.
+    </p>
+
+    <div class="container--tight">
+      <div class="pull-quote" style="text-align: left;">
+        <p>At the heart of our work lies a simple belief: financial support to a girl is not charity — it is her rightful due.</p>
+      </div>
+    </div>
+
+    <p class="about-foundation lead" style="margin-top: 20px;">
       Scholarships here are awarded purely on need, not merit — and it is only after that support arrives that so many of our girls go on to earn merit of their own.
     </p>
 
-    <div class="about-intro glass-panel">
+    <div class="about-intro">
       <p>
         <strong>Swami Vivekanand Students' Welfare Charitable Trust</strong> is a registered public charitable trust
         (12A &amp; 80G compliant, NGO Darpan registered), headquartered at "Manidweep", A-183 Shastri Nagar, Jodhpur.
       </p>
 
-      <div class="fund-integrity-note">
-        <i class="fas fa-check-circle" aria-hidden="true"></i>
-        <p>
+      <div class="stat-callout">
+        <div class="stat-callout__icon"><i class="fas fa-check-circle"></i></div>
+        <p class="stat-callout__desc">
           This Trust is the <strong>independently registered</strong> educational and scholarship initiative of
           Manidweep, its parent spiritual institution.
           <strong>Every donation goes 100% toward girls' education</strong> — not religious activity.
           <a href="manidweep.html" class="fund-integrity-link">Know more about Manidweep →</a>
         </p>
       </div>
+      <!-- Add further lines here -->
     </div>
   </div>
 
@@ -99,9 +310,7 @@
       </div>
 
       <!-- Block 2 & 3 collapse behind "Read the Full Founding Story" by default,
-           so a first-time visitor sees the strongest hook without a long scroll.
-           Expand/collapse behavior is handled by the shared initExpandable()
-           utility in script.js — see the button below. -->
+           so a first-time visitor sees the strongest hook without a long scroll -->
       <div id="inspiration-more" class="inspiration-more">
 
         <!-- Block 2: Building the Vision — three pillars -->
@@ -147,8 +356,8 @@
 
         <!-- Block 3: The First Step — split layout with image -->
         <div class="story-block glass-card">
-          <div class="story-split">
-            <div class="text-col">
+          <div class="split-layout">
+            <div class="split-layout__text">
               <h3>The First Step: Our Foundation</h3>
               <p>
                 To bring this vision to life, the
@@ -168,7 +377,7 @@
                 would naturally lay the foundation for true women's empowerment in society.
               </p>
             </div>
-            <div class="image-col">
+            <div class="split-layout__image">
               <img src="/assets/images/trust.png"
                    alt="Trust certificate of establishment — June 10, 1996">
               <span class="year-label">June 10, 1996</span>
@@ -179,12 +388,7 @@
       </div>
 
       <div class="inspiration-toggle-wrap">
-        <button type="button"
-                class="btn-outline expandable-toggle"
-                id="inspiration-toggle"
-                data-expandable-target="inspiration-more"
-                data-expandable-label-more="Read the Full Founding Story ↓"
-                data-expandable-label-less="Show Less ↑">
+        <button type="button" class="btn-outline" id="inspiration-toggle" onclick="toggleInspiration()">
           Read the Full Founding Story ↓
         </button>
       </div>
@@ -204,8 +408,8 @@
       </div>
 
       <div class="philosophy-block glass-card">
-        <div class="philosophy-layout">
-          <div class="text-col">
+        <div class="split-layout">
+          <div class="split-layout__text">
             <h5>Rooted in Values &amp; Dignity</h5>
             <p>
               The Trust ensures every student is treated with dignity and self-respect —
@@ -215,17 +419,17 @@
               are instilled to ensure true holistic development.
             </p>
           </div>
-          <div class="image-col">
+          <div class="split-layout__image">
             <img src="/assets/images/f6.jpg"
                  alt="Girls listening to Bhaiyaji's encouraging speech">
-            <p>Girls listening to Bhaiyaji's encouraging speech</p>
+            <p class="split-layout__caption">Girls listening to Bhaiyaji's encouraging speech</p>
           </div>
         </div>
       </div>
 
       <div class="philosophy-block glass-card">
-        <div class="philosophy-layout reverse">
-          <div class="text-col">
+        <div class="split-layout split-layout--reverse">
+          <div class="split-layout__text">
             <h5>Building Confident &amp; Capable Individuals</h5>
             <p>
               Through Personality Development and Sanskar Classes, students are guided
@@ -236,10 +440,10 @@
               and the nation.
             </p>
           </div>
-          <div class="image-col">
+          <div class="split-layout__image">
             <img src="/assets/images/sanskar_girls.jpg"
                  alt="Maa Madhubala Advani enlightening students">
-            <p>Maa Madhubala Advani enlightening students</p>
+            <p class="split-layout__caption">Maa Madhubala Advani enlightening students</p>
           </div>
         </div>
       </div>
@@ -249,6 +453,7 @@
 
   <!-- =============================================
        SECTION 3 — OUR LEADERSHIP
+       Full-width rectangular photo + always-visible button
   ============================================== -->
   <section id="leadership" class="about-section">
     <div class="container">
@@ -348,18 +553,18 @@
 
         <div class="trust-reach-col glass-card">
           <h3>Our Reach Today</h3>
-          <div class="reach-grid-compact">
-            <div class="reach-card">
-              <div class="reach-number" data-stat="girlsSupported"></div>
-              <div class="reach-label">Girls supported</div>
+          <div class="trio-grid">
+            <div class="stat-card">
+              <div class="stat-card__number">37,564</div>
+              <div class="stat-card__label">Girls supported</div>
             </div>
-            <div class="reach-card">
-              <div class="reach-number" data-stat="schools"></div>
-              <div class="reach-label">Schools</div>
+            <div class="stat-card">
+              <div class="stat-card__number">45</div>
+              <div class="stat-card__label">Schools</div>
             </div>
-            <div class="reach-card">
-              <div class="reach-number" data-stat="colleges"></div>
-              <div class="reach-label">Colleges</div>
+            <div class="stat-card">
+              <div class="stat-card__number">32</div>
+              <div class="stat-card__label">Colleges</div>
             </div>
           </div>
           <a href="scholarship_distribution.html" class="btn-outline">See the Full Scholarship Report →</a>
@@ -390,13 +595,18 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/assets/js/script.js"></script>
-  <script src="/assets/js/stats.js"></script>
   <script>
-    loadHTML('header-placeholder', 'header.html', initHeaderSubmenu);
-    loadHTML('footer-placeholder', 'footer.html', initBackToTop);
+  
+     loadHTML('header-placeholder', 'header.html', initHeaderSubmenu);
+     loadHTML('footer-placeholder', 'footer.html', initBackToTop);
 
-    initExpandable('.expandable-toggle');
-  </script>
+     function toggleInspiration() {
+       const panel = document.getElementById('inspiration-more');
+       const btn   = document.getElementById('inspiration-toggle');
+       const expanded = panel.classList.toggle('expanded');
+       btn.textContent = expanded ? 'Show Less ↑' : 'Read the Full Founding Story ↓';
+     }
+   </script>
 
 </body>
 </html>

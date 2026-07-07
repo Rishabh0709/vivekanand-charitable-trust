@@ -1033,6 +1033,18 @@ section { padding: 80px 0; }
 
 .leader-desc { font-size: 0.86rem; color: var(--text-secondary); line-height: 1.55; margin: 0 0 16px; flex: 1; }
 
+/* "View Biography" pill inside a leader card — reuses the existing
+   .btn-outline component as-is (same visual treatment) rather than
+   defining a parallel .btn-biography class. The only addition needed is
+   this hover trigger: since the whole card is the clickable link, the
+   pill should fill when *any part of the card* is hovered, not only
+   when the pointer is directly over the small pill itself. */
+.leader-card:hover .btn-outline {
+  background: var(--color-brown);
+  color: #fff;
+}
+
+
 /* Animated connector between leader cards */
 .track-connector {
   width: 48px;

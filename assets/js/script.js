@@ -189,6 +189,69 @@ function initSwiperCarousel(selector, overrides = {}) {
 
 
 /* ==========================================================================
+   EXPANDABLE CONTENT (progressive disclosure)
+   -----------------------------------------------------------------------
+   Generic "show more / show less" utility for any collapsible section
+   driven by a max-height CSS transition. Replaces bespoke, page-local
+   toggle scripts (e.g. a page's own toggleInspiration()-style function)
+   with one shared, accessible implementation.
+
+   MARKUP CONTRACT:
+     <button class="expandable-toggle"
+             data-expandable-target="some-id"
+             data-expandable-label-more="Read More ↓"
+             data-expandable-label-less="Show Less ↑">
+       Read More ↓
+     </button>
+     ...
+     <div id="some-id" class="inspiration-more"> ... </div>
+
+   The target's own CSS handles the collapsed/expanded look (max-height:0
+   by default; an "expanded" class — or whatever class name the target
+   already uses — grows it). This utility only handles:
+     - toggling that class
+     - keeping aria-expanded / aria-controls correct for screen readers
+     - using `inert` so keyboard/AT users can never tab into content
+       that's still visually clipped, instead of just hiding it from sight
+
+   data-expandable-class lets a page reuse its own existing class name
+   (e.g. "expanded", "show") instead of forcing a new one.
+   ========================================================================== */
+function initExpandable(toggleSelector) {
+  document.querySelectorAll(toggleSelector).forEach((btn) => {
+    const targetId = btn.dataset.expandableTarget;
+    const target = targetId
+      ? document.getElementById(targetId)
+      : btn.parentElement.querySelector('.expandable-content, .founder-full, .inspiration-more');
+
+    if (!target) {
+      console.warn('initExpandable: no matching target found for', btn);
+      return;
+    }
+
+    const expandedClass = btn.dataset.expandableClass || 'expanded';
+    const moreLabel = btn.dataset.expandableLabelMore || btn.textContent.trim();
+    const lessLabel = btn.dataset.expandableLabelLess || 'Show Less ↑';
+
+    // Collapsed by default: remove the region from the tab order and the
+    // accessibility tree entirely, rather than leaving it focusable-but-
+    // invisible behind a max-height:0 clip.
+    target.inert = true;
+    btn.setAttribute('aria-expanded', 'false');
+    if (targetId) btn.setAttribute('aria-controls', targetId);
+
+    btn.addEventListener('click', () => {
+      const isExpanding = !target.classList.contains(expandedClass);
+      target.classList.toggle(expandedClass, isExpanding);
+      target.inert = !isExpanding;
+      btn.setAttribute('aria-expanded', String(isExpanding));
+      btn.textContent = isExpanding ? lessLabel : moreLabel;
+    });
+  });
+}
+
+
+/* ==========================================================================
    DOM-DEPENDENT PAGE COMPONENTS (wrapped safely)
    ========================================================================== */
 document.addEventListener('DOMContentLoaded', function () {
