@@ -30,6 +30,7 @@
   <section aria-label="Success stories" class="container pb-5">
     <div class="row g-4">
 
+	{% assign sorted_stories = site.success_stories | sort: 'order' %}	
       {% for story in site.success_stories %}
       <div class="col-md-6 col-lg-4 d-flex">
         <article class="glass-card story-list-card w-100">
