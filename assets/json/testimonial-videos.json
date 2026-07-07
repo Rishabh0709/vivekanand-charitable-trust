@@ -1,0 +1,13 @@
+{
+  "students": [
+    { "name": "Kanika Gehlot",   "role": "Student", "videoId": "1SAEiQBBy-wlvoRZqCQwLZXo2PQZvOtsQ" },
+    { "name": "Deepika Dadhich", "role": "Student", "videoId": "12UeAP-XezfCn-j3FcmpF7s8xJWNmGU5L" },
+    { "name": "Muskaan Sultan",  "role": "Student", "videoId": "1dL50vSTF04yNzioHwBbeXDJaeOlPcFYA" }
+  ],
+  "dignitaries": [
+    { "name": "Prof. (Dr.) V K Bhansali", "role": "Former Head, MBM Engineering College",              "videoId": "1qk7E-RCt39-R5tDfDzS4GiIUDALR89yj" },
+    { "name": "Navneet Agarwal",          "role": "Director General (Ex), JIET Group of Institutions", "videoId": "1yNmIhm3my1PNBd1awJI2iqVGQRJcSb97" },
+    { "name": "Former Director",          "role": "Technical Education, Rajasthan",                    "videoId": "157M4dB4c4oWf3tooChUY5XkJAXhYsttc" },
+    { "name": "DIG, BSF",                 "role": "Rajasthan Frontier",                                "videoId": "1puLiPNiCjzsdIIba4CXlqKIHRePi5vy7" }
+  ]
+}

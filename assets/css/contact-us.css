@@ -1,0 +1,123 @@
+/* ==========================================================================
+   contact-us.css — CONTACT US PAGE ONLY
+   Used by  : contact_us.html
+   Depends  : style.css (tokens, .page-hero, .glass-panel, .btn-cta, .icon-circle)
+   ========================================================================== */
+
+.contact-page { background: var(--gradient-page); }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 32px;
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto 60px;
+}
+
+/* ── Enquiry form panel ───────────────────────────────────────────────── */
+.contact-form-panel h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.contact-form-panel h2 i { color: var(--color-orange); font-size: 1.05rem; }
+
+.form-intro { color: var(--text-secondary); margin-bottom: 28px; }
+
+.form-row { display: flex; gap: 18px; }
+.form-row .form-field { flex: 1; }
+
+.form-field { margin-bottom: 20px; }
+
+.form-field label {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.form-field .required { color: var(--color-brick); }
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  padding: 12px 14px;
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  color: var(--text-primary);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(255, 195, 92, 0.3);
+}
+
+.form-field textarea { resize: vertical; min-height: 120px; }
+
+.form-field.has-error input,
+.form-field.has-error select,
+.form-field.has-error textarea { border-color: var(--color-brick); }
+
+.form-error-text {
+  display: none;
+  font-size: 0.8rem;
+  color: var(--color-brick);
+  margin-top: 6px;
+}
+
+.form-field.has-error .form-error-text { display: block; }
+
+/* Honeypot — invisible to people, present for bots */
+.form-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+.form-submit-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.form-status { font-family: 'Inter', sans-serif; font-size: 0.88rem; font-weight: 600; display: none; }
+.form-status.success { display: block; color: #1b5e20; }
+.form-status.error   { display: block; color: var(--color-brick); }
+
+/* ── Contact info column ──────────────────────────────────────────────── */
+.contact-info-panel { display: flex; flex-direction: column; gap: 24px; }
+
+.contact-info-item { display: flex; align-items: flex-start; gap: 14px; }
+.contact-info-item .icon-circle { flex-shrink: 0; margin: 0; }
+.contact-info-item h3 { font-size: 0.95rem; margin-bottom: 4px; }
+.contact-info-item p,
+.contact-info-item a { font-size: 0.92rem; color: var(--text-secondary); margin: 0; }
+.contact-info-item a:hover { color: var(--color-maroon); }
+
+.contact-office-photo img {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  width: 60%;
+  height: 25%;
+  object-fit: cover;
+}
+
+.contact-map-wrap { max-width: 1100px; margin: 0 auto; }
+.contact-map-frame { border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); }
+
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .form-row { flex-direction: column; gap: 0; }
+}

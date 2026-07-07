@@ -3,186 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Testimonials | Swami Vivekanand Students’ Welfare Charitable Trust</title>
+  <title>Testimonials | Swami Vivekanand Students' Welfare Charitable Trust</title>
+  <meta name="description" content="Hear directly from students and dignitaries about the impact of the Swami Vivekanand Students' Welfare Charitable Trust." />
 
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/style.css" />
-
-  <style>
-.testimonial-gallery {
-  text-align: center;
-  padding: 50px 20px;
-}
-
-.testimonial-gallery h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.testimonial-gallery p {
-  margin-bottom: 25px;
-  color: #555;
-}
-
-/* Tabs */
-.tabs {
-  margin-bottom: 25px;
-}
-.tab-btn {
-  background: #eee;
-  border: none;
-  padding: 12px 20px;
-  margin: 0 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 8px;
-  transition: background 0.3s;
-}
-.tab-btn.active {
-  background: #0077cc;
-  color: #fff;
-}
-
-/* Video Grid */
-.testimonial-video-grid {
-  display: none; /* hidden by default */
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-.testimonial-video-grid.active {
-  display: grid;
-}
-
-.caption {
-  margin-top: 10px;
-  font-weight: bold;
-  color: #444;
-}
-
-  </style>
+  <link rel="stylesheet" href="/assets/css/testimonial.css" />
 </head>
-<body>
+<body class="page-bg">
 
-  <!-- Header -->
   <div id="header-placeholder"></div>
-<section class="testimonial-gallery">
-  
-  <h3>Hear from students and dignitaries about their experiences</h3>
 
-  <!-- Category Tabs -->
-  <div class="tabs">
-    <button class="tab-btn active" onclick="showCategory('students')">🎓 Students</button>
-    <button class="tab-btn" onclick="showCategory('dignitaries')">🌟 Dignitaries</button>
+  <div class="page-hero">
+    <span class="page-hero__eyebrow">In Their Own Words</span>
+    <h1>Testimonials</h1>
+    <div class="page-hero__divider"></div>
+    <p class="page-hero__sub">
+      Hear directly from the students we've supported, and from the educators and
+      dignitaries who have watched this mission unfold over the years.
+    </p>
   </div>
 
-  <!-- Student Videos -->
-  <div class="testimonial-video-grid category students active">
-    <div class="testimonial-video-card">
-      <iframe src="https://drive.google.com/file/d/1SAEiQBBy-wlvoRZqCQwLZXo2PQZvOtsQ/preview" allowfullscreen></iframe>
-      <p class="caption">Kanika Gehlot</p>
-    </div>
-    <div class="testimonial-video-card">
-      <iframe src="https://drive.google.com/file/d/12UeAP-XezfCn-j3FcmpF7s8xJWNmGU5L/preview" allowfullscreen></iframe>
-      <p class="caption">Deepika Dadhich</p>
-    </div>
-    <!-- Add more student videos -->
-	<div class="testimonial-video-card">
-      <iframe src="https://drive.google.com/file/d/1dL50vSTF04yNzioHwBbeXDJaeOlPcFYA/preview" allowfullscreen></iframe>
-      <p class="caption">Muskaan Sultan</p>
+  <main class="testimonial-page-wrap">
+    <div id="testimonial-tabs" class="testimonial-tabs"></div>
+    <div id="testimonial-grid" class="testimonial-grid" aria-live="polite"></div>
+  </main>
+
+  <!-- Shared video modal — one iframe, reused for every testimonial -->
+  <div class="modal fade testimonial-video-modal" id="testimonialVideoModal"
+       tabindex="-1" aria-labelledby="testimonialVideoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+                style="z-index: 2;" data-bs-dismiss="modal" aria-label="Close video"></button>
+        <div class="modal-body">
+          <iframe src="" title="" allow="autoplay" allowfullscreen></iframe>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- Dignitary Videos -->
-  <div class="testimonial-video-grid category dignitaries">
-    <div class="testimonial-video-card">
-      <iframe src="https://drive.google.com/file/d/1qk7E-RCt39-R5tDfDzS4GiIUDALR89yj/preview" allowfullscreen></iframe>
-      <p class="caption">Prof. (Dr.) V K Bhansali - Former Head - MBM Engineering College</p>
-    </div>
-    <div class="testimonial-video-card">
-      <iframe src="https://drive.google.com/file/d/1yNmIhm3my1PNBd1awJI2iqVGQRJcSb97/preview" allowfullscreen></iframe>
-      <p class="caption">Navneet Agarwal - Director General(Ex) JIET Group Of Institutions</p>
-    </div>
-    <!-- Add more dignitary videos -->
-	<div class="testimonial-video-card">
-      <iframe src="https://drive.google.com/file/d/157M4dB4c4oWf3tooChUY5XkJAXhYsttc/preview" allowfullscreen></iframe>
-      <p class="caption">Former Director - Technical Education, Rajasthan</p>
-    </div>
-    <div class="testimonial-video-card">
-      <iframe src="https://drive.google.com/file/d/1puLiPNiCjzsdIIba4CXlqKIHRePi5vy7/preview" allowfullscreen></iframe>
-      <p class="caption">DIG-BSF (Rajasthan Frontier)</p>
-    </div>
-  </div>
-</section>
-
- <!-- Footer -->
   <div id="footer-placeholder"></div>
 
-  <!-- Bootstrap and Main JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/assets/js/script.js"></script>
-
-  <!-- Load header and footer partials -->
+  <script src="/assets/js/testimonial-page.js"></script>
   <script>
     loadHTML('header-placeholder', 'header.html', initHeaderSubmenu);
     loadHTML('footer-placeholder', 'footer.html', initBackToTop);
+
+    initTestimonialPage({
+      dataUrl: '/assets/json/testimonial-videos.json',
+      tabsId:  'testimonial-tabs',
+      gridId:  'testimonial-grid',
+      modalId: 'testimonialVideoModal'
+    });
   </script>
-
-<!-- For toggling between 'Students' & 'dignitaries' tab -->  
-  <script>
-  function showCategory(category) {
-  // Hide all
-  document.querySelectorAll('.testimonial-video-grid').forEach(grid => {
-    grid.classList.remove('active');
-  });
-
-  // Remove active tab
-  document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.classList.remove('active');
-  });
-
-  // Show selected category
-  document.querySelector('.' + category).classList.add('active');
-  event.target.classList.add('active');
-}
-
-  </script>
-  <script>
-document.querySelectorAll(".testimonial-video-card iframe").forEach(video => {
-  video.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    const videoURL = this.getAttribute("src");
-
-    // Set the video inside the popup
-    document.getElementById("popupVideo").src = videoURL;
-
-    // Open Bootstrap modal
-    const modal = new bootstrap.Modal(document.getElementById("videoModal"));
-    modal.show();
-  });
-});
-
-// Clear video when modal closes
-document.getElementById("videoModal").addEventListener("hidden.bs.modal", function () {
-  document.getElementById("popupVideo").src = "";
-});
-</script>
-<!-- Video Popup Modal -->
-<div class="modal fade" id="videoModal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered modal-xl">
-    <div class="modal-content">
-      <div class="modal-body p-0">
-        <iframe id="popupVideo" width="100%" height="500" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"></button>
-    </div>
-  </div>
-</div>
-
 </body>
 </html>
-

@@ -3,104 +3,153 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact Us | Swami Vivekanand Students’ Welfare Charitable Trust</title>
+  <title>Contact Us | Swami Vivekanand Students' Welfare Charitable Trust</title>
+  <meta name="description" content="Get in touch with the Swami Vivekanand Students' Welfare Charitable Trust — send an enquiry, call, email, or visit us at Manidweep, Jodhpur." />
 
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/style.css" />
-
-  <style>
-   
-    .info-icon {
-  color: #1a237e;
-  margin-right: 8px;
-  width: 22px;
-  text-align: center;
-}
-
-.p-4 strong {
-  color: #1a237e;
-}
-
-  </style>
+  <link rel="stylesheet" href="/assets/css/contact-us.css" />
 </head>
-<body>
+<body class="contact-page">
 
-  <!-- Header -->
   <div id="header-placeholder"></div>
 
-<main class="container py-5">
-
-  <div class="text-center mb-4">
-    <h2 class="fw-bold">Get In Touch</h2>
-    <p>
-      Feel free to contact us for any assistance or information.
+  <div class="page-hero">
+    <span class="page-hero__eyebrow">We'd Love to Hear From You</span>
+    <h1>Contact Us</h1>
+    <div class="page-hero__divider"></div>
+    <p class="page-hero__sub">
+      Whether you have a question, want to volunteer, or are ready to sponsor a girl's
+      education — send us a message and we'll get back to you personally.
     </p>
   </div>
 
-  <div class="row g-4 align-items-center">
+  <main class="container py-4">
 
-    <!-- Contact Info -->
-    <div class="col-md-6">
-      <div class="p-4 contact-box">
+    <div class="contact-grid">
 
-        <p class="mb-3">
-          <i class="fa fa-map-marker-alt info-icon"></i>
-          <strong>Address:</strong><br>
-          'Manidweep' A-183 Shastri Nagar,<br>
-          Near Lachoo Memorial College, Jodhpur, Rajasthan, 342001, India
-        </p>
+      <!-- ── Enquiry form ─────────────────────────────────────────────── -->
+      <section class="glass-panel contact-form-panel" aria-labelledby="enquiry-heading">
+        <h2 id="enquiry-heading"><i class="fas fa-comment-dots" aria-hidden="true"></i> Send an Enquiry</h2>
+        <p class="form-intro">Fields marked <span class="required">*</span> are required.</p>
 
-        <p class="mb-3">
-          <i class="fa fa-phone info-icon"></i>
-          <strong>Phone:</strong> +91-9414917901, 0291-2621189
-        </p>
+        <form id="enquiry-form"
+      data-endpoint="https://script.google.com/a/macros/manidweepjodhpur.org/s/AKfycbzK8TB6wvtIYfg_AqEC8ZXmeaC1uRO9C5NrF1lXrHOdVIMZwsxP-_hJKWpqU-z2GCUunQ/exec"
+      data-response-mode="opaque"
+      novalidate>
 
-        <p class="mb-0">
-          <i class="fa fa-envelope info-icon"></i>
-          <strong>Email:</strong> kishoreggm@gmail.com
-        </p>
+          <!-- Honeypot — hidden from people, visible to bots -->
+          <div class="form-hp" aria-hidden="true">
+            <label for="website">Leave this field empty</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
 
+          <div class="form-row">
+            <div class="form-field">
+              <label for="enq-name">Full Name <span class="required">*</span></label>
+              <input type="text" id="enq-name" name="name" required autocomplete="name">
+              <p class="form-error-text">Please enter your name.</p>
+            </div>
+            <div class="form-field">
+              <label for="enq-email">Email <span class="required">*</span></label>
+              <input type="email" id="enq-email" name="email" required autocomplete="email">
+              <p class="form-error-text">Please enter a valid email address.</p>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="enq-phone">Phone (optional)</label>
+              <input type="tel" id="enq-phone" name="phone" autocomplete="tel">
+            </div>
+            <div class="form-field">
+              <label for="enq-subject">Subject <span class="required">*</span></label>
+              <select id="enq-subject" name="subject" required>
+                <option value="" disabled selected>Choose one\u2026</option>
+                <option value="General Enquiry">General Enquiry</option>
+                <option value="Volunteering">Volunteering</option>
+                <option value="Donation / Sponsorship">Donation / Sponsorship</option>
+                <option value="School / College Partnership">School / College Partnership</option>
+                <option value="Media / Press">Media / Press</option>
+                <option value="Other">Other</option>
+              </select>
+              <p class="form-error-text">Please choose a subject.</p>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="enq-message">Message <span class="required">*</span></label>
+            <textarea id="enq-message" name="message" required></textarea>
+            <p class="form-error-text">Please enter a message.</p>
+          </div>
+
+          <div class="form-submit-row">
+            <button type="submit" class="btn-cta">Send Message</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
+
+      <!-- ── Contact info ─────────────────────────────────────────────── -->
+      <aside class="contact-info-panel" aria-label="Contact details">
+
+        <div class="contact-info-item">
+          <span class="icon-circle" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></span>
+          <div>
+            <h3>Address</h3>
+            <p>'Manidweep' A-183 Shastri Nagar,<br>Near Lachoo Memorial College, Jodhpur, Rajasthan, 342001, India</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <span class="icon-circle" aria-hidden="true"><i class="fas fa-phone"></i></span>
+          <div>
+            <h3>Phone</h3>
+            <p><a href="tel:+919414917901">+91-9414917901</a> &middot; <a href="tel:+912912621189">0291-2621189</a></p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <span class="icon-circle" aria-hidden="true"><i class="fas fa-envelope"></i></span>
+          <div>
+            <h3>Email</h3>
+            <p><a href="mailto:kishoreggm@gmail.com">kishoreggm@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="contact-office-photo">
+          <img src="/assets/images/manidweep_home.jpg"
+               alt="Manidweep — the Trust's head office in Shastri Nagar, Jodhpur">
+        </div>
+      </aside>
+
+    </div>
+
+    <!-- ── Map ─────────────────────────────────────────────────────────── -->
+    <div class="contact-map-wrap">
+      <div class="ratio ratio-16x9 contact-map-frame">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3577.7894731051456!2d72.99593527425716!3d26.268495277037033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39418dd7248ff2a1%3A0xa4eab9bf28afbe9c!2sSwami%20Vivekanand%20Students%20Welfare%20Charitable%20Trust!5e0!3m2!1sen!2sae!4v1756071689926!5m2!1sen!2sae"
+          title="Map showing the Trust's location at Manidweep, Shastri Nagar, Jodhpur"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
     </div>
 
-    <!-- Office Image -->
-    <div class="col-md-6 text-center">
-      <img src="/assets/images/manidweep_home.jpg" 
-           class="img-fluid rounded shadow-sm" 
-           style="max-height:350px; object-fit:cover;"
-           alt="Office">
-    </div>
+  </main>
 
-  </div>
-
-  <!-- Map Section -->
-  <div class="mt-5">
-    <div class="ratio ratio-16x9 shadow-sm rounded">
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3577.7894731051456!2d72.99593527425716!3d26.268495277037033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39418dd7248ff2a1%3A0xa4eab9bf28afbe9c!2sSwami%20Vivekanand%20Students%20Welfare%20Charitable%20Trust!5e0!3m2!1sen!2sae!4v1756071689926!5m2!1sen!2sae"
-        loading="lazy"
-        allowfullscreen
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
-  </div>
-
-</main>
-
-
-  <!-- Footer -->
   <div id="footer-placeholder"></div>
 
-  <!-- Bootstrap and main JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/assets/js/script.js"></script>
-
-  <!-- Load header and footer partials -->
+  <script src="/assets/js/contact-form.js"></script>
   <script>
     loadHTML('header-placeholder', 'header.html', initHeaderSubmenu);
     loadHTML('footer-placeholder', 'footer.html', initBackToTop);
+    initContactForm('enquiry-form');
   </script>
 </body>
 </html>
