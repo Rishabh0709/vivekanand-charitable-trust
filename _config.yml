@@ -1,8 +1,18 @@
 permalink: /:basename/
 
+collections:
+  success_stories:
+    output: true
+    permalink: /success-stories/:path/
+
 defaults:
   - scope:
-      path: ""      # apply to all files
-      type: pages   # only HTML/Markdown pages
+      path: ""
+      type: pages
     values:
       layout: none
+  - scope:
+      path: ""
+      type: success_stories
+    values:
+      layout: success_story

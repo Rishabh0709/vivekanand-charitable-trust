@@ -36,7 +36,7 @@
     <!-- ── Breadcrumb ───────────────────────────────────────────────── -->
     <nav aria-label="breadcrumb" class="mb-4">
       <ol class="breadcrumb custom-breadcrumb">
-        <li class="breadcrumb-item"><a href="/index/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
         <li class="breadcrumb-item"><a href="/success_stories/">Success Stories</a></li>
         <li class="breadcrumb-item active" id="breadcrumb-name" aria-current="page"></li>
       </ol>
@@ -137,7 +137,7 @@
 
       /* Redirect to listing if no id provided */
       if (!storyId) {
-        window.location.replace('success_stories.html');
+        window.location.replace('/success_stories/');
         return;
       }
 
@@ -150,7 +150,7 @@
 
         /* Unknown id → redirect rather than showing a broken page */
         if (!story) {
-          window.location.replace('success_stories.html');
+          window.location.replace('/success_stories/');
           return;
         }
 
@@ -199,7 +199,7 @@
       } catch (err) {
         /* Log and redirect — never leave the user on a broken template */
         console.error('Story data load failed:', err);
-        window.location.replace('success_stories.html');
+        window.location.replace('/success_stories/');
       }
     }
 
