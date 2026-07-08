@@ -48,6 +48,17 @@
 
   /* Transition */
   --transition-base: 0.3s ease;
+  
+/* Text color reserved for .btn-cta's label only. Ordinary --color-maroon
+   sits at 4.61:1 against the orange end of the button's gold→orange
+   gradient — a technical AA pass with no safety margin. This darker
+   value holds ≥5.7:1 across the full gradient, so gradient rendering,
+   sub-pixel anti-aliasing, or a future gradient-angle tweak can't push
+   it below the 4.5:1 AA threshold. Scoped to this one variable rather
+   than darkening --color-maroon globally, since maroon elsewhere (solid
+   backgrounds, headings) already passes with plenty of room.
+*/
+--btn-cta-text: #621A1C;
 }
 
 
@@ -743,7 +754,7 @@ section { padding: 80px 0; }
 .btn-cta {
   display: inline-block;
   background: linear-gradient(135deg, var(--color-gold), var(--color-orange));
-  color: var(--color-maroon);
+  color: var(--btn-cta-text); 
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 0.95rem;
@@ -759,7 +770,6 @@ section { padding: 80px 0; }
 .btn-cta:hover {
   transform: translateY(-3px);
   box-shadow: 0 14px 32px rgba(241, 157, 56, 0.4);
-  color: var(--color-maroon);
 }
 
 /* Outline variant */

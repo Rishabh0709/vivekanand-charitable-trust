@@ -183,7 +183,7 @@
       transition: background 0.3s ease, color 0.3s ease;
     }
 
-    .journey-row:hover .journey-node { background: var(--color-gold); color: #fff; }
+    .journey-row:hover .journey-node { background: var(--color-gold); color: var(--color-maroon); }
 
     .journey-card {
       background: rgba(255, 255, 255, 0.65); backdrop-filter: blur(14px); border-radius: 16px;
@@ -312,10 +312,15 @@
 
   <div id="header-placeholder"></div>
 
-  <header class="page-hero">
-    <h1>Our Approach</h1>
-  </header>
-
+  <div class="page-hero">
+  <span class="page-hero__eyebrow">Holistic Empowerment</span>
+  <h1>Our Approach</h1>
+  <div class="page-hero__divider"></div>
+  <p class="page-hero__sub">
+    Rooted in timeless values and modern progress, our multi-dimensional strategy nurtures 
+    intellect, health, and social responsibility to prepare young women to lead and uplift their communities.
+  </p>
+</div>
   <main>
 
     <!-- ════════════════════════════════════════════════════
@@ -323,6 +328,8 @@
     ════════════════════════════════════════════════════════ -->
     <section class="container px-4" aria-labelledby="problem-heading">
       <div class="container--narrow">
+
+		 <h2 id="problem-heading" class="visually-hidden">The Societal Challenge We Address</h2>
 
         <div class="row g-4 align-items-stretch">
 
