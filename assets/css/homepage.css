@@ -57,34 +57,36 @@
    below still carries the larger emotional headline. */
 .hero-org-name {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.15rem, 2.6vw, 1.55rem);
-  font-weight: 700;
-  letter-spacing: 0.3px;
-  color: #fff;
-  margin-bottom: 0;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  line-height: 1.5;
+  margin-bottom: 20px; 
+  color: #fffaf3; /* warm-white, not pure white — sits calmer next to the gold */
+  text-align: center; 
 }
-
-/* .divider (global, gold gradient bar) is reused directly in the markup
-   between .hero-kicker and .hero-tagline — no override needed here */
 
 .hero-tagline {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2.1rem, 5vw, 3.4rem);
-  line-height: 1.18;
+  font-style: italic;
+  font-size: clamp(1.3rem, 2.5vw, 1.5rem);
+  line-height: 1.15;
   font-weight: 700;
-  color: #fff;
-  margin-bottom: 18px;
+  color: #e9c98f; /* warm gold — matches the divider, distinct from tagline white */
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35); /* lifts it off busy photo backgrounds */
+  margin-bottom: 20px;
   text-align: center;
 }
 
 .hero-description {
-  max-width: 620px;
+  max-width: 580px;
   margin: 0 auto 32px;
-  font-size: clamp(0.95rem, 2vw, 1.08rem);
-  line-height: 1.8;
-  color: #f3ede7;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.95rem, 1.9vw, 1.05rem);
+  line-height: 1.85;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.78); /* clearly the quietest voice */
 }
-
 .hero-actions {
   display: flex;
   align-items: center;

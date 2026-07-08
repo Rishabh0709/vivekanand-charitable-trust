@@ -3,7 +3,7 @@ permalink: /:basename/
 collections:
   success_stories:
     output: true
-    permalink: /success-stories/:path/
+    permalink: /success_stories/:path/
 
 defaults:
   - scope:
