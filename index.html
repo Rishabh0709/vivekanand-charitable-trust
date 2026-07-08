@@ -426,27 +426,6 @@
 
 </section>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  const cards = document.querySelectorAll('.impact-card');
-
-	const observer3 = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      cards.forEach((card, index) => {
-        setTimeout(() => {
-          card.classList.add('show');
-        }, index * 120);
-      });
-    }
-  });
-}, { threshold: 0.2 });
-
-observer3.observe(document.querySelector('.impact-grid'));
-
-});
-</script>
 <!-- -->
 
 <!-- STORIES SECTION -->
@@ -705,19 +684,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // SCROLL ANIMATION
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  }, { threshold: 0.2 });
-
-  document.querySelectorAll(".fade-in").forEach(el => {
-    observer.observe(el);
-  });
-
+  
 });
 </script>
 <!-- -->

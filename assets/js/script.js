@@ -250,6 +250,78 @@ function initExpandable(toggleSelector) {
   });
 }
 
+/* ==========================================================================
+   SCROLL REVEAL
+   -----------------------------------------------------------------------
+   Generic "fade/slide into view on scroll" utility, replacing the three
+   near-identical IntersectionObserver blocks that used to live inline in
+   index.html (twice) and approach.html. Covers two shapes:
+
+     SIMPLE — each matched element reveals itself independently as it
+     enters the viewport (approach.html's .journey-row timeline).
+
+     STAGGERED GROUP — pass `staggerSelector` to instead treat each
+     matched element as a *container*; once the container enters view,
+     its children matching `staggerSelector` reveal one after another,
+     `staggerDelay` ms apart (index.html's .impact-card wave, which
+     should animate together as a set once the section is visible,
+     not one-by-one as each card individually scrolls in).
+
+   Both modes stop observing after the first reveal by default — the
+   original .impact-card and .fade-in blocks never did this, so they
+   kept re-running IntersectionObserver callbacks for the lifetime of
+   the page for no visible benefit (classList.add is idempotent, so
+   nothing changed on repeat triggers — just wasted work).
+
+   MARKUP CONTRACT: none — this observes whatever selector you give it.
+   The *_reveal.css already targets each project's own class names
+   (.fade-in, .journey-row, .impact-card), so no CSS changes needed.
+   ========================================================================== */
+
+/**
+ * @param {string} selector                  Elements (or containers) to observe.
+ * @param {Object} [options]
+ * @param {string}  [options.revealClass='visible']  Class added on reveal.
+ * @param {number}  [options.threshold=0.2]          IntersectionObserver threshold.
+ * @param {string}  [options.staggerSelector]        If set, `selector` matches are
+ *        treated as containers; children matching this selector inside each
+ *        are revealed one-by-one, `staggerDelay` ms apart, once the container
+ *        itself enters view.
+ * @param {number}  [options.staggerDelay=120]       Ms between staggered children.
+ * @param {boolean} [options.once=true]              Stop observing after reveal.
+ * @returns {IntersectionObserver|null}   Null if no matching elements exist on this page.
+ */
+function initScrollReveal(selector, options = {}) {
+  const {
+    revealClass = 'visible',
+    threshold = 0.2,
+    staggerSelector = null,
+    staggerDelay = 120,
+    once = true,
+  } = options;
+
+  const targets = document.querySelectorAll(selector);
+  if (!targets.length) return null;
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+
+      if (staggerSelector) {
+        entry.target.querySelectorAll(staggerSelector).forEach((child, index) => {
+          setTimeout(() => child.classList.add(revealClass), index * staggerDelay);
+        });
+      } else {
+        entry.target.classList.add(revealClass);
+      }
+
+      if (once) obs.unobserve(entry.target);
+    });
+  }, { threshold });
+
+  targets.forEach((el) => observer.observe(el));
+  return observer;
+}
 
 /* ==========================================================================
    DOM-DEPENDENT PAGE COMPONENTS (wrapped safely)
@@ -275,6 +347,18 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   document.querySelectorAll('.impact-counter').forEach(animateCounter);
 
+	/* ── Scroll-reveal — safe no-op on pages without these elements ───────
+     .fade-in         → about_us leadership blocks / any generic fade-in
+     .impact-grid      → index.html's staggered impact-card wave
+     .journey-row      → approach.html's vertical pillar timeline        */
+  initScrollReveal('.fade-in', { revealClass: 'visible', threshold: 0.2 });
+  initScrollReveal('.impact-grid', {
+    staggerSelector: '.impact-card',
+    revealClass: 'show',
+    staggerDelay: 120,
+    threshold: 0.2,
+  });
+  initScrollReveal('.journey-row', { revealClass: 'visible', threshold: 0.15 });
 
   /* ── Gallery modal (chart/list lightbox on index.html) ────────────────── */
   const galleryModal = document.getElementById('galleryModal');
