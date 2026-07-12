@@ -16,8 +16,8 @@
   <style>
     /* ================================================================
        infrastructure.html — page-specific additions ONLY.
-       Page shell, hero, glass panel, split layout, and the closing
-       stat callout all reuse shared components from style.css. The
+       Page shell, hero, glass panel, split layout, stat callout, and
+       the closing CTA all reuse shared components from style.css. The
        only genuinely unique piece here is the 2×2 project-card grid
        (a horizontal media-object card shape not used anywhere else).
     ================================================================ */
@@ -209,6 +209,26 @@
         </p>
       </div>
     </div>
+
+    <!-- ============================================================
+         CLOSING CTA — deliberately routes to Contact, not Donate.
+         Infrastructure projects are funded directly by trust members,
+         community contributors, and local MPs/MLAs; this money does
+         NOT route through the Trust's standard donation channel or
+         balance sheet, so the ask here is "coordinate with us" rather
+         than "donate now." Reuses .selection-cta / .btn-cta from
+         style.css — no new CSS introduced.
+    ============================================================ -->
+    <section class="selection-cta">
+      <h3>Want to Help Build the Next Classroom?</h3>
+      <p>
+        Infrastructure projects — classrooms, water-huts, furniture drives — are funded directly by
+        trust members, community contributors, and local representatives, and are coordinated
+        individually rather than through the Trust's standard donation channel. If you'd like to
+        sponsor a specific project, we'd love to hear from you.
+      </p>
+      <a href="/contact_us/" class="btn-cta">Get in Touch →</a>
+    </section>
 
   </main>
 

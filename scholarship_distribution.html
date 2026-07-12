@@ -15,6 +15,10 @@
   <style>
     /* ─────────────────────────────────────────────────────────────
        PAGE SHELL & THEMATIC BASE
+       (page-specific only — .stat-card, .chart-box, .highlight-snippet,
+       and .badge-pill are NOT redefined here; they now come straight
+       from style.css so this page can never visually drift from the
+       rest of the site.)
     ───────────────────────────────────────────────────────────── */
     body {
       background: linear-gradient(160deg, #fdfaf6 0%, #f7f1e8 100%);
@@ -30,58 +34,13 @@
 
     /* ─────────────────────────────────────────────────────────────
        HIGH IMPACT METRIC CARDS
+       Layout spacing only — card look/feel comes from the shared
+       .stat-card / .icon-circle components in style.css.
     ───────────────────────────────────────────────────────────── */
     .stats-grid {
       margin-bottom: 60px;
     }
 
-    .stat-card {
-      background: rgba(255, 255, 255, 0.75);
-      backdrop-filter: blur(14px);
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      border-top: 4px solid var(--color-gold, #d97706);
-      border-radius: 16px;
-      padding: 30px 24px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      height: 100%;
-    }
-
-    .stat-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.07);
-    }
-
-    .stat-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #fff8e7, rgba(255, 195, 92, 0.35));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 16px;
-      color: var(--color-maroon, #800020);
-      font-size: 1.5rem;
-    }
-
-    .stat-number {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 4vw, 2.3rem);
-      font-weight: 700;
-      color: var(--color-maroon, #800020);
-      margin-bottom: 4px;
-    }
-
-    .stat-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: #6b7280;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
 
     /* ─────────────────────────────────────────────────────────────
        NARRATIVE BLOCKS & GRID BOARDS
@@ -123,69 +82,6 @@
       margin-bottom: 0;
     }
 
-    .highlight-snippet {
-      border-left: 3px solid var(--color-gold, #d97706);
-      padding-left: 16px;
-      font-style: italic;
-      color: var(--color-maroon, #800020) !important;
-      font-weight: 500;
-    }
-
-    /* ─────────────────────────────────────────────────────────────
-       CHARTS CONTAINERS DESIGN
-    ───────────────────────────────────────────────────────────── */
-    .chart-box {
-      background: #ffffff;
-      border: 1px solid rgba(0, 0, 0, 0.05);
-      border-radius: 14px;
-      padding: 24px;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-      height: 100%;
-    }
-
-    .chart-box h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
-      color: var(--color-maroon, #800020);
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-
-    .chart-box img {
-      width: 100%;
-      height: auto;
-      max-width: 520px;
-      border-radius: 8px;
-      transition: transform 0.3s ease;
-    }
-
-    .chart-box:hover img {
-      transform: scale(1.02);
-    }
-
-    /* ─────────────────────────────────────────────────────────────
-       IMPACT SPECIFIC MATRIX LAYOUT
-    ───────────────────────────────────────────────────────────── */
-    .qualification-badge-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 20px 0 25px;
-    }
-
-    .q-badge {
-      background: #fff8e7;
-      border: 1px solid rgba(217, 119, 6, 0.2);
-      color: var(--color-brown, #4a3728);
-      font-family: 'Inter', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 700;
-      padding: 6px 14px;
-      border-radius: 8px;
-      letter-spacing: 0.5px;
-    }
-
     /* ─────────────────────────────────────────────────────────────
        RESPONSIVE STRATEGIES
     ───────────────────────────────────────────────────────────── */
@@ -215,30 +111,30 @@
 
     <section class="stats-grid container-fluid px-0" aria-label="Key Trust Statistics">
       <div class="row g-4">
-        
+
         <div class="col-md-4">
           <div class="stat-card">
-            <div class="stat-icon"><i class="ti ti-users"></i></div>
-            <div class="stat-number" data-stat="girlsSupported"></div>
-            <div class="stat-label">Girls Supported</div>
+            <div class="icon-circle icon-circle--lg"><i class="ti ti-users"></i></div>
+            <div class="stat-card__number" data-stat="girlsSupported"></div>
+            <div class="stat-card__label">Girls Supported</div>
           </div>
         </div>
 
         <div class="col-md-4">
           <div class="stat-card">
-            <div class="stat-icon"><i class="ti ti-currency-rupee"></i></div>
-            <div class="stat-number" data-stat="scholarshipCr" data-stat-format="cr"></div>
-            <div class="stat-label">Scholarships Distributed</div>
+            <div class="icon-circle icon-circle--lg"><i class="ti ti-currency-rupee"></i></div>
+            <div class="stat-card__number" data-stat="scholarshipCr" data-stat-format="cr"></div>
+            <div class="stat-card__label">Scholarships Distributed</div>
           </div>
         </div>
 
         <div class="col-md-4">
           <div class="stat-card">
-            <div class="stat-icon"><i class="ti ti-building-community"></i></div>
-            <div class="stat-number">
+            <div class="icon-circle icon-circle--lg"><i class="ti ti-building-community"></i></div>
+            <div class="stat-card__number">
 				<span data-stat="schools"></span> Schools &amp; <span data-stat="colleges"></span> Colleges
 			</div>
-            <div class="stat-label">Active Institutional Network</div>
+            <div class="stat-card__label">Active Institutional Network</div>
           </div>
         </div>
 
@@ -316,13 +212,13 @@
         With the Trust’s support, girls have gone on to achieve professional qualifications, becoming financially independent and supporting their families:
       </p>
 
-      <div class="qualification-badge-group" role="list" aria-label="Achieved professional paths">
-        <span class="q-badge" role="listitem">Ph.D.</span>
-        <span class="q-badge" role="listitem">CA (Chartered Accountant)</span>
-        <span class="q-badge" role="listitem">Engineering</span>
-        <span class="q-badge" role="listitem">MBA</span>
-        <span class="q-badge" role="listitem">MCA</span>
-        <span class="q-badge" role="listitem">B.Ed</span>
+      <div class="badge-group" role="list" aria-label="Achieved professional paths">
+        <span class="badge-pill" role="listitem">Ph.D.</span>
+        <span class="badge-pill" role="listitem">CA (Chartered Accountant)</span>
+        <span class="badge-pill" role="listitem">Engineering</span>
+        <span class="badge-pill" role="listitem">MBA</span>
+        <span class="badge-pill" role="listitem">MCA</span>
+        <span class="badge-pill" role="listitem">B.Ed</span>
       </div>
 
       <p>
@@ -332,6 +228,21 @@
       <p class="highlight-snippet">
         They contribute positively to their families and society — creating homes filled with harmony, respect, and happiness.
       </p>
+    </section>
+
+    <!-- CLOSING CTA — the numbers above prove scale; real stories prove it works.
+         Reuses .selection-cta / .btn-cta / .btn-outline (style.css) and the
+         same two-button flex row already used on donate.html — no new CSS. -->
+    <section class="selection-cta">
+      <h3>Numbers Tell Only Part of the Story</h3>
+      <p>
+        Behind every scholarship is a girl who became an engineer, a CA, a principal, or a lecturer.
+        Read their journeys, in their own words.
+      </p>
+      <div class="d-flex flex-wrap justify-content-center align-items-center gap-3">
+        <a href="/success_stories/" class="btn-cta">Read Real Success Stories →</a>
+        <a href="/donate/" class="btn-outline">Sponsor a Girl's Education</a>
+      </div>
     </section>
 
   </main>
