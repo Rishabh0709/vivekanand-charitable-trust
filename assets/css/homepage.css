@@ -352,36 +352,6 @@
 
 .pillar:hover { transform: translateY(-6px); }
 
-/* Resolution grid (3 cards + arrows) */
-.resolution-grid {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr auto 1fr;
-  align-items: stretch;
-  gap: 16px;
-  margin-top: 32px;
-}
-
-.resolution-card {
-  --icon-color: var(--color-maroon);
-  padding: 28px 22px;
-  text-align: center;
-}
-
-/* Flow arrow (shared by resolution-grid, timeline-wrapper, difference-grid) */
-.flow-arrow {
-  font-size: 24px;
-  color: var(--color-brown);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-}
-
-@media (max-width: 900px) {
-  .flow-arrow { transform: rotate(90deg); font-size: 20px; }
-  .resolution-grid { grid-template-columns: 1fr; gap: 12px; }
-}
-
 /* ─── Trust premium cards ── */
 .trust-premium-section { padding: 90px 20px; }
 
@@ -416,6 +386,112 @@
   --icon-color: var(--color-brown);
   text-align: center;
   padding: 28px 22px;
+}
+
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+   BRIDGE DIAGRAM — minimal 3-node flow (replaces the old text-heavy
+   Traditional / Missing-Link / Long-Term-Outcomes card grid).
+   Deliberately NOT another card grid — icon nodes + a connecting line,
+   so it reads visually distinct from the Timeline and Impact grids
+   sitting directly above and below it on the page.
+───────────────────────────────────────────────────────────────────────── */
+.bridge-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  max-width: 720px;
+  margin: 40px auto 0;
+  flex-wrap: wrap;
+}
+ 
+.bridge-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 150px;
+}
+ 
+.bridge-node__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: var(--color-brown);
+  margin-bottom: 12px;
+  transition: transform var(--transition-base);
+}
+ 
+.bridge-node:hover .bridge-node__icon { transform: translateY(-4px); }
+ 
+.bridge-node--highlight .bridge-node__icon {
+  width: 78px;
+  height: 78px;
+  background: linear-gradient(135deg, var(--color-gold), var(--color-orange));
+  color: var(--color-maroon);
+  box-shadow: 0 10px 28px rgba(241, 157, 56, 0.35);
+}
+ 
+.bridge-node__label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+  margin: 0;
+}
+ 
+.bridge-node--highlight .bridge-node__label { color: var(--color-maroon); }
+ 
+.bridge-node__tag {
+  display: inline-block;
+  margin-top: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-orange);
+}
+ 
+.bridge-connector {
+  flex: 1;
+  min-width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px; /* aligns the line with the icon row, above the labels */
+}
+ 
+.bridge-connector::before {
+  content: "→";
+  font-family: 'Inter', sans-serif;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--color-orange);
+}
+ 
+@media (max-width: 700px) {
+  .bridge-diagram { flex-direction: column; gap: 22px; }
+  .bridge-connector {
+    width: auto;
+    flex: none;
+    margin-bottom: 0;
+  }
+  .bridge-connector::before {
+    content: "↓";
+  }
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+  .bridge-node__icon { transition: none; }
 }
 
 /* Bridging the gap grid */
