@@ -9,7 +9,12 @@
  *
  * SETUP REQUIRED — configure via attributes on the <form>:
  *   data-endpoint="<your POST URL>"
- *   data-response-mode="opaque"   <!-- only needed for Apps Script -->
+ *   data-response-mode="opaque"   <!-- ONLY for backends verified to not
+ *                                       support CORS. Google Apps Script
+ *                                       deployments with "Anyone" access
+ *                                       DO support readable responses —
+ *                                       do not set this attribute for them.
+ *                                       See note below on why. -->
  * -----------------------------------------------------------------------
  */
 (function (global) {
@@ -50,19 +55,31 @@
       try {
         const fetchOptions = { method: 'POST', body: new FormData(form) };
 
-        // Apps Script Web Apps typically don't send CORS headers a
-        // browser can read, so the response is opaque to fetch(). In
-        // that mode we treat "the request didn't throw" as success,
-        // since we can't inspect res.ok. Normal backends (Formspree,
-        // etc.) keep full response checking.
         if (isOpaque) {
+          // We genuinely cannot inspect this response. "The request didn't
+          // throw" is the ONLY signal available in this mode — meaning a
+          // 403, a login redirect, or a broken script all look identical
+          // to a real success. Only use this path for backends verified
+          // to require it.
           fetchOptions.mode = 'no-cors';
+          await fetch(endpoint, fetchOptions);
         } else {
           fetchOptions.headers = { Accept: 'application/json' };
-        }
+          const res = await fetch(endpoint, fetchOptions);
 
-        const res = await fetch(endpoint, fetchOptions);
-        if (!isOpaque && !res.ok) throw new Error(`HTTP ${res.status}`);
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+          // IMPORTANT: Google Apps Script's ContentService always returns
+          // HTTP 200, even when the script's own try/catch caught an
+          // internal error (e.g. a bad Sheet ID, a permissions failure)
+          // and returned { result: 'error', message: '...' }. Checking
+          // res.ok alone would report that as a success. We parse the
+          // body and check the script's own reported result instead.
+          const payload = await res.json().catch(() => null);
+          if (!payload || payload.result !== 'success') {
+            throw new Error((payload && payload.message) || 'Unexpected response from server.');
+          }
+        }
 
         showStatus('success', 'Thank you for reaching out \u2014 we will respond within 2\u20133 working days.');
         form.reset();

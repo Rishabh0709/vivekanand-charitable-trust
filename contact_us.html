@@ -35,10 +35,19 @@
       <section class="glass-panel contact-form-panel" aria-labelledby="enquiry-heading">
         <h2 id="enquiry-heading"><i class="fas fa-comment-dots" aria-hidden="true"></i> Send an Enquiry</h2>
         <p class="form-intro">Fields marked <span class="required">*</span> are required.</p>
+		
+		 <!--
+          data-response-mode="opaque" REMOVED — Google Apps Script Web App
+          deployments with "Who has access: Anyone" support readable CORS
+          responses. Using the readable path here means a real failure
+          (wrong permissions, script error, deployment misconfiguration)
+          now shows the actual error state to the visitor and logs the
+          real reason to the console, instead of silently reporting
+          success regardless of what actually happened server-side.
+        -->
 
         <form id="enquiry-form"
       data-endpoint="https://script.google.com/a/macros/manidweepjodhpur.org/s/AKfycbzK8TB6wvtIYfg_AqEC8ZXmeaC1uRO9C5NrF1lXrHOdVIMZwsxP-_hJKWpqU-z2GCUunQ/exec"
-      data-response-mode="opaque"
       novalidate>
 
           <!-- Honeypot — hidden from people, visible to bots -->
@@ -68,7 +77,7 @@
             <div class="form-field">
               <label for="enq-subject">Subject <span class="required">*</span></label>
               <select id="enq-subject" name="subject" required>
-                <option value="" disabled selected>Choose one\u2026</option>
+                <option value="" disabled selected>Choose one</option>
                 <option value="General Enquiry">General Enquiry</option>
                 <option value="Volunteering">Volunteering</option>
                 <option value="Donation / Sponsorship">Donation / Sponsorship</option>
