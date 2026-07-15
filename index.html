@@ -15,6 +15,34 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="/assets/css/style.css" />
 	<link rel="stylesheet" href="/assets/css/homepage.css" />
+
+<style>
+		/* Page-unique components not shared elsewhere — see homepage.css
+		   header comment for why global utilities live there instead. */
+
+		/* ── Photo banner (breathing-room image between text-heavy sections) ── */
+		.photo-banner {
+			max-width: 1100px;
+			margin: 60px auto 0;
+			padding: 0 20px;
+			text-align: center;
+		}
+		.photo-banner img {
+			width: 100%;
+			max-height: 420px;
+			object-fit: cover;
+			border-radius: var(--radius-lg);
+			box-shadow: var(--shadow-md);
+		}
+		.photo-banner figcaption {
+			margin-top: 14px;
+			font-family: 'Inter', sans-serif;
+			font-size: 0.9rem;
+			color: var(--text-secondary);
+		}
+	</style>
+
+
 	
 </head>
 <body>
@@ -62,13 +90,6 @@
     </div>
 
 </div>
-<!-- TRUST IDENTITY BANNER
-<div class="trust-badge">
-  <p>
-    This Trust is the independently registered educational and scholarship initiative of Manidweep.
-    Every donation goes 100% toward girls' education — not religious activity.
-  </p>
-</div> -->
 
 <!--- STATS SECTION ---------->
 <section class="stats-section">
@@ -90,11 +111,9 @@
 </button>
 
 <button class="glass-card stat" onclick="openGallery('img2')" aria-label="chart showing total amount distributed till date">
-<!--<h2 class="counter" data-target="396">0</h2>-->
 <i class="ti ti-currency-rupee text-primary mb-3" style="font-size: 3rem;"></i>
 <h3><span class="currency">₹</span><span class="counter" data-stat-counter="scholarshipCr">0</span> Cr</h3>
 <p>Worth of scholarships distributed so far</p>
-
 </button>
 
 <button class="glass-card stat" onclick="openGallery('schools')" aria-label="View list of schools covered">
@@ -111,6 +130,7 @@
 
 </div>
 </section>
+
 <!-- Gallery Modal -->
 <div id="galleryModal" class="gallery-modal">
   <span class="close-btn" onclick="closeGallery()">&times;</span>
@@ -125,60 +145,20 @@
   </div>
 </div>
 
-<!-- VISION MISSION SECTION -->
+<!-- VISION SECTION -->
  <section class="vision-mission">
 
-  <!-- Heading -->
   <div class="section-heading">
-  <h2 class="section-heading__title">Our Vision &amp; Mission</h2>
-  <div class="section-heading__divider" aria-hidden="true"></div>
-</div>
-  <!-- VISION -->
-  <div class="vision-block">
-    <p class="vision-text">
-  Empowering girls through education and holistic development, rooted in compassion, values, and self-reliance.  
-  Nurturing confident individuals with a positive outlook to lead meaningful lives.  
-  Shaping future changemakers who contribute with strength and purpose to society.
-  </p>
-  <p  class="vision-text">
-  We bring this vision to life by ensuring that every girl has access to education while nurturing confidence, values, and self-reliance —
-  empowering her to lead a dignified and purposeful life. This commitment is carried forward through two key focus areas:
-</p>
+    <h2 class="section-heading__title">Our Vision &amp; Mission</h2>
+    <div class="section-heading__divider" aria-hidden="true"></div>
   </div>
 
-
-  <!-- DIVIDER 
-  <div class="section-transition">
-    <span>How we bring this vision to life</span>
-  </div>  -->
-
-  <!-- MISSION -->
-  <div class="mission-block">
-
-    <!-- Mission Pillars -->
-    <div class="mission-pillars">
-
-      <div class="pillar-card glass-card">
-        <i class="ti ti-book-2 icon-plain"></i>
-        <h4>Education Without Barriers</h4>
-        <p>
-          We ensure that no girl is denied education due to financial constraints, regardless of caste, community, or religion—creating equal opportunity for every child to learn, grow, and thrive.
-        </p>
-		<a href="/student_selection/" class="pillar-card__link">
-    Explore our selection process →
-  </a>
-      </div>
-
-      <div class="pillar-card glass-card">
-        <i class="ti ti-heart-handshake icon-plain"></i>
-        <h4>Confidence & Character</h4>
-        <p>
-          Through regular engagement with schools, we nurture self-confidence, dignity, and inner strength among girls—guiding them to value education, embrace strong human values, and move toward a self-reliant and purposeful future.
-        </p>
-      </div>
-
-    </div>
-
+  <div class="vision-block">
+    <p class="vision-text">
+      Empowering girls through education and holistic development, rooted in compassion, values, and self-reliance. 
+	  We ensure no girl is denied education because of financial hardship, caste, community, or religion 
+	  — nurturing confident, self-reliant changemakers who lead with strength and purpose.
+    </p>
   </div>
 
 </section>
@@ -189,61 +169,64 @@
 
   <div class="container">
 
-    <!-- Heading Block -->
     <div class="section-heading">
-  <h2 class="section-heading__title">The Spirit of Our Trust</h2>
-  <div class="section-heading__divider" aria-hidden="true"></div>
-  <p class="section-heading__sub">
-    The principles that guide our actions and define our commitment to every girl we support
-  </p>
-</div>
-	
-	<div class="trust-premium-container">
-  <!-- Card 1 -->
-  <div class="trust-premium-card glass-card">
-  <i class="ti ti-scale icon-plain"></i>
-    <h4>Need-Based, Not Merit-Based</h4>
-    <p>
-      Financial assistance is extended purely on the basis of genuine need, without regard to academic performance, 
-	  religion, caste, or background — giving every girl a fair and equal chance at education.
-    </p>
+      <h2 class="section-heading__title">The Spirit of Our Trust</h2>
+      <div class="section-heading__divider" aria-hidden="true"></div>
+      <p class="section-heading__sub">
+        The principles that guide our actions and define our commitment to every girl we support.
+      </p>
+    </div>
+
+    <div class="trust-premium-container">
+
+      <div class="trust-premium-card glass-card">
+        <i class="ti ti-scale icon-plain"></i>
+        <h4>Need-Based, Not Merit-Based</h4>
+        <p>
+          Support is extended purely on genuine need — regardless of marks, religion, caste, or background.
+        </p>
+      </div>
+
+      <div class="trust-premium-card glass-card">
+        <i class="ti ti-heart icon-plain"></i>
+        <h4>A Right, Not a Favour</h4>
+        <p>
+          We treat this as every girl's rightful share, not charity — so she can accept help with dignity and pride.
+        </p>
+      </div>
+
+      <div class="trust-premium-card glass-card">
+        <i class="ti ti-gift icon-plain"></i>
+        <h4>Every Contribution, Direct Impact</h4>
+        <p>
+          Administrative costs are borne voluntarily by trust members, so your donation goes entirely to education.
+        </p>
+      </div>
+
+    </div>
   </div>
 
-  <!-- Card 2 -->
-   <div class="trust-premium-card glass-card">
-    <i class="ti ti-heart icon-plain"></i>
-	<h4>A Right, Not a Favour</h4>
-    <p>We believe this support is not an act of charity, but every girl’s rightful
-          share in the Divine plan. This belief preserves self-respect, nurtures inner strength, 
-		  and teaches her to accept help with grace, gratitude, and pride.
-    </p>
-  </div>
-   
-  <!-- Card 3 -->
-  <div class="trust-premium-card glass-card">
-    <i class="ti ti-gift icon-plain"></i>
-	<h4>Every Contribution, Direct Impact</h4>
-    <p>
-      Every donation received is dedicated entirely to scholarship distribution.
-      Administrative expenses are minimal and covered voluntarily, ensuring that
-      your contribution directly benefits deserving students.
-    </p>
-  </div>
-</div>
-</div>
+  <section class="selection-cta">
+    <div class="container">
+      <h3>Transparency in Every Step</h3>
+      <p>
+        Whether through school recommendations or direct outreach to college students, we ensure every
+        girl receives her rightful share — with dignity.
+      </p>
+      <a href="/student_selection/" class="btn-cta">View Our Selection Criteria</a>
+    </div>
+  </section>
+</section>
 
-<section class="selection-cta">
-  <div class="container">
-    <h3>Transparency in Every Step</h3>
-    <p>
-      Our support is extended purely on the basis of genuine need. Whether through
-      school recommendations or direct outreach to college students, we ensure every
-      girl receives her rightful share — with dignity.
-    </p>
-    <a href="/student_selection/" class="btn-cta">View Our Selection Criteria</a>
-  </div>
-</section>
-</section>
+
+<!-- PHOTO BANNER -->
+<figure class="photo-banner">
+  <img src="/assets/images/main_page1.jpg"
+       alt="Girls listening to Bhaiyaji's encouraging speech at Manidweep"
+       loading="lazy" />
+  <figcaption>Every Sunday, girls gather at Manidweep for Sanskar and Personality Development classes.</figcaption>
+</figure>
+
 
 <!---------- HOW WE TRANSFORM LIVES -------------------->
 
@@ -251,54 +234,46 @@
 
   <div class="container">
 
-    <!-- Heading -->
     <div class="section-heading">
-  <h2 class="section-heading__title">Our Transformation Journey</h2>
-  <div class="section-heading__divider" aria-hidden="true"></div>
-  <p class="section-heading__sub">Guiding every girl from uncertainty to confidence and purpose</p>
-</div>
+      <h2 class="section-heading__title">Our Transformation Journey</h2>
+      <div class="section-heading__divider" aria-hidden="true"></div>
+      <p class="section-heading__sub">Guiding every girl from uncertainty to confidence and purpose.</p>
+    </div>
 
-    <!-- Timeline -->
     <div class="timeline-wrapper">
-      <!-- Step 1 -->
+
       <div class="timeline-item glass-card">
-		<div class="icon-circle"><i class="ti ti-sunrise"></i></div>
+        <div class="icon-circle"><i class="ti ti-sunrise"></i></div>
         <h5>From Fear to Faith</h5>
         <p>
-          Many girls begin their journey feeling uncertain and hesitant due to challenging backgrounds.
-          Through guidance and support, fear gradually gives way to faith, and self-doubt transforms into confidence.
+          Many girls begin this journey uncertain, from challenging backgrounds. Guidance and support turn
+          self-doubt into confidence.
         </p>
       </div>
 
-	<div class="flow-arrow" aria-hidden="true">→</div>
-	
-      <!-- Step 2 -->
+      <div class="flow-arrow" aria-hidden="true">→</div>
+
       <div class="timeline-item glass-card">
         <div class="icon-circle"><i class="ti ti-bulb"></i></div>
-		<h5>Shaping Mindsets</h5>
+        <h5>Shaping Mindsets</h5>
         <p>
-          Through ‘Sanskar’ and holistic development, the Trust nurtures values, awareness, and inner strength—
-          helping each girl grow into a balanced and purpose-driven individual.
+          Through weekly <em>Sanskar</em> classes, we nurture values, awareness, and inner strength alongside
+          academics.
         </p>
       </div>
 
-	 <div class="flow-arrow" aria-hidden="true">→</div>
-	
-      <!-- Step 3 -->
+      <div class="flow-arrow" aria-hidden="true">→</div>
+
       <div class="timeline-item glass-card">
         <div class="icon-circle"><i class="ti ti-flag"></i></div>
-		<h5>Self-Reliance & Growth</h5>
+        <h5>Self-Reliance &amp; Growth</h5>
         <p>
-          With lifelong mentorship and support, the girls evolve into confident, self-reliant individuals—
-          ready to shape their own futures with dignity and purpose.
+          With lifelong mentorship, girls evolve into confident, self-reliant individuals shaping their own futures.
         </p>
       </div>
 
     </div>
 
-  </div>
-
-<!-- -->
 	<!-- Differentiator Section --> 
 	<div class="container">
   <div class="section-transition">
@@ -312,103 +287,90 @@
     Along with scholarships, we provide mentorship, counselling, values-based education, and lifelong support that empowers girls
     to thrive with confidence and purpose.
   </p>
-</div>
-
-  <div class="difference-grid">
-    <div class="glass-card">
-      <h4>Traditional Support</h4>
-      <ul>
-        <li>Scholarships</li>
-        <li>School Fees</li>
-        <li>Study Materials</li>
-      </ul>
-    </div>
-
-    <div class="flow-arrow" aria-hidden="true">→</div>
-
-    <div class="glass-card highlight-card">
-      <div class="highlight-icon">🌱</div>
-      <h4>The Missing Link</h4>
-      <p>
-        Continuous mentoring, counselling, career guidance, and weekly Sanskar classes that support both
-        academic and personal development.
-      </p>
-      <span class="badge">Sunday Sanskar Classes</span>
-    </div>
-
-    <div class="flow-arrow" aria-hidden="true">→</div>
-
-    <div class="glass-card">
-      <h4>Long-Term Outcomes</h4>
-      <ul>
-        <li>Learning for Knowledge</li>
-        <li>Greater Confidence</li>
-        <li>Purposeful Growth</li>
-        <li>Self-Reliance</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-    <!-- Transition Line -->
-    <div class="section-transition">
-  <span>And this journey creates a lasting impact</span>
 	</div>
-    <!-- ===================== -->
-    <!-- PART 2: IMPACT (SCROLL REVEAL) -->
-    <!-- ===================== -->
-  <div class="container">
-  <div class="impact-grid">
-    <div class="impact-card glass-card">
-      <i class="ti ti-trending-up icon-plain"></i>
-      <h5>Academic Growth</h5>
-      <p>Stronger focus, performance, and a genuine love for learning.</p>
+	
+    <div class="container--tight text-center">
+
+      <div class="bridge-diagram" role="list" aria-label="How the Trust bridges financial support and lasting transformation">
+ 
+        <div class="bridge-node" role="listitem">
+          <div class="bridge-node__icon" aria-hidden="true"><i class="ti ti-cash"></i></div>
+          <p class="bridge-node__label">Scholarships<br>&amp; Fees</p>
+        </div>
+ 
+        <div class="bridge-connector" aria-hidden="true"></div>
+ 
+        <div class="bridge-node bridge-node--highlight" role="listitem">
+          <div class="bridge-node__icon" aria-hidden="true"><i class="ti ti-sparkles"></i></div>
+          <p class="bridge-node__label">Mentorship<br>&amp; Sanskar</p>
+          <span class="bridge-node__tag">The Missing Link</span>
+		  <a href="/sunday_classes/" class="bridge-node__link">See how →</a>
+        </div>
+ 
+        <div class="bridge-connector" aria-hidden="true"></div>
+ 
+        <div class="bridge-node" role="listitem">
+          <div class="bridge-node__icon" aria-hidden="true"><i class="ti ti-flag"></i></div>
+          <p class="bridge-node__label">Confident,<br>Self-Reliant Girls</p>
+        </div>
+ 
+      </div>
+    </div>		
+	</div>
+	
+
+    <div class="section-transition">
+      <span>And this journey creates a lasting impact</span>
     </div>
-    <div class="impact-card glass-card">
-      <i class="ti ti-heart-handshake icon-plain"></i>
-      <h5>Confidence &amp; Character</h5>
-      <p>Humility, compassion, and discipline shape balanced personalities.</p>
+
+    <div class="impact-grid">
+      <div class="impact-card glass-card">
+        <i class="ti ti-trending-up icon-plain"></i>
+        <h5>Academic Growth</h5>
+        <p>Stronger focus, performance, and a genuine love for learning.</p>
+      </div>
+      <div class="impact-card glass-card">
+        <i class="ti ti-heart-handshake icon-plain"></i>
+        <h5>Confidence &amp; Character</h5>
+        <p>Humility, compassion, and discipline shape balanced personalities.</p>
+      </div>
+      <div class="impact-card glass-card">
+        <i class="ti ti-briefcase icon-plain"></i>
+        <h5>Career &amp; Independence</h5>
+        <p>Professional careers and lasting financial self-reliance.</p>
+      </div>
+      <div class="impact-card glass-card">
+        <i class="ti ti-leaf icon-plain"></i>
+        <h5>Lifestyle Transformation</h5>
+        <p>Conscious, value-driven living that rejects social evils.</p>
+      </div>
+      <div class="impact-card glass-card">
+        <i class="ti ti-users icon-plain"></i>
+        <h5>Impact on Society</h5>
+        <p>Families and communities grow into spaces of harmony.</p>
+      </div>
     </div>
-    <div class="impact-card glass-card">
-      <i class="ti ti-briefcase icon-plain"></i>
-      <h5>Career &amp; Independence</h5>
-      <p>Professional careers and lasting financial self-reliance.</p>
-    </div>
-    <div class="impact-card glass-card">
-      <i class="ti ti-leaf icon-plain"></i>
-      <h5>Lifestyle Transformation</h5>
-      <p>Conscious, value-driven living that rejects social evils.</p>
-    </div>
-    <div class="impact-card glass-card">
-      <i class="ti ti-users icon-plain"></i>
-      <h5>Impact on Society</h5>
-      <p>Families and communities grow into spaces of harmony.</p>
-    </div>
+
   </div>
-</div>
 
 </section>
-
-<!-- -->
 
 <!-- STORIES SECTION -->
 
 <section class="stories-section">
   <div class="container">
 
-    <!-- Heading -->
     <div class="section-heading">
-  <h2 class="section-heading__title">Stories Of Hope</h2>
-  <div class="section-heading__divider" aria-hidden="true"></div>
-  <p class="section-heading__sub">
-    From Uncertainty to Unshakable Strength — Journeys That Inspire
-  </p>
-</div>
-    <!-- Swiper -->
+      <h2 class="section-heading__title">Stories Of Hope</h2>
+      <div class="section-heading__divider" aria-hidden="true"></div>
+      <p class="section-heading__sub">
+        From Uncertainty to Unshakable Strength — Journeys That Inspire
+      </p>
+    </div>
+
     <div class="swiper success-stories-swiper">
       <div class="swiper-wrapper">
 
-        <!-- Card -->
         <div class="swiper-slide">
           <div class="story-card">
             <div class="story-img">
@@ -417,16 +379,14 @@
             <div class="story-content">
               <h5>Neetu Deora</h5>
               <p>
-                Beginning her journey as a young student with aspirations, she found consistent guidance through the Trust. 
-				With continuous financial and academic support from Class 9th to M.Com, her path remained steady and focused. 
-				Today, she has been serving at SBI, Jodhpur for over 17 years. She stands as a symbol of stability, dedication, and self-reliance..
+                Supported by the Trust from Class 9th through M.Com, she has served at SBI, Jodhpur for over
+                17 years — a symbol of stability, dedication, and self-reliance.
               </p>
               <a href="/success_stories/neetu-deora" class="story-btn">Read Story</a>
             </div>
           </div>
         </div>
 
-        <!-- Card -->
         <div class="swiper-slide">
           <div class="story-card">
             <div class="story-img">
@@ -435,16 +395,14 @@
             <div class="story-content">
               <h5>Sejal Rathore</h5>
               <p>
-                With aspirations to build a meaningful career, she was supported and nurtured by the Trust. 
-				Beyond financial aid, the Trust helped shape her confidence and personality. 
-				Today, she is working as a Software Engineer at Wells Fargo, Hyderabad. She represents growth driven by belief, guidance, and determination.
+                Nurtured in confidence as much as finance, she now works as a Software Engineer at Wells Fargo,
+                Hyderabad.
               </p>
               <a href="/success_stories/sejal-rathore" class="story-btn">Read Story</a>
             </div>
           </div>
         </div>
 
-        <!-- Card -->
         <div class="swiper-slide">
           <div class="story-card">
             <div class="story-img">
@@ -453,17 +411,14 @@
             <div class="story-content">
               <h5>Poonam Mishra</h5>
               <p>
-                Starting her journey at a young age, she remained committed to her education with the Trust’s support. 
-				From Class 6th to M.Sc, she received continuous financial assistance and mentorship. 
-				Today, she serves as the <strong>Principal of Wisdom International School, Jodhpur.</strong> 
-				She reflects leadership shaped through education and perseverance.
+                Supported from Class 6th to M.Sc, she now serves as
+                <strong>Principal of Wisdom International School, Jodhpur.</strong>
               </p>
               <a href="/success_stories/poonam-mishra" class="story-btn">Read Story</a>
             </div>
           </div>
         </div>
-		
-		<!-- Card -->
+
         <div class="swiper-slide">
           <div class="story-card">
             <div class="story-img">
@@ -472,16 +427,14 @@
             <div class="story-content">
               <h5>Jyoti Soni (CA, CS)</h5>
               <p>
-                Her life took a difficult turn after the loss of her father, bringing immense uncertainty. 
-				With the Trust’s financial support, moral guidance, and Sanskar classes, she rebuilt her path with strength. 
-				She went on to become a <strong>Chartered Accountant and Company Secretary</strong>. Today, she stands as a confident and self-reliant professional.
+                After losing her father, financial support and Sanskar classes helped her rebuild — today
+                she is a <strong>Chartered Accountant and Company Secretary</strong>.
               </p>
               <a href="/success_stories/jyoti-soni" class="story-btn">Read Story</a>
             </div>
           </div>
         </div>
-		
-		<!-- Card -->
+
         <div class="swiper-slide">
           <div class="story-card">
             <div class="story-img">
@@ -490,24 +443,18 @@
             <div class="story-content">
               <h5>Dr. Kumudini Dadhich</h5>
               <p>
-                At a stage where continuing education seemed uncertain, her journey found new direction through the Trust. 
-				With guidance, support, and encouragement, she continued her academic path with determination. 
-				Today, she is a <strong>Chemistry Lecturer</strong>. She represents transformation through resilience and the power of right support.
+                Continued guidance and support carried her through to becoming a
+                <strong>Chemistry Lecturer</strong> today.
               </p>
               <a href="/success_stories/kumudini-dadhich" class="story-btn">Read Story</a>
             </div>
           </div>
         </div>
 
-        <!-- Add remaining cards similarly -->
-
       </div>
-	  <!-- Pagination -->
-    <div class="swiper-pagination"></div>
-
-    <!-- Navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
 
   </div>
@@ -517,157 +464,78 @@
 <section class="founders section">
 
   <div class="section-heading">
-  <h2 class="section-heading__title">The Pillars of our mission</h2>
-  <div class="section-heading__divider" aria-hidden="true"></div>
-  <p class="section-heading__sub">
-    The Trust's work is inspired by the teachings of these spiritual leaders, whose guidance shaped its values of dignity,
-    service, and self-reliance — <b>while all donations are directed solely toward education.</b>
-  </p>
-</div>
-
-    <!-- ===== FOUNDER 1 ===== -->
-    <div class="founder fade-in">
-      <div class="founder-image">
-        <img src="/assets/images/bhaiyaji_2.jpg" alt="Shri Nandkishore Sharda">
-      </div>
-
-      <div class="founder-content">
-        <p class="founder-label">Our Inspiration</p>
-
-        <h2 class="founder-name">Shri Nandkishore Sharda</h2>
-
-        <p class="founder-lead">
-          He was a profound spiritual seeker and visionary who, through selfless devotion, complete surrender, and disciplined spiritual practice, 
-		  attained the grace and direct realization of Jagatjanani Maa Tripurasundari. Guided by Her divine wisdom, 
-		  he shared teachings relevant to the modern age and inspired countless individuals to recognize 
-		  spirituality as a living reality capable of transforming lives.
-        </p>
-
-        <div class="founder-full">
-          <p>
-            For the holistic development of humanity and the realization of life’s true purpose, he introduced “Buddhi Vivek Yog Sadhna” — 
-			a simple, universal, and practical spiritual discipline. Through this path, individuals are guided towards 
-			a harmonious balance between material responsibilities and spiritual growth, enabling them to lead lives rooted in peace, 
-			clarity, joy, and inner fulfillment.
-          </p>
-          <p>
-            By beautifully integrating wisdom, devotion, and selfless service in his own life, he established a timeless ideal that inspired 
-			and transformed thousands of lives, paving the way for a new era of spiritual awakening and purposeful living.
-          </p>
-
-          <a href="/torch_bearers/nandkishore-sharda/" class="link-primary">Know More →</a>
-        </div>
-
-        <button class="read-more-btn">Read More</button>
-      </div>
-    </div>
-
-    <!-- ===== FOUNDER 2 ===== -->
-    <div class="founder reverse fade-in">
-      <div class="founder-image">
-        <img src="/assets/images/maa_1.jpg" alt="Kumari Basanti Manihar">
-      </div>
-
-      <div class="founder-content">
-        <p class="founder-label">Guiding Force</p>
-
-        <h2 class="founder-name">Kumari Basanti Manihar</h2>
-
-        <p class="founder-lead">
-          She chose the spiritual path in 1964. Under the guidance and spiritual empowerment of her mentor, Shri Nandkishore Ji Sharda, 
-		  she attained the grace of Jagatjanani Maa through childlike devotion, unwavering dedication, and complete surrender. 
-		  After Bhaiyaji assumed his chaitanya (divine conscious) form, she carried forward his divine knowledge and spiritual methodology, 
-		  skillfully advancing all the noble initiatives he had begun.
-        </p>
-
-        <div class="founder-full">
-          <p>
-            By resolving the spiritual and practical questions of thousands of seekers, she brought about a positive transformation 
-			in their outlook on life and taught them the art of living with joy, peace, and inner happiness. 
-			Alongside this, she sowed the seeds of education, values, and spirituality in the lives of thousands of students—
-			especially girls—so that they might grow into responsible and capable citizens. 
-			<b>Bhaiyaji and  Maa Basanti Ji were true pioneers of women’s empowerment.</b>
-          </p>
-
-          <a href="/torch_bearers/basanti-manihar/" class="link-primary">Know More →</a>
-        </div>
-
-        <button class="read-more-btn">Read More</button>
-      </div>
-    </div>
-
-    <!-- ===== FOUNDER 3 ===== -->
-    <div class="founder fade-in">
-      <div class="founder-image">
-        <img src="/assets/images/madhu_maa2.1.jpg" alt="Kumari Madhubala Advani">
-      </div>
-
-      <div class="founder-content">
-        <p class="founder-label">Continuing the Legacy</p>
-
-        <h2 class="founder-name">Kumari Madhubala Advani</h2>
-
-        <p class="founder-lead">
-          She embraced the spiritual path in 1970 under the guidance of Maa Basanti and Bhaiyaji. 
-		  Through rigorous spiritual disciplines imparted by them, she was blessed with the grace of numerous divine powers. 
-		  For the past 55 years, she has remained steadfastly dedicated to spiritual practice.
-        </p>
-
-        <div class="founder-full">
-          <p>
-            After Maa Basanti left for heavenly abode in year 2021, Madhu Maa has been seamlessly and devotedly carrying forward 
-			all the responsibilities entrusted by Mother and Bhaiyaji. <b>These include the administration of all Trust activities, 
-			publication and distribution of spiritual literature, nurturing education, values, and spirituality among students, 
-			guiding seekers associated with “Manidweep” through spiritual discourses, distributing food grains to the needy, 
-			and running free yoga classes and a tailoring center, among other service initiatives.</b>
-          </p>
-
-          <a href="/torch_bearers/madhu-advani/" class="link-primary">Know More →</a>
-        </div>
-
-        <button class="read-more-btn">Read More</button>
-      </div>
-    </div>
-
+    <h2 class="section-heading__title">The Pillars of our mission</h2>
+    <div class="section-heading__divider" aria-hidden="true"></div>
+    <p class="section-heading__sub">
+      The Trust's work is inspired by the teachings of these spiritual leaders, whose guidance shaped its values of dignity,
+      service, and self-reliance — <b>while all donations are directed solely toward education.</b>
+    </p>
   </div>
+
+  <!-- ===== FOUNDER 1 ===== -->
+  <div class="founder fade-in">
+    <div class="founder-image">
+      <img src="/assets/images/bhaiyaji_2.jpg" alt="Shri Nandkishore Sharda">
+    </div>
+
+    <div class="founder-content">
+      <p class="founder-label">Our Inspiration</p>
+      <h2 class="founder-name">Shri Nandkishore Sharda</h2>
+      <p class="founder-lead">
+        A profound spiritual seeker and visionary who, through selfless devotion and disciplined practice,
+        founded the Trust in 1996 to give underprivileged girls in western Rajasthan both education and values.
+      </p>
+      <a href="/torch_bearers/nandkishore-sharda/" class="link-primary">Read His Full Story →</a>
+    </div>
+  </div>
+
+  <!-- ===== FOUNDER 2 ===== -->
+  <div class="founder reverse fade-in">
+    <div class="founder-image">
+      <img src="/assets/images/maa_1.jpg" alt="Kumari Basanti Manihar">
+    </div>
+
+    <div class="founder-content">
+      <p class="founder-label">Guiding Force</p>
+      <h2 class="founder-name">Kumari Basanti Manihar</h2>
+      <p class="founder-lead">
+        Chose the spiritual path in 1964 under Bhaiyaji's guidance, and after 2003 carried his mission
+        forward — sowing education, values, and spirituality in thousands of students' lives.
+      </p>
+      <a href="/torch_bearers/basanti-manihar/" class="link-primary">Read Her Full Story →</a>
+    </div>
+  </div>
+
+  <!-- ===== FOUNDER 3 ===== -->
+  <div class="founder fade-in">
+    <div class="founder-image">
+      <img src="/assets/images/madhu_maa2.1.jpg" alt="Kumari Madhubala Advani">
+    </div>
+
+    <div class="founder-content">
+      <p class="founder-label">Continuing the Legacy</p>
+      <h2 class="founder-name">Kumari Madhubala Advani</h2>
+      <p class="founder-lead">
+        On the spiritual path since 1970, she has led the Trust since 2021 — overseeing education, Sanskar
+        classes, and community service with steady, selfless dedication.
+      </p>
+      <a href="/torch_bearers/madhu-advani/" class="link-primary">Read Her Full Story →</a>
+    </div>
+  </div>
+
 </section>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  // READ MORE TOGGLE
-  document.querySelectorAll(".founder-content").forEach(block => {
-    const btn = block.querySelector(".read-more-btn");
-    const full = block.querySelector(".founder-full");
-
-    btn.addEventListener("click", function () {
-      full.classList.toggle("show");
-      btn.innerText = full.classList.contains("show")
-        ? "Read Less"
-        : "Read More";
-    });
-  });
-
-  
-});
-</script>
-<!-- -->
-
-
-
-<!--  -->
 
 <!-- Gallery -->
 <section class="image-section">
   <div class="container">
 
     <div class="section-heading">
-  <h2 class="section-heading__title">Image Gallery</h2>
-  <div class="section-heading__divider" aria-hidden="true"></div>
-</div>
+      <h2 class="section-heading__title">Image Gallery</h2>
+      <div class="section-heading__divider" aria-hidden="true"></div>
+    </div>
 
     <div class="gallery-grid">
 
-      <!-- Card 1 -->
       <a href="/gallery_scholarship/" class="gallery-card">
         <div class="gallery-img">
           <img src="/assets/images/sch_prg.jpeg" alt="Scholarship Programme">
@@ -678,7 +546,6 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </a>
 
-      <!-- Card 2 (NEW) -->
       <a href="/testimonial/" class="gallery-card">
         <div class="gallery-img">
           <img src="/assets/images/sanskar_classes.jpg" alt="Personality Development Classes">
@@ -688,8 +555,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <p>Moments from our sessions focused on building confidence, values, and life skills.</p>
         </div>
       </a>
-	  
-	  <!-- Card 2 -->
+
       <a href="/awards/" class="gallery-card">
         <div class="gallery-img">
           <img src="/assets/images/aw4.jpg" alt="Trust in News">
@@ -704,27 +570,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
   </div>
 </section>
-<!-- -->
 
 <!------------ testimonials -------------->
 <section class="testimonial-section">
   <div class="section-heading">
-  <h2 class="section-heading__title">Our Testimonials</h2>
-  <div class="section-heading__divider" aria-hidden="true"></div>
-  <p class="section-heading__sub">
-    From Guidance to Growth — Reflections That Resonate
-  </p>
-</div>
+    <h2 class="section-heading__title">Our Testimonials</h2>
+    <div class="section-heading__divider" aria-hidden="true"></div>
+    <p class="section-heading__sub">
+      From Guidance to Growth — Reflections That Resonate
+    </p>
+  </div>
 
   <div class="swiper testimonials-swiper">
     <div class="swiper-wrapper">
 
-      <!-- Testimonial 1 -->
       <div class="swiper-slide">
         <div class="testimonial-card">
           <p class="testimonial-text">
-            “For me, this trust is not just an institution, but a guiding light that builds both education and character.”
-			</p>
+            "For me, this trust is not just an institution, but a guiding light that builds both education and character."
+          </p>
           <div class="testimonial-author">
             <h6>Raj Kumari Panwar</h6>
             <span>Student</span>
@@ -732,12 +596,11 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </div>
 
-      <!-- Testimonial 2 -->
       <div class="swiper-slide">
         <div class="testimonial-card">
           <p class="testimonial-text">
-            “The weekly personality development classes held every Sunday have played a vital role 
-            in shaping my outlook on life, helping me face challenges with confidence and composure.”
+            "The weekly personality development classes held every Sunday have played a vital role
+            in shaping my outlook on life, helping me face challenges with confidence and composure."
           </p>
           <div class="testimonial-author">
             <h6>Krishna Rajpurohit</h6>
@@ -746,13 +609,12 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </div>
 
-		<!-- Testimonial 3 -->
       <div class="swiper-slide">
         <div class="testimonial-card">
           <p class="testimonial-text">
-            “This institution has supported me both financially and mentally, and I am deeply thankful to all 
-			<b>the volunteers who treat me like family and mentors, rather than outsiders.</b> 
-			Even my family thanks this trust for bringing such a positive change in my behavior and outlook on life.”
+            "This institution has supported me both financially and mentally, and I am deeply thankful to all
+            <b>the volunteers who treat me like family and mentors, rather than outsiders.</b>
+            Even my family thanks this trust for bringing such a positive change in my behavior and outlook on life."
           </p>
           <div class="testimonial-author">
             <h6>Bhavika Chanda</h6>
@@ -760,13 +622,12 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
         </div>
       </div>
-	  
-	  <!-- Testimonial 4 -->
+
       <div class="swiper-slide">
         <div class="testimonial-card">
           <p class="testimonial-text">
-            “Thanks a lot for the amazing personality development classes! 
-		Your guidance has made a huge difference in my life. I'm grateful for your support and encouragement.”
+            "Thanks a lot for the amazing personality development classes!
+            Your guidance has made a huge difference in my life. I'm grateful for your support and encouragement."
           </p>
           <div class="testimonial-author">
             <h6>Meenakshi Parihar</h6>
@@ -774,13 +635,12 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
         </div>
       </div>
-	  
-	  <!-- Testimonial 5 -->
+
       <div class="swiper-slide">
         <div class="testimonial-card">
           <p class="testimonial-text">
-            “What I love about this trust is <b>its peaceful atmosphere and the way it embraces everyone equally, 
-		without any discrimination of caste”</b>
+            "What I love about this trust is <b>its peaceful atmosphere and the way it embraces everyone equally,
+            without any discrimination of caste"</b>
           </p>
           <div class="testimonial-author">
             <h6>Sangeeta Biswas</h6>
@@ -788,8 +648,6 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
         </div>
       </div>
-	  
-      <!-- Repeat same structure for others -->
 
     </div>
 
@@ -798,23 +656,19 @@ document.addEventListener("DOMContentLoaded", function () {
     <div class="swiper-button-next"></div>
   </div>
 </section>
-<!-- -->
 
 <!-- Footer will load here -->
   <div id="footer-placeholder"></div>
 
 <!-- Bootstrap Bundle JS -->
- 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-
-
 
   <!-- Main JS -->
   <script src="/assets/js/script.js"></script>
   <script src="/assets/js/stats.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  
+
 <script>
   AOS.init({
     duration: 800,
@@ -823,13 +677,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 </script>
 
-
 <!-- JS to load partials -->
   <script>
     loadHTML('header-placeholder', '/header.html', initHeaderSubmenu);
     loadHTML('footer-placeholder', '/footer.html', initBackToTop);
   </script>
-  
+
 </body>
 
 </html>

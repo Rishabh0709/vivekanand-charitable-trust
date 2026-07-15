@@ -461,6 +461,30 @@
   color: var(--color-orange);
 }
  
+ 
+/* Contextual link scoped to a single node — deliberately NOT a full-width
+   CTA below the whole diagram. It answers the curiosity "The Missing Link"
+   raises right where that curiosity is raised, so the diagram itself is
+   free to end cleanly at its own payoff node instead of a click target
+   that only applies to one step in the middle. */
+.bridge-node__link {
+  display: inline-block;
+  margin-top: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--color-brown);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(135, 64, 44, 0.35);
+  transition: color var(--transition-base), border-color var(--transition-base);
+}
+ 
+.bridge-node__link:hover {
+  color: var(--color-maroon);
+  border-color: var(--color-maroon);
+}
+ 
+ 
 .bridge-connector {
   flex: 1;
   min-width: 30px;
