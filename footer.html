@@ -1,84 +1,76 @@
+<link rel="stylesheet" href="/assets/css/footer.css">
+
 <footer class="footer-section text-light pt-5 pb-3">
 
   <div class="container">
 
-    <div class="row gy-5 align-items-start">
+    <!-- ═══ SITEMAP + ADDRESS + CONTACT — single row ═══ -->
+    <div class="row gy-4 align-items-start">
 
-      <!-- Quick Links -->
-      <div class="col-lg-4 col-md-6">
-        <h5 class="footer-title mb-3">Quick Links</h5>
-
-        <ul class="list-unstyled footer-links">
-          <li>
-            <a href="/" class="text-light text-decoration-none">
-              Home
-            </a>
-          </li>
-
-          <li>
-            <a href="/faq/" class="text-light text-decoration-none">
-              FAQs
-            </a>
-          </li>
-
-          <li>
-            <a href="/future-plan/" class="text-light text-decoration-none">
-              Future Plans
-            </a>
-          </li>
-
-          <li>
-            <a href="/contact_us/" class="text-light text-decoration-none">
-              Contact Us
-            </a>
-          </li>
+      <!-- Explore — all sitemap links under one heading, laid out as an
+           internal 2-column grid (via CSS column-count) so 12 links take
+           roughly half the vertical space a single stacked list would. -->
+      <div class="col-lg-6 col-md-12">
+        <h5 class="footer-title mb-3">Explore</h5>
+        <ul class="list-unstyled footer-links footer-links--grid">
+          <li><a href="/" class="text-light text-decoration-none">Home</a></li>
+          <li><a href="/about_us/" class="text-light text-decoration-none">About Us</a></li>
+          <li><a href="/approach/" class="text-light text-decoration-none">Our Approach</a></li>
+          <li><a href="/success_stories/" class="text-light text-decoration-none">Success Stories</a></li>
+          <li><a href="/testimonial/" class="text-light text-decoration-none">Testimonials</a></li>
+          <li><a href="/scholarship_distribution/" class="text-light text-decoration-none">Scholarship Programme</a></li>
+          <li><a href="/balance_sheet/" class="text-light text-decoration-none">Financial Reports</a></li>
+          <li><a href="/certificates/" class="text-light text-decoration-none">Legal Certificates</a></li>
+          <li><a href="/scholarship_certificate/" class="text-light text-decoration-none">Scholarship Receipts</a></li>
+          <li><a href="/future-plan/" class="text-light text-decoration-none">Future Plans</a></li>
+		  <li><a href="/faq/" class="text-light text-decoration-none">FAQs</a></li>
+		  <li><a href="/contact_us/" class="text-light text-decoration-none">Contact Us</a></li>
         </ul>
       </div>
 
       <!-- Address -->
-<div class="col-lg-4 col-md-6">
-  <h5 class="footer-title">Address</h5>
+      <div class="col-lg-3 col-md-6">
+        <h5 class="footer-title mb-3">Address</h5>
 
-  <p class="footer-text mb-2">
-    Swami Vivekanand Students’ Welfare Charitable Trust
-  </p>
+        <p class="footer-text mb-2">
+          Swami Vivekanand Students’ Welfare Charitable Trust
+        </p>
 
-  <p class="footer-text mb-0">
-    Manidweep, A-183 Shastri Nagar <br>
-    Near Lachoo Memorial College, Jodhpur,<br>
-    Rajasthan, India - 342001
-  </p>
-</div>
+        <p class="footer-text mb-0">
+          Manidweep, A-183 Shastri Nagar <br>
+          Near Lachoo Memorial College, Jodhpur,<br>
+          Rajasthan, India - 342001
+        </p>
+
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Manidweep%2C+A-183+Shastri+Nagar%2C+Jodhpur%2C+Rajasthan+342001"
+           class="footer-directions-link"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Get directions to Manidweep, Jodhpur (opens in a new tab)">
+          <i class="fa fa-location-arrow" aria-hidden="true"></i>
+          Get Directions
+        </a>
+      </div>
 
       <!-- Contact -->
-      <div class="col-lg-4 col-md-12 d-flex flex-column align-items-lg-end align-items-start">
+      <div class="col-lg-3 col-md-6 d-flex flex-column align-items-lg-end align-items-start">
 
         <h5 class="footer-title mb-3">Contact</h5>
 
         <p class="mb-2 footer-text">
           <i class="fa fa-phone me-2"></i>
-
-          <a href="tel:+919414917901"
-             class="text-light text-decoration-none">
-            +91-9414917901
-          </a>
+          <a href="tel:+919414917901" class="text-light text-decoration-none">+91-9414917901</a>
         </p>
 
         <p class="mb-2 footer-text">
           <i class="fa fa-envelope me-2"></i>
-
-          <a href="mailto:kishoreggm@gmail.com"
-             class="text-light text-decoration-none">
-            kishoreggm@gmail.com
-          </a>
+          <a href="mailto:kishoreggm@gmail.com" class="text-light text-decoration-none">kishoreggm@gmail.com</a>
         </p>
 
-        <!-- Donate Button -->
         <a href="/donate/"
            class="btn footer-donate-btn btn-rounded mt-3 px-4 py-2"
            role="button"
            aria-label="Donate to support the Trust">
-
           Donate
         </a>
 
@@ -86,23 +78,21 @@
 
     </div>
 
-    <!-- Tax Info -->
-<div class="footer-bottom text-center">
-  <p class="footer-tax mb-0">
-    <strong>
-      All donations to this trust are exempted under Section 80G of the Income Tax Act of India.
-    </strong>
-  </p>
-</div>
-
-    <!-- Divider -->
     <hr class="footer-divider mt-4">
 
-    <!-- Copyright -->
-    <div class="text-center small footer-copy">
-      &copy; 2026 Swami Vivekanand Students’ Welfare Charitable Trust.
-      All rights reserved.
-    </div>
+    <!-- Single bottom line — copyright, legal links, and the CSR
+         registration number only (PAN/12A/80G/FCRA numbers dropped;
+         the fuller registration details already live on /donate/ for
+         anyone who needs them there). -->
+    <p class="footer-bottom-line text-center mb-0">
+      &copy; <span id="footerYear">2026</span> Swami Vivekanand Students’ Welfare Charitable Trust. All rights reserved.
+      <span class="footer-bottom-sep">|</span>
+      <a href="/privacy_policy/" target="_blank" rel="noopener">Privacy Policy</a>
+      <span class="footer-bottom-sep">|</span>
+      <a href="/terms_of_use/" target="_blank" rel="noopener">Terms of Use</a>
+      <span class="footer-bottom-sep">|</span>
+      CSR Registration Number: CSR00015606
+    </p>
 
   </div>
 
@@ -111,232 +101,12 @@
        loadHTML() in every page brings this partial in) are never executed
        by the browser — this button's listeners must live in script.js and
        be (re)initialized after the footer fetch resolves. See initBackToTop()
-       in script.js, invoked via the loadHTML() callback in each page. -->
+       in script.js, invoked via the loadHTML() callback in each page.
+       Same reasoning applies to the year below: a plain <script> tag here
+       would never run, so script.js's initBackToTop() also sets #footerYear
+       to the real current year on init, instead of it being hardcoded. -->
   <button id="backToTopBtn" aria-label="Back to top">
   <i class="fa-solid fa-arrow-up"></i>
 </button>
 
 </footer>
-
-<style>
-
-/* =========================================================
-   FOOTER SECTION
-========================================================= */
-
-.footer-section {
-  background: var(--color-brick);
-  position: relative;
-  overflow: hidden;
-  font-size: 0.8rem;
-}
-
-/* subtle top border glow */
-.footer-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 1px;
-
-  background: rgba(255,255,255,0.2);
-}
-
-/* =========================================================
-   TITLES
-========================================================= */
-
-.footer-title {
-  color: var(--color-gold);
-  font-weight: 600;
-  font-size: 1.2rem;
-  letter-spacing: 0.3px;
-}
-
-/* =========================================================
-   TEXT
-========================================================= */
-
-.footer-text{
-  color: rgba(255,255,255,0.88);
-  line-height: 1.8;
-  word-break: break-word;
-}
-
-.footer-tax{
-  color: rgba(255,255,255,0.95);
-  font-size: 0.95rem;
-}
-
-.footer-text,
-.footer-links li,
-.footer-links a {
-  line-height: 1.8;
-  font-size: 0.97rem;
-}
-
-.footer-text{
-  text-align: left;
-  word-spacing: normal;
-  letter-spacing: normal;
-}
-
-.footer-text,
-.footer-contact li{
-  overflow-wrap: anywhere;
-}
-
-/* =========================================================
-   LINKS
-========================================================= */
-
-.footer-links li {
-  margin-bottom: 10px;
-}
-
-.footer-links a,
-.footer-section a.text-light {
-  transition: all 0.3s ease;
-}
-
-.footer-links a:hover,
-.footer-section a.text-light:hover {
-  color: #FBBF24 !important;
-  padding-left: 4px;
-}
-
-/* =========================================================
-   DONATE BUTTON
-========================================================= */
-
-.btn-rounded {
-  border-radius: 50px;
-}
-
-.footer-donate-btn {
-  background: var(--color-gold);
-  border: none;
-  color: var(--color-maroon);
-  font-weight: 600;
-
-  transition: all 0.3s ease;
-}
-
-.footer-donate-btn:hover {
-  background: #fff;
-  color: #951A19;
-
-  transform: translateY(-2px);
-}
-
-/* =========================================================
-   DIVIDER
-========================================================= */
-
-.footer-divider {
-  border-color: rgba(255,255,255,0.2);
-}
-
-/* =========================================================
-   TAX + COPYRIGHT
-========================================================= */
-
-.footer-tax p {
-  font-size: 0.96rem;
-  line-height: 1.7;
-}
-
-.footer-copy {
-  opacity: 0.9;
-  letter-spacing: 0.2px;
-}
-
-/* =========================================================
-   BACK TO TOP
-========================================================= */
-#backToTopBtn{
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-
-  width: 52px;
-  height: 52px;
-
-  border: none;
-  border-radius: 50%;
-
-  background: #FBBF24;
-  color: #5B0E0D;
-
-  font-size: 18px;
-  cursor: pointer;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
-
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(20px);
-
-  transition: all 0.3s ease;
-
-  z-index: 9999;
-}
-
-#backToTopBtn.show{
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-#backToTopBtn:hover{
-  transform: translateY(-4px);
-}
-
-@media (max-width:768px){
-
-  #backToTopBtn{
-    width: 46px;
-    height: 46px;
-    bottom: 18px;
-    right: 18px;
-    font-size: 16px;
-  }
-
-}
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 768px) {
-
-  .footer-section {
-    text-align: center;
-  }
-
-  .footer-section .col-lg-4,
-  .footer-section .col-md-6,
-  .footer-section .col-md-12 {
-
-    text-align: center !important;
-    align-items: center !important;
-  }
-
-  .footer-donate-btn {
-    width: 100%;
-    max-width: 240px;
-  }
-
-  .footer-links a:hover,
-  .footer-section a.text-light:hover {
-    padding-left: 0;
-  }
-
-}
-
-</style>

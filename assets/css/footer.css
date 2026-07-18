@@ -1,0 +1,261 @@
+/* ==========================================================================
+   footer.css
+   Loaded via <link> INSIDE footer.html itself (not each page's <head>) —
+   footer.html is injected via innerHTML at runtime (see loadHTML() in
+   script.js), and while injected <script> tags are inert, injected <link>
+   and <style> tags are NOT — the browser still fetches and applies them.
+   Keeping the stylesheet link here (rather than duplicating it into every
+   page's <head>) means it loads once, per page, right where it's used,
+   and — unlike the old inline <style> block — the browser can now cache
+   this file across every page navigation instead of re-parsing it as
+   fresh text on every single load.
+   ========================================================================== */
+
+/* =========================================================
+   FOOTER SECTION
+========================================================= */
+
+.footer-section {
+  background: var(--color-brick);
+  position: relative;
+  overflow: hidden;
+  font-size: 0.8rem;
+}
+
+.footer-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(255,255,255,0.2);
+}
+
+/* =========================================================
+   SITEMAP COLUMN HEADINGS
+========================================================= */
+
+.footer-title {
+  color: var(--color-gold);
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: 0.3px;
+}
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.footer-text {
+  color: rgba(255,255,255,0.88);
+  line-height: 1.6;
+  word-break: break-word;
+  text-align: left;
+  word-spacing: normal;
+  letter-spacing: normal;
+  overflow-wrap: anywhere;
+  font-size: 0.85rem;
+}
+
+.footer-text,
+.footer-links li,
+.footer-links a {
+  line-height: 1.6;
+  font-size: 0.85rem;
+}
+
+/* =========================================================
+   LINKS (Explore — merged sitemap, single heading)
+========================================================= */
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+/* Internal 2-column grid: 12 links read as one "Explore" block but take
+   roughly half the vertical space a single stacked list would, without
+   splitting the sitemap into multiple separate headings/columns. */
+.footer-links--grid {
+  column-count: 2;
+  column-gap: 28px;
+}
+
+.footer-links--grid li {
+  break-inside: avoid;
+}
+
+@media (max-width: 768px) {
+  .footer-links--grid {
+    column-count: 1;
+  }
+}
+
+.footer-links a,
+.footer-section a.text-light {
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-section a.text-light:hover {
+  color: var(--color-gold) !important;
+  padding-left: 4px;
+}
+
+/* =========================================================
+   ADDRESS + GET DIRECTIONS
+========================================================= */
+
+.footer-directions-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-gold);
+  text-decoration: none;
+  transition: color 0.3s ease, gap 0.3s ease;
+}
+
+.footer-directions-link:hover {
+  color: #fff;
+  gap: 10px;
+}
+
+/* =========================================================
+   DONATE BUTTON
+========================================================= */
+
+.btn-rounded {
+  border-radius: 50px;
+}
+
+.footer-donate-btn {
+  background: var(--color-gold);
+  border: none;
+  color: var(--color-maroon);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.footer-donate-btn:hover {
+  background: #fff;
+  color: #951A19;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.footer-divider {
+  border-color: rgba(255,255,255,0.2);
+}
+
+/* =========================================================
+   BOTTOM LINE — copyright, legal links, CSR number (single line)
+========================================================= */
+
+.footer-bottom-line {
+  font-size: 0.7rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.2px;
+}
+
+.footer-bottom-line a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+}
+
+.footer-bottom-line a:hover {
+  color: var(--color-gold);
+  text-decoration: underline;
+}
+
+.footer-bottom-sep {
+  margin: 0 10px;
+  color: rgba(255,255,255,0.3);
+}
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+#backToTopBtn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 50%;
+  background: #FBBF24;
+  color: #5B0E0D;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+#backToTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#backToTopBtn:hover {
+  transform: translateY(-4px);
+}
+
+@media (max-width: 768px) {
+  #backToTopBtn {
+    width: 46px;
+    height: 46px;
+    bottom: 18px;
+    right: 18px;
+    font-size: 16px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .footer-section {
+    text-align: center;
+  }
+
+  .footer-section .col-lg-3,
+  .footer-section .col-lg-4,
+  .footer-section .col-lg-6,
+  .footer-section .col-md-6,
+  .footer-section .col-md-12 {
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  .footer-directions-link {
+    justify-content: center;
+  }
+
+  .footer-donate-btn {
+    width: 100%;
+    max-width: 240px;
+  }
+
+  .footer-links a:hover,
+  .footer-section a.text-light:hover {
+    padding-left: 0;
+  }
+}

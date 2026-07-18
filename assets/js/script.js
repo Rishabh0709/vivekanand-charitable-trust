@@ -18,6 +18,12 @@ function initBackToTop() {
   if (backBtn.dataset.initialized === 'true') return;
   backBtn.dataset.initialized = 'true';
 
+  // Footer copyright year — footer.html can't run its own <script> tag
+  // (injected via innerHTML, same reasoning as the button listeners
+  // below), so the hardcoded year lives here instead, set once per load.
+  const yearEl = document.getElementById('footerYear');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
   window.addEventListener('scroll', () => {
     if (window.scrollY > 300) {
       backBtn.classList.add('show');
