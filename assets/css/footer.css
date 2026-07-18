@@ -75,10 +75,13 @@
 
 /* Internal 2-column grid: 12 links read as one "Explore" block but take
    roughly half the vertical space a single stacked list would, without
-   splitting the sitemap into multiple separate headings/columns. */
+   splitting the sitemap into multiple separate headings/columns. Stays
+   2-column across every breakpoint — on phones this is what keeps the
+   list to 6 rows instead of 12, so font-size shrinks at narrow widths
+   instead of the column count collapsing back to 1. */
 .footer-links--grid {
   column-count: 2;
-  column-gap: 28px;
+  column-gap: 24px;
 }
 
 .footer-links--grid li {
@@ -87,7 +90,22 @@
 
 @media (max-width: 768px) {
   .footer-links--grid {
-    column-count: 1;
+    column-gap: 16px;
+  }
+  .footer-links--grid li {
+    margin-bottom: 6px;
+  }
+  .footer-links--grid a {
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .footer-links--grid {
+    column-gap: 10px;
+  }
+  .footer-links--grid a {
+    font-size: 0.72rem;
   }
 }
 
@@ -158,7 +176,7 @@
 ========================================================= */
 
 .footer-bottom-line {
-  font-size: 0.7rem;
+  font-size: 0.82rem;
   line-height: 1.8;
   color: rgba(255,255,255,0.55);
   letter-spacing: 0.2px;
@@ -167,6 +185,7 @@
 .footer-bottom-line a {
   color: rgba(255,255,255,0.85);
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .footer-bottom-line a:hover {
