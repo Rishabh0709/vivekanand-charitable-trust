@@ -1,5 +1,17 @@
 permalink: /:basename/
 
+# Files/dirs that must never be treated as pages or copied into the built
+# site. Anything not linked from the live navigation should live outside
+# the repo root (or here) rather than sit around as a publishable page.
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package.json
+  - package-lock.json
+  - "*.sh"
+
 collections:
   success_stories:
     output: true
