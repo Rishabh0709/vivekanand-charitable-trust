@@ -17,12 +17,12 @@
     /* ================================================================
        manidweep.html — page-specific additions ONLY.
        .page-hero, .glass-panel, .glass-card, .section-heading,
-       .split-layout, .leadership-track/.leader-*, .badge-pill,
-       .stat-callout, .selection-cta, .btn-cta/.btn-outline, .pull-quote
-       all reuse shared components from style.css unchanged. Only the
-       handful of layouts genuinely unique to this page — the founding
-       narrative panel, the four-trust grid, the service grid, and the
-       tribute grid — are defined here.
+       .split-layout, .badge-pill, .stat-callout, .selection-cta,
+       .btn-cta/.btn-outline, .pull-quote, .text-highlight all reuse
+       shared components from style.css unchanged. Only the handful of
+       layouts genuinely unique to this page — the founding narrative
+       panel, the four-trust grid, the photo-led service grid, and the
+       principle grid — are defined here.
     ================================================================ */
 
     /* ── Founding narrative panel (kept from the original page) ──────── */
@@ -47,36 +47,6 @@
       max-width: 620px;
       margin: 36px auto;
       line-height: 1.5;
-    }
-
-    /* ── On-page quick nav ────────────────────────────────────────────── */
-    .manidweep-nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      max-width: 900px;
-      margin: 0 auto 10px;
-      padding: 0 20px;
-    }
-
-    .manidweep-nav a {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--color-brown);
-      background: rgba(255, 255, 255, 0.6);
-      border: 1px solid rgba(166, 120, 46, 0.25);
-      border-radius: 999px;
-      padding: 7px 16px;
-      text-decoration: none;
-      transition: background var(--transition-base), color var(--transition-base), border-color var(--transition-base);
-    }
-
-    .manidweep-nav a:hover {
-      background: var(--color-maroon);
-      border-color: var(--color-maroon);
-      color: #fff;
     }
 
     /* ── Four Trusts grid ─────────────────────────────────────────────── */
@@ -130,10 +100,22 @@
       margin-top: 32px;
     }
 
-    .service-card { --icon-color: var(--color-brown); text-align: center; }
-    .service-card .icon-circle--lg { margin: 0 auto 16px; }
-    .service-card h4 { margin-bottom: 8px; }
-    .service-card p { margin-bottom: 0; }
+    .service-card { padding: 0; overflow: hidden; text-align: left; }
+
+    .service-card__img-wrap { width: 100%; height: 190px; overflow: hidden; }
+    .service-card__img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.45s ease;
+    }
+    .service-card:hover .service-card__img-wrap img { transform: scale(1.06); }
+
+    .service-card__body { padding: 24px 22px 26px; }
+    .service-card__body h4 { margin-bottom: 8px; }
+    .service-card__body p { margin-bottom: 0; }
+
     .service-card__since {
       display: inline-block;
       margin-top: 12px;
@@ -165,31 +147,6 @@
       .principle-grid { grid-template-columns: 1fr; }
     }
 
-    /* ── Tribute grid (roads named in honour) ────────────────────────── */
-    .tribute-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 28px;
-    }
-
-    .tribute-card { --icon-color: var(--color-gold); text-align: center; }
-    .tribute-card__city {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--color-orange);
-      margin-bottom: 6px;
-    }
-    .tribute-card h4 { font-size: 1.05rem; margin-bottom: 8px; }
-    .tribute-card p { font-size: 0.88rem; margin-bottom: 0; }
-
-    @media (max-width: 900px) {
-      .tribute-grid { grid-template-columns: 1fr; }
-    }
-
     /* ── Support panel note ───────────────────────────────────────────── */
     .support-note {
       max-width: 720px;
@@ -217,16 +174,6 @@
       from which four charitable trusts, and this educational mission, draw their values.
     </p>
   </header>
-
-  <nav class="manidweep-nav" aria-label="Jump to section on this page">
-    <a href="#awakening">Manidweep</a>
-    <a href="#torchbearers">Our Torchbearers</a>
-    <a href="#trusts">The Four Trusts</a>
-    <a href="#service">Community Service</a>
-    <a href="#principles">Guiding Principles</a>
-    <a href="#guidance">Spiritual Guidance</a>
-    <a href="#support">Support This Mission</a>
-  </nav>
 
   <!-- ════════════════════════════════════════════════════════════════════
        SECTION — WHAT IS MANIDWEEP
@@ -270,9 +217,9 @@
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════════
-       SECTION — OUR TORCHBEARERS (condensed; full biographies live
-       on their own pages, linked from each card, to avoid duplicating
-       content already covered in depth elsewhere on the site)
+       SECTION — OUR TORCHBEARERS (condensed narrative; each founder's
+       name links directly to their full biography page, so no separate
+       card/CTA row duplicates the leader-card grid on about_us.html)
   ════════════════════════════════════════════════════════════════════ -->
   <section id="torchbearers" class="about-section alt-bg" aria-labelledby="torchbearers-heading">
     <div class="container">
@@ -282,24 +229,28 @@
         <div class="divider"></div>
         <p class="subtext">
           Three lives whose spiritual practice at Manidweep became the root of every trust described
-          on this page.
+          on this page. Follow any name below to read their full biography.
         </p>
       </div>
 
       <div class="glass-panel manidweep-panel" style="max-width: 900px;">
         <p>
-          Shri Nandkishore ji Sharda was born on 16 July 1944 into a prosperous, cultured family in
-          Jodhpur. At just fifteen, standing before his father's funeral pyre, a profound detachment
-          arose within him — and in that moment he resolved to know the power that animates the human
-          body. To fulfil that resolve, Bhaiyaji began intense sadhna of Jagatjanani Maa Tripurasundari;
-          through unwavering devotion, penance, and surrender, he received her divine grace and darshan.
+          <a href="/torch_bearers/nandkishore-sharda/" class="text-highlight">Shri Nandkishore ji Sharda</a>
+          was born on 16 July 1944 into a prosperous, cultured family in Jodhpur. At just fifteen,
+          standing before his father's funeral pyre, a profound detachment arose within him — and in
+          that moment he resolved to know the power that animates the human body. To fulfil that
+          resolve, Bhaiyaji began intense sadhna of Jagatjanani Maa Tripurasundari; through unwavering
+          devotion, penance, and surrender, he received her divine grace and darshan.
         </p>
         <p>
-          Moved by Bhaiyaji's knowledge, sadhna, and divine presence, Kumari Basanti ji Manihar (M.A.,
-          B.Ed.) began her own sadhna of Maa Tripurasundari under his guidance from 1964, and — through
-          continuous japa, tapa, and practice — she too received the divine darshan of Jagatjanani Maa.
-          In 1970, Kumari Madhubala ji Advani (M.A., B.Ed.) came into contact with Maa Basanti ji and,
-          moved by her pure, childlike devotion, became deeply devoted to her in turn.
+          Moved by Bhaiyaji's knowledge, sadhna, and divine presence,
+          <a href="/torch_bearers/basanti-manihar/" class="text-highlight">Kumari Basanti ji Manihar</a>
+          (M.A., B.Ed.) began her own sadhna of Maa Tripurasundari under his guidance from 1964, and —
+          through continuous japa, tapa, and practice — she too received the divine darshan of
+          Jagatjanani Maa. In 1970,
+          <a href="/torch_bearers/madhu-advani/" class="text-highlight">Kumari Madhubala ji Advani</a>
+          (M.A., B.Ed.) came into contact with Maa Basanti ji and, moved by her pure, childlike
+          devotion, became deeply devoted to her in turn.
         </p>
         <p class="mb-0">
           In 1996, by the command of Jagatjanani Maa, they began <em>"Karma Sadhna"</em> — spiritual
@@ -308,61 +259,6 @@
         </p>
       </div>
 
-      <div class="leadership-track">
-
-        <a href="/torch_bearers/nandkishore-sharda/" class="leader-card glass-card">
-          <div class="leader-img">
-            <img src="/assets/images/bhaiyaji_2.jpg" alt="Shri Nandkishore Sharda">
-          </div>
-          <div class="leader-body">
-            <p class="leader-name">Shri Nandkishore Sharda</p>
-            <p class="leader-role">Founder &amp; First President</p>
-            <p class="leader-years">1944 &ndash; 2003</p>
-            <p class="leader-desc">
-              The original seeker whose sadhna of Maa Tripurasundari, begun after a life-changing
-              loss at fifteen, awakened Manidweep itself.
-            </p>
-            <span class="btn-outline">View Full Biography</span>
-          </div>
-        </a>
-
-        <div class="track-connector" aria-hidden="true"></div>
-
-        <a href="/torch_bearers/basanti-manihar/" class="leader-card glass-card">
-          <div class="leader-img">
-            <img src="/assets/images/maa_1.jpg" alt="Kumari Basanti Manihar">
-          </div>
-          <div class="leader-body">
-            <p class="leader-name">Kumari Basanti Manihar</p>
-            <p class="leader-role">Founder &amp; Former President</p>
-            <p class="leader-years">1964 &ndash; 2021</p>
-            <p class="leader-desc">
-              Began her sadhna under Bhaiyaji's guidance in 1964 and, after 2003, carried his mission
-              forward — founding two of the four trusts described below.
-            </p>
-            <span class="btn-outline">View Full Biography</span>
-          </div>
-        </a>
-
-        <div class="track-connector" aria-hidden="true"></div>
-
-        <a href="/torch_bearers/madhu-advani/" class="leader-card glass-card">
-          <div class="leader-img">
-            <img src="/assets/images/madhu_maa2.1.jpg" alt="Kumari Madhubala Advani">
-          </div>
-          <div class="leader-body">
-            <p class="leader-name">Kumari Madhubala Advani</p>
-            <p class="leader-role">President</p>
-            <p class="leader-years">1970 &ndash; Present</p>
-            <p class="leader-desc">
-              In contact with Maa Basanti and Bhaiyaji since 1970; today leads every trust rooted in
-              Manidweep with dedication, faith, and efficiency.
-            </p>
-            <span class="btn-outline">View Full Biography</span>
-          </div>
-        </a>
-
-      </div>
     </div>
   </section>
 
@@ -515,39 +411,57 @@
       <div class="service-grid">
 
         <div class="glass-card service-card">
-          <span class="icon-circle icon-circle--lg" aria-hidden="true"><i class="ti ti-basket"></i></span>
-          <h4>Food Grain Distribution</h4>
-          <p>
-            During the hardship of the Covid-19 pandemic, Maa Basanti ji — moved by the suffering of
-            needy families — resolved in October 2020 to distribute food grain regularly, not as mere
-            assistance but as a true sadhna of humanity. Since her passing in May 2021, Madhu Maa has
-            carried the work forward with the same devotion.
-          </p>
-          <span class="service-card__since">Since Oct 2020 &middot; 300+ families in Jodhpur &amp; Balotra</span>
+          <div class="service-card__img-wrap">
+            <img src="/assets/images/ration.jpg"
+                 alt="Food grain being distributed to needy families by the Trust"
+                 loading="lazy" />
+          </div>
+          <div class="service-card__body">
+            <h4>Food Grain Distribution</h4>
+            <p>
+              During the hardship of the Covid-19 pandemic, Maa Basanti ji — moved by the suffering of
+              needy families — resolved in October 2020 to distribute food grain regularly, not as mere
+              assistance but as a true sadhna of humanity. Since her passing in May 2021, Madhu Maa has
+              carried the work forward with the same devotion.
+            </p>
+            <span class="service-card__since">Since Oct 2020 &middot; 300+ families in Jodhpur &amp; Balotra</span>
+          </div>
         </div>
 
         <div class="glass-card service-card">
-          <span class="icon-circle icon-circle--lg" aria-hidden="true"><i class="ti ti-yoga"></i></span>
-          <h4>Free Yoga Classes</h4>
-          <p>
-            Free daily yoga classes began on 10 June 2022 at the Adhyatma Yogi Shri Nandkishore Sharda
-            Sadhna Sthali, Kabootaron ka Chowk. Trained instructors guide participants each morning
-            through subtle exercise, pranayama, asanas, and meditation — building physical health,
-            mental peace, and a positive outlook for the general public.
-          </p>
-          <span class="service-card__since">Since June 2022 &middot; Daily, 7:15&ndash;8:15 AM</span>
+          <div class="service-card__img-wrap">
+            <img src="/assets/images/yoga_class.jpg"
+                 alt="Free morning yoga class at the Adhyatma Yogi Shri Nandkishore Sharda Sadhna Sthali"
+                 loading="lazy" />
+          </div>
+          <div class="service-card__body">
+            <h4>Free Yoga Classes</h4>
+            <p>
+              Free daily yoga classes began on 10 June 2022 at the Adhyatma Yogi Shri Nandkishore Sharda
+              Sadhna Sthali, Kabootaron ka Chowk. Trained instructors guide participants each morning
+              through subtle exercise, pranayama, asanas, and meditation — building physical health,
+              mental peace, and a positive outlook for the general public.
+            </p>
+            <span class="service-card__since">Since June 2022 &middot; Daily, 7:15&ndash;8:15 AM</span>
+          </div>
         </div>
 
         <div class="glass-card service-card">
-          <span class="icon-circle icon-circle--lg" aria-hidden="true"><i class="ti ti-scissors"></i></span>
-          <h4>Sewing &amp; Self-Reliance Centre</h4>
-          <p>
-            Under the Women's Self-Reliance Scheme, the "Vatsalyamayi Maa Basanti Manihar Sewing Centre"
-            was established by Madhu Maa in 2025 for women and young women from the most disadvantaged,
-            economically weak sections of society — offering free, practical training in sewing and
-            garment-making, alongside self-confidence, self-respect, and dignified livelihood.
-          </p>
-          <span class="service-card__since">Est. 2025 &middot; Free skills training for women</span>
+          <div class="service-card__img-wrap">
+            <img src="/assets/images/sewing.png"
+                 alt="Women training at the Vatsalyamayi Maa Basanti Manihar Sewing Centre"
+                 loading="lazy" />
+          </div>
+          <div class="service-card__body">
+            <h4>Sewing &amp; Self-Reliance Centre</h4>
+            <p>
+              Under the Women's Self-Reliance Scheme, the "Vatsalyamayi Maa Basanti Manihar Sewing Centre"
+              was established by Madhu Maa in 2025 for women and young women from the most disadvantaged,
+              economically weak sections of society — offering free, practical training in sewing and
+              garment-making, alongside self-confidence, self-respect, and dignified livelihood.
+            </p>
+            <span class="service-card__since">Est. 2025 &middot; Free skills training for women</span>
+          </div>
         </div>
 
       </div>
