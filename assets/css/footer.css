@@ -1,14 +1,8 @@
 /* ==========================================================================
    footer.css
-   Loaded via <link> INSIDE footer.html itself (not each page's <head>) —
-   footer.html is injected via innerHTML at runtime (see loadHTML() in
-   script.js), and while injected <script> tags are inert, injected <link>
-   and <style> tags are NOT — the browser still fetches and applies them.
-   Keeping the stylesheet link here (rather than duplicating it into every
-   page's <head>) means it loads once, per page, right where it's used,
-   and — unlike the old inline <style> block — the browser can now cache
-   this file across every page navigation instead of re-parsing it as
-   fresh text on every single load.
+   Loaded via <link> inside _includes/footer.html itself (not each page's
+   <head>), so it loads once, right where it's used, and the browser can
+   cache it across every page navigation.
    ========================================================================== */
 
 /* =========================================================

@@ -97,14 +97,10 @@
   </div>
 
   <!-- Back To Top
-       NOTE: no <script> here. Scripts injected via innerHTML (which is how
-       loadHTML() in every page brings this partial in) are never executed
-       by the browser — this button's listeners must live in script.js and
-       be (re)initialized after the footer fetch resolves. See initBackToTop()
-       in script.js, invoked via the loadHTML() callback in each page.
-       Same reasoning applies to the year below: a plain <script> tag here
-       would never run, so script.js's initBackToTop() also sets #footerYear
-       to the real current year on init, instead of it being hardcoded. -->
+       This include is now rendered server-side by Jekyll, so its markup is
+       present at page load — but the button's listeners and the copyright
+       year still live in script.js's initBackToTop(), called once on
+       DOMContentLoaded, rather than an inline <script> here. -->
   <button id="backToTopBtn" aria-label="Back to top">
   <i class="fa-solid fa-arrow-up"></i>
 </button>

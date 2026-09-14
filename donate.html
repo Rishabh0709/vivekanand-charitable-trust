@@ -102,7 +102,7 @@
 </head>
 <body class="page-bg">
   <!-- Header Element -->
-  <div id="header-placeholder"></div>
+  {% include header.html %}
 
   <!-- HERO HEADER CONTEXT -->
   <header class="page-hero">
@@ -204,7 +204,7 @@
   </main>
 
   <!-- Footer Element -->
-  <div id="footer-placeholder"></div>
+  {% include footer.html %}
 
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -212,9 +212,5 @@
   <script src="/assets/js/script.js"></script>
 
   <!-- Component Loading Scripts -->
-  <script>
-    loadHTML('header-placeholder', '/header.html', initHeaderSubmenu);
-    loadHTML('footer-placeholder', '/footer.html', initBackToTop);  
-  </script>
 </body>
 </html>

@@ -147,6 +147,6 @@
   document.addEventListener('DOMContentLoaded', initStats);
 
   // Exposed for pages that inject stats-bearing HTML *after* DOMContentLoaded
-  // (e.g. into a modal or a partial loaded via loadHTML()).
+  // (e.g. into a modal loaded dynamically).
   global.refreshStats = initStats;
 })(window);

@@ -1,0 +1,310 @@
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<style>
+/* =========================================================
+   NAVBAR BASE
+========================================================= */
+.navbar {
+  background-color: #fff;
+  padding: 0;
+}
+
+.navbar .nav-link {
+  color: var(--color-maroon);
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  background-color: var(--color-brown);
+  color: #fff;
+}
+
+/* =========================================================
+   DROPDOWN
+========================================================= */
+.dropdown-menu {
+  border-radius: 10px;
+  padding: 8px;
+  border: none;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.dropdown-menu .dropdown-item {
+  color: var(--color-maroon);
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: var(--color-brown);
+  color: #fff;
+}
+
+/* =========================================================
+   SUBMENU (DESKTOP)
+========================================================= */
+.dropdown-submenu {
+  position: relative;
+}
+
+/* Default: hidden, positioned for the desktop flyout */
+.dropdown-submenu > .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-left: 0.2rem;
+}
+
+/* Opened via click/keyboard (.show) — identical behavior on every device */
+.dropdown-submenu.show > .dropdown-menu {
+  display: block;
+}
+
+@media (min-width: 992px) {
+  .dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+  }
+}
+
+/* Arrow */
+.dropdown-submenu > .dropdown-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown-submenu > .dropdown-toggle::after {
+  margin-left: 8px;
+  transform: rotate(-90deg);
+}
+
+.dropdown-submenu.show > .dropdown-toggle::after {
+  transform: rotate(90deg);
+}
+
+/* Make the new button look identical to the old a tag */
+.submenu-toggle {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font: inherit;
+}
+
+/* Mobile: cancel the desktop flyout positioning (the fix from earlier) */
+@media (max-width: 991px) {
+  .dropdown-submenu > .dropdown-menu {
+    position: static;
+    left: 0;
+    top: 0;
+    margin-left: 0;
+    padding-left: 1rem;
+    box-shadow: none;
+  }
+}
+
+
+/* =========================================================
+   HEADER WRAPPER
+========================================================= */
+.header-wrapper {
+  height: 120px;
+  background: var(--color-gold);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1000;
+}
+
+/* =========================================================
+   LOGO
+========================================================= */
+.navbar-brand img {
+  max-height: 100px;
+  transition: all 0.3s ease;
+}
+
+.header-wrapper.scrolled .navbar-brand img {
+  max-height: 55px;
+}
+
+/* =========================================================
+   NAVBAR STRUCTURE
+========================================================= */
+#mainNav .container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-toggler {
+  margin-left: auto;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+/* =========================================================
+   MOBILE STYLING
+========================================================= */
+@media (max-width: 991px) {
+
+  .navbar-collapse {
+    background: #fff;
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  }
+
+  .navbar-nav {
+    gap: 6px;
+  }
+
+  .nav-link {
+    padding: 10px 12px;
+  }
+
+  .dropdown-submenu > .dropdown-menu {
+    position: static;     /* cancel Bootstrap's default absolute positioning */
+    left: 0;               /* cancel the desktop left: 100% offset */
+    top: 0;
+    margin-left: 0;        /* cancel the desktop 0.2rem gap */
+    padding-left: 1rem;    /* small indent so it visually reads as a sub-level */
+    box-shadow: none;      /* it's inline now, doesn't need the floating shadow */
+    display: none;         /* keep your existing toggle logic */
+  }
+
+  .dropdown-submenu.show > .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-submenu > .dropdown-toggle::after {
+    transform: rotate(0deg);
+  }
+  
+  .dropdown-submenu.show > .dropdown-toggle::after {
+  transform: rotate(90deg);
+}
+
+  /* Header responsive */
+  .header-wrapper {
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .navbar-brand img {
+    max-height: 70px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 768px) {
+  .navbar-brand img {
+    max-height: 60px;
+  }
+}
+</style>
+
+<header class="header-wrapper">
+  <nav id="mainNav" class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+
+      <!-- Logo -->
+      <a class="navbar-brand d-flex align-items-center ps-3" href="/">
+        <img src="/assets/images/logo.png" alt="Trust Logo" class="img-fluid">
+      </a>
+
+      <!-- Toggler -->
+      <button class="navbar-toggler ms-auto" type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavDropdown"
+			  aria-controls="navbarNavDropdown"
+			  aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menu -->
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+
+          <!-- ABOUT -->
+          <li class="nav-item">
+            <a class="nav-link" href="/about_us/">About Us</a>
+		  </li>
+
+          <!-- WOMEN EMPOWERMENT -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              Women Empowerment
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/approach/">Our Approach</a></li>
+              <li><a class="dropdown-item" href="/scholarship_distribution/">Scholarship Programme</a></li>
+			  <li><a class="dropdown-item" href="/student_selection/">How We Select Students</a></li>
+              <li><a class="dropdown-item" href="/sunday_classes/">Personality Development Classes</a></li>
+              <li><a class="dropdown-item" href="/infrastructure/">Basic Infrastructure Support</a></li>
+            </ul>
+          </li>
+
+          <!-- IMPACT -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              Our Impact
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/success_stories/">Success Stories</a></li>
+              <li><a class="dropdown-item" href="/testimonial/">Testimonials</a></li>
+            </ul>
+          </li>
+
+          <!-- RESOURCES -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              Resources
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/certificates/">Legal Certificates</a></li>
+              <li><a class="dropdown-item" href="/balance_sheet/">Financial Reports</a></li>
+              <li><a class="dropdown-item" href="/scholarship_certificate/">Scholarship Receipts</a></li>
+            </ul>
+          </li>
+
+          <!-- GALLERY -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              Gallery
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/awards/">Awards & Recognitions</a></li>
+              <li><a class="dropdown-item" href="/gallery_scholarship/">Scholarship Programme</a></li>
+              <li><a class="dropdown-item" href="/gallery_news/">Trust in News</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/contact_us/">Contact Us</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+	 
+</header>

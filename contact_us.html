@@ -15,7 +15,7 @@
 </head>
 <body class="contact-page">
 
-  <div id="header-placeholder"></div>
+  {% include header.html %}
 
   <header class="page-hero">
     <span class="page-hero__eyebrow">We'd Love to Hear From You</span>
@@ -152,15 +152,13 @@
 
   </main>
 
-  <div id="footer-placeholder"></div>
+  {% include footer.html %}
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/assets/js/script.js"></script>
   <script src="/assets/js/contact-form.js"></script>
   <script>
-    loadHTML('header-placeholder', '/header.html', initHeaderSubmenu);
-    loadHTML('footer-placeholder', '/footer.html', initBackToTop);
     initContactForm('enquiry-form');
   </script>
 </body>
-</html>
+</html>

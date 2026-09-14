@@ -7,20 +7,17 @@
 
 /* ---------------------------------------------------------
    BACK TO TOP BUTTON
-   Call this once, after footer.html has been injected.
+   Called once on DOMContentLoaded (footer markup is now rendered
+   server-side via the Jekyll include, so it's already in the DOM).
 --------------------------------------------------------- */
 function initBackToTop() {
   const backBtn = document.getElementById('backToTopBtn');
   if (!backBtn) return;
 
-  // Guard against double-initialization if loadHTML's callback
-  // ever fires more than once for the same element.
   if (backBtn.dataset.initialized === 'true') return;
   backBtn.dataset.initialized = 'true';
 
-  // Footer copyright year — footer.html can't run its own <script> tag
-  // (injected via innerHTML, same reasoning as the button listeners
-  // below), so the hardcoded year lives here instead, set once per load.
+  // Footer copyright year — set here rather than hardcoded in the include.
   const yearEl = document.getElementById('footerYear');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
@@ -73,36 +70,6 @@ function initHeaderSubmenu() {
 
     toggle.addEventListener('click', toggleSubmenu);
   });
-}
-
-
-/* ---------------------------------------------------------
-   PARTIAL LOADER
-   Fetches an HTML fragment (header.html / footer.html) into a
-   placeholder element, then runs an optional callback only after
-   innerHTML has actually been set — this is what lets initHeaderSubmenu
-   and initBackToTop reliably attach to elements that don't exist yet
-   at page-load time.
-
-   USAGE (identical on every page):
-
-     <script>
-       loadHTML('header-placeholder', 'header.html', initHeaderSubmenu);
-       loadHTML('footer-placeholder', 'footer.html', initBackToTop);
-     </script>
-
-   Do NOT keep a second, page-local loadHTML() definition once this one
-   is loaded — some pages still do; that cleanup is tracked separately.
---------------------------------------------------------- */
-async function loadHTML(id, url, callback) {
-  try {
-    const res = await fetch(url);
-    const text = await res.text();
-    document.getElementById(id).innerHTML = text;
-    if (typeof callback === 'function') callback();
-  } catch (error) {
-    console.error(`Failed to load ${url}:`, error);
-  }
 }
 
 
@@ -333,6 +300,11 @@ function initScrollReveal(selector, options = {}) {
    DOM-DEPENDENT PAGE COMPONENTS (wrapped safely)
    ========================================================================== */
 document.addEventListener('DOMContentLoaded', function () {
+
+  /* ── Header/footer — now rendered server-side via Jekyll includes, so
+     these just attach behavior to markup that's already in the DOM. */
+  initHeaderSubmenu();
+  initBackToTop();
 
   /* ── Legacy counter animation ──────────────────────────────────────────
      For any remaining elements using the old data-count contract
