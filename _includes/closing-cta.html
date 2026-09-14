@@ -1,10 +1,14 @@
 <!--
   Shared closing CTA band, reusing the .selection-cta component already
   defined in style.css (same pattern as the homepage's selection CTA).
-  Drop {% include closing-cta.html %} before the footer include on any
-  page that would otherwise end without a next step for the reader.
+  Include this file before the footer include on any page that would
+  otherwise end without a next step for the reader.
   Optional params: title, text, primary_href, primary_label,
   secondary_href, secondary_label — all fall back to a donation appeal.
+  NOTE: never write a literal {% raw %}{% include %}{% endraw %} example in this comment —
+  Liquid parses tag syntax inside HTML comments too, and a self-
+  referencing include here caused infinite recursion that failed the
+  Jekyll build (see git history on this file).
 -->
 <section class="selection-cta">
   <div class="container">
