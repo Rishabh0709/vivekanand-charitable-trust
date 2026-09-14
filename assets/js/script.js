@@ -73,6 +73,48 @@ function initHeaderSubmenu() {
 }
 
 
+/* ---------------------------------------------------------
+   COPY-TO-CLIPBOARD BUTTONS
+   Generic handler for any <button class="copy-btn" data-copy-value="...">
+   — currently used on donate.html for bank account details, so donors
+   don't have to manually retype them into a banking app.
+--------------------------------------------------------- */
+function initCopyButtons() {
+  document.querySelectorAll('.copy-btn').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const value = btn.dataset.copyValue;
+      if (!value) return;
+
+      try {
+        await navigator.clipboard.writeText(value);
+      } catch (error) {
+        // Clipboard API unavailable (very old browser, or insecure context) —
+        // fall back to a temporary offscreen textarea + execCommand.
+        const temp = document.createElement('textarea');
+        temp.value = value;
+        temp.style.position = 'fixed';
+        temp.style.opacity = '0';
+        document.body.appendChild(temp);
+        temp.select();
+        try { document.execCommand('copy'); } catch (e) { /* give up silently */ }
+        document.body.removeChild(temp);
+      }
+
+      const icon = btn.querySelector('i');
+      const originalClass = icon ? icon.className : null;
+      btn.classList.add('copied');
+      if (icon) icon.className = 'fas fa-check';
+
+      clearTimeout(btn._copyResetTimer);
+      btn._copyResetTimer = setTimeout(() => {
+        btn.classList.remove('copied');
+        if (icon && originalClass) icon.className = originalClass;
+      }, 1500);
+    });
+  });
+}
+
+
 /* ==========================================================================
    SWIPER CAROUSEL FACTORY
    -----------------------------------------------------------------------
@@ -305,6 +347,7 @@ document.addEventListener('DOMContentLoaded', function () {
      these just attach behavior to markup that's already in the DOM. */
   initHeaderSubmenu();
   initBackToTop();
+  initCopyButtons();
 
   /* ── Legacy counter animation ──────────────────────────────────────────
      For any remaining elements using the old data-count contract

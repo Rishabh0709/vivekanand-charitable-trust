@@ -94,6 +94,41 @@
     .fee-transparency-note strong {
       color: #212529;
     }
+
+    /* ── Tap-to-copy on bank details ──────────────────────────────────
+       Donors have to retype these into a banking app; a copy button
+       removes that friction on mobile in particular. */
+    .copy-field {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px 10px;
+    }
+    .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      padding: 0;
+      border: 1px solid rgba(166, 120, 46, 0.3);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--color-brown, #87402c);
+      font-size: 0.78rem;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+    .copy-btn:hover {
+      background: var(--color-brown, #87402c);
+      border-color: var(--color-brown, #87402c);
+      color: #fff;
+    }
+    .copy-btn.copied {
+      background: #2e7d32;
+      border-color: #2e7d32;
+      color: #fff;
+    }
   </style>
 </head>
 <body class="page-bg">
@@ -159,11 +194,32 @@
             <h5 class="fw-bold text-primary mb-3">Direct Bank Wire / NEFT / IMPS</h5>
             
             <div class="row g-2 mb-4">
-              <div class="col-100"><p class="mb-1"><strong>Account Name:</strong> Swami Vivekanand Students’ Welfare Charitable Trust</p></div>
+              <div class="col-100">
+                <p class="mb-1 copy-field">
+                  <strong>Account Name:</strong> <span class="copy-field__value">Swami Vivekanand Students’ Welfare Charitable Trust</span>
+                  <button type="button" class="copy-btn" data-copy-value="Swami Vivekanand Students’ Welfare Charitable Trust" aria-label="Copy account name">
+                    <i class="fas fa-copy" aria-hidden="true"></i>
+                  </button>
+                </p>
+              </div>
               <div class="col-sm-6"><p class="mb-1"><strong>Bank Name:</strong> ICICI Bank</p></div>
               <div class="col-sm-6"><p class="mb-1"><strong>Branch:</strong> Shastri Nagar Branch, Jodhpur</p></div>
-              <div class="col-sm-6"><p class="mb-1"><strong>Saving A/c No.:</strong> 683301420518</p></div>
-              <div class="col-sm-6"><p class="mb-1"><strong>IFSC Code:</strong> ICIC0006833</p></div>
+              <div class="col-sm-6">
+                <p class="mb-1 copy-field">
+                  <strong>Saving A/c No.:</strong> <span class="copy-field__value">683301420518</span>
+                  <button type="button" class="copy-btn" data-copy-value="683301420518" aria-label="Copy account number">
+                    <i class="fas fa-copy" aria-hidden="true"></i>
+                  </button>
+                </p>
+              </div>
+              <div class="col-sm-6">
+                <p class="mb-1 copy-field">
+                  <strong>IFSC Code:</strong> <span class="copy-field__value">ICIC0006833</span>
+                  <button type="button" class="copy-btn" data-copy-value="ICIC0006833" aria-label="Copy IFSC code">
+                    <i class="fas fa-copy" aria-hidden="true"></i>
+                  </button>
+                </p>
+              </div>
             </div>
 
             <!-- Fee-transparency note — explains the deliberate absence of a card/wallet gateway -->

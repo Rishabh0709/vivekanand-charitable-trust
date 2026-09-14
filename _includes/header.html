@@ -215,6 +215,39 @@
     max-height: 60px;
   }
 }
+
+/* =========================================================
+   NAV DONATE BUTTON
+   Donate is the site's primary conversion action, but was only
+   reachable via the footer or the homepage hero — not from the nav
+   itself. Styled as a pill button (not a plain nav-link) so it
+   stands out from the rest of the menu on every page.
+========================================================= */
+.nav-donate-link {
+  background: linear-gradient(135deg, var(--color-gold), var(--color-orange));
+  color: var(--btn-cta-text) !important;
+  font-weight: 700 !important;
+  border-radius: 999px !important;
+  padding: 0.5rem 1.25rem !important;
+  margin-left: 8px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.nav-donate-link:hover {
+  background: linear-gradient(135deg, var(--color-gold), var(--color-orange)) !important;
+  color: var(--btn-cta-text) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(241, 157, 56, 0.35);
+}
+
+@media (max-width: 991px) {
+  .nav-donate-link {
+    display: inline-block;
+    margin-left: 0;
+    margin-top: 4px;
+    text-align: center;
+  }
+}
 </style>
 
 <header class="header-wrapper">
@@ -300,6 +333,10 @@
 
           <li class="nav-item">
             <a class="nav-link" href="/contact_us/">Contact Us</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link nav-donate-link" href="/donate/">Donate</a>
           </li>
 
         </ul>
