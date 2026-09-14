@@ -1,0 +1,18 @@
+<!--
+  Shared closing CTA band, reusing the .selection-cta component already
+  defined in style.css (same pattern as the homepage's selection CTA).
+  Drop {% include closing-cta.html %} before the footer include on any
+  page that would otherwise end without a next step for the reader.
+  Optional params: title, text, primary_href, primary_label,
+  secondary_href, secondary_label — all fall back to a donation appeal.
+-->
+<section class="selection-cta">
+  <div class="container">
+    <h3>{{ include.title | default: "Every Contribution Creates a Ripple" }}</h3>
+    <p>{{ include.text | default: "Your support turns opportunity into reality for underprivileged girls across western Rajasthan. See how you can help today." }}</p>
+    <div class="selection-cta__actions">
+      <a href="{{ include.primary_href | default: "/donate/" }}" class="btn-cta">{{ include.primary_label | default: "Donate Now" }}</a>
+      <a href="{{ include.secondary_href | default: "/contact_us/" }}" class="btn-outline">{{ include.secondary_label | default: "Get in Touch" }}</a>
+    </div>
+  </div>
+</section>
