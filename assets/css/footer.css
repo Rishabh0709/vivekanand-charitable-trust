@@ -249,8 +249,10 @@
     text-align: center;
     /* Keeps the last line of footer text clear of the fixed
        back-to-top button, which otherwise overlaps it once the
-       page is scrolled all the way down. */
-    padding-bottom: 64px;
+       page is scrolled all the way down. !important is required
+       because the markup also carries Bootstrap's .pb-3 utility,
+       which sets its own padding-bottom with !important. */
+    padding-bottom: 90px !important;
   }
 
   .footer-section .col-lg-3,
