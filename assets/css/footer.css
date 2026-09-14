@@ -247,6 +247,10 @@
 
   .footer-section {
     text-align: center;
+    /* Keeps the last line of footer text clear of the fixed
+       back-to-top button, which otherwise overlaps it once the
+       page is scrolled all the way down. */
+    padding-bottom: 64px;
   }
 
   .footer-section .col-lg-3,

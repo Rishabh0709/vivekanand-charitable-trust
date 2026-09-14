@@ -141,6 +141,15 @@ p {
   text-justify: inter-word;
 }
 
+/* Justify only reads well once lines are long enough to keep word-gaps
+   even; on narrow phone columns it creates uneven "rivers" of
+   whitespace, so fall back to left-aligned below the tablet breakpoint. */
+@media (max-width: 600px) {
+  p {
+    text-align: left;
+  }
+}
+
 .lead {
   font-size: 1.18rem;
   line-height: 1.75;

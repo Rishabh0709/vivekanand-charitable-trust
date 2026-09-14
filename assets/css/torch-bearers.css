@@ -77,6 +77,12 @@
       .section:nth-child(even) {
         flex-direction: column !important;
       }
+      /* Justify creates uneven word-gaps once the column narrows to
+         phone width — left-align reads better there. */
+      .text,
+      .p {
+        text-align: left;
+      }
     }
 	
 	.image-group {
